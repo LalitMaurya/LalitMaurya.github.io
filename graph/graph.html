@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Global Hunger Index, 2018</title>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="jquery-2.0.2.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="main.css" />
+        <style type="text/css">
+            body {
+                font-family:"Guardian-Text-Egyp-Web-Light-Latin",Georgia,serif;
+            }
+            #tooltip {
+                position: absolute;
+                width: 200px;
+                height: auto;
+                padding: 10px;
+                background-color: #ebeae8;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                border-radius: 10px;
+                -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                pointer-events: none;
+              
+                font-size: 15px;
+                line-height: 22px;
+            }
+            #tooltip.hidden {
+                display: none;
+            }
+        </style>
+        <script>
+          
+            widthTotal = 1290;
+            heightTotal = 800;
+
+            widthMain = 1100;
+            heightMain = 800;
+            margin = {
+                top: 25,
+                bottom: 50,
+                left: 50,
+                right: 50
+            };
+
+             // country marks
+            countryMarkRadius = heightMain / 35;
+            minValueScaled = 0.25; // use for normalizations of values in [minValueScaled,1]
+            colorMarkLimits = "#938671";
+            colorsSubind = [
+                    '#f0b112', '#ba131b', "#85bc3c", "#f15922"
+            ];
+            namesSubind = ['income', 'health', 'employment', 'environment'];
+
+            backgroundColor = "#fff";
+            areaBackgroundColor = '#efe6da';
+            panelBackgroundColor = '#f7eece';
+
+             // left panel
+            spaceInterMini = 5;
+            spaceInterMainMini = 5;
+            headSpace = 30;
+            miniWidth = (widthTotal - widthMain - spaceInterMini);
+            miniHeight = heightTotal / 4 - headSpace;
+
+            minimargin = {
+                top: 10,
+                bottom: 10,
+                left: 10,
+                right: 10
+            };
+            miniWedgeRadius = miniHeight / 15;
+
+             // path strokes
+            dashLength = 7;
+
+            /*
+             * Go
+             */
+
+            dimDrawBool = [true, true, true, true];
+
+             // Read data
+            d3.tsv('data_viz.tsv', function(d) {
+                return {
+                    namelong: d['Country'],
+                    country: d['Country.short'],
+                    region: d['Region'],
+                    income: +d['Income.security'],
+                    health: +d['Health.status'],
+                    employment: +d['Capability'],
+                    environment: +d['Enabling.environment'],
+                    gawi: +d['Overall.Index'],
+                    gawirank:  +d['Overall.Index.Rank'],
+                    x: +d.x,
+                    y: +d.y
+                };
+            }, function(error, rows) {
+
+
+                // to be used later
+                d3.selection.prototype.moveToFront = function() {
+                    return this.each(function() {
+                        this.parentNode.appendChild(this);
+                    });
+                };
+
+                data = rows;
+                namesSubind = ['income', 'health', 'employment', 'environment'];
+                longNamesSubind = ['Undernourished',
+                        'Prevalence of wasting',
+                        'Prevalence of stunting',
+                        'Infant mortality'
+                ];
+
+                // Scales
+                scaleX = d3.scale.linear()
+                    .domain(d3.extent(data, function(t) {
+                    return t.x
+                }))
+                    .range([margin.left, widthMain - margin.right]);
+
+                scaleY = d3.scale.linear()
+                    .domain(d3.extent(data, function(t) {
+                    return t.y
+                }))
+                    .range([heightMain - margin.bottom, margin.top]); // reverse
+
+                scaleValues01 = {};
+                for (var i = 0; i < namesSubind.length; i++) {
+                    scaleValues01[namesSubind[i]] = d3.scale.linear()
+                        .domain(d3.extent(data, function(d) {
+                        return d[namesSubind[i]]
+                    }))
+                        .range([minValueScaled, 1]);
+                }
+
+                scaleValues01Quartile = {};
+                for (var i = 0; i < namesSubind.length; i++) {
+                    scaleValues01Quartile[namesSubind[i]] = getLinearQuartileScale(data, function(d) {
+                        return d[namesSubind[i]]
+                    }, [0.25, 0.5, 0.75, 1]);
+                }
+
+
+                // mini-scales: for drawing the side 4 rectangles
+                miniscaleX = d3.scale.linear()
+                    .domain(d3.extent(data, function(t) {
+                    return t.x
+                }))
+                    .range([minimargin.left, miniWidth - minimargin.right]);
+
+                miniscaleY = d3.scale.linear()
+                    .domain(d3.extent(data, function(t) {
+                    return t.y
+                }))
+                    .range([miniHeight - minimargin.bottom, minimargin.top]); // reverse
+
+
+                // Create SVG
+                svg = d3.select("#viz")
+                    .append("svg")
+                    .attr("width", widthTotal)
+                    .attr("height", heightTotal);
+                /*
+                // Enclosing rectangle (to remove)
+                svg.append("rect")
+                    .attr("x", 0)
+                    .attr("y", 0)
+                    .attr("width", widthTotal)
+                    .attr("height", heightTotal)
+                    .attr("stroke", "black")
+                    .attr("stroke-size", "1px")
+                    .attr("fill", "white");
+    */
+                // background rectangle for main panel
+                xx = [];
+                svg.append("rect")
+                    .attr("x", 0)
+                    .attr("y", 0)
+                    .attr("width", widthMain)
+                    .attr("height", heightMain)
+                    .attr("fill", backgroundColor)
+                    .on("click", function() {
+                    koko = d3.mouse(this);
+                    console.log(
+                    [scaleX.invert(koko[0]).toFixed(2),
+                            scaleY.invert(koko[1]).toFixed(2)
+                    ]);
+                    xx.push([+scaleX.invert(koko[0]).toFixed(2), +scaleY.invert(koko[1]).toFixed(2)]);
+                });
+
+                // Now draw the 4 mini rectangles
+                for (var i = 0; i < 4; i++) {
+                    var cx = widthMain + spaceInterMini + headSpace / 2;
+                    var cy = (i * heightTotal / 4) + headSpace / 2;
+                    var r = 10;
+
+                    var allmini = svg.append("g");
+                    allmini.datum(i); // add as a datum i to be used in hovering
+
+                    allmini.append("rect")
+                        .attr("x", widthMain + spaceInterMini)
+                        .attr("y", (i * heightTotal / 4))
+                        .attr("width", miniWidth)
+                        .attr("height", miniHeight + headSpace)
+                        .attr("fill", "white");
+
+                    // Add icon
+                    allmini.append("image")
+                        .attr("x", cx - r)
+                        .attr("y", cy - r)
+                        .attr("width", 2 * r)
+                        .attr("height", 2 * r)
+                        .attr("xlink:href", namesSubind[i] + ".png");
+
+                    var fsize = 15;
+
+                    allmini.append("text")
+                        .text(longNamesSubind[i])
+                        .attr("x", cx + 1.5 * r)
+                        .attr("y", cy + 1 * fsize / 3)
+                        .attr("text-anchor", "right")
+                        .attr("font-family", "")
+                        .attr("font-style", "bold")
+                        .attr("font-size", fsize + "px");
+
+                    allmini.append("rect")
+                        .attr("x", widthMain + spaceInterMini)
+                        .attr("y", (i * heightTotal / 4) + headSpace)
+                        .attr("width", miniWidth)
+                        .attr("height", miniHeight)
+                        .attr("fill", panelBackgroundColor);
+
+                    // add wedges for that dim
+                    for (var j = 0; j < data.length; j++) {
+                        var datum = data[j];
+                        var sc = scaleValues01Quartile[namesSubind[i]];
+                        var innerRadius = 0;
+                        var outerRadius = sc(datum[namesSubind[i]]) * miniWedgeRadius;
+                        drawWedge(allmini,
+                            widthMain + spaceInterMainMini + miniscaleX(datum.x), (i * heightTotal / 4) + headSpace + miniscaleY(datum.y), innerRadius, outerRadius, (i - 1) * Math.PI / 2, i * Math.PI / 2, colorsSubind[i], "black", "0px", "miniwedges", "miniarc" + i + "_" + datum.country);
+                    }
+
+                    // add hover behavior
+                    allmini
+                        .on("mouseover", function(d) {
+                        for (var k = 0; k < 4; k++) {
+                            // remove all other colors
+                            if (k != d) {
+                                svg.selectAll("path.countrymarkwedge" + namesSubind[k])
+                                    .attr("fill", "none");
+                            }
+                        }
+                    })
+                        .on("mouseout", function(d) {
+                        for (var k = 0; k < 4; k++) {
+                            svg.selectAll("path.countrymarkwedge" + namesSubind[k])
+                                .attr("fill", colorsSubind[k]);
+                        }
+                    });
+
+                }
+
+                // to be removed
+                /*
+                dd = 'environment';
+                mm = d3.median(data, function(d) {
+                    return d[dd]
+                });
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i][dd] >= mm) {
+                        svg.append("circle")
+                            .attr("cx", scaleX(data[i].x))
+                            .attr("cy", scaleY(data[i].y))
+                            .attr("r", countryMarkRadius + 4)
+                            .attr("stroke-size", "1px")
+                            .attr("stroke", "red");
+                    }
+                }
+                */
+
+                /* FINALLY : plot country marks*/
+                quarts = [];
+                for (var i = 0; i < 4; i++) {
+                    quarts.push(getQuartiles(data, function(d) {
+                        return d[namesSubind[i]]
+                    }));
+                }
+
+                for (var i = 0; i < data.length; i++) {
+                    drawCountryMark(svg, data[i], namesSubind, colorsSubind);
+                }
+
+
+
+            });
+
+
+             // Generates a country mark centered on (posx,posy) in the given svg
+
+            function drawCountryMark(svghandle, datum, dimnames, colors) {
+
+                console.log("drawCountryMark");
+
+                thatsvg = svg.append("g")
+                    .attr("class", "countrymark")
+                    .attr("id", "cgroup" + datum.name);
+
+
+                // Draw enclosing circle and rays
+                thatsvg.append("circle")
+                    .attr("cx", scaleX(datum.x))
+                    .attr("cy", scaleY(datum.y))
+                    .attr("r", countryMarkRadius + 1)
+                    .attr("stroke-size", "1px")
+                    .attr("stroke", colorMarkLimits)
+                    .attr("fill", "white");
+
+                // Draw wedges
+                for (var i = 0; i < dimnames.length; i++) {
+                    var sc = scaleValues01[dimnames[i]];
+                    var innerRadius = 4;
+                    var outerRadius = sc(datum[dimnames[i]]) * countryMarkRadius;
+
+                    drawWedge(thatsvg, scaleX(datum.x), scaleY(datum.y), innerRadius, outerRadius, (i - 1) * Math.PI / 2, i * Math.PI / 2, colors[i], "black", "0px", "countrymarkwedge" + dimnames[i], "arc" + "_" + datum.country);
+                }
+
+
+                // Draw enclosing lines
+                thatsvg.append("line")
+                    .attr("x1", scaleX(datum.x) - countryMarkRadius)
+                    .attr("y1", scaleY(datum.y))
+                    .attr("x2", scaleX(datum.x) + countryMarkRadius)
+                    .attr("y2", scaleY(datum.y))
+                    .attr("stroke-size", "1px")
+                    .attr("stroke", colorMarkLimits);
+                thatsvg.append("line")
+                    .attr("x1", scaleX(datum.x))
+                    .attr("y1", scaleY(datum.y) - countryMarkRadius)
+                    .attr("x2", scaleX(datum.x))
+                    .attr("y2", scaleY(datum.y) + countryMarkRadius)
+                    .attr("stroke-size", "1px")
+                    .attr("stroke", colorMarkLimits);
+
+                // Draw country name along a path
+                //drawTxtArc(svg, datum.country, "Verdana", "9px", "black", countryMarkRadius + 3, scaleX(datum.x),scaleY(datum.y),0);
+
+                // Draw text of country name
+                thatsvg.append("text")
+                    .text(datum.country)
+                    .attr("id", "countrytxt" + datum.country)
+                    .attr("transform", "translate(" + scaleX(datum.x) + "," + (scaleY(datum.y) + countryMarkRadius + 10) + ")")
+                    .attr("text-anchor", "middle")
+                    .attr("font-family", "")
+                    .attr("font-size", "12px")
+					.attr("font-weight", "400");
+
+
+                // Draw text of index value
+                thatsvg.append("text")
+                    //.text(datum.gawi.toFixed(1))
+                    .text(datum.gawirank)
+                    .attr("id", "gawitxt" + datum.country)
+                    .attr("transform", "translate(" + scaleX(datum.x) + "," + (scaleY(datum.y) + countryMarkRadius + 10 + 2 + 10) + ")")
+                    .attr("text-anchor", "middle")
+                    .attr("font-family", "")
+              		.attr("font-size", "12px")
+					.attr("font-weight", "600");
+
+                thatsvg.on("mouseover", function() {
+                    //Get this bar's x/y values, then augment for the tooltip
+                    var xPosition = parseFloat(d3.select(this).select("circle").attr("cx")) + 2 * parseFloat(d3.select(this).select("circle").attr("r"));
+
+                    var yPosition = parseFloat(d3.select(this).select("circle").attr("cy")) + 5;
+
+                    // if y too high, move it so it fits
+                    yPosition = Math.min(heightTotal - 200, yPosition);
+
+                    //Update the tooltip position and value
+                    d3.select("#tooltip")
+                        .style("left", xPosition + "px")
+                        .style("top", yPosition + "px");
+                    document.getElementById("tooltip").innerHTML = toHtml(datum);
+
+                    //Show the tooltip
+                    d3.select("#tooltip").classed("hidden", false);
+                })
+                    .on("mouseout", function() {
+                    d3.select("#tooltip").classed("hidden", true);
+                });
+
+            
+
+                //console.log('width = '+computeWidth(datum.country, "10px Verdana"));
+
+            }
+
+             // for tooltip
+
+            function toHtml(d) {
+                r = "";
+                r = r + "<span style='font-size:20px;font-weight:bold; color:#b9074b;'>" + d.namelong + "</span><br>";
+                r = r + "<hr>" ;
+                r = r + "<table>";
+                r = r + "<tr>" + 
+                    "<td>" + "<img src='"+ 'all' + ".png' alt='' width='12px' height='12px' />" + "</td>" +
+                    "<td><b>Global Index</b></td>"  +
+                    "<td>&nbsp;<b>" + d['gawi'].toFixed(1) + "</b></td>" +
+                    "</tr>";
+                for (var i = 0; i < namesSubind.length; i++) {
+                    r = r + "<tr> " +
+                        "<td>" + "<img src='"+ namesSubind[i] + ".png' alt='' width='12px' height='12px' />"+ "</td>" +
+                        "<td>" + longNamesSubind[i] + "</td>"+
+                        "<td>&nbsp;" + d[namesSubind[i]].toFixed(1) + "</td>" +
+                    "</tr> ";
+                }
+                r = r + "</table>";
+                
+                r = r + "<span style='font-size:11px;'>" + 'Data source: World Hunger Index, 2018' + "</span>"
+                return r;
+            }
+
+             // Function to compute the width of a string
+
+            function computeWidth(txt, font) {
+                var f = font || '12px arial',
+                    o = $('<div>' + txt + '</div>')
+                        .css({
+                        'position': 'absolute',
+                        'float': 'left',
+                        'white-space': 'nowrap',
+                        'visibility': 'hidden',
+                        'font': f
+                    })
+                        .appendTo($('body')),
+                    w = o.width();
+
+                o.remove();
+                return w;
+            }
+
+             // Function to draw a text arc centered on a given angle
+
+            function drawTxtArc(svghandle, datxt, fontfam, fontsize, fontcol, rad, posx, posy, angoffset) {
+                var txtw = computeWidth(datxt, fontsize + " " + fontfam);
+
+                var txtarc = d3.svg.arc()
+                    .innerRadius(rad) // controls path thickness
+                .outerRadius(rad)
+                    .startAngle(-0.5 * txtw / rad + angoffset)
+                    .endAngle(0.5 * txtw / rad + angoffset);
+
+                svghandle.append("path")
+                    .attr("d", txtarc)
+                    .attr("id", "txtarc" + datxt)
+                    .attr("transform", "translate(" + posx + "," + posy + ")");
+
+                svghandle.append("text")
+                    .append("textPath")
+                    .attr("xlink:href", "#txtarc" + datxt)
+                    .text(datxt)
+                    .attr("font-family", fontfam)
+                    .attr("font-size", fontsize)
+                    .attr("fill", fontcol);
+            }
+
+             // Function to draw a wedge
+
+            function drawWedge(svghandle, posx, posy, inner_radius, outer_radius, start_angle, end_angle, fillcolor, strokecolor, strokesize, arclass, arcid) {
+                var arc = d3.svg.arc()
+                    .innerRadius(inner_radius)
+                    .outerRadius(outer_radius)
+                    .startAngle(start_angle)
+                    .endAngle(end_angle);
+
+                svghandle.append("path")
+                    .attr("class", arclass)
+                    .attr("id", arcid)
+                    .attr("stroke-size", strokesize)
+                    .attr("fill", fillcolor)
+                    .attr("d", arc)
+                    .attr("transform", "translate(" + posx + "," + posy + ")");
+            }
+
+            /** Returns a scale mapping values to 4 sizes depending on their quartile **/
+            function getLinearQuartileScale(data, funct, sizes) {
+                values = data.map(function(d) {
+                    return funct(d)
+                }).sort(function(a, b) {
+                    return d3.ascending(a, b)
+                });
+
+                // quartiles and bounds
+                var mima = d3.extent(data, function(d) {
+                    return funct(d)
+                });
+                var q25 = d3.quantile(values, 0.25);
+                var q50 = d3.quantile(values, 0.5);
+                var q75 = d3.quantile(values, 0.75);
+
+                return d3.scale.linear()
+                    .domain([mima[0], q25, q25, q50, q50, q75, q75, mima[1]])
+                    .range([sizes[0], sizes[0], sizes[1], sizes[1], sizes[2], sizes[2], sizes[3], sizes[3]]);
+            }
+
+            /**
+             get min, max and quartiles
+             **/
+            function getQuartiles(data, funct) {
+                values = data.map(function(d) {
+                    return funct(d)
+                }).sort(function(a, b) {
+                    return d3.ascending(a, b)
+                });
+
+                // quartiles and bounds
+                var mima = d3.extent(data, function(d) {
+                    return funct(d)
+                });
+                var q25 = d3.quantile(values, 0.25);
+                var q50 = d3.quantile(values, 0.5);
+                var q75 = d3.quantile(values, 0.75);
+
+                return [mima[0], q25, q50, q75, mima[1]];
+            }
+        </script>
+
+    </head>
+    
+    <body>
+        <div id="viz"></div>
+        <div id="tooltip" class="hidden"></div>
+    </body>
+
+</html>
