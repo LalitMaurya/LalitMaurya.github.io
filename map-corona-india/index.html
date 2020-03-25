@@ -91,7 +91,7 @@ var type = "SC",
         st_nm: "Rajasthan",
         title: "राजस्थान",
         label: {
-            SC: "राजस्थान में अब तक कोविद-19 के 32 मामले सामने आ चुके हैं| जिनमें से 30 भारतीय और दो विदेशी नागरिक हैं "
+            SC: "राजस्थान में अब तक कोविड-19 के 32 मामले सामने आ चुके हैं| जिनमें से 30 भारतीय और दो विदेशी नागरिक हैं "
         },
         
         mobile_show: !0
@@ -254,7 +254,7 @@ l_svg.selectAll("rect").data(colors_reversed).enter().append("rect").attr("x", f
     return l_x(t)
 }).attr("width", l_x.bandwidth()).attr("height", l_height).style("fill", function(t) {
     return t
-}), l_svg.selectAll(".legend-label").data(window.innerWidth < 400 ? ["संक्रमण के सामने आये सबसे ज्यादा मामले ", "संक्रमण के सामने आये सीमित मामले"] : ["संक्रमण के सामने आये सबसे ज्यादा मामले", "संक्रमण के सामने आये सीमित मामले "]).enter().append("text").attr("class", "legend-label").attr("x", function(t, e) {
+}), l_svg.selectAll(".legend-label").data(window.innerWidth < 400 ? ["अत्यधिक संक्रमित  ", "कम संक्रमित "] : ["अत्यधिक संक्रमित ", "कम संक्रमित  "]).enter().append("text").attr("class", "legend-label").attr("x", function(t, e) {
     return 0 == e ? 0 : l_width
 }).attr("dy", -5).style("text-anchor", function(t, e) {
     return 0 == e ? "start" : "end"
