@@ -81,7 +81,7 @@ var type = "SC",
     match_property = "state_id",
     value_property = type + "_pct_cultivators",
     colors = ['#ffffb2','#fed976','#feb24c','#fd8d3c','#f03b20','#bd0026'],
-    limits = [1, 10, 20, 30, 80, 200],
+    limits = [1, 10, 20, 50, 100, 210],
     width = window.innerWidth,
     height = 650,
     projection = d3.geoMercator(),
@@ -91,7 +91,7 @@ var type = "SC",
         st_nm: "Rajasthan",
         title: "राजस्थान",
         label: {
-            SC: "राजस्थान में अब तक कोविड-19 के 57 मामले सामने आ चुके हैं| जिनमें से 55 भारतीय और दो विदेशी नागरिक हैं "
+            SC: "राजस्थान में अब तक कोविड-19 के 59 मामले सामने आ चुके हैं| जिनमें से 57 भारतीय और दो विदेशी नागरिक हैं "
         },
         
         mobile_show: !0
@@ -99,14 +99,14 @@ var type = "SC",
         st_nm: "Kerala",
         title: "केरल ",
         label: {
-            SC: "भारत के केरल राज्य में कोरोना के 194 मामले सामने आ चुके हैं। अच्छी बात यह रही कि उनमें से 19 लोग स्वस्थ हो चुके हैं  "
+            SC: "भारत के केरल राज्य में कोरोना के 202 मामले सामने आ चुके हैं। अच्छी बात यह रही कि उनमें से 19 लोग स्वस्थ हो चुके हैं  "
         },
         mobile_show: !0
     }, {
         st_nm: "NCT of Delhi",
         title: "दिल्ली",
         label: {
-            SC: "दिल्ली में इस वायरस के अब तक 53 मामले सामने आ चुके हैं। जिनमें से 6 स्वस्थ हो चुके हैं। जबकि 2 की मृत्यु हो चुकी है "
+            SC: "दिल्ली में इस वायरस के अब तक 87 मामले सामने आ चुके हैं। जिनमें से 6 स्वस्थ हो चुके हैं। जबकि 2 की मृत्यु हो चुकी है "
         },
         mobile_show: !1
     }, {
@@ -254,7 +254,7 @@ l_svg.selectAll("rect").data(colors_reversed).enter().append("rect").attr("x", f
     return l_x(t)
 }).attr("width", l_x.bandwidth()).attr("height", l_height).style("fill", function(t) {
     return t
-}), l_svg.selectAll(".legend-label").data(window.innerWidth < 400 ? ["अत्यधिक संक्रमित  ", "कम संक्रमित "] : ["अत्यधिक संक्रमित ", "कम संक्रमित  "]).enter().append("text").attr("class", "legend-label").attr("x", function(t, e) {
+}), l_svg.selectAll(".legend-label").data(window.innerWidth < 400 ? ["अत्यधिक संक्रमित (100+)  ", "कम संक्रमित (<10) "] : ["अत्यधिक संक्रमित (100+) ", "कम संक्रमित (<10)"]).enter().append("text").attr("class", "legend-label").attr("x", function(t, e) {
     return 0 == e ? 0 : l_width
 }).attr("dy", -5).style("text-anchor", function(t, e) {
     return 0 == e ? "start" : "end"
