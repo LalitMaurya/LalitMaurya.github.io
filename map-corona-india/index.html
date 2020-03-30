@@ -91,7 +91,7 @@ var type = "SC",
         st_nm: "Rajasthan",
         title: "राजस्थान",
         label: {
-            SC: "राजस्थान में अब तक कोविड-19 के 55 मामले सामने आ चुके हैं| जिनमें से 53 भारतीय और दो विदेशी नागरिक हैं "
+            SC: "राजस्थान में अब तक कोविड-19 के 57 मामले सामने आ चुके हैं| जिनमें से 55 भारतीय और दो विदेशी नागरिक हैं "
         },
         
         mobile_show: !0
@@ -99,21 +99,21 @@ var type = "SC",
         st_nm: "Kerala",
         title: "केरल ",
         label: {
-            SC: "भारत के केरल राज्य में कोरोना के 182 मामले सामने आ चुके हैं। अच्छी बात यह रही कि उनमें से 15 लोग स्वस्थ हो चुके हैं  "
+            SC: "भारत के केरल राज्य में कोरोना के 194 मामले सामने आ चुके हैं। अच्छी बात यह रही कि उनमें से 19 लोग स्वस्थ हो चुके हैं  "
         },
         mobile_show: !0
     }, {
         st_nm: "NCT of Delhi",
         title: "दिल्ली",
         label: {
-            SC: "दिल्ली में इस वायरस के अब तक 49 मामले सामने आ चुके हैं। जिनमें से 6 स्वस्थ हो चुके हैं। जबकि 2 की मृत्यु हो चुकी है "
+            SC: "दिल्ली में इस वायरस के अब तक 53 मामले सामने आ चुके हैं। जिनमें से 6 स्वस्थ हो चुके हैं। जबकि 2 की मृत्यु हो चुकी है "
         },
         mobile_show: !1
     }, {
         st_nm: "Manipur",
         title: "मणिपुर ",
         label: {
-            SC: "देश के उत्तर पूर्व में अब तक २ मामले सामने आ चुके हैं। जिनमें से एक मणिपुर में और दूसरा मामला मिजोरम में सामने आया है "
+            SC: "देश के उत्तर पूर्व में अब तक 2 मामले सामने आ चुके हैं। जिनमें से एक मणिपुर में और दूसरा मामला मिजोरम में सामने आया है "
         },
         
         mobile_show: !1
@@ -205,7 +205,7 @@ function ready(t, e, a, r) {
         }), svg.selectAll(".subunit." + e).on("mouseover", function(a) {
             d3.select("#tip").style("display", "block");
             var o = g(a, t);
-            o || d3.select("#tip").style("display", "none"), d3.select("#tip .tip-title").html("<h3>"+o.hindi_name + "</h3>संक्रमित (भारतीय): <strong>" + o.SC_pct_cultivators+ "</strong><br>संक्रमित (विदेशी): <strong>" + o.SC_main_workers+ "</strong><br>स्वस्थ: <strong>" + o.SC_cultivators+" </strong><br>मृत्यु: <strong>" + o.SC_agricultural_labourers+" </strong>");
+            o || d3.select("#tip").style("display", "none"), d3.select("#tip .tip-title").html("<h3>"+o.hindi_name + "</h3>संक्रमित मरीज: <strong>" + o.SC_pct_cultivators+ "</strong><br>स्वस्थ: <strong>" + o.SC_cultivators+" </strong><br>मृत्यु: <strong>" + o.SC_agricultural_labourers+" </strong>");
            
                         p.enter().append("text").attr("class", "type-label").attr("y", function(t) {
                 return t_y(t.type)
