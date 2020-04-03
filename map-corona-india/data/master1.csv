@@ -2,14 +2,14 @@ state_id,state_name,district_code,hindi_name,SC_pct_cultivators,SC_cultivators,S
 1,Andaman & Nicobar Islands,638,अंडमान एंड निकोबार आइलैंड,10,0,0
 2,Andhra Pradesh,532,आंध्रप्रदेश,86,1,1
 3,Arunachal Pradesh,260,अरुणाचल प्रदेश,0,0,0
-4,Assam,324,असम,1,0,0
-5,Bihar,209,बिहार,23,0,1
+4,Assam,324,असम,5,0,0
+5,Bihar,209,बिहार,24,0,1
 6,Chandigarh,55,चंडीगढ़,16,0,0
 7,Chhattisgarh,414,छत्तीसगढ़,9,2,0
 8,Dadra & Nagar Haveli,496,दादरा एंड नगर हवेली,0,0,0
 9,Daman & Diu,495,दमन और दिउए,0,0,0
 10,Goa,585,गोवा,5,0,0
-11,Gujarat,474,गुजरात,82,5,6
+11,Gujarat,474,गुजरात,87,8,7
 12,Haryana,70,हरियाणा,43,21,0
 13,Himachal Pradesh,30,हिमाचल प्रदेश,3,1,1
 14,Jammu & Kashmir,14,जम्मू एंड कश्मीर,75,5,2
@@ -23,15 +23,15 @@ state_id,state_name,district_code,hindi_name,SC_pct_cultivators,SC_cultivators,S
 22,Meghalaya,294,मेघालय,0,0,0
 23,Mizoram,283,मिजोरम,1,0,0
 24,Nagaland,265,नागालैंड,0,0,0
-25,Nct Of Delhi,95,दिल्ली,152,6,2
+25,Nct Of Delhi,95,दिल्ली,219,8,4
 26,Odisha,384,ओडिशा,4,0,0
 27,Puducherry,637,पुदुचेर्री,3,1,0
 28,Punjab,49,पंजाब,46,1,4
 29,Rajasthan,119,राजस्थान,108,3,0
 30,Sikkim,244,सिक्किम,0,0,0
 31,Tamil Nadu,616,तमिलनाडु,234,6,1
-32,Telangana,145,तेलंगाना,96,1,3
+32,Telangana,145,तेलंगाना,107,1,3
 33,Tripura,291,त्रिपुरा,0,0,0
 34,Uttar Pradesh,146,उत्तरप्रदेश,113,14,2
 35,Uttarakhand,64,उत्तराखंड,7,2,0
-36,West Bengal,339,पश्चिम बंगाल,37,6,3
+36,West Bengal,339,पश्चिम बंगाल,53,6,3
