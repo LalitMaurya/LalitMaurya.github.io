@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+  <head>
+      <link rel="stylesheet" href="main.css" />
+    <script type="text/javascript" src="loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['भारत में कोरोना संक्रमण की स्थिति',"सक्रिय मामले","ठीक हो चुके मरीज","अपने देश वापस जा चुके मरीज","मृत्यु ", { role: 'annotation' } ],
+		
+        ['भारत में कोरोना संक्रमण की स्थिति', 3030,266,1,77, ''],
+        
+      ]);
+
+      var options = {
+        legend: { position: 'top', maxLines: 6 },
+        bar: {groupWidth: '65%'},		
+        isStacked: true,
+		 hAxis: {
+          minValue: 0
+        },
+        series: {
+          0:{color:'#fe9929'},
+          1:{color:'#74c476'},
+          2:{color:'#9e9ac8'},
+          3:{color:'#e31a1c'},
+          4:{color:'#c51b7d'},
+		  5:{color:'#4d9221'},
+		  6:{color:'#e38a00'},
+		  7:{color:'#9f0035'},
+          8:{color:'#9d9d9d'},
+		  9:{color:'#ff0000'}
+		  
+        }
+      };
+		
+     
+
+      var chart = new google.visualization.BarChart(document.getElementById('barchart_stacked'));
+      chart.draw(data, options);
+	  
+	  
+  }
+  </script>
+<div id="barchart_stacked" style="max-width: 1600px; min-width:320px; height: 200px;"></div>
+  </body>
+</html>
+
