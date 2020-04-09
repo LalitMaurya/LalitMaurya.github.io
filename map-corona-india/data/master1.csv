@@ -3,23 +3,23 @@ state_id,state_name,district_code,hindi_name,SC_pct_cultivators,SC_cultivators,S
 2,Andhra Pradesh,532,आंध्रप्रदेश,348,6,4
 3,Arunachal Pradesh,260,अरुणाचल प्रदेश,1,0,0
 4,Assam,324,असम,28,0,0
-5,Bihar,209,बिहार,38,0,1
+5,Bihar,209,बिहार,39,0,1
 6,Chandigarh,55,चंडीगढ़,18,7,0
 7,Chhattisgarh,414,छत्तीसगढ़,10,9,0
 8,Dadra & Nagar Haveli,496,दादरा एंड नगर हवेली,0,0,0
 9,Daman & Diu,495,दमन और दिउए,0,0,0
 10,Goa,585,गोवा,7,0,0
 11,Gujarat,474,गुजरात,179,25,16
-12,Haryana,70,हरियाणा,147,28,3
+12,Haryana,70,हरियाणा,169,29,3
 13,Himachal Pradesh,30,हिमाचल प्रदेश,18,2,1
 14,Jammu & Kashmir,14,जम्मू एंड कश्मीर,172,14,4
-15,Jharkhand,355,झारखण्ड,4,0,0
+15,Jharkhand,355,झारखण्ड,13,0,0
 16,Karnataka,556,कर्नाटक,181,28,5
 17,Kerala,598,केरला,345,83,2
 18,Lakshadweep,587,लक्षद्वीप,0,0,0
-19,Madhya Pradesh,465,मध्य प्रदेश,229,0,13
+19,Madhya Pradesh,465,मध्य प्रदेश,259,0,16
 20,Maharashtra,522,महाराष्ट्र,1135,117,72
-21,Manipur,275,मणिपुर,1,1,0
+21,Manipur,275,मणिपुर,2,1,0
 22,Meghalaya,294,मेघालय,0,0,0
 23,Mizoram,283,मिजोरम,1,0,0
 24,Nagaland,265,नागालैंड,0,0,0
@@ -27,11 +27,11 @@ state_id,state_name,district_code,hindi_name,SC_pct_cultivators,SC_cultivators,S
 26,Odisha,384,ओडिशा,42,2,1
 27,Puducherry,637,पुदुचेर्री,5,1,0
 28,Punjab,49,पंजाब,101,4,8
-29,Rajasthan,119,राजस्थान,381,21,3
+29,Rajasthan,119,राजस्थान,383,21,3
 30,Sikkim,244,सिक्किम,0,0,0
 31,Tamil Nadu,616,तमिलनाडु,738,21,8
-32,Telangana,145,तेलंगाना,427,35,7
+32,Telangana,145,तेलंगाना,442,35,7
 33,Tripura,291,त्रिपुरा,1,0,0
-34,Uttar Pradesh,146,उत्तरप्रदेश,361,27,4
-35,Uttarakhand,64,उत्तराखंड,33,5,0
+34,Uttar Pradesh,146,उत्तरप्रदेश,410,31,4
+35,Uttarakhand,64,उत्तराखंड,35,5,0
 36,West Bengal,339,पश्चिम बंगाल,103,16,5
