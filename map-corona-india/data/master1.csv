@@ -1,6 +1,6 @@
 state_id,state_name,district_code,hindi_name,SC_pct_cultivators,SC_cultivators,SC_agricultural_labourers
 1,Andaman & Nicobar Islands,638,अंडमान एंड निकोबार आइलैंड,11,0,0
-2,Andhra Pradesh,532,आंध्रप्रदेश,363,7,6
+2,Andhra Pradesh,532,आंध्रप्रदेश,381,11,6
 3,Arunachal Pradesh,260,अरुणाचल प्रदेश,1,0,0
 4,Assam,324,असम,29,0,1
 5,Bihar,209,बिहार,60,0,1
@@ -13,25 +13,25 @@ state_id,state_name,district_code,hindi_name,SC_pct_cultivators,SC_cultivators,S
 12,Haryana,70,हरियाणा,177,29,3
 13,Himachal Pradesh,30,हिमाचल प्रदेश,28,6,1
 14,Jammu & Kashmir,14,जम्मू एंड कश्मीर,222,16,4
-15,Jharkhand,355,झारखण्ड,14,0,1
-16,Karnataka,556,कर्नाटक,207,31,6
+15,Jharkhand,355,झारखण्ड,17,0,1
+16,Karnataka,556,कर्नाटक,214,37,6
 17,Kerala,598,केरला,364,123,2
 18,Lakshadweep,587,लक्षद्वीप,0,0,0
-19,Madhya Pradesh,465,मध्य प्रदेश,435,0,33
+19,Madhya Pradesh,465,मध्य प्रदेश,443,0,33
 20,Maharashtra,522,महाराष्ट्र,1574,188,110
 21,Manipur,275,मणिपुर,2,1,0
 22,Meghalaya,294,मेघालय,0,0,0
 23,Mizoram,283,मिजोरम,1,0,0
 24,Nagaland,265,नागालैंड,0,0,0
-25,Nct Of Delhi,95,दिल्ली,903,25,13
+25,Nct Of Delhi,95,दिल्ली,903,25,14
 26,Odisha,384,ओडिशा,48,2,1
-27,Puducherry,637,पुदुचेर्री,5,1,0
+27,Puducherry,637,पुदुचेर्री,7,1,0
 28,Punjab,49,पंजाब,132,5,11
 29,Rajasthan,119,राजस्थान,553,21,3
 30,Sikkim,244,सिक्किम,0,0,0
 31,Tamil Nadu,616,तमिलनाडु,911,44,8
-32,Telangana,145,तेलंगाना,473,43,7
-33,Tripura,291,त्रिपुरा,1,0,0
-34,Uttar Pradesh,146,उत्तरप्रदेश,431,32,4
+32,Telangana,145,तेलंगाना,504,43,9
+33,Tripura,291,त्रिपुरा,2,0,0
+34,Uttar Pradesh,146,उत्तरप्रदेश,433,32,4
 35,Uttarakhand,64,उत्तराखंड,35,5,0
-36,West Bengal,339,पश्चिम बंगाल,116,16,5
+36,West Bengal,339,पश्चिम बंगाल,126,16,5
