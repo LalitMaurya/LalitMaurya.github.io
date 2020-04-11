@@ -96,10 +96,10 @@ var type = "SC",
         
         mobile_show: !0
     }, {
-        st_nm: "Kerala",
-        title: "केरल ",
+        st_nm: "Maharashtra",
+        title: "महाराष्ट्र  ",
         label: {
-            SC: "भारत के केरल राज्य में कोरोना के 364 मामले सामने आ चुके हैं। अच्छी बात यह रही कि उनमें से 123 लोग स्वस्थ हो चुके हैं  "
+            SC: "महाराष्ट्र में कोरोना के 1,574 मामले सामने आ चुके हैं। जिनमें से 188 लोग स्वस्थ हो चुके हैं, जबकि 110 की मृत्यु हो चुकी है  "
         },
         mobile_show: !0
     }, {
@@ -194,8 +194,8 @@ function ready(t, e, a, r) {
                 i = a.select(".state-" + jz.str.toSlugCase(e.st_nm)).node().getBBox(),
                 o = a.node().getBBox();
             n.x = i.x + i.width / 2, n.y = i.y + i.height / 2;
-            var l = o.width + o.x - n.x - (t ? 150 : 200);
-            return n.dx = "Kerala" == e.st_nm ? t ? l : -80 : "Rajasthan" == e.st_nm ? t ? l : -45 : "NCT of Delhi" == e.st_nm ? 92 : "Assam" == e.st_nm ? 33 : 0, n.dy = "Rajasthan" == e.st_nm ? t ? -105 : -80 : "Kerala" == e.st_nm ? t ? 0 : -50 : "NCT of Delhi" == e.st_nm ? -1 : "Assam" == e.st_nm ? 65 : 40, n
+            var l = o.width + o.x - n.x - (t ? 120 : 200);
+            return n.dx = "Maharashtra" == e.st_nm ? t ? -0 : -80 : "Rajasthan" == e.st_nm ? t ? l : -45 : "NCT of Delhi" == e.st_nm ? 92 : "Assam" == e.st_nm ? 33 : 0, n.dy = "Rajasthan" == e.st_nm ? t ? -105 : -80 : "Maharashtra" == e.st_nm ? t ? -28 : 20 : "NCT of Delhi" == e.st_nm ? -1 : "Assam" == e.st_nm ? 65 : 40, n
         })
     }
 
