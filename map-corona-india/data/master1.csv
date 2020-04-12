@@ -3,28 +3,28 @@ state_id,state_name,district_code,hindi_name,SC_pct_cultivators,SC_cultivators,S
 2,Andhra Pradesh,532,आंध्रप्रदेश,381,11,6
 3,Arunachal Pradesh,260,अरुणाचल प्रदेश,1,0,0
 4,Assam,324,असम,29,0,1
-5,Bihar,209,बिहार,63,0,1
+5,Bihar,209,बिहार,64,19,1
 6,Chandigarh,55,चंडीगढ़,19,7,0
-7,Chhattisgarh,414,छत्तीसगढ़,18,9,0
+7,Chhattisgarh,414,छत्तीसगढ़,25,10,0
 8,Dadra & Nagar Haveli,496,दादरा एंड नगर हवेली,0,0,0
 9,Daman & Diu,495,दमन और दिउए,0,0,0
 10,Goa,585,गोवा,7,5,0
 11,Gujarat,474,गुजरात,432,44,22
-12,Haryana,70,हरियाणा,177,29,3
+12,Haryana,70,हरियाणा,185,29,3
 13,Himachal Pradesh,30,हिमाचल प्रदेश,32,6,1
-14,Jammu & Kashmir,14,जम्मू एंड कश्मीर,222,16,4
+14,Jammu & Kashmir,14,जम्मू एंड कश्मीर,239,16,4
 15,Jharkhand,355,झारखण्ड,17,0,1
-16,Karnataka,556,कर्नाटक,214,37,6
-17,Kerala,598,केरला,364,123,2
+16,Karnataka,556,कर्नाटक,226,37,6
+17,Kerala,598,केरला,374,142,2
 18,Lakshadweep,587,लक्षद्वीप,0,0,0
-19,Madhya Pradesh,465,मध्य प्रदेश,532,0,36
+19,Madhya Pradesh,465,मध्य प्रदेश,564,0,36
 20,Maharashtra,522,महाराष्ट्र,1761,208,127
 21,Manipur,275,मणिपुर,2,1,0
 22,Meghalaya,294,मेघालय,0,0,0
 23,Mizoram,283,मिजोरम,1,0,0
 24,Nagaland,265,नागालैंड,0,0,0
 25,Nct Of Delhi,95,दिल्ली,1069,25,19
-26,Odisha,384,ओडिशा,50,2,1
+26,Odisha,384,ओडिशा,54,12,1
 27,Puducherry,637,पुदुचेर्री,7,1,0
 28,Punjab,49,पंजाब,151,5,11
 29,Rajasthan,119,राजस्थान,700,21,3
