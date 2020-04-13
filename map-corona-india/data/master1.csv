@@ -1,37 +1,37 @@
 state_id,state_name,district_code,hindi_name,SC_pct_cultivators,SC_cultivators,SC_agricultural_labourers
 1,Andaman & Nicobar Islands,638,अंडमान एंड निकोबार आइलैंड,11,10,0
-2,Andhra Pradesh,532,आंध्रप्रदेश,381,11,6
+2,Andhra Pradesh,532,आंध्रप्रदेश,427,11,7
 3,Arunachal Pradesh,260,अरुणाचल प्रदेश,1,0,0
 4,Assam,324,असम,29,0,1
 5,Bihar,209,बिहार,64,19,1
-6,Chandigarh,55,चंडीगढ़,19,7,0
-7,Chhattisgarh,414,छत्तीसगढ़,25,10,0
+6,Chandigarh,55,चंडीगढ़,21,7,0
+7,Chhattisgarh,414,छत्तीसगढ़,31,10,0
 8,Dadra & Nagar Haveli,496,दादरा एंड नगर हवेली,0,0,0
 9,Daman & Diu,495,दमन और दिउए,0,0,0
 10,Goa,585,गोवा,7,5,0
-11,Gujarat,474,गुजरात,432,44,22
+11,Gujarat,474,गुजरात,516,44,25
 12,Haryana,70,हरियाणा,185,29,3
-13,Himachal Pradesh,30,हिमाचल प्रदेश,32,6,1
-14,Jammu & Kashmir,14,जम्मू एंड कश्मीर,239,16,4
-15,Jharkhand,355,झारखण्ड,17,0,1
-16,Karnataka,556,कर्नाटक,226,37,6
-17,Kerala,598,केरला,374,142,2
+13,Himachal Pradesh,30,हिमाचल प्रदेश,32,13,1
+14,Jammu & Kashmir,14,जम्मू एंड कश्मीर,260,16,4
+15,Jharkhand,355,झारखण्ड,19,0,2
+16,Karnataka,556,कर्नाटक,232,57,6
+17,Kerala,598,केरला,376,179,2
 18,Lakshadweep,587,लक्षद्वीप,0,0,0
-19,Madhya Pradesh,465,मध्य प्रदेश,564,0,36
-20,Maharashtra,522,महाराष्ट्र,1761,208,127
+19,Madhya Pradesh,465,मध्य प्रदेश,532,0,36
+20,Maharashtra,522,महाराष्ट्र,1985,217,149
 21,Manipur,275,मणिपुर,2,1,0
 22,Meghalaya,294,मेघालय,0,0,0
 23,Mizoram,283,मिजोरम,1,0,0
 24,Nagaland,265,नागालैंड,0,0,0
-25,Nct Of Delhi,95,दिल्ली,1069,25,19
+25,Nct Of Delhi,95,दिल्ली,1154,27,24
 26,Odisha,384,ओडिशा,54,12,1
 27,Puducherry,637,पुदुचेर्री,7,1,0
 28,Punjab,49,पंजाब,151,5,11
-29,Rajasthan,119,राजस्थान,700,21,3
+29,Rajasthan,119,राजस्थान,804,21,3
 30,Sikkim,244,सिक्किम,0,0,0
-31,Tamil Nadu,616,तमिलनाडु,969,44,10
+31,Tamil Nadu,616,तमिलनाडु,1075,50,11
 32,Telangana,145,तेलंगाना,504,43,9
 33,Tripura,291,त्रिपुरा,2,0,0
-34,Uttar Pradesh,146,उत्तरप्रदेश,452,45,5
+34,Uttar Pradesh,146,उत्तरप्रदेश,483,46,5
 35,Uttarakhand,64,उत्तराखंड,35,5,0
-36,West Bengal,339,पश्चिम बंगाल,134,19,5
+36,West Bengal,339,पश्चिम बंगाल,152,29,7
