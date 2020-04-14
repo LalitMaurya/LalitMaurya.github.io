@@ -1,37 +1,37 @@
 state_id,state_name,district_code,hindi_name,SC_pct_cultivators,SC_cultivators,SC_agricultural_labourers
 1,Andaman & Nicobar Islands,638,अंडमान एंड निकोबार आइलैंड,11,10,0
-2,Andhra Pradesh,532,आंध्रप्रदेश,432,11,7
+2,Andhra Pradesh,532,आंध्रप्रदेश,473,14,9
 3,Arunachal Pradesh,260,अरुणाचल प्रदेश,1,0,0
 4,Assam,324,असम,31,0,1
-5,Bihar,209,बिहार,65,26,1
+5,Bihar,209,बिहार,66,26,1
 6,Chandigarh,55,चंडीगढ़,21,7,0
 7,Chhattisgarh,414,छत्तीसगढ़,31,10,0
 8,Dadra & Nagar Haveli,496,दादरा एंड नगर हवेली,0,0,0
 9,Daman & Diu,495,दमन और दिउए,0,0,0
 10,Goa,585,गोवा,7,5,0
-11,Gujarat,474,गुजरात,539,54,26
-12,Haryana,70,हरियाणा,185,29,3
+11,Gujarat,474,गुजरात,617,55,26
+12,Haryana,70,हरियाणा,199,34,3
 13,Himachal Pradesh,30,हिमाचल प्रदेश,32,13,1
 14,Jammu & Kashmir,14,जम्मू एंड कश्मीर,285,26,4
 15,Jharkhand,355,झारखण्ड,24,0,2
-16,Karnataka,556,कर्नाटक,247,59,6
+16,Karnataka,556,कर्नाटक,258,65,9
 17,Kerala,598,केरला,379,198,3
 18,Lakshadweep,587,लक्षद्वीप,0,0,0
-19,Madhya Pradesh,465,मध्य प्रदेश,604,44,43
-20,Maharashtra,522,महाराष्ट्र,2334,217,160
+19,Madhya Pradesh,465,मध्य प्रदेश,730,51,50
+20,Maharashtra,522,महाराष्ट्र,2337,229,160
 21,Manipur,275,मणिपुर,2,1,0
-22,Meghalaya,294,मेघालय,0,0,0
+22,Meghalaya,294,मेघालय,1,0,0
 23,Mizoram,283,मिजोरम,1,0,0
 24,Nagaland,265,नागालैंड,1,0,0
 25,Nct Of Delhi,95,दिल्ली,1510,30,28
-26,Odisha,384,ओडिशा,54,12,1
+26,Odisha,384,ओडिशा,55,18,1
 27,Puducherry,637,पुदुचेर्री,7,1,0
-28,Punjab,49,पंजाब,167,14,11
-29,Rajasthan,119,राजस्थान,873,21,3
+28,Punjab,49,पंजाब,176,14,12
+29,Rajasthan,119,राजस्थान,879,133,3
 30,Sikkim,244,सिक्किम,0,0,0
 31,Tamil Nadu,616,तमिलनाडु,1173,58,11
-32,Telangana,145,तेलंगाना,562,100,16
+32,Telangana,145,तेलंगाना,624,100,17
 33,Tripura,291,त्रिपुरा,2,0,0
-34,Uttar Pradesh,146,उत्तरप्रदेश,558,49,5
-35,Uttarakhand,64,उत्तराखंड,35,5,0
+34,Uttar Pradesh,146,उत्तरप्रदेश,657,49,5
+35,Uttarakhand,64,उत्तराखंड,35,7,0
 36,West Bengal,339,पश्चिम बंगाल,190,36,7
