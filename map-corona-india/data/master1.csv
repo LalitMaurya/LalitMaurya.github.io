@@ -1,38 +1,38 @@
 state_id,state_name,district_code,hindi_name,SC_pct_cultivators,SC_cultivators,SC_agricultural_labourers
 1,Andaman & Nicobar Islands,638,अंडमान एंड निकोबार आइलैंड,12,11,0
-2,Andhra Pradesh,532,आंध्रप्रदेश,572,36,14
+2,Andhra Pradesh,532,आंध्रप्रदेश,603,42,15
 3,Arunachal Pradesh,260,अरुणाचल प्रदेश,1,0,0
-4,Assam,324,असम,35,5,1
-5,Bihar,209,बिहार,83,37,2
+4,Assam,324,असम,35,9,1
+5,Bihar,209,बिहार,85,37,2
 6,Chandigarh,55,चंडीगढ़,21,9,0
 7,Chhattisgarh,414,छत्तीसगढ़,36,24,0
 8,Dadra & Nagar Haveli,496,दादरा एंड नगर हवेली,0,0,0
 9,Daman & Diu,495,दमन और दिउए,0,0,0
 10,Goa,585,गोवा,7,6,0
-11,Gujarat,474,गुजरात,1099,86,41
+11,Gujarat,474,गुजरात,1272,88,48
 12,Haryana,70,हरियाणा,225,43,3
-13,Himachal Pradesh,30,हिमाचल प्रदेश,36,16,1
+13,Himachal Pradesh,30,हिमाचल प्रदेश,38,16,1
 14,Jammu & Kashmir,14,जम्मू और कश्मीर,328,42,5
 15,Jharkhand,355,झारखण्ड,33,0,2
-16,Karnataka,556,कर्नाटक,359,89,13
+16,Karnataka,556,कर्नाटक,371,92,13
 17,Kerala,598,केरल,396,255,3
 37,Ladakh,1111,लद्दाख,18,14,0
 18,Lakshadweep,587,लक्षद्वीप,0,0,0
-19,Madhya Pradesh,465,मध्य प्रदेश,1310,69,69
+19,Madhya Pradesh,465,मध्य प्रदेश,1355,69,69
 20,Maharashtra,522,महाराष्ट्र,3323,331,201
 21,Manipur,275,मणिपुर,2,1,0
-22,Meghalaya,294,मेघालय,9,0,1
+22,Meghalaya,294,मेघालय,11,0,1
 23,Mizoram,283,मिजोरम,1,0,0
 24,Nagaland,265,नागालैंड,0,0,0
 25,Nct Of Delhi,95,दिल्ली,1707,72,42
-26,Odisha,384,ओडिशा,60,19,1
-27,Puducherry,637,पुदुचेर्री,7,1,0
+26,Odisha,384,ओडिशा,60,21,1
+27,Puducherry,637,पुदुचेर्री,7,3,0
 28,Punjab,49,पंजाब,202,27,13
 29,Rajasthan,119,राजस्थान,1229,183,11
 30,Sikkim,244,सिक्किम,0,0,0
 31,Tamil Nadu,616,तमिलनाडु,1323,283,15
-32,Telangana,145,तेलंगाना,766,186,18
+32,Telangana,145,तेलंगाना,791,186,18
 33,Tripura,291,त्रिपुरा,2,1,0
-34,Uttar Pradesh,146,उत्तरप्रदेश,849,82,14
-35,Uttarakhand,64,उत्तराखंड,40,9,0
+34,Uttar Pradesh,146,उत्तरप्रदेश,969,86,14
+35,Uttarakhand,64,उत्तराखंड,42,9,0
 36,West Bengal,339,पश्चिम बंगाल,287,55,10
