@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="build/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+    <script src="build/nv.d3.js"></script>
+
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        html, body, svg {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class='with-3d-shadow with-transitions'>
+<button onClick="expandLegend();">लीजेंड एक्सपैंड कीजिये </button>
+    <script>
+        var expandLegend = function() {
+            var exp = chart.legend.expanded();
+            chart.legend.expanded(!exp);
+            chart.update();
+        }
+    </script>
+<svg id="chart1"></svg>
+
+<script>
+
+    var histcatexplong = [
+        {
+            "key" : "कुल मामले" ,
+            "values" : [ [1580362428000,1],
+  [1580621628000,2],
+  [1580708028000,3],
+  [1583127228000,5],
+  [1583213628000,6],
+  [1583300028000,28],
+  [1583386428000,30],
+  [1583472828000,31],
+  [1583559228000,34],
+  [1583645628000,39],
+  [1583732028000,44],
+  [1583818428000,50],
+  [1583904828000,60],
+  [1583991228000,73],
+  [1584077628000,81],
+  [1584164028000,97],
+  [1584250428000,107],
+  [1584336828000,118],
+  [1584423228000,137],
+  [1584509628000,151],
+  [1584596028000,173],
+  [1584682428000,223],
+  [1584768828000,283],
+  [1584855228000,360],
+  [1584941628000,434],
+  [1585028028000,519],
+  [1585114428000,606],
+  [1585200828000,694],
+  [1585287228000,834],
+  [1585373628000,918],
+  [1585460028000,1024],
+  [1585546428000,1251],
+  [1585632828000,1397],
+  [1585719228000,1834],
+  [1585805628000,2069],
+  [1585892028000,2547],
+  [1585978428000,3072],
+  [1586064828000,3374],
+  [1586151228000,4281],
+  [1586237628000,4789],
+  [1586324028000,5274],
+  [1586410428000,5865],
+  [1586496828000,6761],
+  [1586583228000,7529],
+  [1586669628000,8447],
+  [1586756028000,9352],
+  [1586842428000,10815],
+  [1586928828000,11933],
+  [1587015228000,12759],
+  [1587101628000,13835],
+  [1587188028000,14792],
+  [1587274428000,16116],
+  [1587360828000,17656],
+  [1587447228000,18985],
+  [1587533628000,20471],
+  [1587620028000,21700],
+  [1587706428000,23452],
+  [1587792828000,24942],
+  [1587879228000,26917],
+  [1587965628000,28380],
+  [1588052028000,29974],
+  [1588138428000,31787],
+  [1588224828000,33050]]
+        } 
+    ];
+
+    var colors = d3.scale.category20();
+
+    var chart;
+    nv.addGraph(function() {
+        chart = nv.models.stackedAreaChart()
+            .useInteractiveGuideline(true)
+            .x(function(d) { return d[0] })
+            .y(function(d) { return d[1] })
+            .controlLabels({stacked: "Stacked"})
+            .duration(300);
+
+        chart.xAxis.tickFormat(function(d) { return d3.time.format('%x')(new Date(d)) });
+        chart.yAxis.tickFormat(d3.format(',.f'));
+
+        chart.legend.vers('furious');
+
+        d3.select('#chart1')
+            .datum(histcatexplong)
+            .transition().duration(500)
+            .call(chart)
+            .each('start', function() {
+                setTimeout(function() {
+                    d3.selectAll('#chart1 *').each(function() {
+                        if(this.__transition__)
+                            this.__transition__.duration = 1;
+                    })
+                }, 0)
+            });
+
+        nv.utils.windowResize(chart.update);
+        return chart;
+    });
+
+
+</script>
+</body>
+</html>
