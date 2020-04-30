@@ -522,7 +522,8 @@ svg.nvd3-svg {
     display: block;
 
     font-family: Arial, sans-serif;
-    font-size: 13px;
+    font-size: 11px;
+	line-height:8px;
     text-align: left;
     pointer-events: none;
 
