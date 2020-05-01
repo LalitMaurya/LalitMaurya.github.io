@@ -15,13 +15,26 @@
         }
         html, body, svg {
             margin: 0px;
+			padding-left:-30px;
             padding: 0px;
             height: 100%;
             width: 100%;
         }
     </style>
+	<script language="javascript">
+document.onmousedown=disableclick;
+status="Right Click Disabled";
+Function disableclick(event)
+{
+  if(event.button==2)
+   {
+     alert(status);
+     return false;    
+   }
+}
+</script>
 </head>
-<body class='with-3d-shadow with-transitions'>
+<body class='with-3d-shadow with-transitions' oncontextmenu="return false">
 
     <script>
         var expandLegend = function() {
