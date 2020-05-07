@@ -121,7 +121,8 @@ Function disableclick(event)
   [1588475844000,10886],
   [1588562202000,11762],
   [1588650726000,13160],
-  [1588736992000,14182]
+  [1588736992000,14182],
+  [1588822246000,15266]
 ]
         } ,
         {
@@ -196,7 +197,8 @@ Function disableclick(event)
   [1588475844000,28070],
   [1588562202000,29685],
   [1588650726000,31967],
-  [1588736992000,33514]
+  [1588736992000,33514],
+  [1588822246000,35902]
 ]
         } ,
         {
@@ -271,7 +273,8 @@ Function disableclick(event)
   [1588475844000,1306],
   [1588562202000,1389],
   [1588650726000,1583],
-  [1588736992000,1694]
+  [1588736992000,1694],
+  [1588822246000,1783]
 ]
         } 
     ];
@@ -286,7 +289,7 @@ Function disableclick(event)
             .y(function(d) { return d[1] })
             .controlLabels({stacked: "Stacked"})
             .duration(300);
-        chart.brushExtent([1580362428000, 1588736992000]);
+        chart.brushExtent([1580362428000, 1588822246000]);
 
         chart.xAxis.tickFormat(function(d) { return d3.time.format('%x')(new Date(d)) });
         chart.x2Axis.tickFormat(function(d) { return d3.time.format('%x')(new Date(d)) });
