@@ -1,77 +1,269 @@
+
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Decorative WebGL Backgrounds | Demo 6 | Codrops</title>
-		<meta name="description" content="A collection of decorative animated background shapes powered by WebGL and TweenMax." />
-		<meta name="keywords" content="webgl, background, shape, web design, web development, tweenmax, gsap, animation" />
-		<meta name="author" content="Louis Hoebregts for Codrops" />
-		<link rel="shortcut icon" href="favicon.ico">
-		<link href="https://fonts.googleapis.com/css?family=Barlow:400,500,700|Vidaloka" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo6.css" />
-		<link rel="stylesheet" type="text/css" href="pater/pater.css" />
-		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-	</head>
-	<body class="demo-6">
-		<svg class="hidden">
-			<symbol id="icon-arrow" viewBox="0 0 24 24">
-				<title>arrow</title>
-				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
-			</symbol>
-			<symbol id="icon-drop" viewBox="0 0 24 24">
-				<title>drop</title>
-				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
-			</symbol>
-			<symbol id="icon-github" viewBox="0 0 32.6 31.8">
-				<title>github</title>
-				<path d="M16.3,0C7.3,0,0,7.3,0,16.3c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4C7.4,10.7,6.8,9,7.7,6.8c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C32.6,7.3,25.3,0,16.3,0z"/>
-			</symbol>
-			<symbol id="icon-keyboard" viewBox="0 0 100 70">
-				<title>keyboard</title>
-				<!-- https://thenounproject.com/term/keyboard/783/ by Paul te Kortschot from the Noun Project -->
-				<path d="M 60.94,1.83 39.22,1.83 C 36.71,1.83 34.67,3.86 34.67,6.376 L 34.67,28.1 C 34.67,30.61 36.71,32.65 39.22,32.65 L 60.94,32.65 C 63.45,32.65 65.5,30.61 65.5,28.1 L 65.5,6.376 C 65.5,3.86 63.45,1.83 60.94,1.83 Z M 44.79,18.63 50.08,11.74 55.37,18.63 Z" opacity="0.2"/>
-				<path d="M 60.86,36.75 39.14,36.75 C 36.63,36.75 34.59,38.79 34.59,41.3 L 34.59,63.02 C 34.59,65.53 36.63,67.57 39.14,67.57 L 60.86,67.57 C 63.38,67.57 65.41,65.53 65.41,63.02 L 65.41,41.3 C 65.42,38.79 63.38,36.75 60.86,36.75 Z M 50.08,57.45 44.79,50.55 55.37,50.55 Z" opacity="0.2" />
-				<path d="M 95.45,36.75 73.73,36.75 C 71.22,36.75 69.18,38.79 69.18,41.3 L 69.18,63.02 C 69.18,65.53 71.22,67.57 73.73,67.57 L 95.45,67.57 C 97.97,67.57 100,65.53 100,63.02 L 100,41.3 C 100,38.79 97.97,36.75 95.45,36.75 Z M 83.4,57.45 83.4,46.86 90.3,52.16 Z" />
-				<path d="M 26.27,36.75 4.55,36.75 C 2.037,36.75 0,38.79 0,41.3 L 0,63.02 C 0,65.53 2.037,67.57 4.55,67.57 L 26.27,67.57 C 28.78,67.57 30.82,65.53 30.82,63.02 L 30.82,41.3 C 30.82,38.79 28.78,36.75 26.27,36.75 Z M 16.69,57.45 9.79,52.16 16.69,46.86 Z" />
-			</symbol>
-		</svg>
-		<main>
-			<div class="content content--fixed">
-				<header class="codrops-header">
-					<div class="codrops-links">
-						<a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/AnimatedFrameSlideshow/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
-						<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=33168" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
-					</div>
-					<h1 class="codrops-header__title">Decorative WebGL Backgrounds</h1>
-				</header>
-				<a class="github" href="https://github.com/Mamboleoo/DecorativeBackgrounds/" title="Find this project on GitHub"><svg class="icon icon--github"><use xlink:href="#icon-github"></use></svg></a>
-				<nav class="demos">
-					<svg class="icon icon--keyboard"><use xlink:href="#icon-keyboard"></use></svg>
-					<a class="demo" href="index.html"><span>Demo 1</span></a>
-					<a class="demo" href="index2.html"><span>Demo 2</span></a>
-					<a class="demo" href="index3.html"><span>Demo 3</span></a>
-					<a class="demo" href="index4.html"><span>Demo 4</span></a>
-					<a class="demo" href="index5.html"><span>Demo 5</span></a>
-					<a class="demo demo--current" href="index6.html"><span>Demo 6</span></a>
-				</nav>
-				<a class="pater" href="http://go.thoughtleaders.io/TLDcodrops211117" onClick="recordOutboundLink(this, 'Outbound Links', 'TLDcodrops211117');return false;">
-					<img class="pater__img" src="pater/TLD.png" alt="TLD"/>
-					<h3 class="pater__title">​Snag the hottest new domain name for designers</h3>
-					<p class="pater__description">.design domains were just released and some of the best ones are still available. They normally cost $35 but Codrops readers <strong>get them now for FREE!</strong></p>
-				</a>
-			</div>
-			<div class="content">
-				<canvas class="scene scene--full" id="scene"></canvas>
-				<div class="content__inner">
-					<h2 class="content__title">Hawking</h2>
-					<h3 class="content__subtitle">A Biography</h2>
-				</div>
-			</div>
-		</main>
-		<script src="js/demo.js"></script>
-		<script src="js/three.min.js"></script>
-		<script src="js/demo6.js"></script>
-	</body>
+<meta charset="utf-8">
+  <head>
+
+    
+      <!-- google webfonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800|PT+Serif:400,400i,700" />
+
+    <!-- css cdns, use as needs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/fonts/FontAwesome.otf" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="styles.min.css" />
+     <link rel="stylesheet" href="main.css" />
+     
+     <script language="javascript">
+        document.onmousedown=disableclick;
+        status="Right Click Disabled";
+        Function disableclick(event)
+        {
+          if(event.button==2)
+           {
+             alert(status);
+             return false;    
+           }
+        }
+        </script>
+        
+        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-5282895-1']);
+            _gaq.push(['_trackPageview']);
+        
+            
+        
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+  </head>
+  <body oncontextmenu="return false">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSLPR3B"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+
+    
+
+      <div id="legend">
+      </div>
+
+      <div id="tip">
+        <div class="tip-x"><i class="fa fa-times" aria-hidden="true"></i></div>
+        <div class="tip-title"></div>
+        
+      </div>
+
+      <div id="map"></div>
+
+     
+        
+      </div>
+
+     
+      </div>
+
+    
+    <!-- custom js -->
+    <script src="scripts.min.js"></script>
+	 <script>
+   var isMobile = !1;
+(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0, 4))) && (isMobile = !0), window.innerWidth <= 480 && (isMobile = !0);
+var type = "SC",
+    match_property = "state_id",
+    value_property = type + "_pct_cultivators",
+    colors = ['#ffffb2','#fed976','#feb24c','#fd8d3c','#f03b20','#bd0026'],
+    limits = [0, 10000, 20000, 50000, 100000, 8595000],
+    width = window.innerWidth,
+    height = 650,
+    projection = d3.geoMercator(),
+    path = d3.geoPath().projection(projection).pointRadius(2),
+    svg = d3.select("#map").append("svg").attr("width", width).attr("height", height),
+    annotations = [{
+        st_nm: "Rajasthan",
+        title: "राजस्थान",
+        label: {
+            SC: "राजस्थान में अब तक कोविड-19 के 953,224 मामले सामने आ चुके हैं| जिनमें से 943,719 मरीज स्वस्थ हो चुके हैं"
+        },
+        
+        mobile_show: !1
+    }, {
+        st_nm: "Maharashtra",
+        title: "महाराष्ट्र  ",
+        label: {
+            SC: "महाराष्ट्र में कोरोना के 61,81,247 मामले सामने आ चुके हैं। जिनमें से 59,44,801 लोग स्वस्थ हो चुके हैं, जबकि 126,390 की मृत्यु हो चुकी है"
+        },
+        mobile_show: !1
+    }, {
+        st_nm: "NCT of Delhi",
+        title: "दिल्ली",
+        label: {
+            SC: "दिल्ली में इस वायरस के अब तक 14,35,281 मामले सामने आ चुके हैं। जिनमें से 14,09,572 स्वस्थ हो चुके हैं। जबकि 25,021 की मृत्यु हो चुकी है"
+        },
+        mobile_show: !1
+    }, {
+        st_nm: "Assam",
+        title: "असम",
+        label: {
+            SC: "असम में अब तक 540,453 मामले सामने आये हैं| जिनमें से 514,543 स्वस्थ हो चुके हैं।"
+        },
+        
+        mobile_show: !1
+    }],
+    annotations_generator = d3.annotation().type(d3.annotationCallout),
+    t_margin = {
+        top: 24,
+        left: 0,
+        bottom: 0,
+        right: 0
+    },
+    t_width = (isMobile ? window.innerWidth - 20 : 200) - t_margin.left - t_margin.right,
+    t_height = 80 - t_margin.top - t_margin.bottom,
+    t_svg = d3.select("#tip").append("svg").attr("class", "tip-chart").attr("width", t_width + t_margin.left + t_margin.right).attr("height", t_height + t_margin.top + t_margin.bottom).append("g").attr("transform", "translate(" + t_margin.left + ", " + t_margin.top + ")"),
+    t_x = {
+        SC: d3.scaleLinear().range([0, t_width]),
+        GEN: d3.scaleLinear().range([0, t_width])
+    },
+    t_y = d3.scaleBand().rangeRound([0, t_height]).domain(["SC", "GEN"]).paddingInner(.45),
+    l_margin = {
+        top: 25,
+        left: 0,
+        bottom: 0,
+        right: 0
+    },
+    l_width = +jz.str.keepNumber(d3.select("#legend").style("width")) - l_margin.left - l_margin.right,
+    l_height = 33 - l_margin.top - l_margin.bottom,
+    l_svg = d3.select("#legend").append("svg").attr("class", "legend-chart").attr("width", l_width + l_margin.left + l_margin.right).attr("height", l_height + l_margin.top + l_margin.bottom).append("g").attr("transform", "translate(" + l_margin.left + ", " + l_margin.top + ")"),
+    colors_reversed = ['#ffffb2','#fed976','#feb24c','#fd8d3c','#f03b20','#bd0026'].reverse(),
+    l_x = d3.scaleBand().rangeRound([0, l_width]).domain(colors_reversed).paddingInner(.01);
+
+function ready(t, e, a, r) {
+    var n, i, o = [];
+    ["SC", "GEN"].forEach(function(t) {
+        [t + "_agricultural_labourers", t + "_cultivators", t + "_total_farmers", t + "_pct_cultivators"].forEach(function(t) {
+            o.push(t)
+        })
+    }), jz.arr.propertyToNumber(r, o), p(a, width, height), h(e, "district", match_property), n = a, i = topojson.mesh(n, n.objects.polygons, function(t, e) {
+        return t === e
+    }), svg.append("path").datum(i).attr("d", path).attr("class", "subunit-boundary"), d(r, "district"), h(a, "state", "st_nm"), u(r, "district", isMobile, t_width, t_svg, t_x, width), window.addEventListener("resize", function() {
+        isMobile = window.innerWidth <= 480;
+        var t = window.innerWidth;
+        svg.attr("width", t).attr("height", 650), p(a, t, 650), svg.selectAll("path").attr("d", path), t_width = (isMobile ? window.innerWidth - 20 : 200) - t_margin.left - t_margin.right, t_svg.attr("width", t_width + t_margin.left + t_margin.right), t_x.SC.range([0, t_width]), t_x.GEN.range([0, t_width]), u(r, "district", isMobile, t_width, t_svg, t_x, t), d3.timeout(function() {
+            var e = c(isMobile, t, svg, type);
+            annotations_generator.annotations(e), d3.select(".annotation-group").call(annotations_generator).moveToFront()
+        }, 10), l_width = (window.innerWidth <= 500 ? window.innerWidth - 60 : +jz.str.keepNumber(d3.select("#legend").style("width"))) - l_margin.left - l_margin.right, console.log(l_width), d3.select("#legend svg").attr("width", l_width + l_margin.left + l_margin.right), l_x.rangeRound([0, l_width]), l_svg.selectAll("rect").attr("x", function(t) {
+            return l_x(t)
+        }).attr("width", l_x.bandwidth()), l_svg.selectAll(".legend-label").attr("x", function(t, e) {
+            return 0 == e ? 0 : l_width
+        })
+    });
+    var l = c(isMobile, width, svg, type);
+    annotations_generator.annotations(l), svg.append("g").attr("class", "annotation-group").call(annotations_generator);
+    var s = d3.selectAll(".toggle-item");
+
+    function d(t, e) {
+        svg.selectAll(".subunit." + e).transition().style("fill", function(e, a) {
+            var r = g(e, t);
+            if (r) {
+                var n = [];
+                return limits.forEach(function(t, e) {
+                    +r[value_property] >= t && +r[value_property] <= limits[e + 1] && n.push(colors[e])
+                }), n[0]
+            }
+        })
+    }
+
+    function c(t, e, a, r) {
+        return annotations.filter(function(e) {
+            return t ? e.mobile_show : e
+        }).map(function(e) {
+            var n = {
+                    note: {
+                        title: e.title,
+                        label: e.label[r]
+                    }
+                },
+                i = a.select(".state-" + jz.str.toSlugCase(e.st_nm)).node().getBBox(),
+                o = a.node().getBBox();
+            n.x = i.x + i.width / 2, n.y = i.y + i.height / 2;
+            var l = o.width + o.x - n.x - (t ? 120 : 200);
+            return n.dx = "Maharashtra" == e.st_nm ? t ? -0 : -80 : "Rajasthan" == e.st_nm ? t ? l : -45 : "NCT of Delhi" == e.st_nm ? 92 : "Assam" == e.st_nm ? 33 : 0, n.dy = "Rajasthan" == e.st_nm ? t ? -105 : -80 : "Maharashtra" == e.st_nm ? t ? -28 : 20 : "NCT of Delhi" == e.st_nm ? -1 : "Assam" == e.st_nm ? 65 : 40, n
+        })
+    }
+
+    function u(t, e, a, r, n, i, o) {
+        d3.select("#tip").on("click", function() {
+            d3.select("#tip").style("display", "none"), d3.selectAll(".subunit").classed("selected", !1), d3.select(".subunit-boundary").moveToFront()
+        }), svg.selectAll(".subunit." + e).on("mouseover", function(a) {
+            d3.select("#tip").style("display", "block");
+            var o = g(a, t);
+            o || d3.select("#tip").style("display", "none"), d3.select("#tip .tip-title").html("<h3>"+o.hindi_name + "</h3>संक्रमित मरीज: <strong>" + o.SC_pct_cultivators+ "</strong><br>स्वस्थ: <strong>" + o.SC_cultivators+" </strong><br>मृत्यु: <strong>" + o.SC_agricultural_labourers+" </strong>");
+           
+                        p.enter().append("text").attr("class", "type-label").attr("y", function(t) {
+                return t_y(t.type)
+            }).attr("dy", -3).merge(p).html(function(t) {
+                return t.label + "<tspan>" + jz.str.numberLakhs(o[t.type + "_total_farmers"]) + " Vulnerability Indices</tspan>"
+            }), d3.selectAll(".type-label tspan").attr("dx", 4), d3.select(".subunit." + e + "." + e + "-" + jz.str.toSlugCase(a.properties[match_property])).classed("selected", !0).moveToFront(), d3.selectAll(".subunit.state").moveToFront()
+        }).on("mousemove", function() {
+            d3.select(".annotation-group").moveToFront();
+            var t, e = (t = d3.mouse(this))[0],
+                r = t[1],
+                n = d3.select("#map").node().getBoundingClientRect(),
+                i = n.top,
+                o = -1 !== navigator.userAgent.toLowerCase().indexOf("safari") && -1 == navigator.userAgent.toLowerCase().indexOf("chrome") ? document.body.scrollTop : document.documentElement.scrollTop,
+                l = +jz.str.keepNumber(d3.select("#tip").style("height"));
+            n.height, window.innerHeight;
+            d3.select("#tip").style("left", a ? "0px" : e + 20 + "px").style("top", a ? r - 20 + i + o - l - 5 + "px" : r - 20 + i + o + "px")
+        }).on("mouseout", function() {
+            d3.select("#tip").style("display", "none"), d3.selectAll(".subunit").classed("selected", !1), d3.select(".subunit-boundary").moveToFront()
+        })
+    }
+
+    function g(t, e) {
+        return e.filter(function(e) {
+            return t.properties[match_property] == +e[match_property]
+        })[0]
+    }
+
+    function p(t, e, a) {
+        projection.fitExtent([
+            [0, 0],
+            [e, a]
+        ], topojson.feature(t, t.objects.polygons))
+    }
+
+    function h(t, e, a) {
+        svg.selectAll(".subunit." + e).data(topojson.feature(t, t.objects.polygons).features).enter().append("path").attr("class", function(t) {
+            return "subunit " + e + " " + e + "-" + jz.str.toSlugCase(t.properties[a])
+        }).attr("d", path)
+    }
+    s.on("click", function() {
+        var t = d3.select(this);
+        s.classed("active", !1), t.classed("active", !0), type = t.attr("toggle-value"), value_property = type + "_pct_cultivators", d(r, "district"), u(r, "district", isMobile, t_width, t_svg, t_x, width)
+    })
+}
+l_svg.selectAll("rect").data(colors_reversed).enter().append("rect").attr("x", function(t) {
+    return l_x(t)
+}).attr("width", l_x.bandwidth()).attr("height", l_height).style("fill", function(t) {
+    return t
+}), l_svg.selectAll(".legend-label").data(window.innerWidth < 400 ? ["अत्यधिक संक्रमित (100,000+)  ", "कम संक्रमित (<10,000) "] : ["अत्यधिक संक्रमित (100,000+) ", "कम संक्रमित (<10,000)"]).enter().append("text").attr("class", "legend-label").attr("x", function(t, e) {
+    return 0 == e ? 0 : l_width
+}).attr("dy", -5).style("text-anchor", function(t, e) {
+    return 0 == e ? "start" : "end"
+}).text(function(t) {
+    return t
+}), d3.queue().defer(d3.json, "data/india-ladakh.json").defer(d3.json, "data/india.json").defer(d3.csv, "data/master1.csv").await(ready);// JavaScript Document
+   
+   </script>
+
+   
+  </body>
 </html>
