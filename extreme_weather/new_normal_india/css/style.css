@@ -1,0 +1,73 @@
+body {
+    text-align:left;
+	margin-left:30%;
+  
+}
+
+svg {
+  margin-top: -10px;
+  margin-left:-50PX;
+   
+}
+
+#light {
+  transform-origin: top left;
+  transform: scaleY(1);
+  opacity: 0;
+  animation: lightup2 10s infinite alternate;
+}
+
+#bulb {
+  opacity: 0.5;
+  animation: lightup1 3s infinite alternate;
+}
+
+@keyframes lightup1 {
+  15% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes lightup2 {
+  15% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+#flash {
+  animation: pulse 3s infinite alternate;
+  transform-origin: center center;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    fill: #333;
+  }
+  5% {
+    opacity:1;
+    transform: scale(1.1) rotate(2deg);
+  }
+  0% {
+    opacity: 0;
+    transform: scale(1) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1.1) rotate(-2deg);
+  }
+  13% {
+    opacity: 0;
+    transform: scale(1) rotate(0deg);
+  }
+  15% {
+    opacity: 1;
+  }
+}
