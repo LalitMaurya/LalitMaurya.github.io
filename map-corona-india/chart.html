@@ -1090,7 +1090,8 @@ var histcatexplong = [
   [1679378282000,44159617],
   [1679460556000,44160279],
   [1679546625000,44160997],
-  [1679633101000,44161922]
+  [1679633101000,44161922],
+  [1679722667000,44162832]
   
   ]
  
@@ -1107,7 +1108,7 @@ var histcatexplong = [
             .y(function(d) { return d[1] })
             .controlLabels({stacked: "Stacked"})
             .duration(300);
-        chart.brushExtent([1580362428000, 1679633101000]);
+        chart.brushExtent([1580362428000, 1679722667000]);
 
         chart.xAxis.tickFormat(function(d) { return d3.time.format('%x')(new Date(d)) });
         chart.x2Axis.tickFormat(function(d) { return d3.time.format('%x')(new Date(d)) });
