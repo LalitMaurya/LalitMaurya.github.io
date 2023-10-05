@@ -46,7 +46,7 @@
   </head>
   <body oncontextmenu="return false">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html"
+    <noscript><iframe src="https://www.googletagmana ger.com/ns.html?id=GTM-KSLPR3B"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
@@ -81,7 +81,7 @@ var type = "SC",
     match_property = "state_id",
     value_property = type + "_pct_cultivators",
     colors = ['#ffffb2','#fed976','#feb24c','#fd8d3c','#f03b20','#bd0026'],
-    limits = [0, 100, 500, 1000, 1500, 2720],
+    limits = [0, 10000, 20000, 50000, 100000, 9995000],
     width = window.innerWidth,
     height = 650,
     projection = d3.geoMercator(),
@@ -91,29 +91,29 @@ var type = "SC",
         st_nm: "Rajasthan",
         title: "राजस्थान",
         label: {
-            SC: "राजस्थान में 2,284 विशेषज्ञों की जरुरत है जबकि वहां केवल 455 उपलब्ध हैं। इस हिसाब से वहां 80 फीसदी की कमी है।"
+            SC: "राजस्थान में अब तक कोविड-19 के 1326466 मामले सामने आ चुके हैं| जिनमें से 1316729 मरीज स्वस्थ हो चुके हैं"
         },
         
-        mobile_show: !0
+        mobile_show: !1
     }, {
-        st_nm: "Kerala",
-        title: "केरल ",
+        st_nm: "Maharashtra",
+        title: "महाराष्ट्र  ",
         label: {
-            SC: "केरल में 96.1 फीसदी विशेषज्ञों की कमी हैं। वहां केवल 35 विशेषज्ञ उपलब्ध हैं।"
+            SC: "महाराष्ट्र में कोरोना के 8171656 मामले सामने आ चुके हैं। जिनमें से 8022988 लोग स्वस्थ हो चुके हैं, जबकि 148561 की मृत्यु हो चुकी है"
         },
-        mobile_show: !0
+        mobile_show: !1
     }, {
-        st_nm: "Himachal Pradesh",
-        title: "हिमाचल प्रदेश ",
+        st_nm: "NCT of Delhi",
+        title: "दिल्ली",
         label: {
-            SC: "हिमाचल प्रदेश में 98.6 फीसदी विशेषज्ञों की कमी हैं। वहां केवल 5 विशेषज्ञ उपलब्ध हैं।"
+            SC: "दिल्ली में इस वायरस के अब तक 2040995 मामले सामने आ चुके हैं। जिनमें से 2014307 स्वस्थ हो चुके हैं। जबकि 26666 की मृत्यु हो चुकी है"
         },
         mobile_show: !1
     }, {
         st_nm: "Assam",
-        title: "असम ",
+        title: "असम",
         label: {
-            SC: "असम में 708 विशेषज्ञों की जरुरत है जबकि वहां केवल 136 उपलब्ध हैं। "
+            SC: "असम में अब तक 746159 मामले सामने आये हैं| जिनमें से 738119 स्वस्थ हो चुके हैं।"
         },
         
         mobile_show: !1
@@ -142,7 +142,7 @@ var type = "SC",
     l_width = +jz.str.keepNumber(d3.select("#legend").style("width")) - l_margin.left - l_margin.right,
     l_height = 33 - l_margin.top - l_margin.bottom,
     l_svg = d3.select("#legend").append("svg").attr("class", "legend-chart").attr("width", l_width + l_margin.left + l_margin.right).attr("height", l_height + l_margin.top + l_margin.bottom).append("g").attr("transform", "translate(" + l_margin.left + ", " + l_margin.top + ")"),
-    colors_reversed = ["#a63603", "#e6550d", "#fd8d3c", "#fdbe85", "#feedde", "#fecc5c"].reverse(),
+    colors_reversed = ['#ffffb2','#fed976','#feb24c','#fd8d3c','#f03b20','#bd0026'].reverse(),
     l_x = d3.scaleBand().rangeRound([0, l_width]).domain(colors_reversed).paddingInner(.01);
 
 function ready(t, e, a, r) {
@@ -194,8 +194,8 @@ function ready(t, e, a, r) {
                 i = a.select(".state-" + jz.str.toSlugCase(e.st_nm)).node().getBBox(),
                 o = a.node().getBBox();
             n.x = i.x + i.width / 2, n.y = i.y + i.height / 2;
-            var l = o.width + o.x - n.x - (t ? 150 : 200);
-            return n.dx = "Kerala" == e.st_nm ? t ? l : -100 : "Rajasthan" == e.st_nm ? t ? l : -65 : "Himachal Pradesh" == e.st_nm ? 150 : "Assam" == e.st_nm ? 30 : 0, n.dy = "Rajasthan" == e.st_nm ? t ? -125 : -100 : "Kerala" == e.st_nm ? t ? 0 : -50 : "Himachal Pradesh" == e.st_nm ? -1 : "Assam" == e.st_nm ? 60 : 0, n
+            var l = o.width + o.x - n.x - (t ? 120 : 200);
+            return n.dx = "Maharashtra" == e.st_nm ? t ? -0 : -80 : "Rajasthan" == e.st_nm ? t ? l : -45 : "NCT of Delhi" == e.st_nm ? 92 : "Assam" == e.st_nm ? 33 : 0, n.dy = "Rajasthan" == e.st_nm ? t ? -105 : -80 : "Maharashtra" == e.st_nm ? t ? -28 : 20 : "NCT of Delhi" == e.st_nm ? -1 : "Assam" == e.st_nm ? 65 : 40, n
         })
     }
 
@@ -205,7 +205,7 @@ function ready(t, e, a, r) {
         }), svg.selectAll(".subunit." + e).on("mouseover", function(a) {
             d3.select("#tip").style("display", "block");
             var o = g(a, t);
-            o || d3.select("#tip").style("display", "none"), d3.select("#tip .tip-title").html("<h3>"+o.hindi_name + "</h3>विषेशज्ञों की कमी: <strong>" + o.SC_pct_cultivators+ "</strong><br>जरुरत: <strong>" + o.SC_agricultural_labourers+ "</strong><br>उपलब्धता: <strong>" + o.SC_cultivators+" </strong>"+ "</strong><br>कमी (प्रतिशत में): <strong>" + o.SC_main_workers+" </strong>");
+            o || d3.select("#tip").style("display", "none"), d3.select("#tip .tip-title").html("<h3>"+o.hindi_name + "</h3>संक्रमित मरीज: <strong>" + o.SC_pct_cultivators+ "</strong><br>स्वस्थ: <strong>" + o.SC_cultivators+" </strong><br>मृत्यु: <strong>" + o.SC_agricultural_labourers+" </strong>");
            
                         p.enter().append("text").attr("class", "type-label").attr("y", function(t) {
                 return t_y(t.type)
@@ -254,13 +254,13 @@ l_svg.selectAll("rect").data(colors_reversed).enter().append("rect").attr("x", f
     return l_x(t)
 }).attr("width", l_x.bandwidth()).attr("height", l_height).style("fill", function(t) {
     return t
-}), l_svg.selectAll(".legend-label").data(window.innerWidth < 400 ? ["कम", "ज्यादा"] : ["कम", "ज्यादा"]).enter().append("text").attr("class", "legend-label").attr("x", function(t, e) {
+}), l_svg.selectAll(".legend-label").data(window.innerWidth < 400 ? ["अत्यधिक संक्रमित (100,000+)  ", "कम संक्रमित (<10,000) "] : ["अत्यधिक संक्रमित (100,000+) ", "कम संक्रमित (<10,000)"]).enter().append("text").attr("class", "legend-label").attr("x", function(t, e) {
     return 0 == e ? 0 : l_width
 }).attr("dy", -5).style("text-anchor", function(t, e) {
     return 0 == e ? "start" : "end"
 }).text(function(t) {
     return t
-}), d3.queue().defer(d3.json, "data/india.json").defer(d3.json, "data/india.json").defer(d3.csv, "data/master1.csv").await(ready);// JavaScript Document
+}), d3.queue().defer(d3.json, "data/india-ladakh.json").defer(d3.json, "data/india.json").defer(d3.csv, "data/master1.csv").await(ready);// JavaScript Document
    
    </script>
 
