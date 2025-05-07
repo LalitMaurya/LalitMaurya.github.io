@@ -30,6 +30,8 @@ img {
   max-width: 100%;
 }
 
+
+
 /* -------------------------------- 
 
 Modules - reusable parts of our design
@@ -573,7 +575,7 @@ color:#CC0000;
   -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
   -o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
   transform: translateX(-50%) translateY(-50%) rotate(45deg);
-  background-color:#FFFFFF;
+  background-color:#000000;
   -webkit-transition-property: -webkit-transform;
   -moz-transition-property: -moz-transform;
   transition-property: transform;
