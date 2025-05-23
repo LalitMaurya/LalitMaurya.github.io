@@ -561,10 +561,10 @@ color:#CC0000;
 /* close the interest point description - only on mobile */
 .cd-close-info {
   position: fixed;
-  top: 17px;
-  right: 10px;
-  height: 44px;
-  width: 44px;
+  top: 6px;
+  right: 8px;
+  height: 42px;
+  width: 42px;
   color:#000000;
 }
 .cd-close-info::after, .cd-close-info:before {
