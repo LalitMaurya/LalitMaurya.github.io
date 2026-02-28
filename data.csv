@@ -1,13 +1,11 @@
-"city,lat,lon,value"
-"Delhi,28.6139,77.2090,120"
-"Mumbai,19.0760,72.8777,90"
-"Kolkata,22.5726,88.3639,70"
-"Chennai,13.0827,80.2707,60"
-"Bengaluru,12.9716,77.5946,80"
-"Hyderabad,17.3850,78.4867,75"
-"Jaipur,26.9124,75.7873,50"
-"Lucknow,26.8467,80.9462,55"
-"Ahmedabad,23.0225,72.5714,65"
-"Pune,18.5204,73.8567,68"
-"Patna,25.5941,85.1376,45"
-"Bhopal,23.2599,77.4126,40"
+city,state,lat,lon,aqi
+Delhi,Delhi,28.6139,77.209,312
+Gurugram,Haryana,28.4595,77.0266,307
+Ghaziabad,Uttar Pradesh,28.6692,77.4538,298
+Mumbai,Maharashtra,19.076,72.8777,145
+Kolkata,West Bengal,22.5726,88.3639,172
+Chennai,Tamil Nadu,13.0827,80.2707,132
+Bengaluru,Karnataka,12.9716,77.5946,118
+Patna,Bihar,25.5941,85.1376,221
+Lucknow,Uttar Pradesh,26.8467,80.9462,245
+Jaipur,Rajasthan,26.9124,75.7873,190

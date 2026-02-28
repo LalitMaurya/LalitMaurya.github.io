@@ -1,83 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>India Hexbin Map</title>
+<title>India AQI Hexbin Map</title>
+
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3-hexbin@0.2.2/build/d3-hexbin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/topojson@3"></script>
+
 <style>
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fafafa;
 }
-.hexagon {
-  stroke: #fff;
-  stroke-width: 1px;
+
+.tooltip {
+  position: absolute;
+  background: white;
+  padding: 8px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  pointer-events: none;
+  border-radius: 4px;
+}
+
+.legend {
+  font-size: 12px;
 }
 </style>
 </head>
 <body>
 
-<svg width="900" height="700"></svg>
+<svg width="950" height="750"></svg>
+<div class="tooltip" style="opacity:0;"></div>
 
 <script>
 
-const width = 900;
-const height = 700;
+const width = 950;
+const height = 750;
 
 const svg = d3.select("svg");
+const tooltip = d3.select(".tooltip");
 
+// Projection
 const projection = d3.geoMercator()
-    .center([82.8, 22.5]) // India center
-    .scale(1000)
-    .translate([width / 2, height / 2]);
+  .center([82.8, 22.5])
+  .scale(1100)
+  .translate([width / 2, height / 2]);
 
 const path = d3.geoPath().projection(projection);
 
-// Load India GeoJSON
-d3.json("https://raw.githubusercontent.com/geohacker/india/master/state/india_telengana.geojson")
-.then(function(india) {
+// Zoom behavior
+const zoom = d3.zoom()
+  .scaleExtent([1, 8])
+  .on("zoom", (event) => {
+    g.attr("transform", event.transform);
+  });
 
-    // Draw India map
-    svg.append("g")
+svg.call(zoom);
+
+const g = svg.append("g");
+
+// Load India GeoJSON (replace with official boundary for production)
+d3.json("https://raw.githubusercontent.com/geohacker/india/master/state/india_telangana.geojson")
+.then(india => {
+
+  // Draw map
+  g.selectAll("path")
+    .data(india.features)
+    .enter()
+    .append("path")
+    .attr("d", path)
+    .attr("fill", "#f0f0f0")
+    .attr("stroke", "#999");
+
+  // Load AQI CSV
+  d3.csv("data.csv").then(data => {
+
+    data.forEach(d => {
+      const coords = projection([+d.lon, +d.lat]);
+      d.x = coords[0];
+      d.y = coords[1];
+      d.aqi = +d.aqi;
+    });
+
+    // Hexbin
+    const hexbin = d3.hexbin()
+      .x(d => d.x)
+      .y(d => d.y)
+      .radius(30)
+      .extent([[0, 0], [width, height]]);
+
+    const bins = hexbin(data);
+
+    // Color scale (AQI-based)
+    const color = d3.scaleSequential()
+      .domain([0, 400])
+      .interpolator(d3.interpolateYlOrRd);
+
+    g.append("g")
       .selectAll("path")
-      .data(india.features)
+      .data(bins)
       .enter()
       .append("path")
-      .attr("d", path)
-      .attr("fill", "#eee")
-      .attr("stroke", "#999");
+      .attr("d", d => "M" + d.x + "," + d.y + hexbin.hexagon())
+      .attr("fill", d => {
+        const avg = d3.mean(d, p => p.aqi);
+        return color(avg);
+      })
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 1)
+      .attr("opacity", 0.85)
+      .on("mouseover", function(event, d) {
+        const avg = d3.mean(d, p => p.aqi);
+        tooltip
+          .style("opacity", 1)
+          .html(`
+            <strong>Cities:</strong> ${d.length}<br>
+            <strong>Average AQI:</strong> ${Math.round(avg)}
+          `);
+      })
+      .on("mousemove", function(event) {
+        tooltip
+          .style("left", (event.pageX + 10) + "px")
+          .style("top", (event.pageY - 20) + "px");
+      })
+      .on("mouseout", function() {
+        tooltip.style("opacity", 0);
+      });
 
-    // Load CSV
-    d3.csv("data.csv").then(function(data) {
+    // Legend
+    const legendWidth = 200;
+    const legendHeight = 10;
 
-        data.forEach(d => {
-            const coords = projection([+d.lon, +d.lat]);
-            d.x = coords[0];
-            d.y = coords[1];
-        });
+    const legendScale = d3.scaleLinear()
+      .domain(color.domain())
+      .range([0, legendWidth]);
 
-        const hexbin = d3.hexbin()
-            .x(d => d.x)
-            .y(d => d.y)
-            .radius(20)
-            .extent([[0, 0], [width, height]]);
+    const legendAxis = d3.axisBottom(legendScale)
+      .ticks(5);
 
-        const bins = hexbin(data);
+    const legend = svg.append("g")
+      .attr("class", "legend")
+      .attr("transform", `translate(50,700)`);
 
-        const color = d3.scaleSequential(d3.interpolateReds)
-            .domain([0, d3.max(bins, d => d.length)]);
+    const gradient = svg.append("defs")
+      .append("linearGradient")
+      .attr("id", "gradient");
 
-        svg.append("g")
-          .selectAll(".hexagon")
-          .data(bins)
-          .enter().append("path")
-          .attr("class", "hexagon")
-          .attr("d", d => "M" + d.x + "," + d.y + hexbin.hexagon())
-          .attr("fill", d => color(d.length))
-          .attr("opacity", 0.8);
+    gradient.selectAll("stop")
+      .data(d3.range(0, 1.01, 0.1))
+      .enter()
+      .append("stop")
+      .attr("offset", d => d * 100 + "%")
+      .attr("stop-color", d => color(d * 400));
 
-    });
+    legend.append("rect")
+      .attr("width", legendWidth)
+      .attr("height", legendHeight)
+      .style("fill", "url(#gradient)");
+
+    legend.append("g")
+      .attr("transform", `translate(0,${legendHeight})`)
+      .call(legendAxis);
+
+  });
 
 });
 
