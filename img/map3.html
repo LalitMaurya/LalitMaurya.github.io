@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>India AQI Hexbin Map - With City Category Breakdown</title>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/d3-hexbin@0.2.2/build/d3-hexbin.min.js"></script>
+
+<style>
+body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #f4f6f9; }
+header { background: white; padding: 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); text-align: center; }
+.header-title { font-size: 20px; font-weight: 600; }
+.header-sub { font-size: 13px; color: #666; }
+
+.controls { position: absolute; top: 95px; left: 20px; width: 250px; z-index: 20; }
+#search { width: 100%; padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc; font-size: 13px; }
+#cityList { border: 1px solid #ccc; border-top: none; max-height: 150px; overflow-y: auto; display: none; background: #fff; position: absolute; width: 100%; z-index: 30; }
+#cityList div { padding: 6px 10px; cursor: pointer; }
+#cityList div:hover { background: #eee; }
+
+#map { width: 100%; height: calc(100vh - 90px); }
+.state { fill: #fafafa; stroke: #c7c7c7; stroke-width: 0.6px; transition: fill 0.2s; }
+.state-label { font-size: 11px; font-weight: 600; fill: #222; text-anchor: middle; pointer-events: none; opacity: 0.9; text-shadow: 0 0 3px #fff, 0 0 6px #fff; }
+.hex { stroke: #fff; stroke-width: 1px; cursor: pointer; transition: opacity 0.2s; }
+
+.tooltip { position: absolute; background: rgba(0,0,0,0.85); color: #fff; padding: 8px 10px; font-size: 12px; border-radius: 6px; pointer-events: none; opacity: 0; }
+
+.legend, #aqiPanel {
+  position: absolute; background: white; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.15); padding: 10px 14px; font-size: 12px;
+}
+.legend { bottom: 20px; left: 20px; width: 230px; }
+#aqiPanel { top: 95px; right: 20px; width: 250px; max-height: 400px; overflow-y: auto; }
+
+.legend-title { font-weight: 600; margin-bottom: 6px; }
+.legend div { margin-bottom: 4px; }
+.legend span { display: inline-block; width: 14px; height: 14px; margin-right: 6px; border-radius: 2px; }
+
+#aqiPanel h4 { margin:0 0 8px 0; font-weight:600; font-size:14px; }
+#aqiPanel div { margin-bottom:4px; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-title">India Air Quality Index (AQI)</div>
+  <div class="header-sub">State & City-level AQI Visualization</div>
+</header>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Search city..." autocomplete="off" />
+  <div id="cityList"></div>
+</div>
+
+<div class="legend">
+  <div class="legend-title">AQI Categories</div>
+  <div><span style="background:#00e400"></span> Good (0-50)</div>
+  <div><span style="background:#9cff00"></span> Satisfactory (51-100)</div>
+  <div><span style="background:#ffff00"></span> Moderate (101-200)</div>
+  <div><span style="background:#ff7e00"></span> Poor (201-300)</div>
+  <div><span style="background:#ff0000"></span> Very Poor (301-400)</div>
+  <div><span style="background:#7e0023"></span> Severe (401+)</div>
+
+  <hr style="margin:8px 0">
+  <div class="legend-title">Hexagon Size (City Avg AQI)</div>
+  <svg id="sizeLegend" width="200" height="90"></svg>
+  <div style="font-size:11px;color:#555;">Bigger hexagon = Higher city AQI</div>
+</div>
+
+<div id="aqiPanel">
+  <h4>State-level Average AQI & City Categories</h4>
+  <div id="stateAqiList"></div>
+</div>
+
+<div class="tooltip"></div>
+<svg id="map"></svg>
+
+<script>
+const svg = d3.select("#map");
+const tooltip = d3.select(".tooltip");
+const width = window.innerWidth;
+const height = window.innerHeight - 90;
+const g = svg.append("g");
+
+svg.call(d3.zoom().scaleExtent([1,6]).on("zoom", (event)=>g.attr("transform",event.transform)));
+
+Promise.all([d3.json("india.geojson"), d3.csv("data1.csv")]).then(([india,data])=>{
+  const projection = d3.geoMercator().fitSize([width,height],india);
+  const path = d3.geoPath().projection(projection);
+  const stateKey = "st_nm";
+
+  // Project city data
+  const points = data.map(d=>{
+    const coords = projection([+d.longitude,+d.latitude]);
+    if(!coords) return null;
+    return {x:coords[0],y:coords[1],aqi:+d.aqi,city:d.city,state:d.state};
+  }).filter(d=>d);
+
+  // AQI Categories
+  const categories = [
+    {name:"Good", max:50},
+    {name:"Satisfactory", max:100},
+    {name:"Moderate", max:200},
+    {name:"Poor", max:300},
+    {name:"Very Poor", max:400},
+    {name:"Severe", max:Infinity}
+  ];
+  function getAQICategory(aqi){ return categories.find(c=>aqi<=c.max).name; }
+
+  // State-level AQI & city category counts
+  const stateAQI = d3.rollup(points, v=>d3.mean(v,d=>d.aqi), d=>d.state);
+  const stateCategoryCounts = d3.rollup(
+    points,
+    v=>{
+      const counts = {};
+      categories.forEach(c=>counts[c.name]=0);
+      v.forEach(p=>counts[getAQICategory(p.aqi)]++);
+      return counts;
+    },
+    d=>d.state
+  );
+
+  const colorScale = d3.scaleThreshold()
+    .domain([50,100,200,300,400])
+    .range(["#00e400","#9cff00","#ffff00","#ff7e00","#ff0000","#7e0023"]);
+
+  // Draw states colored by avg AQI
+  g.selectAll(".state")
+    .data(india.features)
+    .enter()
+    .append("path")
+    .attr("class","state")
+    .attr("d",path)
+    .attr("fill", d=>colorScale(stateAQI.get(d.properties[stateKey])||0))
+    .on("mousemove", function(event,d){
+      const counts = stateCategoryCounts.get(d.properties[stateKey]);
+      const breakdown = categories.map(c=>`${counts[c.name]} ${c.name}`).join(", ");
+      tooltip.style("opacity",1)
+        .html(`<b>${d.properties[stateKey]}</b><br>Avg AQI: ${Math.round(stateAQI.get(d.properties[stateKey])||0)}<br>${breakdown}`)
+        .style("left",(event.pageX+12)+"px")
+        .style("top",(event.pageY-20)+"px");
+    })
+    .on("mouseout",()=>tooltip.style("opacity",0))
+    .on("click", function(event,d){
+      hexGroup.selectAll(".hex")
+        .attr("opacity", bin=>bin.some(p=>p[4]===d.properties[stateKey])?1:0.15);
+    });
+
+  // State labels
+  const uniqueStates = Array.from(d3.rollup(india.features, v=>v[0], d=>d.properties[stateKey]).values());
+  g.selectAll(".state-label")
+    .data(uniqueStates)
+    .enter()
+    .append("text")
+    .attr("class","state-label")
+    .attr("x", d=>path.centroid(d)[0])
+    .attr("y", d=>path.centroid(d)[1])
+    .text(d=>d.properties[stateKey]);
+
+  // HEXBIN
+  const hexbin = d3.hexbin().extent([[0,0],[width,height]]).radius(6);
+  const bins = hexbin(points.map(p=>[p.x,p.y,p.aqi,p.city,p.state]));
+  bins.forEach(d=>{ d.avgAQI = d3.mean(d,p=>p[2]); d.cityCount=d.length; });
+  const sizeScale = d3.scaleSqrt().domain([0,d3.max(bins,d=>d.avgAQI)]).range([4,22]);
+
+  const hexGroup = g.append("g");
+  hexGroup.selectAll(".hex")
+    .data(bins)
+    .enter()
+    .append("path")
+    .attr("class","hex")
+    .attr("transform", d=>`translate(${d.x},${d.y})`)
+    .attr("d", d=>d3.hexbin().radius(sizeScale(d.avgAQI)).hexagon())
+    .attr("fill", d=>colorScale(d.avgAQI))
+    .attr("opacity",0.85)
+    .on("mousemove", function(event,d){
+      tooltip.style("opacity",1)
+        .html(`${d.map(p=>p[3]).join(", ")}<br><b>Avg AQI:</b> ${Math.round(d.avgAQI)}`)
+        .style("left",(event.pageX+12)+"px")
+        .style("top",(event.pageY-20)+"px");
+    })
+    .on("mouseout",()=>tooltip.style("opacity",0));
+
+  // SEARCH with dropdown
+  const searchInput = d3.select("#search");
+  const cityListDiv = d3.select("#cityList");
+  const cities = points.map(d=>d.city).sort();
+  searchInput.on("input",function(){
+    const val = this.value.toLowerCase();
+    if(!val){ cityListDiv.style("display","none"); return;}
+    const matches = cities.filter(c=>c.toLowerCase().includes(val));
+    cityListDiv.html("");
+    matches.forEach(c=>{
+      cityListDiv.append("div").text(c).on("click",()=>{
+        searchInput.property("value",c);
+        cityListDiv.style("display","none");
+        const pt = points.find(p=>p.city===c);
+        if(pt){
+          svg.transition().duration(750).call(
+            d3.zoom().transform,
+            d3.zoomIdentity.translate(width/2 - pt.x*2, height/2 - pt.y*2).scale(2)
+          );
+          hexGroup.selectAll(".hex")
+            .attr("opacity", d=>d.some(p=>p[3]===c)?1:0.15);
+        }
+      });
+    });
+    cityListDiv.style("display", matches.length?"block":"none");
+  });
+  searchInput.on("blur",()=>setTimeout(()=>cityListDiv.style("display","none"),200));
+
+  // STATE PANEL with category breakdown
+  const stateAqiList = d3.select("#stateAqiList");
+  Array.from(stateAQI.entries()).sort((a,b)=>b[1]-a[1])
+    .forEach(([state,avgAQI])=>{
+      const counts = stateCategoryCounts.get(state);
+      const breakdown = categories.map(c=>`${counts[c.name]} ${c.name}`).join(", ");
+      stateAqiList.append("div").html(`<b>${state}:</b> Avg AQI ${Math.round(avgAQI)}<br>${breakdown}`);
+    });
+
+  // HEXBIN SIZE LEGEND
+  const legendSvg = d3.select("#sizeLegend");
+  const legendVals = [d3.min(bins,d=>d.avgAQI), d3.mean(bins,d=>d.avgAQI), d3.max(bins,d=>d.avgAQI)];
+  const legendHex = d3.hexbin();
+  legendSvg.selectAll("path").data(legendVals)
+    .enter().append("path")
+    .attr("d", d=>legendHex.radius(sizeScale(d)).hexagon())
+    .attr("transform",(d,i)=>`translate(${45+i*60},40)`)
+    .attr("fill","#888").attr("opacity",0.7);
+  legendSvg.selectAll("text").data(legendVals)
+    .enter().append("text")
+    .attr("x",(d,i)=>45+i*60).attr("y",80)
+    .attr("text-anchor","middle").attr("font-size","10px").text(d=>Math.round(d));
+});
+</script>
+</body>
+</html>
