@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>India AQI Dashboard - Responsive Mobile Version</title>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/d3-hexbin@0.2.2/build/d3-hexbin.min.js"></script>
+
+  <style>
+    :root{
+      --bg:#e5e7eb;
+      --panel:#ffffff;
+      --panel-soft:#f8fafc;
+      --line:#cbd5e1;
+      --line-strong:#94a3b8;
+      --text:#111827;
+      --muted:#6b7280;
+      --shadow:0 10px 24px rgba(15,23,42,.08);
+      --header-1:#374151;
+      --header-2:#111827;
+      --state-fill:#e5e7eb;
+      --state-fill-active:#d1d5db;
+      --state-stroke:#9ca3af;
+      --good:#00e400;
+      --sat:#9cff00;
+      --mod:#ffff00;
+      --poor:#ff7e00;
+      --vpoor:#ff0000;
+      --sev:#7e0023;
+      --missing:#d1d5db;
+      --accent:#4b5563;
+      --radius-lg:16px;
+      --radius-md:12px;
+      --radius-sm:10px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0; padding: 0; min-height: 100%;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg); color: var(--text);
+      -webkit-text-size-adjust: 100%;
+    }
+    body { overflow-x: hidden; }
+
+    header {
+      background: linear-gradient(135deg, var(--header-1), var(--header-2));
+      color: #fff;
+      padding: 16px clamp(14px, 2.5vw, 24px);
+      box-shadow: 0 6px 18px rgba(0,0,0,.18);
+    }
+    .header-title { font-size: clamp(20px,3.2vw,26px); font-weight:800; letter-spacing:.2px; line-height:1.2; }
+    .header-sub { margin-top:6px; font-size:clamp(12px,2.1vw,13px); opacity:.9; line-height:1.45; max-width:860px; }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 300px minmax(0,1fr) 420px;
+      gap: 16px; padding: 16px;
+      min-height: calc(100vh - 84px);
+      align-items: start;
+    }
+
+    .sidebar, .rightbar { display:flex; flex-direction:column; gap:16px; min-width:0; min-height:0; }
+    .main { display:grid; grid-template-rows:auto 1fr; gap:16px; min-width:0; min-height:0; }
+
+    .panel, .card {
+      background: var(--panel);
+      border: 1px solid rgba(148,163,184,.45);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden; min-width: 0;
+    }
+
+    .panel-header {
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg,#ffffff,#f8fafc);
+    }
+    .panel-title { margin:0; font-size:15px; font-weight:800; color:#111827; line-height:1.3; }
+    .panel-sub { margin-top:4px; font-size:12px; color:var(--muted); line-height:1.45; }
+    .panel-body { padding:14px 16px 16px; min-width:0; }
+
+    .cards { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+    .card { padding:14px 16px; background:linear-gradient(180deg,#ffffff,#f8fafc); }
+    .card-label { font-size:11px; font-weight:800; color:#6b7280; margin-bottom:8px; text-transform:uppercase; letter-spacing:.05em; line-height:1.35; }
+    .card-value { font-size:clamp(22px,3vw,28px); font-weight:800; line-height:1.1; color:#111827; word-break:break-word; }
+    .card-note { margin-top:6px; font-size:11px; color:var(--muted); line-height:1.45; }
+
+    .control-group { margin-bottom:14px; position:relative; }
+    .control-label { display:block; margin-bottom:7px; font-size:12px; font-weight:800; color:#374151; letter-spacing:.01em; }
+
+    input[type="text"], select, button {
+      width:100%; min-height:44px; appearance:none;
+      border:1px solid var(--line-strong);
+      background:#f9fafb; color:#111827;
+      border-radius:12px; padding:11px 12px;
+      font-size:14px; outline:none; transition:.18s ease;
+      touch-action:manipulation;
+    }
+    input[type="text"]::placeholder { color:#9ca3af; }
+    input[type="text"]:focus, select:focus {
+      background:#fff; border-color:#6b7280;
+      box-shadow:0 0 0 3px rgba(107,114,128,.14);
+    }
+    button { background:#374151; color:#fff; font-weight:700; cursor:pointer; }
+    button:hover { background:#1f2937; }
+    button:disabled { background:#9ca3af; cursor:not-allowed; }
+
+    .help-note {
+      padding:10px 12px; border-radius:12px;
+      background:#f3f4f6; border:1px solid #d1d5db;
+      font-size:12px; color:#4b5563; line-height:1.5;
+    }
+
+    .suggestions { z-index:30; }
+    #cityList {
+      position:absolute; top:calc(100% + 6px); left:0;
+      width:100%; max-height:220px; overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      background:#fff; border:1px solid #cbd5e1; border-radius:12px;
+      box-shadow:0 12px 26px rgba(15,23,42,.14); display:none; z-index:50;
+    }
+    #cityList div { padding:11px 12px; font-size:14px; cursor:pointer; border-bottom:1px solid #f1f5f9; }
+    #cityList div:last-child { border-bottom:none; }
+    #cityList div:hover { background:#f3f4f6; }
+
+    .legend-block { margin-bottom:14px; }
+    .legend-title { font-size:12px; font-weight:800; color:#374151; margin-bottom:8px; }
+    .legend-item { display:flex; align-items:center; gap:10px; font-size:12px; margin-bottom:8px; color:#374151; line-height:1.45; }
+    .legend-swatch { width:16px; height:16px; border-radius:4px; border:1px solid rgba(0,0,0,.12); flex:0 0 auto; }
+    #sizeLegend { width:100%; height:92px; display:block; }
+    .size-legend text { font-size:10px; fill:#475569; text-anchor:middle; font-weight:700; }
+
+    /* City AQI Summary list */
+    .city-aqi-list, .rank-list {
+      max-height:320px; overflow-y:auto;
+      -webkit-overflow-scrolling:touch; padding-right:4px;
+    }
+
+    .city-aqi-row, .rank-row {
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap:12px; padding:11px 12px; margin-bottom:8px;
+      border-radius:12px; border:1px solid #e5e7eb;
+      background:#f9fafb; cursor:pointer; transition:.18s ease;
+    }
+    .city-aqi-row:hover, .rank-row:hover { background:#f3f4f6; border-color:#cbd5e1; }
+    .city-aqi-row.active, .rank-row.active { background:#e5e7eb; border-color:#9ca3af; }
+
+    .city-aqi-row .dot {
+      width:10px; height:10px; border-radius:50%;
+      flex:0 0 auto; margin-top:3px; border:1px solid rgba(0,0,0,.12);
+    }
+
+    .city-aqi-main, .rank-main { min-width:0; flex:1 1 auto; }
+    .city-aqi-main strong, .rank-main strong { word-break:break-word; }
+    .city-aqi-meta, .rank-meta { font-size:11px; color:#6b7280; margin-top:4px; line-height:1.4; word-break:break-word; }
+    .city-aqi-value, .rank-value { font-size:14px; font-weight:800; color:#111827; white-space:nowrap; flex:0 0 auto; }
+
+    .map-panel { position:relative; min-height:0; }
+    #mapWrap {
+      position:relative; height:clamp(360px,58vh,760px); min-height:360px;
+      background:linear-gradient(180deg,#f8fafc,#eef2f7);
+    }
+    #map { width:100%; height:100%; display:block; touch-action:none; }
+    .map-note {
+      position:absolute; left:14px; top:14px; z-index:10;
+      max-width:min(300px,calc(100% - 28px));
+      background:rgba(255,255,255,.92); backdrop-filter:blur(8px);
+      border:1px solid rgba(148,163,184,.4); border-radius:12px;
+      padding:10px 12px; box-shadow:var(--shadow);
+      font-size:12px; line-height:1.45; color:#374151;
+    }
+
+    .state { fill:var(--state-fill); stroke:var(--state-stroke); stroke-width:.9px; cursor:pointer; transition:.18s ease; }
+    .state:hover { fill:#dbe1e8; stroke:#6b7280; }
+    .state.active { fill:var(--state-fill-active); stroke:#374151; stroke-width:1.25px; }
+    .hex { stroke:rgba(255,255,255,.95); stroke-width:1.6px; cursor:pointer; transition:.18s ease; }
+    .hex:hover { stroke:#111827; stroke-width:1.8px; }
+    .hex.is-selected { stroke:#111827; stroke-width:2.2px; }
+
+    .tooltip {
+      position:absolute; opacity:0; pointer-events:none; z-index:100;
+      max-width:min(280px,calc(100vw - 24px));
+      padding:10px 12px; border-radius:10px;
+      background:rgba(17,24,39,.94); color:#fff;
+      font-size:12px; line-height:1.45;
+      box-shadow:0 8px 22px rgba(0,0,0,.24);
+    }
+
+    /* --- Calendar month nav --- */
+    .month-nav {
+      display:flex; align-items:center; justify-content:space-between;
+      margin-bottom:12px; gap:8px;
+    }
+    .month-nav-btn {
+      min-height:36px; width:auto; padding:6px 16px;
+      font-size:13px; font-weight:700; border-radius:10px;
+      flex-shrink:0; line-height:1;
+    }
+    .month-nav-label {
+      font-size:14px; font-weight:800; color:#111827;
+      text-align:center; flex:1; line-height:1.3;
+    }
+
+    #calendarSvg { width:100%; height:auto; display:block; }
+
+    .month-title { font-size:13px; font-weight:800; fill:#334155; }
+    .dow-label { font-size:10px; font-weight:700; fill:#94a3b8; }
+    .day-num { font-size:9px; fill:#374151; font-weight:600; pointer-events:none; dominant-baseline:hanging; }
+    .day-cell { stroke:#fff; stroke-width:1px; cursor:pointer; }
+    .day-cell:hover { stroke:#374151; stroke-width:1.4px; }
+    .day-cell.selected { stroke:#111827; stroke-width:2px; }
+
+    .report-box {
+      margin-top:14px; padding:14px;
+      background:linear-gradient(180deg,#ffffff,#f8fafc);
+      border:1px solid #dbe1e8; border-radius:14px;
+    }
+    .report-title { font-size:13px; font-weight:800; color:#111827; margin-bottom:10px; line-height:1.35; }
+    .report-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .report-metric { padding:10px; border-radius:12px; border:1px solid #e5e7eb; background:#f9fafb; min-width:0; }
+    .report-metric-label { font-size:11px; color:#6b7280; margin-bottom:4px; line-height:1.35; }
+    .report-metric-value { font-size:18px; font-weight:800; color:#111827; line-height:1.2; word-break:break-word; }
+    .report-text { font-size:12px; color:#374151; line-height:1.55; word-break:break-word; }
+
+    .muted { color:var(--muted); font-size:12px; line-height:1.45; }
+    .divider { margin:12px 0; border:none; border-top:1px solid #e5e7eb; }
+
+    @media (max-width:1280px) {
+      .dashboard { grid-template-columns:280px minmax(0,1fr) 360px; }
+      .cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width:1080px) {
+      .dashboard { grid-template-columns:1fr; }
+      .main { order:1; } .sidebar { order:2; } .rightbar { order:3; }
+      .cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .city-aqi-list, .rank-list { max-height:280px; }
+    }
+    @media (max-width:768px) {
+      .dashboard { gap:14px; padding:14px; }
+      .panel-header { padding:13px 14px 10px; }
+      .panel-body { padding:13px 14px 14px; }
+      .cards { grid-template-columns:1fr 1fr; gap:12px; }
+      #mapWrap { height:clamp(340px,55vh,520px); }
+      .map-note { left:12px; top:12px; padding:9px 10px; font-size:11px; }
+    }
+    @media (max-width:560px) {
+      header { padding:14px; }
+      .dashboard { padding:12px; gap:12px; }
+      .cards { grid-template-columns:1fr; }
+      .report-grid { grid-template-columns:1fr; }
+      .panel-title { font-size:14px; }
+      .panel-sub { font-size:11px; }
+      .card { padding:13px 14px; }
+      .card-value { font-size:24px; }
+      .city-aqi-row, .rank-row { padding:10px 11px; }
+      #mapWrap { height:clamp(320px,52vh,460px); min-height:320px; }
+      .map-note { max-width:calc(100% - 24px); }
+      .tooltip { font-size:11px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-title">India Air Quality Dashboard</div>
+  <div class="header-sub">City-level AQI dashboard — desktop, tablet & mobile. Hexagon colours reflect the most recent AQI reading per city.</div>
+</header>
+
+<div class="dashboard">
+
+  <!-- --- SIDEBAR --- -->
+  <aside class="sidebar">
+    <div class="panel">
+      <div class="panel-header">
+        <h3 class="panel-title">Filters</h3>
+        <div class="panel-sub">Year, city search, and state focus</div>
+      </div>
+      <div class="panel-body">
+        <div class="control-group">
+          <label class="control-label">Year</label>
+
+          <select id="yearSelect"></select>
+        </div>
+        <div class="control-group suggestions">
+          <label class="control-label">Search city</label>
+          <input type="text" id="search" placeholder="Start typing a city name…" autocomplete="off" />
+          <div id="cityList"></div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Selected city</label>
+          <select id="citySelect"></select>
+        </div>
+        <div class="control-group">
+          <button id="resetFilters">Reset all filters</button>
+        </div>
+        <div class="help-note">
+          Tap a state to filter. Tap a city hexagon to update the calendar and city report.<br>
+          <strong>Hexagon colour</strong> = most recent AQI reading for that city.
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <h3 class="panel-title">Hexagon Legend</h3>
+        <div class="panel-sub">Colour = most recent AQI. Size = yearly city-average AQI.</div>
+      </div>
+      <div class="panel-body">
+        <div class="legend-block">
+          <div class="legend-title">AQI Colour Scale</div>
+          <div class="legend-item"><span class="legend-swatch" style="background:#00e400"></span> Good (0–50)</div>
+          <div class="legend-item"><span class="legend-swatch" style="background:#9cff00"></span> Satisfactory (51–100)</div>
+          <div class="legend-item"><span class="legend-swatch" style="background:#ffff00"></span> Moderate (101–200)</div>
+          <div class="legend-item"><span class="legend-swatch" style="background:#ff7e00"></span> Poor (201–300)</div>
+          <div class="legend-item"><span class="legend-swatch" style="background:#ff0000"></span> Very Poor (301–400)</div>
+          <div class="legend-item"><span class="legend-swatch" style="background:#7e0023"></span> Severe (401+)</div>
+          <div class="legend-item"><span class="legend-swatch" style="background:#d1d5db"></span> Missing / no value</div>
+        </div>
+        <hr class="divider">
+        <div class="legend-block">
+          <div class="legend-title">Hexagon Size</div>
+          <svg id="sizeLegend" class="size-legend"></svg>
+          <div class="muted">Bigger hexagons = higher yearly city-average AQI.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ? FIX 3: City AQI Summary (replaces State AQI Summary) -->
+    <div class="panel" style="min-height:0;">
+      <div class="panel-header">
+        <h3 class="panel-title">City AQI Summary</h3>
+        <div class="panel-sub">Cities ranked by average AQI — click to select</div>
+      </div>
+      <div class="panel-body city-aqi-list" id="cityAqiList"></div>
+    </div>
+  </aside>
+
+  <!-- --- MAIN --- -->
+  <main class="main">
+    <section class="cards">
+      <div class="card">
+        <div class="card-label">National avg AQI</div>
+        <div class="card-value" id="kpiNational">--</div>
+        <div class="card-note" id="kpiNationalNote">Selected year overview</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Selected city avg AQI</div>
+        <div class="card-value" id="kpiCity">--</div>
+        <div class="card-note" id="kpiCityNote">Choose a city</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Most polluted city</div>
+        <div class="card-value" id="kpiWorst">--</div>
+        <div class="card-note" id="kpiWorstNote">Highest yearly average</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Cities in view</div>
+        <div class="card-value" id="kpiCities">--</div>
+        <div class="card-note" id="kpiCitiesNote">All states</div>
+      </div>
+    </section>
+
+    <section class="panel map-panel">
+      <div class="panel-header">
+        <h3 class="panel-title">India AQI Map</h3>
+        <div class="panel-sub">Hexagon colour = most recent AQI per city · Grey basemap shows states</div>
+      </div>
+      <div id="mapWrap">
+        <div class="map-note">
+          <strong>Map interactions</strong><br>
+          • Tap state to filter<br>
+          • Tap city hexagon to select<br>
+          • Pinch or drag to zoom/pan
+        </div>
+        <svg id="map"></svg>
+        <div class="tooltip"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- --- RIGHT BAR --- -->
+  <aside class="rightbar">
+    <div class="panel">
+      <div class="panel-header">
+        <h3 class="panel-title">Daily AQI Calendar</h3>
+        <div class="panel-sub" id="calendarTitle">Select a city to inspect daily AQI</div>
+      </div>
+      <div class="panel-body">
+
+        <!-- ? FIX 1: Month navigation -->
+        <div class="month-nav" id="monthNav">
+          <button class="month-nav-btn" id="prevMonth">&#8249; Prev</button>
+          <div class="month-nav-label" id="monthNavLabel">—</div>
+          <button class="month-nav-btn" id="nextMonth">Next &#8250;</button>
+        </div>
+
+        <svg id="calendarSvg"></svg>
+
+        <div class="report-box" id="cityReport">
+          <div class="report-title">City Report</div>
+          <div class="report-text">Select a city hexagon to generate the annual city AQI report.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="min-height:0;">
+      <div class="panel-header">
+        <h3 class="panel-title">Top Polluted Cities</h3>
+        <div class="panel-sub">Ranked by average AQI in the selected context</div>
+      </div>
+      <div class="panel-body rank-list" id="cityRankList"></div>
+    </div>
+  </aside>
+
+</div>
+
+<script>
+/* -----------------------------------------------
+   CONSTANTS & GLOBALS
+----------------------------------------------- */
+const stateKey = "st_nm";
+const tooltip  = d3.select(".tooltip");
+
+const AQI_BANDS = [
+  { name:"Good",       max:50,       color:"#00e400" },
+  { name:"Satisfactory",max:100,     color:"#9cff00" },
+  { name:"Moderate",   max:200,      color:"#ffff00" },
+  { name:"Poor",       max:300,      color:"#ff7e00" },
+  { name:"Very Poor",  max:400,      color:"#ff0000" },
+  { name:"Severe",     max:Infinity, color:"#7e0023" }
+];
+
+const colorScale = d3.scaleThreshold()
+  .domain([50,100,200,300,400])
+  .range(AQI_BANDS.map(d => d.color));
+
+/* -- date parsers -- */
+const parseDateFns = [
+  d3.timeParse("%Y-%m-%d"), d3.timeParse("%d-%m-%Y"),
+  d3.timeParse("%m/%d/%Y"), d3.timeParse("%Y/%m/%d"),
+  d3.timeParse("%d/%m/%Y")
+];
+function parseAnyDate(v){
+  if (!v) return null;
+  for (const fn of parseDateFns){ const d=fn(v); if(d&&!isNaN(d)) return d; }
+  const d=new Date(v); return isNaN(d)?null:d;
+}
+function firstOf(obj,keys){ for(const k of keys){ if(obj[k]!=null&&obj[k]!=="") return obj[k]; } return null; }
+function getAQICategory(v){ return AQI_BANDS.find(c=>v<=c.max)?.name||"Unknown"; }
+function formatAQI(v){ return (v==null||isNaN(v))?"--":Math.round(v); }
+function fmtDate(d){ return d3.timeFormat("%d %b %Y")(d); }
+function formatMonth(d){ return d3.timeFormat("%B")(d); }
+
+function normalizeRow(d){
+  const date=parseAnyDate(firstOf(d,["date","Date","day","Day","datetime","Datetime","timestamp"]));
+  return {
+    city: firstOf(d,["city","City","station","Station"]),
+    state: firstOf(d,["state","State","st_nm","province"]),
+    latitude:  +firstOf(d,["latitude","Latitude","lat","Lat"]),
+    longitude: +firstOf(d,["longitude","Longitude","lng","Lng","lon","Lon"]),
+    aqi: +firstOf(d,["aqi","AQI","value","Value"]),
+    date
+  };
+}
+
+/* -- state -- */
+let india, allRows=[];
+let selectedYear=null, selectedCity=null, selectedState=null, selectedDay=null;
+let currentCalendarMonth = new Date().getMonth(); // ? FIX 1
+
+/* -- DOM refs -- */
+const yearSelect   = d3.select("#yearSelect");
+const citySelect   = d3.select("#citySelect");
+const searchInput  = d3.select("#search");
+const cityListDiv  = d3.select("#cityList");
+const cityAqiList  = d3.select("#cityAqiList");  // ? FIX 3
+const cityRankList = d3.select("#cityRankList");
+
+const mapWrap = document.getElementById("mapWrap");
+const svg     = d3.select("#map");
+const mapG    = svg.append("g");
+const statesG = mapG.append("g");
+const hexG    = mapG.append("g");
+
+let mapWidth=1000, mapHeight=600, projection, path, zoom;
+
+/* -----------------------------------------------
+   MAP SIZING
+----------------------------------------------- */
+function resizeMapBase(){
+  if (!india) return;
+  mapWidth  = mapWrap.clientWidth  || 1000;
+  mapHeight = mapWrap.clientHeight || 560;
+  svg.attr("viewBox",[0,0,mapWidth,mapHeight]);
+  projection = d3.geoMercator().fitSize([mapWidth,mapHeight],india);
+  path = d3.geoPath().projection(projection);
+  zoom = d3.zoom().scaleExtent([1,7]).on("zoom",e=>mapG.attr("transform",e.transform));
+  svg.call(zoom);
+}
+
+/* -----------------------------------------------
+   DATA LOAD
+----------------------------------------------- */
+Promise.all([
+  d3.json("india.geojson"),
+  d3.csv("data2.csv")
+]).then(([geojson, raw]) => {
+  india   = geojson;
+  allRows = raw.map(normalizeRow).filter(d =>
+    d.city && d.state &&
+    isFinite(d.latitude) && isFinite(d.longitude) &&
+    isFinite(d.aqi) && d.date
+  );
+
+  if (!allRows.length){
+    d3.select("#calendarTitle").text("No valid daily AQI records found.");
+    return;
+  }
+
+  allRows.forEach(d => d.year = d.date.getFullYear());
+  const years = Array.from(new Set(allRows.map(d=>d.year))).sort((a,b)=>a-b);
+  selectedYear = d3.max(years);
+
+  yearSelect.selectAll("option").data(years).enter().append("option")
+    .attr("value",d=>d).text(d=>d);
+  yearSelect.property("value", selectedYear);
+
+  resizeMapBase();
+  initStaticMap();
+  bindUI();
+  updateDashboard();
+
+  let resizeTimer;
+  window.addEventListener("resize",()=>{
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(()=>{ resizeMapBase(); initStaticMap(); updateDashboard(); },120);
+  });
+});
+
+/* -----------------------------------------------
+   STATIC MAP
+----------------------------------------------- */
+function initStaticMap(){
+  statesG.selectAll(".state").data(india.features).join("path")
+    .attr("class","state").attr("d",path);
+}
+
+/* -----------------------------------------------
+   BIND UI EVENTS
+----------------------------------------------- */
+function bindUI(){
+  yearSelect.on("change",function(){
+    selectedYear=+this.value; selectedState=null; selectedDay=null;
+    ensureValidCity(true); resetZoom(); updateDashboard();
+  });
+
+  citySelect.on("change",function(){
+    selectedCity=this.value||null; selectedDay=null;
+    if(selectedCity) focusOnCity(selectedCity);
+    updateDashboard();
+  });
+
+  searchInput.on("input",function(){
+    const q=this.value.trim().toLowerCase();
+    const cities=getAvailableCities();
+    if(!q){ cityListDiv.style("display","none"); return; }
+    const matches=cities.filter(c=>c.toLowerCase().includes(q)).slice(0,20);
+    cityListDiv.html("");
+    matches.forEach(city=>{
+      cityListDiv.append("div").text(city).on("click",()=>{
+        selectedCity=city;
+        searchInput.property("value",city);
+        selectedDay=null;
+        cityListDiv.style("display","none");
+        focusOnCity(city);
+        updateDashboard();
+      });
+    });
+    cityListDiv.style("display",matches.length?"block":"none");
+  });
+
+  searchInput.on("blur",()=>setTimeout(()=>cityListDiv.style("display","none"),180));
+
+  d3.select("#resetFilters").on("click",()=>{
+    selectedState=null; selectedDay=null;
+    ensureValidCity(true);
+    searchInput.property("value",selectedCity||"");
+    resetZoom(); updateDashboard();
+  });
+
+  /* ? FIX 1: Month navigation buttons */
+  document.getElementById("prevMonth").addEventListener("click",()=>{
+    currentCalendarMonth = (currentCalendarMonth - 1 + 12) % 12;
+    renderCalendar(getYearData());
+    updateMonthNavLabel();
+  });
+  document.getElementById("nextMonth").addEventListener("click",()=>{
+    currentCalendarMonth = (currentCalendarMonth + 1) % 12;
+    renderCalendar(getYearData());
+    updateMonthNavLabel();
+  });
+}
+
+function updateMonthNavLabel(){
+  const label = selectedCity
+    ? d3.timeFormat("%B %Y")(new Date(selectedYear, currentCalendarMonth, 1))
+    : "—";
+  document.getElementById("monthNavLabel").textContent = label;
+
+  // Disable prev/next when no city
+  const hasCity = !!selectedCity;
+  document.getElementById("prevMonth").disabled = !hasCity;
+  document.getElementById("nextMonth").disabled = !hasCity;
+}
+
+/* -----------------------------------------------
+   DATA HELPERS
+----------------------------------------------- */
+function getYearData(){ return allRows.filter(d=>d.year===selectedYear); }
+function getContextData(){
+  const yd=getYearData();
+  return selectedState ? yd.filter(d=>d.state===selectedState) : yd;
+}
+function getAvailableCities(){
+  return Array.from(new Set(getContextData().map(d=>d.city))).sort(d3.ascending);
+}
+function ensureValidCity(forceDefault=false){
+  const cd=getContextData();
+  const cityAgg=d3.rollups(cd,v=>d3.mean(v,d=>d.aqi),d=>d.city)
+    .sort((a,b)=>d3.descending(a[1],b[1]));
+  const valid=cityAgg.map(d=>d[0]);
+  if(forceDefault||!selectedCity||!valid.includes(selectedCity))
+    selectedCity=valid[0]||null;
+}
+function resetZoom(){ svg.transition().duration(650).call(zoom.transform,d3.zoomIdentity); }
+function zoomToFeature(feature){
+  const b=path.bounds(feature);
+  const dx=b[1][0]-b[0][0], dy=b[1][1]-b[0][1];
+  const x=(b[0][0]+b[1][0])/2, y=(b[0][1]+b[1][1])/2;
+  const scale=Math.max(1,Math.min(6,.88/Math.max(dx/mapWidth,dy/mapHeight)));
+  svg.transition().duration(650).call(zoom.transform,
+    d3.zoomIdentity.translate(mapWidth/2-scale*x, mapHeight/2-scale*y).scale(scale));
+}
+function focusOnCity(city){
+  const p=getContextData().find(d=>d.city===city)||allRows.find(d=>d.city===city);
+  if(!p) return;
+  const [x,y]=projection([p.longitude,p.latitude]);
+  svg.transition().duration(650).call(zoom.transform,
+    d3.zoomIdentity.translate(mapWidth/2-x*2.8, mapHeight/2-y*2.8).scale(2.8));
+}
+
+/* ? FIX 2: getCityAggregates now computes mostRecentAQI */
+function getCityAggregates(rows){
+  return d3.rollups(rows, v=>{
+    // sort descending by date to find most recent
+    const sorted = v.slice().sort((a,b)=>b.date-a.date);
+    const mostRecentTs = +d3.timeDay.floor(sorted[0].date);
+    const recentRows   = sorted.filter(d=>+d3.timeDay.floor(d.date)===mostRecentTs);
+    return {
+      city:          v[0].city,
+      state:         v[0].state,
+      latitude:      d3.mean(v,d=>d.latitude),
+      longitude:     d3.mean(v,d=>d.longitude),
+      avgAQI:        d3.mean(v,d=>d.aqi),
+      mostRecentAQI: d3.mean(recentRows,d=>d.aqi),  // ? most recent daily AQI
+      mostRecentDate:new Date(mostRecentTs),
+      maxAQI:        d3.max(v,d=>d.aqi),
+      minAQI:        d3.min(v,d=>d.aqi),
+      days:          new Set(v.map(d=>+d3.timeDay.floor(d.date))).size
+    };
+  }, d=>d.city)
+  .map(([,vals])=>vals)
+  .sort((a,b)=>d3.descending(a.avgAQI,b.avgAQI));
+}
+
+/* -----------------------------------------------
+   MAIN UPDATE
+----------------------------------------------- */
+function updateDashboard(){
+  const yearData    = getYearData();
+  ensureValidCity();
+  const contextData = getContextData();
+  const cityOptions = Array.from(new Set(contextData.map(d=>d.city))).sort(d3.ascending);
+
+  citySelect.selectAll("option").data(cityOptions,d=>d).join(
+    enter=>enter.append("option").attr("value",d=>d).text(d=>d),
+    update=>update.text(d=>d),
+    exit=>exit.remove()
+  );
+  citySelect.property("value", selectedCity||"");
+  searchInput.property("value", selectedCity||"");
+
+  renderMap(yearData);
+  renderKpis(yearData);
+  renderCityAqiPanel(contextData);   // ? FIX 3
+  renderCityRanking(contextData);
+  renderCalendar(yearData);
+  renderSizeLegend(contextData);
+  renderCityReport(yearData);
+  updateMonthNavLabel();
+}
+
+/* -----------------------------------------------
+   MAP RENDER  (? FIX 2: colour = mostRecentAQI)
+----------------------------------------------- */
+function renderMap(yearData){
+  const cityAggregates = getCityAggregates(getContextData())
+    .map(d=>{
+      const coords=projection([d.longitude,d.latitude]);
+      if(!coords) return null;
+      return {...d, x:coords[0], y:coords[1]};
+    }).filter(Boolean);
+
+  const maxAvg = d3.max(cityAggregates,d=>d.avgAQI)||1;
+  const sizeScale = d3.scaleSqrt()
+    .domain([0,maxAvg])
+    .range([8, Math.max(18,Math.min(24,mapWidth/40))]);
+
+  /* states */
+  statesG.selectAll(".state").data(india.features).join("path")
+    .attr("class",d=>`state ${selectedState===d.properties[stateKey]?"active":""}`)
+    .attr("d",path)
+    .attr("opacity",d=>!selectedState||selectedState===d.properties[stateKey]?1:0.38)
+    .on("mousemove touchmove",function(event,d){
+      const e=event.touches?event.touches[0]:event;
+      const st=d.properties[stateKey];
+      const stRows=yearData.filter(r=>r.state===st);
+      const avg=d3.mean(stRows,r=>r.aqi);
+      const cc=new Set(stRows.map(r=>r.city)).size;
+      tooltip.style("opacity",1).html(`
+        <strong>${st}</strong><br>
+        Avg AQI: <strong>${formatAQI(avg)}</strong><br>
+        Cities tracked: <strong>${cc}</strong><br>
+        Tap to ${selectedState===st?"clear filter":"filter this state"}
+      `)
+      .style("left",`${Math.min(window.innerWidth-290,(e.pageX||20)+12)}px`)
+      .style("top",`${Math.max(12,(e.pageY||20)-20)}px`);
+    })
+    .on("mouseout touchend",()=>tooltip.style("opacity",0))
+    .on("click",function(event,d){
+      const st=d.properties[stateKey];
+      if(selectedState===st){ selectedState=null; ensureValidCity(true); resetZoom(); }
+      else { selectedState=st; ensureValidCity(true); zoomToFeature(d); }
+      selectedDay=null; updateDashboard();
+    });
+
+  /* hexagons — ? FIX 2: fill = colorScale(mostRecentAQI) */
+  hexG.selectAll(".hex").data(cityAggregates,d=>d.city).join("path")
+    .attr("class",d=>`hex ${selectedCity===d.city?"is-selected":""}`)
+    .attr("transform",d=>`translate(${d.x},${d.y})`)
+    .attr("d",d=>d3.hexbin().hexagon(sizeScale(d.avgAQI)))
+    .attr("fill",d=> d.mostRecentAQI!=null ? colorScale(d.mostRecentAQI) : "#d1d5db")
+    .attr("opacity",d=>selectedCity&&selectedCity!==d.city?0.45:0.95)
+    .on("mousemove touchmove",function(event,d){
+      const e=event.touches?event.touches[0]:event;
+      tooltip.style("opacity",1).html(`
+        <strong>${d.city}</strong><br>
+        State: <strong>${d.state}</strong><br>
+        Most recent AQI: <strong>${formatAQI(d.mostRecentAQI)}</strong>
+          (${d3.timeFormat("%d %b %Y")(d.mostRecentDate)})<br>
+        Category: <strong>${getAQICategory(d.mostRecentAQI??d.avgAQI)}</strong><br>
+        Yearly avg AQI: <strong>${formatAQI(d.avgAQI)}</strong><br>
+        Daily records: <strong>${d.days}</strong>
+      `)
+      .style("left",`${Math.min(window.innerWidth-290,(e.pageX||20)+12)}px`)
+      .style("top",`${Math.max(12,(e.pageY||20)-20)}px`);
+    })
+    .on("mouseout touchend",()=>tooltip.style("opacity",0))
+    .on("click",function(event,d){
+      selectedCity=d.city; selectedDay=null;
+      searchInput.property("value",selectedCity);
+      focusOnCity(selectedCity); updateDashboard();
+    });
+}
+
+/* -----------------------------------------------
+   KPIs
+----------------------------------------------- */
+function renderKpis(yearData){
+  const contextData = getContextData();
+  const natAvg = d3.mean(yearData,d=>d.aqi);
+  const cityAvg = d3.mean(yearData.filter(d=>d.city===selectedCity),d=>d.aqi);
+  const cityAgg = d3.rollups(contextData,v=>d3.mean(v,d=>d.aqi),d=>d.city)
+    .sort((a,b)=>d3.descending(a[1],b[1]));
+  const worst = cityAgg[0];
+  const cityCount = new Set(contextData.map(d=>d.city)).size;
+
+  d3.select("#kpiNational").text(formatAQI(natAvg));
+  d3.select("#kpiNationalNote").text(`${selectedYear} across all records`);
+  d3.select("#kpiCity").text(formatAQI(cityAvg));
+  d3.select("#kpiCityNote").text(selectedCity?`${selectedCity} in ${selectedYear}`:"No city selected");
+  d3.select("#kpiWorst").text(worst?formatAQI(worst[1]):"--");
+  d3.select("#kpiWorstNote").text(worst?worst[0]:"No data");
+  d3.select("#kpiCities").text(cityCount);
+  d3.select("#kpiCitiesNote").text(selectedState?`Filtered: ${selectedState}`:"All states");
+}
+
+/* -----------------------------------------------
+   ? FIX 3: City AQI Summary panel (replaces State panel)
+----------------------------------------------- */
+function renderCityAqiPanel(contextData){
+  const rows = getCityAggregates(contextData); // already sorted by avgAQI desc
+
+  cityAqiList.selectAll(".city-aqi-row")
+    .data(rows, d=>d.city)
+    .join(
+      enter=>{
+        const div=enter.append("div").attr("class","city-aqi-row");
+        div.append("div").attr("class","dot");
+        div.append("div").attr("class","city-aqi-main");
+        div.append("div").attr("class","city-aqi-value");
+        return div;
+      },
+      update=>update,
+      exit=>exit.remove()
+    )
+    .attr("class",d=>`city-aqi-row ${selectedCity===d.city?"active":""}`)
+    .on("click",(event,d)=>{
+      selectedCity=d.city; selectedDay=null;
+      searchInput.property("value",selectedCity);
+      focusOnCity(selectedCity); updateDashboard();
+    })
+    .each(function(d){
+      const row  = d3.select(this);
+      const color = d.mostRecentAQI!=null ? colorScale(d.mostRecentAQI) : "#d1d5db";
+      const recentLabel = d.mostRecentAQI!=null
+        ? `Latest: ${formatAQI(d.mostRecentAQI)} (${d3.timeFormat("%d %b")(d.mostRecentDate)})`
+        : "No recent data";
+
+      row.select(".dot").style("background", color);
+      row.select(".city-aqi-main").html(`
+        <strong>${d.city}</strong>
+        <div class="city-aqi-meta">${d.state} · ${d.days} days · ${recentLabel}</div>
+      `);
+      row.select(".city-aqi-value").html(`
+        <span title="Yearly average">${formatAQI(d.avgAQI)}</span>
+      `);
+    });
+}
+
+/* -----------------------------------------------
+   CITY RANKING (right bar)
+----------------------------------------------- */
+function renderCityRanking(contextData){
+  const rows = d3.rollups(contextData, v=>({
+    avgAQI: d3.mean(v,d=>d.aqi),
+    maxAQI: d3.max(v,d=>d.aqi),
+    state:  v[0].state,
+    days:   new Set(v.map(d=>+d3.timeDay.floor(d.date))).size
+  }), d=>d.city)
+  .sort((a,b)=>d3.descending(a[1].avgAQI,b[1].avgAQI))
+  .slice(0,15);
+
+  cityRankList.selectAll(".rank-row").data(rows,d=>d[0]).join(
+    enter=>{ const div=enter.append("div").attr("class","rank-row"); div.append("div").attr("class","rank-main"); div.append("div").attr("class","rank-value"); return div; },
+    update=>update, exit=>exit.remove()
+  )
+  .attr("class",d=>`rank-row ${selectedCity===d[0]?"active":""}`)
+  .on("click",(event,d)=>{
+    selectedCity=d[0]; selectedDay=null;
+    searchInput.property("value",selectedCity);
+    focusOnCity(selectedCity); updateDashboard();
+  })
+  .each(function(d,i){
+    d3.select(this).select(".rank-main").html(`
+      <div><strong>${i+1}. ${d[0]}</strong></div>
+      <div class="rank-meta">${d[1].state} · ${d[1].days} daily records</div>
+    `);
+    d3.select(this).select(".rank-value").html(`${formatAQI(d[1].avgAQI)}`);
+  });
+}
+
+/* -----------------------------------------------
+   ? FIX 1: Calendar — single month with prev/next
+----------------------------------------------- */
+function renderCalendar(yearData){
+  const calSvg = d3.select("#calendarSvg");
+  calSvg.selectAll("*").remove();
+
+  d3.select("#calendarTitle").text(
+    selectedCity
+      ? `${selectedCity} · Daily AQI heatmap for ${selectedYear}`
+      : "Select a city to inspect daily AQI"
+  );
+
+  updateMonthNavLabel();
+
+  if (!selectedCity){
+    calSvg.attr("viewBox","0 0 100 20");
+    calSvg.append("text").attr("x",50).attr("y",14)
+      .attr("text-anchor","middle").attr("font-size","11").attr("fill","#9ca3af")
+      .text("No city selected");
+    return;
+  }
+
+  /* build daily AQI map for selected city */
+  const cityYearData = yearData.filter(d=>d.city===selectedCity);
+  const dailyAQI = new Map(
+    d3.rollups(cityYearData, v=>d3.mean(v,d=>d.aqi),
+      d=>+d3.timeDay.floor(d.date))
+    .map(([k,v])=>[+k,v])
+  );
+
+  /* layout */
+  const containerW = calSvg.node().parentElement?.clientWidth || 360;
+  const PAD = 4;
+  const innerW = containerW - PAD*2;
+  const CELL = Math.max(28, Math.min(42, Math.floor(innerW / 7)));
+  const gridW = CELL * 7;
+  const offsetX = (innerW - gridW) / 2 + PAD;
+
+  const HEADER_H = 24;  // month title
+  const DOW_H    = 18;  // day-of-week labels
+  const NUM_ROWS = 6;   // max 6 week-rows
+  const totalH   = HEADER_H + DOW_H + NUM_ROWS * CELL + 10;
+
+  calSvg.attr("viewBox", `0 0 ${containerW} ${totalH}`);
+
+  const monthIndex = currentCalendarMonth;
+  const monthStart = new Date(selectedYear, monthIndex, 1);
+  const monthEnd   = new Date(selectedYear, monthIndex + 1, 1);
+  const firstDow   = monthStart.getDay();
+
+  const monthG = calSvg.append("g");
+
+  /* month title (inside SVG, minimal — the real label is the HTML nav label) */
+  monthG.append("text")
+    .attr("class","month-title")
+    .attr("x", containerW / 2)
+    .attr("y", 16)
+    .attr("text-anchor","middle")
+    .text(d3.timeFormat("%B %Y")(monthStart));
+
+  /* day-of-week labels */
+  ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].forEach((lbl,i)=>{
+    monthG.append("text")
+      .attr("class","dow-label")
+      .attr("x", offsetX + i*CELL + CELL/2)
+      .attr("y", HEADER_H + 12)
+      .attr("text-anchor","middle")
+      .text(lbl);
+  });
+
+  /* day cells */
+  const days = d3.timeDays(monthStart, monthEnd).map(date=>({
+    date, aqi: dailyAQI.get(+date)
+  }));
+
+  const cellG = monthG.selectAll(".day-cell-g")
+    .data(days).enter().append("g").attr("class","day-cell-g");
+
+  cellG.append("rect")
+    .attr("class",d=>`day-cell ${selectedDay&&(+selectedDay===+d.date)?"selected":""}`)
+    .attr("x",d=> offsetX + d.date.getDay()*CELL)
+    .attr("y",d=> HEADER_H + DOW_H + Math.floor((d.date.getDate()-1+firstDow)/7)*CELL)
+    .attr("width",  CELL - 2)
+    .attr("height", CELL - 2)
+    .attr("rx", 4).attr("ry", 4)
+    .attr("fill",d=> d.aqi==null?"#d1d5db":colorScale(d.aqi))
+    .on("mousemove touchmove",function(event,d){
+      const e=event.touches?event.touches[0]:event;
+      tooltip.style("opacity",1).html(`
+        <strong>${selectedCity}</strong><br>
+        ${fmtDate(d.date)}<br>
+        AQI: <strong>${d.aqi==null?"No data":formatAQI(d.aqi)}</strong>
+        ${d.aqi!=null?`· <strong>${getAQICategory(d.aqi)}</strong>`:""}
+      `)
+      .style("left",`${Math.min(window.innerWidth-290,(e.pageX||20)+12)}px`)
+      .style("top",`${Math.max(12,(e.pageY||20)-20)}px`);
+    })
+    .on("mouseout touchend",()=>tooltip.style("opacity",0))
+    .on("click",(event,d)=>{
+      selectedDay = d.date;
+      renderCalendar(yearData);
+      renderCityReport(yearData);
+    });
+
+  /* day numbers inside cells */
+  cellG.append("text")
+    .attr("class","day-num")
+    .attr("x",d=> offsetX + d.date.getDay()*CELL + 3)
+    .attr("y",d=> HEADER_H + DOW_H + Math.floor((d.date.getDate()-1+firstDow)/7)*CELL + 3)
+    .attr("pointer-events","none")
+    .text(d=>d.date.getDate());
+}
+
+/* -----------------------------------------------
+   CITY REPORT
+----------------------------------------------- */
+function renderCityReport(yearData){
+  const report = d3.select("#cityReport");
+  if(!selectedCity){
+    report.html(`<div class="report-title">City Report</div>
+      <div class="report-text">Select a city hexagon to generate the annual city AQI report.</div>`);
+    return;
+  }
+  const cityYearData = yearData.filter(d=>d.city===selectedCity);
+  if(!cityYearData.length){
+    report.html(`<div class="report-title">City Report</div>
+      <div class="report-text">No AQI data for the selected city and year.</div>`);
+    return;
+  }
+
+  const avg   = d3.mean(cityYearData,d=>d.aqi);
+  const min   = d3.min(cityYearData,d=>d.aqi);
+  const max   = d3.max(cityYearData,d=>d.aqi);
+  const state = cityYearData[0].state;
+  const days  = new Set(cityYearData.map(d=>+d3.timeDay.floor(d.date))).size;
+
+  const monthly = d3.rollups(cityYearData,v=>d3.mean(v,d=>d.aqi),d=>d.date.getMonth())
+    .sort((a,b)=>a[0]-b[0]);
+  const best  = monthly.slice().sort((a,b)=>d3.ascending(a[1],b[1]))[0];
+  const worst = monthly.slice().sort((a,b)=>d3.descending(a[1],b[1]))[0];
+
+  /* most recent AQI */
+  const sortedRecent = cityYearData.slice().sort((a,b)=>b.date-a.date);
+  const recentTs = +d3.timeDay.floor(sortedRecent[0].date);
+  const recentAQI = d3.mean(sortedRecent.filter(d=>+d3.timeDay.floor(d.date)===recentTs),d=>d.aqi);
+  const recentDateStr = d3.timeFormat("%d %b %Y")(new Date(recentTs));
+
+  let dayText="";
+  if(selectedDay){
+    const dayVal=d3.mean(cityYearData.filter(d=>+d3.timeDay.floor(d.date)===+selectedDay),d=>d.aqi);
+    dayText=`<div class="report-text" style="margin-top:8px;">
+      <strong>Selected day:</strong> ${fmtDate(selectedDay)} ·
+      AQI <strong>${dayVal==null?"No data":formatAQI(dayVal)}</strong>
+      ${dayVal!=null?`· <strong>${getAQICategory(dayVal)}</strong>`:""}
+    </div>`;
+  }
+
+  report.html(`
+    <div class="report-title">${selectedCity} AQI Report</div>
+    <div class="report-grid">
+      <div class="report-metric">
+        <div class="report-metric-label">Yearly average</div>
+        <div class="report-metric-value">${formatAQI(avg)}</div>
+      </div>
+      <div class="report-metric">
+        <div class="report-metric-label">AQI category</div>
+        <div class="report-metric-value" style="font-size:14px;">${getAQICategory(avg)}</div>
+      </div>
+      <div class="report-metric">
+        <div class="report-metric-label">Min / Max</div>
+        <div class="report-metric-value" style="font-size:14px;">${formatAQI(min)} / ${formatAQI(max)}</div>
+      </div>
+      <div class="report-metric">
+        <div class="report-metric-label">Days tracked</div>
+        <div class="report-metric-value">${days}</div>
+      </div>
+    </div>
+    <div class="report-metric" style="margin-bottom:10px;">
+      <div class="report-metric-label">Most recent reading</div>
+      <div class="report-metric-value" style="font-size:15px;color:${colorScale(recentAQI)};">
+        ${formatAQI(recentAQI)}
+        <span style="font-size:12px;color:#6b7280;font-weight:600;">
+          — ${getAQICategory(recentAQI)} · ${recentDateStr}
+        </span>
+      </div>
+    </div>
+    <div class="report-text">
+      <strong>State:</strong> ${state}<br>
+      <strong>Best month:</strong> ${best?formatMonth(new Date(selectedYear,best[0],1)):"--"} (${best?formatAQI(best[1]):"--"})<br>
+      <strong>Worst month:</strong> ${worst?formatMonth(new Date(selectedYear,worst[0],1)):"--"} (${worst?formatAQI(worst[1]):"--"})
+    </div>
+    ${dayText}
+  `);
+}
+
+/* -----------------------------------------------
+   SIZE LEGEND
+----------------------------------------------- */
+function renderSizeLegend(contextData){
+  const lgSvg = d3.select("#sizeLegend");
+  lgSvg.selectAll("*").remove();
+  const aggs = getCityAggregates(contextData);
+  const w = lgSvg.node().clientWidth||240, h=92;
+  lgSvg.attr("viewBox",[0,0,w,h]);
+  if(!aggs.length) return;
+  const maxAQI=d3.max(aggs,d=>d.avgAQI)||1;
+  const sizeScale=d3.scaleSqrt().domain([0,maxAQI]).range([8,22]);
+  const vals=[
+    d3.min(aggs,d=>d.avgAQI)||0,
+    d3.mean(aggs,d=>d.avgAQI)||0,
+    d3.max(aggs,d=>d.avgAQI)||0
+  ].map(v=>Math.round(v));
+  const xs=vals.map((d,i)=>vals.length===1?w/2:34+i*((w-68)/(vals.length-1)));
+  lgSvg.selectAll("path").data(vals).enter().append("path")
+    .attr("d",d=>d3.hexbin().hexagon(sizeScale(d)))
+    .attr("transform",(d,i)=>`translate(${xs[i]},34)`)
+    .attr("fill","#6b7280").attr("opacity",.78);
+  lgSvg.selectAll("text").data(vals).enter().append("text")
+    .attr("x",(d,i)=>xs[i]).attr("y",76).text(d=>d);
+}
+</script>
+</body>
+</html>
