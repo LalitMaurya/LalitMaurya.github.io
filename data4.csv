@@ -1,0 +1,44 @@
+city,state,latitude,longitude,aqi,date
+Mumbai,Maharashtra,19.07,72.87,20,2026-03-01
+Mumbai,Maharashtra,19.07,72.87,220,2026-03-02
+Mumbai,Maharashtra,19.07,72.87,320,2026-03-03
+Mumbai,Maharashtra,19.07,72.87,120,2026-03-04
+Mumbai,Maharashtra,19.07,72.87,24,2026-03-05
+Mumbai,Maharashtra,19.07,72.87,420,2026-03-06
+Mumbai,Maharashtra,19.07,72.87,120,2026-03-07
+Gurugram,Haryana,28.4595,77.0266,245,2026-03-07
+Faridabad,Haryana,28.4089,77.3178,238,2026-03-07 
+Noida,Uttar Pradesh,28.5355,77.3910,210,2026-03-07
+Ghaziabad,Uttar Pradesh,28.6692,77.4538,230,2026-03-07
+Lucknow,Uttar Pradesh,26.8467,80.9462,190,2026-03-07
+Kanpur,Uttar Pradesh,26.4499,80.3319,205,2026-03-07
+Varanasi,Uttar Pradesh,25.3176,82.9739,175,2026-03-07
+Jaipur,Rajasthan,26.9124,75.7873,198,2026-03-07
+Kota,Rajasthan,25.2138,75.8648,160,2026-03-07
+Mumbai,Maharashtra,19.0760,72.8777,120,2026-03-07
+Pune,Maharashtra,18.5204,73.8567,135,2026-03-07
+Nagpur,Maharashtra,21.1458,79.0882,150,2026-03-07
+Bhopal,Madhya Pradesh,23.2599,77.4126,65,2026-03-07
+Indore,Madhya Pradesh,22.7196,75.8577,70,2026-03-07
+Patna,Bihar,25.5941,85.1376,220,2026-03-07
+Kolkata,West Bengal,22.5726,88.3639,255,2026-03-07
+Chennai,Tamil Nadu,13.0827,80.2707,110,2026-03-07
+Bengaluru,Karnataka,12.9716,77.5946,198,2026-03-07
+Hyderabad,Telangana,17.3850,78.4867,330,2026-03-07
+Bhubaneswar,Odisha,20.2961,85.8245,140,2026-03-07
+Angul,Odisha,20.8444,85.1511,298,2026-03-07
+Raipur,Chhattisgarh,21.2514,81.6296,170,2026-03-07
+Chandigarh,Chandigarh,30.7333,76.7794,145,2026-03-07
+Amritsar,Punjab,31.6340,74.8723,155,2026-03-07
+Delhi,Delhi,28.61,77.20,245,2026-03-01
+Delhi,Delhi,28.61,77.20,230,2026-03-02
+Delhi,Delhi,28.61,77.20,245,2026-03-11
+Delhi,Delhi,28.61,77.20,330,2026-03-15
+Delhi,Delhi,28.61,77.20,145,2026-03-20
+Delhi,Delhi,28.61,77.20,203,2026-03-30
+Delhi,Delhi,28.61,77.20,145,2026-03-03
+Delhi,Delhi,28.61,77.20,30,2026-03-04
+Delhi,Delhi,28.61,77.20,345,2026-03-05
+Delhi,Delhi,28.61,77.20,130,2026-03-06
+Delhi,Delhi,28.61,77.20,25,2026-03-07
+Delhi,Delhi,28.61,77.20,123,2026-03-08
