@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Heat Tracker | Temperature Anomaly Monitor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            padding: 50px 40px;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .header-title {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            color: #000;
+        }
+
+        .header-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            color: #666;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 0 40px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Controls */
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .control-group label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+        }
+
+        .control-group input,
+        .control-group select {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 14px;
+            font-family: inherit;
+            background: #fff;
+            color: #000;
+        }
+
+        .control-group input:focus,
+        .control-group select:focus {
+            outline: none;
+            border-color: #d32f2f;
+            box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.1);
+        }
+
+        /* Metrics Grid */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .metric {
+            background: #f5f5f5;
+            padding: 24px;
+            border-radius: 3px;
+            border-left: 4px solid #d32f2f;
+        }
+
+        .metric-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #d32f2f;
+            margin-bottom: 6px;
+        }
+
+        .metric-unit {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Map Section - MORE PROMINENT */
+        .map-wrapper {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #000;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e5e5e5;
+        }
+
+        .map-container {
+            background: #f9f9f9;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            gap: 0;
+            min-height: 750px;
+        }
+
+        #india-map {
+            flex: 1;
+            display: block;
+            background: #fafafa;
+        }
+
+        .legend {
+            width: 220px;
+            padding: 24px 20px;
+            background: #fff;
+            border-left: 1px solid #e5e5e5;
+            overflow-y: auto;
+        }
+
+        .legend-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 16px;
+        }
+
+        .legend-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .legend-swatch {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .legend-item.extreme .legend-swatch { background: #d32f2f; box-shadow: 0 0 4px rgba(211, 47, 47, 0.4); }
+        .legend-item.high .legend-swatch { background: #f57c00; }
+        .legend-item.moderate .legend-swatch { background: #fbc02d; }
+        .legend-item.normal .legend-swatch { background: #388e3c; }
+        .legend-item.below .legend-swatch { background: #1976d2; }
+
+        /* Cities Grid */
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .city-card {
+            background: #f9f9f9;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+            border-left: 4px solid #e5e5e5;
+        }
+
+        .city-card:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left-color: #d32f2f;
+        }
+
+        .city-card.extreme { border-left-color: #d32f2f; }
+        .city-card.high { border-left-color: #f57c00; }
+        .city-card.moderate { border-left-color: #fbc02d; }
+        .city-card.normal { border-left-color: #388e3c; }
+        .city-card.below { border-left-color: #1976d2; }
+
+        .city-header {
+            padding: 16px;
+            border-bottom: 1px solid #e5e5e5;
+            background: #fff;
+        }
+
+        .city-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 4px;
+        }
+
+        .city-meta {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .city-chart {
+            height: 140px;
+            padding: 12px;
+            background: #fff;
+        }
+
+        .city-body {
+            padding: 16px;
+        }
+
+        .temp-metric {
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .temp-metric:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .temp-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #999;
+            margin-bottom: 4px;
+        }
+
+        .temp-display {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .temp-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .temp-normal {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .anomaly-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 2px;
+            margin-top: 4px;
+        }
+
+        .anomaly-badge.positive {
+            background: #ffebee;
+            color: #d32f2f;
+        }
+
+        .anomaly-badge.negative {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .anomaly-badge.neutral {
+            background: #f5f5f5;
+            color: #666;
+        }
+
+        /* Statistics Table */
+        .stats-wrapper {
+            margin-bottom: 40px;
+        }
+
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .stats-table thead {
+            background: #f5f5f5;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .stats-table th {
+            padding: 16px;
+            text-align: left;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #999;
+        }
+
+        .stats-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 13px;
+        }
+
+        .stats-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .stats-table tbody tr:hover {
+            background: #f9f9f9;
+        }
+
+        .city-col {
+            font-weight: 700;
+            color: #000;
+        }
+
+        .above {
+            color: #d32f2f;
+            font-weight: 700;
+        }
+
+        .below {
+            color: #1976d2;
+            font-weight: 700;
+        }
+
+        .bar-cell {
+            position: relative;
+            height: 28px;
+            background: #f5f5f5;
+            border-radius: 2px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .bar-segment {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .bar-segment.above {
+            background: linear-gradient(90deg, #f57c00 0%, #d32f2f 100%);
+        }
+
+        .bar-segment.normal {
+            background: #c8e6c9;
+        }
+
+        .bar-segment.below {
+            background: linear-gradient(90deg, #1976d2 0%, #0d47a1 100%);
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.95);
+            color: white;
+            padding: 12px 14px;
+            border-radius: 3px;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            border-left: 3px solid #d32f2f;
+            max-width: 220px;
+            line-height: 1.4;
+        }
+
+        .tooltip-title {
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+
+        .tooltip-row {
+            font-size: 11px;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .map-container {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .legend {
+                width: auto;
+                border-left: none;
+                border-top: 1px solid #e5e5e5;
+                padding: 20px;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .legend-items {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 10px;
+            }
+
+            #india-map {
+                min-height: 500px;
+            }
+
+            .header-title {
+                font-size: 36px;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .main-content {
+                padding: 0 20px 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 28px;
+            }
+
+            .cities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .controls {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .error {
+            background: #ffebee;
+            border: 1px solid #ef5350;
+            border-radius: 3px;
+            padding: 20px;
+            color: #c62828;
+            margin: 20px 0;
+        }
+
+        /* Chart container styling */
+        .chartjs-render-monitor {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="tooltip" class="tooltip"></div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <div class="header-eyebrow">Climate Monitor</div>
+            <h1 class="header-title">India Heat Tracker</h1>
+            <p class="header-subtitle">Real-time monitoring of temperature anomalies across Indian meteorological stations, tracking how local conditions compare to historical normals.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content container">
+        <!-- Controls -->
+        <div class="controls">
+            <div class="control-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate">
+            </div>
+            <div class="control-group">
+                <label for="endDate">End Date</label>
+                <input type="date" id="endDate">
+            </div>
+            <div class="control-group">
+                <label for="sortBy">Sort By</label>
+                <select id="sortBy">
+                    <option value="city">City (A-Z)</option>
+                    <option value="anomaly">Anomaly (High to Low)</option>
+                    <option value="temp">Temperature (High to Low)</option>
+                    <option value="days_above">Days Above Normal</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-label">Hottest Region</div>
+                <div class="metric-value" id="hottestCity">—</div>
+                <div class="metric-unit" id="hottestTemp">—</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Peak Anomaly</div>
+                <div class="metric-value" id="peakAnomaly">—</div>
+                <div class="metric-unit">Above normal</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Min Temp Anomaly</div>
+                <div class="metric-value" id="minTempAnomaly">—</div>
+                <div class="metric-unit">Average across cities</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Extreme Heat Days</div>
+                <div class="metric-value" id="extremeCount">—</div>
+                <div class="metric-unit">Anomaly > 5°C</div>
+            </div>
+        </div>
+
+        <!-- Map Section - ENLARGED -->
+        <div class="map-wrapper">
+            <h2 class="section-title">Temperature Distribution Map</h2>
+            <div class="map-container">
+                <svg id="india-map"></svg>
+                <div class="legend">
+                    <div class="legend-title">Temperature Anomaly</div>
+                    <div class="legend-items">
+                        <div class="legend-item extreme">
+                            <div class="legend-swatch"></div>
+                            <span>Extreme +5°C</span>
+                        </div>
+                        <div class="legend-item high">
+                            <div class="legend-swatch"></div>
+                            <span>High +3 to +5°C</span>
+                        </div>
+                        <div class="legend-item moderate">
+                            <div class="legend-swatch"></div>
+                            <span>Moderate +1 to +3°C</span>
+                        </div>
+                        <div class="legend-item normal">
+                            <div class="legend-swatch"></div>
+                            <span>Normal -1 to +1°C</span>
+                        </div>
+                        <div class="legend-item below">
+                            <div class="legend-swatch"></div>
+                            <span>Below < -1°C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cities Section -->
+        <div>
+            <h2 class="section-title">City Data</h2>
+            <div class="cities-grid" id="citiesContainer">
+                <div class="loading">Loading data...</div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-wrapper">
+            <h2 class="section-title">Period Statistics</h2>
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Days Above Normal</th>
+                        <th>Days Below Normal</th>
+                        <th>Distribution</th>
+                        <th>Avg Max Anomaly</th>
+                        <th>Avg Min Anomaly</th>
+                    </tr>
+                </thead>
+                <tbody id="statsBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let allData = [];
+        let cityMetadata = {};
+        let cityCharts = {};
+
+        const indiaBoundary = {
+            type: "Polygon",
+            coordinates: [[
+                [68.17595, 35.49399], [97.39511, 35.49399], [97.39511, 6.5559], [68.17595, 6.5559], [68.17595, 35.49399]
+            ]]
+        };
+
+        async function loadData() {
+            try {
+                // Load temperature data
+                const tempRes = await fetch('./temperature_data.csv');
+                if (!tempRes.ok) throw new Error('Temperature data not found');
+                const tempText = await tempRes.text();
+                
+                const lines = tempText.trim().split('\n');
+                const headers = lines[0].split(',').map(h => h.trim());
+                
+                for (let i = 1; i < lines.length; i++) {
+                    if (!lines[i].trim()) continue;
+                    const values = lines[i].split(',').map(v => v.trim());
+                    const record = {};
+                    headers.forEach((h, idx) => {
+                        record[h] = values[idx];
+                    });
+                    allData.push(record);
+                }
+
+                // Load city metadata
+                const metaRes = await fetch('./city_metadata.csv');
+                if (!metaRes.ok) throw new Error('City metadata not found');
+                const metaText = await metaRes.text();
+                
+                const metaLines = metaText.trim().split('\n');
+                const metaHeaders = metaLines[0].split(',').map(h => h.trim());
+                
+                for (let i = 1; i < metaLines.length; i++) {
+                    if (!metaLines[i].trim()) continue;
+                    const values = metaLines[i].split(',').map(v => v.trim());
+                    cityMetadata[values[0]] = {
+                        latitude: parseFloat(values[1]),
+                        longitude: parseFloat(values[2])
+                    };
+                }
+
+                // Initialize date inputs - DEFAULT TO LAST DAY
+                const dates = [...new Set(allData.map(d => d.date))].sort();
+                const lastDate = dates[dates.length - 1];
+
+                document.getElementById('startDate').min = dates[0];
+                document.getElementById('startDate').max = dates[dates.length - 1];
+                document.getElementById('startDate').value = lastDate;
+                
+                document.getElementById('endDate').min = dates[0];
+                document.getElementById('endDate').max = dates[dates.length - 1];
+                document.getElementById('endDate').value = lastDate;
+
+                // Initialize map
+                initMap();
+
+                // Event listeners
+                document.getElementById('startDate').addEventListener('change', updateDashboard);
+                document.getElementById('endDate').addEventListener('change', updateDashboard);
+                document.getElementById('sortBy').addEventListener('change', updateDashboard);
+
+                updateDashboard();
+
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('citiesContainer').innerHTML = `
+                    <div class="error">
+                        <strong>Error Loading Data</strong><br>
+                        ${error.message}<br><br>
+                        Please ensure temperature_data.csv and city_metadata.csv are in the same folder.
+                    </div>
+                `;
+            }
+        }
+
+        function initMap() {
+            const svg = d3.select('#india-map');
+            const container = document.querySelector('.map-container');
+            const width = container.clientWidth - 220;
+            const height = 750;
+
+            svg.attr('width', width).attr('height', height);
+
+            const projection = d3.geoMercator()
+                .center([82.5, 20.5])
+                .scale(900)
+                .translate([width / 2, height / 2]);
+
+            const path = d3.geoPath().projection(projection);
+
+            svg.append('path')
+                .datum(indiaBoundary)
+                .attr('d', path)
+                .attr('fill', 'none')
+                .attr('stroke', '#e5e5e5')
+                .attr('stroke-width', 1.5);
+
+            window.mapProjection = projection;
+            window.mapPath = path;
+            window.mapWidth = width;
+            window.mapHeight = height;
+        }
+
+        function updateDashboard() {
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const sortBy = document.getElementById('sortBy').value;
+
+            const periodData = allData.filter(d => d.date >= startDate && d.date <= endDate);
+
+            if (periodData.length === 0) {
+                document.getElementById('citiesContainer').innerHTML = '<div class="error">No data available for this period</div>';
+                return;
+            }
+
+            const citiesByName = {};
+            periodData.forEach(record => {
+                if (!citiesByName[record.city]) citiesByName[record.city] = [];
+                citiesByName[record.city].push(record);
+            });
+
+            let sortedCities = Object.keys(citiesByName).sort();
+            
+            if (sortBy === 'anomaly') {
+                sortedCities.sort((a, b) => {
+                    const avgA = citiesByName[a].reduce((s, d) => s + parseFloat(d.tmax_anomaly || 0), 0) / citiesByName[a].length;
+                    const avgB = citiesByName[b].reduce((s, d) => s + parseFloat(d.tmax_anomaly || 0), 0) / citiesByName[b].length;
+                    return avgB - avgA;
+                });
+            } else if (sortBy === 'temp') {
+                sortedCities.sort((a, b) => {
+                    const avgA = citiesByName[a].reduce((s, d) => s + parseFloat(d.tmax || 0), 0) / citiesByName[a].length;
+                    const avgB = citiesByName[b].reduce((s, d) => s + parseFloat(d.tmax || 0), 0) / citiesByName[b].length;
+                    return avgB - avgA;
+                });
+            } else if (sortBy === 'days_above') {
+                sortedCities.sort((a, b) => {
+                    const countA = citiesByName[a].filter(d => parseFloat(d.tmax) > parseFloat(d.tmax_normal)).length;
+                    const countB = citiesByName[b].filter(d => parseFloat(d.tmax) > parseFloat(d.tmax_normal)).length;
+                    return countB - countA;
+                });
+            }
+
+            updateMap(periodData);
+            renderCities(sortedCities, citiesByName);
+            updateMetrics(citiesByName);
+            updateStatsTable(sortedCities, citiesByName);
+        }
+
+        function updateMap(data) {
+            const svg = d3.select('#india-map');
+            svg.selectAll('.city-dot').remove();
+
+            function getColor(anomaly) {
+                const val = parseFloat(anomaly) || 0;
+                if (val >= 5) return '#d32f2f';
+                if (val >= 3) return '#f57c00';
+                if (val >= 1) return '#fbc02d';
+                if (val >= -1) return '#388e3c';
+                return '#1976d2';
+            }
+
+            const latestData = {};
+            data.forEach(record => {
+                if (!latestData[record.city]) latestData[record.city] = record;
+            });
+
+            svg.selectAll('.city-dot')
+                .data(Object.values(latestData))
+                .enter()
+                .append('circle')
+                .attr('class', 'city-dot')
+                .attr('cx', d => {
+                    const meta = cityMetadata[d.city];
+                    if (!meta) return 0;
+                    return window.mapProjection([meta.longitude, meta.latitude])[0];
+                })
+                .attr('cy', d => {
+                    const meta = cityMetadata[d.city];
+                    if (!meta) return 0;
+                    return window.mapProjection([meta.longitude, meta.latitude])[1];
+                })
+                .attr('r', d => {
+                    const anom = parseFloat(d.tmax_anomaly || 0);
+                    return Math.max(6, Math.min(12, 7 + anom * 0.4));
+                })
+                .attr('fill', d => getColor(d.tmax_anomaly))
+                .attr('opacity', 0.85)
+                .attr('stroke', '#fff')
+                .attr('stroke-width', 1.5)
+                .on('mouseover', (event, d) => {
+                    const tooltip = document.getElementById('tooltip');
+                    tooltip.innerHTML = `
+                        <div class="tooltip-title">${d.city}</div>
+                        <div class="tooltip-row"><span>Max:</span> <strong>${d.tmax}°C</strong></div>
+                        <div class="tooltip-row"><span>Min:</span> <strong>${d.tmin}°C</strong></div>
+                        <div class="tooltip-row"><span>Anomaly:</span> <strong>${d.tmax_anomaly}°C</strong></div>
+                    `;
+                    tooltip.style.display = 'block';
+                    tooltip.style.left = (event.pageX + 10) + 'px';
+                    tooltip.style.top = (event.pageY - 10) + 'px';
+                })
+                .on('mousemove', (event) => {
+                    document.getElementById('tooltip').style.left = (event.pageX + 10) + 'px';
+                    document.getElementById('tooltip').style.top = (event.pageY - 10) + 'px';
+                })
+                .on('mouseout', () => {
+                    document.getElementById('tooltip').style.display = 'none';
+                });
+        }
+
+        function renderCities(cities, citiesByName) {
+            const container = document.getElementById('citiesContainer');
+            container.innerHTML = '';
+
+            cities.forEach(cityName => {
+                const data = citiesByName[cityName];
+                const avgTmax = data.reduce((s, d) => s + parseFloat(d.tmax || 0), 0) / data.length;
+                const avgTmin = data.reduce((s, d) => s + parseFloat(d.tmin || 0), 0) / data.length;
+                const avgTmaxNorm = data.reduce((s, d) => s + parseFloat(d.tmax_normal || 0), 0) / data.length;
+                const avgTminNorm = data.reduce((s, d) => s + parseFloat(d.tmin_normal || 0), 0) / data.length;
+                const avgMaxAnom = data.reduce((s, d) => s + parseFloat(d.tmax_anomaly || 0), 0) / data.length;
+                const avgMinAnom = data.reduce((s, d) => s + parseFloat(d.tmin_anomaly || 0), 0) / data.length;
+                const daysAbove = data.filter(d => parseFloat(d.tmax) > parseFloat(d.tmax_normal)).length;
+                const daysBelow = data.filter(d => parseFloat(d.tmax) < parseFloat(d.tmax_normal)).length;
+
+                let category = 'normal';
+                if (avgMaxAnom >= 5) category = 'extreme';
+                else if (avgMaxAnom >= 3) category = 'high';
+                else if (avgMaxAnom >= 1) category = 'moderate';
+                else if (avgMaxAnom < -1) category = 'below';
+
+                const card = document.createElement('div');
+                card.className = `city-card ${category}`;
+                card.innerHTML = `
+                    <div class="city-header">
+                        <div class="city-name">${cityName}</div>
+                        <div class="city-meta">${data.length} days</div>
+                    </div>
+                    <div class="city-chart">
+                        <canvas id="chart-${cityName}"></canvas>
+                    </div>
+                    <div class="city-body">
+                        <div class="temp-metric">
+                            <div class="temp-label">Maximum Temperature</div>
+                            <div class="temp-display">
+                                <span class="temp-value">${avgTmax.toFixed(1)}°</span>
+                                <span class="temp-normal">Normal: ${avgTmaxNorm.toFixed(1)}°</span>
+                            </div>
+                            <span class="anomaly-badge ${avgMaxAnom > 0 ? 'positive' : 'negative'}">
+                                ${avgMaxAnom > 0 ? '+' : ''}${avgMaxAnom.toFixed(1)}°
+                            </span>
+                        </div>
+                        <div class="temp-metric">
+                            <div class="temp-label">Minimum Temperature</div>
+                            <div class="temp-display">
+                                <span class="temp-value">${avgTmin.toFixed(1)}°</span>
+                                <span class="temp-normal">Normal: ${avgTminNorm.toFixed(1)}°</span>
+                            </div>
+                            <span class="anomaly-badge ${avgMinAnom > 0 ? 'positive' : 'negative'}">
+                                ${avgMinAnom > 0 ? '+' : ''}${avgMinAnom.toFixed(1)}°
+                            </span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e5e5e5; font-size: 11px;">
+                            <div><strong>Above Normal</strong><br><span class="above">${daysAbove}</span> days</div>
+                            <div><strong>Below Normal</strong><br><span class="below">${daysBelow}</span> days</div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+
+                setTimeout(() => createChart(cityName, data), 50);
+            });
+        }
+
+        function createChart(cityName, data) {
+            const ctx = document.getElementById(`chart-${cityName}`);
+            if (!ctx) return;
+
+            if (cityCharts[cityName]) cityCharts[cityName].destroy();
+
+            const chartData = data.map(d => ({
+                date: d.date,
+                tmax: parseFloat(d.tmax),
+                tmax_normal: parseFloat(d.tmax_normal),
+                tmin: parseFloat(d.tmin),
+                tmin_normal: parseFloat(d.tmin_normal)
+            }));
+
+            cityCharts[cityName] = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: chartData.map((d, i) => i % Math.ceil(data.length / 4) === 0 ? new Date(d.date).toLocaleDateString('en-US', {month: 'short', day: 'numeric'}) : ''),
+                    datasets: [
+                        {
+                            label: 'Max Temp',
+                            data: chartData.map(d => d.tmax),
+                            borderColor: '#f57c00',
+                            backgroundColor: 'rgba(245, 124, 0, 0.08)',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            fill: true,
+                            pointRadius: 0,
+                            pointHoverRadius: 4,
+                            pointBackgroundColor: '#f57c00',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 1,
+                        },
+                        {
+                            label: 'Min Temp',
+                            data: chartData.map(d => d.tmin),
+                            borderColor: '#1976d2',
+                            backgroundColor: 'rgba(25, 118, 210, 0.08)',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            fill: true,
+                            pointRadius: 0,
+                            pointHoverRadius: 4,
+                            pointBackgroundColor: '#1976d2',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 1,
+                        },
+                        {
+                            label: 'Normal Max',
+                            data: chartData.map(d => d.tmax_normal),
+                            borderColor: '#f57c00',
+                            backgroundColor: 'transparent',
+                            borderWidth: 1,
+                            borderDash: [4, 4],
+                            fill: false,
+                            pointRadius: 0,
+                            tension: 0.3,
+                        },
+                        {
+                            label: 'Normal Min',
+                            data: chartData.map(d => d.tmin_normal),
+                            borderColor: '#1976d2',
+                            backgroundColor: 'transparent',
+                            borderWidth: 1,
+                            borderDash: [4, 4],
+                            fill: false,
+                            pointRadius: 0,
+                            tension: 0.3,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.95)',
+                            padding: 10,
+                            titleFont: { size: 11, weight: 'bold' },
+                            bodyFont: { size: 10 },
+                            borderColor: 'rgba(255, 255, 255, 0.2)',
+                            borderWidth: 1,
+                            displayColors: false,
+                            callbacks: {
+                                title: (items) => {
+                                    if (items.length > 0) {
+                                        const date = new Date(chartData[items[0].dataIndex].date);
+                                        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                                    }
+                                    return '';
+                                },
+                                label: (context) => {
+                                    const dataIndex = context.dataIndex;
+                                    const data = chartData[dataIndex];
+                                    
+                                    if (context.dataset.label === 'Max Temp') {
+                                        return `Max: ${data.tmax}°C (Normal: ${data.tmax_normal}°C)`;
+                                    } else if (context.dataset.label === 'Min Temp') {
+                                        return `Min: ${data.tmin}°C (Normal: ${data.tmin_normal}°C)`;
+                                    }
+                                    return null;
+                                },
+                                filter: (item) => {
+                                    return item.dataset.label === 'Max Temp' || item.dataset.label === 'Min Temp';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            grid: { display: false, drawBorder: false },
+                            ticks: { font: { size: 9 }, color: '#999', maxTicksLimit: 4 }
+                        },
+                        y: {
+                            display: true,
+                            grid: { color: '#f0f0f0', drawBorder: false },
+                            ticks: {
+                                font: { size: 9 },
+                                color: '#999',
+                                callback: function(value) { return value + '°'; }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateMetrics(citiesByName) {
+            const cities = Object.keys(citiesByName);
+            let hottestCity = '', hottestTemp = -Infinity, peakAnom = -Infinity;
+            let totalMinAnom = 0, extremeDays = 0;
+
+            cities.forEach(city => {
+                const data = citiesByName[city];
+                const avgT = data.reduce((s, d) => s + parseFloat(d.tmax || 0), 0) / data.length;
+                const avgAnom = data.reduce((s, d) => s + parseFloat(d.tmax_anomaly || 0), 0) / data.length;
+                const avgMinAnom = data.reduce((s, d) => s + parseFloat(d.tmin_anomaly || 0), 0) / data.length;
+
+                if (avgT > hottestTemp) { hottestTemp = avgT; hottestCity = city; }
+                if (avgAnom > peakAnom) peakAnom = avgAnom;
+                totalMinAnom += avgMinAnom;
+                extremeDays += data.filter(d => parseFloat(d.tmax_anomaly) > 5).length;
+            });
+
+            document.getElementById('hottestCity').textContent = hottestCity;
+            document.getElementById('hottestTemp').textContent = hottestTemp.toFixed(1) + '°C';
+            document.getElementById('peakAnomaly').textContent = peakAnom.toFixed(1) + '°';
+            document.getElementById('minTempAnomaly').textContent = (totalMinAnom / cities.length).toFixed(1) + '°';
+            document.getElementById('extremeCount').textContent = extremeDays;
+        }
+
+        function updateStatsTable(cities, citiesByName) {
+            const tbody = document.getElementById('statsBody');
+            tbody.innerHTML = '';
+
+            cities.forEach(city => {
+                const data = citiesByName[city];
+                const above = data.filter(d => parseFloat(d.tmax) > parseFloat(d.tmax_normal)).length;
+                const below = data.filter(d => parseFloat(d.tmax) < parseFloat(d.tmax_normal)).length;
+                const normal = data.length - above - below;
+                const avgMaxAnom = (data.reduce((s, d) => s + parseFloat(d.tmax_anomaly || 0), 0) / data.length).toFixed(1);
+                const avgMinAnom = (data.reduce((s, d) => s + parseFloat(d.tmin_anomaly || 0), 0) / data.length).toFixed(1);
+
+                const pctAbove = Math.round((above / data.length) * 100);
+                const pctNormal = Math.round((normal / data.length) * 100);
+                const pctBelow = 100 - pctAbove - pctNormal;
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="city-col">${city}</td>
+                    <td><span class="above">${above}</span></td>
+                    <td><span class="below">${below}</span></td>
+                    <td>
+                        <div class="bar-cell">
+                            ${pctAbove > 0 ? `<div class="bar-segment above" style="width: ${pctAbove}%">${pctAbove > 15 ? pctAbove + '%' : ''}</div>` : ''}
+                            ${pctNormal > 0 ? `<div class="bar-segment normal" style="width: ${pctNormal}%">${pctNormal > 15 ? pctNormal + '%' : ''}</div>` : ''}
+                            ${pctBelow > 0 ? `<div class="bar-segment below" style="width: ${pctBelow}%">${pctBelow > 15 ? pctBelow + '%' : ''}</div>` : ''}
+                        </div>
+                    </td>
+                    <td><span class="${avgMaxAnom > 0 ? 'above' : 'below'}">${avgMaxAnom > 0 ? '+' : ''}${avgMaxAnom}°</span></td>
+                    <td><span class="${avgMinAnom > 0 ? 'above' : 'below'}">${avgMinAnom > 0 ? '+' : ''}${avgMinAnom}°</span></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+</body>
+</html>
