@@ -85,16 +85,16 @@
     .control-group { margin-bottom:14px; position:relative; }
     .control-label { display:block; margin-bottom:7px; font-size:12px; font-weight:800; color:#374151; letter-spacing:.01em; }
 
-    input[type="text"], select {
-      width:100%; min-height:44px; appearance:none;
+    input[type="text"], input[type="date"], select {
+      width:100%; min-height:36px; appearance:none;
       border:1px solid var(--line-strong);
       background:#f9fafb; color:#111827;
-      border-radius:12px; padding:11px 12px;
-      font-size:14px; outline:none; transition:.18s ease;
+      border-radius:12px; padding:8px 12px;
+      font-size:13px; outline:none; transition:.18s ease;
       touch-action:manipulation;
     }
     input[type="text"]::placeholder { color:#9ca3af; }
-    input[type="text"]:focus, select:focus {
+    input[type="text"]:focus, input[type="date"]:focus, select:focus {
       background:#fff; border-color:#6b7280;
       box-shadow:0 0 0 3px rgba(107,114,128,.14);
     }
@@ -172,95 +172,127 @@
       box-shadow:0 8px 22px rgba(0,0,0,.24);
     }
 
-    /* Report Section */
-    #cityReport {
-      flex:1; overflow-y:auto;
-      -webkit-overflow-scrolling:touch;
+    /* Analysis Cards */
+    .analysis-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:14px; }
+    .analysis-card {
+      background:linear-gradient(135deg,#fff5e6,#ffe6cc);
+      border:1px solid #fbbf24;
+      border-radius:12px;
+      padding:12px;
+      text-align:center;
     }
+    .analysis-card.above { background:linear-gradient(135deg,#fee2e2,#fecaca); border-color:#dc2626; }
+    .analysis-card.below { background:linear-gradient(135deg,#dbeafe,#bfdbfe); border-color:#3b82f6; }
+    
+    .analysis-label { font-size:11px; font-weight:700; color:#6b7280; text-transform:uppercase; margin-bottom:4px; }
+    .analysis-value { font-size:20px; font-weight:800; color:#111827; }
+    .analysis-sub { font-size:10px; color:#6b7280; margin-top:2px; }
 
-    .report-title {
-      font-size:16px; font-weight:800; margin-bottom:12px; color:#111827;
-    }
-
-    .report-grid {
-      display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px;
-    }
-
-    .report-metric {
+    /* Dual Charts Container */
+    .dual-charts { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px; }
+    .chart-item {
       background:linear-gradient(180deg,#ffffff,#f8fafc);
-      border:1px solid #e5e7eb; border-radius:12px;
-      padding:12px 14px;
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      padding:10px;
+    }
+    .chart-item-title { font-size:11px; font-weight:700; color:#374151; margin-bottom:6px; text-transform:uppercase; }
+    .dual-chart { width:100%; height:140px; display:block; }
+
+    .chart-tooltip {
+      position:absolute; opacity:0; pointer-events:none; z-index:100;
+      background:rgba(17,24,39,.95); color:#fff;
+      font-size:11px; padding:6px 8px;
+      border-radius:6px; white-space:nowrap;
     }
 
-    .report-metric-label {
-      font-size:11px; font-weight:700; color:#6b7280;
-      text-transform:uppercase; letter-spacing:.05em; margin-bottom:6px;
+    /* Bottom Section */
+    .bottom-section {
+      border-top:1px solid #cbd5e1;
+      background:#ffffff;
+      margin-top:16px;
     }
 
-    .report-metric-value {
-      font-size:24px; font-weight:800; color:#111827; line-height:1.1;
+    .bottom-section-header {
+      padding:14px 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      border-bottom:1px solid #e5e7eb;
     }
 
-    .report-text {
-      font-size:13px; color:#374151; line-height:1.5;
-      background:#f9fafb; padding:12px 14px;
-      border-radius:12px; margin-bottom:12px;
+    .bottom-title { font-size:15px; font-weight:800; color:#111827; margin:0; }
+
+    .bottom-search { width:100%; max-width:280px; }
+    .bottom-search input {
+      width:100%;
+      min-height:36px;
+      padding:8px 12px;
+      font-size:13px;
+      border:1px solid #cbd5e1;
+      border-radius:8px;
+      background:#f9fafb;
+    }
+    .bottom-search input:focus {
+      background:#fff;
+      border-color:#6b7280;
+      outline:none;
     }
 
-    .chart-container {
+    .bottom-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+      gap:12px;
+      padding:14px 16px;
+    }
+
+    .detailed-card {
       background:linear-gradient(180deg,#ffffff,#f8fafc);
-      border:1px solid #e5e7eb; border-radius:12px;
-      padding:12px 14px; margin-bottom:12px;
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      padding:12px;
+      transition:.2s ease;
+    }
+    .detailed-card:hover {
+      border-color:#fbbf24;
+      box-shadow:0 4px 12px rgba(251,191,36,.12);
     }
 
-    .chart-title {
-      font-size:12px; font-weight:700; color:#374151;
-      margin-bottom:8px; text-transform:uppercase;
+    .card-date { font-size:10px; color:#6b7280; margin-bottom:6px; font-weight:600; }
+    .card-city { font-size:13px; font-weight:800; color:#111827; margin-bottom:8px; }
+    
+    .temps-row {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-bottom:8px;
     }
+    .temp-box {
+      background:#f3f4f6;
+      padding:6px 8px;
+      border-radius:8px;
+      font-size:10px;
+    }
+    .temp-label { color:#6b7280; font-weight:600; }
+    .temp-value { font-size:12px; font-weight:800; color:#111827; margin-top:2px; }
 
-    #tempChart {
-      width:100%; height:140px; display:block;
+    .anomaly-indicator {
+      display:flex;
+      gap:6px;
+      font-size:9px;
+      padding:6px 8px;
+      background:#f9fafb;
+      border-radius:8px;
     }
-
-    .bottom-cards {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:14px; padding:0 16px 16px;
+    .anomaly-badge {
+      padding:2px 6px;
+      border-radius:4px;
+      font-weight:600;
     }
-
-    .bottom-card {
-      background:linear-gradient(180deg,#ffffff,#f8fafc);
-      border:1px solid #e5e7eb; border-radius:12px;
-      padding:14px;
-    }
-
-    .card-city-name {
-      font-size:14px; font-weight:800; color:#111827; margin-bottom:8px;
-    }
-
-    .card-temps {
-      display:flex; gap:12px; margin-bottom:10px; font-size:12px;
-    }
-
-    .card-temps-item {
-      flex:1; background:#f3f4f6; padding:8px; border-radius:8px;
-    }
-
-    .card-temps-label {
-      font-weight:700; color:#6b7280; margin-bottom:2px;
-    }
-
-    .card-temps-value {
-      font-size:14px; font-weight:800; color:#111827;
-    }
-
-    #bottomChartsContainer {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:14px; padding:0 16px 16px;
-    }
-
-    .small-chart {
-      width:100%; height:100px; display:block;
-    }
+    .anomaly-badge.positive { background:#fee2e2; color:#dc2626; }
+    .anomaly-badge.negative { background:#dbeafe; color:#3b82f6; }
 
     .loading { text-align:center; padding:40px 20px; color:#6b7280; }
     .error { color:#dc2626; padding:20px; background:#fee2e2; border-radius:12px; }
@@ -286,7 +318,7 @@
 
   <header>
     <div class="header-title">🌡️ India City Heat Tracker</div>
-    <div class="header-sub">Monitor city-wise temperature records, anomalies, and heat patterns across India. Search for a city to view detailed temperature metrics and historical trends.</div>
+    <div class="header-sub">Monitor city-wise temperature records, anomalies, and heat patterns across India. Search for a city to view detailed analysis with date filters.</div>
   </header>
 
   <div class="dashboard">
@@ -295,14 +327,28 @@
     <div class="sidebar">
       <div class="panel">
         <div class="panel-header">
-          <p class="panel-title">Search City</p>
-          <p class="panel-sub">Find and select a city to view details</p>
+          <p class="panel-title">Search & Filter</p>
+          <p class="panel-sub">Find cities and set date range</p>
         </div>
         <div class="panel-body">
           <div class="control-group suggestions">
             <label class="control-label">City Name</label>
             <input type="text" id="citySearch" placeholder="Type city name..." />
             <div id="cityList"></div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Date Range</label>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <div>
+                <label class="control-label" style="font-size:10px; margin-bottom:4px;">From</label>
+                <input type="date" id="dateStart" />
+              </div>
+              <div>
+                <label class="control-label" style="font-size:10px; margin-bottom:4px;">To</label>
+                <input type="date" id="dateEnd" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -365,23 +411,29 @@
     <div class="rightbar">
       <div class="panel">
         <div class="panel-body" id="cityReport" style="min-height:280px;">
-          <div class="report-title">City Report</div>
-          <div class="report-text">Select a city from the map or list to view detailed temperature metrics, trends, and heat anomalies.</div>
+          <div style="font-size:14px; font-weight:800; color:#111827; margin-bottom:10px;">Analysis Report</div>
+          <div style="font-size:12px; color:#6b7280; line-height:1.6;">
+            Select a city from the map or list to view detailed temperature analysis, trends, and heat anomalies.
+          </div>
         </div>
       </div>
     </div>
 
   </div>
 
-  <!-- BOTTOM: Other Cities Cards -->
-  <div id="bottomContainer" style="display:none;">
-    <div style="padding:16px; border-top:1px solid #cbd5e1; background:#ffffff;">
-      <h3 style="margin:0 0 16px 0; font-size:16px; font-weight:800; color:#111827;">Other Major Cities</h3>
-      <div id="bottomChartsContainer"></div>
+  <!-- BOTTOM: All Cities Cards with Search -->
+  <div class="bottom-section" id="bottomContainer" style="display:none;">
+    <div class="bottom-section-header">
+      <h3 class="bottom-title">📊 Detailed Records by Date</h3>
+      <div class="bottom-search">
+        <input type="text" id="bottomSearch" placeholder="Search city name in records..." />
+      </div>
     </div>
+    <div id="bottomGridContainer"></div>
   </div>
 
   <div class="tooltip" id="tooltip"></div>
+  <div class="chart-tooltip" id="chartTooltip"></div>
 
   <script>
     // Global state
@@ -389,6 +441,8 @@
     let citiesMetadata = {};
     let selectedCity = null;
     let dataByCity = {};
+    let filteredData = [];
+    let dateRangeFilter = { start: null, end: null };
 
     // Temperature color scale
     function getTemperatureColor(temp) {
@@ -447,10 +501,19 @@
         });
 
         allData = tempData;
+        
+        // Set default date range (last 30 days)
+        setDefaultDateRange();
+        
+        // Initialize with New Delhi
+        selectedCity = 'New Delhi';
+        
         initUI();
         renderMap();
         populateTopCities();
+        renderCityReport();
         updateMapNote();
+        showBottomCards();
 
       } catch (error) {
         console.error('Error loading data:', error);
@@ -458,9 +521,46 @@
       }
     }
 
+    function setDefaultDateRange() {
+      // Set to last 30 days
+      const today = new Date();
+      const thirtyDaysAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+      
+      document.getElementById('dateEnd').value = formatDate(today);
+      document.getElementById('dateStart').value = formatDate(thirtyDaysAgo);
+      
+      dateRangeFilter.start = thirtyDaysAgo;
+      dateRangeFilter.end = today;
+    }
+
+    function formatDate(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+
+    function parseDate(dateStr) {
+      return new Date(dateStr + 'T00:00:00');
+    }
+
+    function filterDataByDateRange(cityData) {
+      if (!dateRangeFilter.start || !dateRangeFilter.end) {
+        return cityData;
+      }
+      
+      return cityData.filter(d => {
+        const dDate = parseDate(d.date);
+        return dDate >= dateRangeFilter.start && dDate <= dateRangeFilter.end;
+      });
+    }
+
     function initUI() {
       const searchInput = document.getElementById('citySearch');
       const cityList = document.getElementById('cityList');
+      const dateStartInput = document.getElementById('dateStart');
+      const dateEndInput = document.getElementById('dateEnd');
+      const bottomSearch = document.getElementById('bottomSearch');
 
       searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase();
@@ -479,9 +579,30 @@
         }
 
         cityList.innerHTML = filtered.map(c => 
-          `<div onclick="selectCity('${c}')">${c}</div>`
+          `<div onclick="selectCity('${c.replace(/'/g, "\\'")}')">${c}</div>`
         ).join('');
         cityList.style.display = 'block';
+      });
+
+      dateStartInput.addEventListener('change', () => {
+        const startStr = dateStartInput.value;
+        if (startStr) {
+          dateRangeFilter.start = parseDate(startStr);
+          applyFilters();
+        }
+      });
+
+      dateEndInput.addEventListener('change', () => {
+        const endStr = dateEndInput.value;
+        if (endStr) {
+          dateRangeFilter.end = parseDate(endStr);
+          applyFilters();
+        }
+      });
+
+      bottomSearch.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        showBottomCards(query);
       });
 
       document.addEventListener('click', (e) => {
@@ -489,6 +610,11 @@
           cityList.style.display = 'none';
         }
       });
+    }
+
+    function applyFilters() {
+      renderCityReport();
+      showBottomCards();
     }
 
     function selectCity(cityName) {
@@ -499,34 +625,38 @@
       renderCityReport();
       updateMapHighlight();
       populateTopCities();
-      updateBottomCards();
+      showBottomCards();
     }
 
     function renderMap() {
       const svg = d3.select('#map');
       const rect = svg.node().getBoundingClientRect();
-      const width = rect.width || 600;
-      const height = rect.height || 500;
+      let width = rect.width || 600;
+      let height = rect.height || 500;
 
-      svg.attr('viewBox', [0, 0, width, height]);
+      // Ensure minimum reasonable dimensions
+      if (width < 300) width = 600;
+      if (height < 300) height = 500;
 
-      // India map bounds (approximate)
+      svg.attr('viewBox', `0 0 ${width} ${height}`);
+
+      // India map bounds with better margins
       const indiaLat = [8, 35];
       const indiaLon = [68, 97];
 
       const xScale = d3.scaleLinear()
         .domain(indiaLon)
-        .range([20, width - 20]);
+        .range([40, width - 40]);
 
       const yScale = d3.scaleLinear()
         .domain(indiaLat)
-        .range([height - 20, 20]);
+        .range([height - 40, 40]);
 
       // Draw cities
       svg.selectAll('.city-circle').remove();
       
       Object.entries(citiesMetadata).forEach(([city, meta]) => {
-        if (meta.latitude === 0 || meta.longitude === 0) return; // Skip invalid coords
+        if (meta.latitude === 0 || meta.longitude === 0) return;
         
         const cityData = dataByCity[city] || [];
         const latestTemp = cityData.length > 0 ? cityData[cityData.length - 1].tmax : 25;
@@ -549,7 +679,7 @@
             tooltip.style('opacity', 1).html(`
               <strong>${city}</strong><br>
               ${meta.state}<br>
-              ${latest ? `Max: ${latest.tmax.toFixed(1)}°C | Min: ${latest.tmin.toFixed(1)}°C` : 'No recent data'}
+              ${latest ? `Max: ${latest.tmax.toFixed(1)}°C | Min: ${latest.tmin.toFixed(1)}°C` : 'No data'}
             `)
             .style('left', `${Math.min(window.innerWidth-290, (e.pageX||20)+12)}px`)
             .style('top', `${Math.max(12, (e.pageY||20)-20)}px`);
@@ -564,31 +694,21 @@
     }
 
     function updateMapHighlight() {
-      d3.selectAll('.city-circle')
-        .classed('is-selected', d => {
-          const cities = Object.keys(citiesMetadata);
-          let cityName = null;
-          cities.forEach(c => {
-            if (c === selectedCity) cityName = c;
-          });
-          return false;
-        });
-
+      d3.selectAll('.city-circle').classed('is-selected', false);
+      
       Object.entries(citiesMetadata).forEach(([city, meta]) => {
-        const circle = d3.selectAll('.city-circle').filter(function() {
-          const cx = +d3.select(this).attr('cx');
-          const cy = +d3.select(this).attr('cy');
-          const svg = d3.select('#map').node();
-          const rect = svg.getBoundingClientRect();
+        if (city === selectedCity) {
+          const rect = d3.select('#map').node().getBoundingClientRect();
           const width = rect.width || 600;
           const height = rect.height || 500;
-          const xScale = d3.scaleLinear().domain([68, 97]).range([20, width - 20]);
-          const yScale = d3.scaleLinear().domain([8, 35]).range([height - 20, 20]);
-          return Math.abs(cx - xScale(meta.longitude)) < 1 && Math.abs(cy - yScale(meta.latitude)) < 1;
-        });
-
-        if (city === selectedCity) {
-          circle.classed('is-selected', true);
+          const xScale = d3.scaleLinear().domain([68, 97]).range([40, width - 40]);
+          const yScale = d3.scaleLinear().domain([8, 35]).range([height - 40, 40]);
+          
+          d3.selectAll('.city-circle').filter(function() {
+            const cx = +d3.select(this).attr('cx');
+            const cy = +d3.select(this).attr('cy');
+            return Math.abs(cx - xScale(meta.longitude)) < 2 && Math.abs(cy - yScale(meta.latitude)) < 2;
+          }).classed('is-selected', true);
         }
       });
     }
@@ -597,85 +717,106 @@
       const report = d3.select('#cityReport');
       
       if (!selectedCity || !dataByCity[selectedCity]) {
-        report.html(`
-          <div class="report-title">City Report</div>
-          <div class="report-text">Select a city to view temperature metrics and historical trends.</div>
-        `);
+        report.html(`<div class="error">No data for selected city</div>`);
         return;
       }
 
-      const cityData = dataByCity[selectedCity].slice(); // Last 100 records
+      let cityData = dataByCity[selectedCity].slice();
+      cityData = filterDataByDateRange(cityData);
+      
       const meta = citiesMetadata[selectedCity];
       
       if (cityData.length === 0) {
-        report.html(`
-          <div class="report-title">City Report</div>
-          <div class="report-text">No data available for ${selectedCity}.</div>
-        `);
+        report.html(`<div class="error">No data in selected date range</div>`);
         return;
       }
 
       const latest = cityData[cityData.length - 1];
-      const avgTemp = d3.mean(cityData, d => d.tmax);
-      const maxTemp = d3.max(cityData, d => d.tmax);
-      const minTemp = d3.min(cityData, d => d.tmin);
-      const maxAnomaly = d3.max(cityData, d => d.tmax_anomaly || 0);
-      const avgAnomaly = d3.mean(cityData, d => d.tmax_anomaly || 0);
+      const avgTmax = d3.mean(cityData, d => d.tmax);
+      const maxTmax = d3.max(cityData, d => d.tmax);
+      const minTmin = d3.min(cityData, d => d.tmin);
+      
+      // Calculate analysis metrics
+      const daysObserved = cityData.length;
+      const daysAboveNormalTmax = cityData.filter(d => d.tmax_anomaly && d.tmax_anomaly > 0).length;
+      const daysAboveNormalTmin = cityData.filter(d => d.tmin_anomaly && d.tmin_anomaly > 0).length;
+      const avgAnomalyTmax = d3.mean(cityData, d => d.tmax_anomaly || 0);
+      const avgAnomalyTmin = d3.mean(cityData, d => d.tmin_anomaly || 0);
 
       report.html(`
-        <div id="reportContent" style="overflow-y:auto; max-height:600px;">
-          <div class="report-title">${selectedCity} Temperature Report</div>
-          
-          <div class="report-grid">
-            <div class="report-metric">
-              <div class="report-metric-label">Latest Max</div>
-              <div class="report-metric-value" style="color:${getTemperatureColor(latest.tmax)};">
+        <div id="reportContent" style="overflow-y:auto; max-height:800px;">
+          <div style="font-size:14px; font-weight:800; color:#111827; margin-bottom:12px;">
+            ${selectedCity} - ${meta.state}
+          </div>
+
+          <!-- Big Facts -->
+          <div class="analysis-grid">
+            <div class="analysis-card">
+              <div class="analysis-label">Days Observed</div>
+              <div class="analysis-value">${daysObserved}</div>
+              <div class="analysis-sub">in ${dateRangeFilter.start ? 'selected period' : 'all data'}</div>
+            </div>
+            <div class="analysis-card">
+              <div class="analysis-label">Current Max Temp</div>
+              <div class="analysis-value" style="color:${getTemperatureColor(latest.tmax)};">
                 ${latest.tmax.toFixed(1)}°C
               </div>
+              <div class="analysis-sub">Last recorded</div>
             </div>
-            <div class="report-metric">
-              <div class="report-metric-label">Latest Min</div>
-              <div class="report-metric-value">${latest.tmin.toFixed(1)}°C</div>
+            <div class="analysis-card above">
+              <div class="analysis-label">Days Above Normal (TMax)</div>
+              <div class="analysis-value">${daysAboveNormalTmax}/${daysObserved}</div>
+              <div class="analysis-sub">${((daysAboveNormalTmax/daysObserved)*100).toFixed(0)}% of period</div>
             </div>
-            <div class="report-metric">
-              <div class="report-metric-label">Average Max</div>
-              <div class="report-metric-value">${avgTemp.toFixed(1)}°C</div>
-            </div>
-            <div class="report-metric">
-              <div class="report-metric-label">Peak Recorded</div>
-              <div class="report-metric-value" style="color:${getTemperatureColor(maxTemp)};">
-                ${maxTemp.toFixed(1)}°C
-              </div>
+            <div class="analysis-card above">
+              <div class="analysis-label">Days Above Normal (TMin)</div>
+              <div class="analysis-value">${daysAboveNormalTmin}/${daysObserved}</div>
+              <div class="analysis-sub">${((daysAboveNormalTmin/daysObserved)*100).toFixed(0)}% of period</div>
             </div>
           </div>
 
-          <div class="report-text">
-            <strong>State:</strong> ${meta.state}<br>
-            <strong>Latest Date:</strong> ${latest.date}<br>
-            <strong>Records:</strong> ${meta.recordCount} observations<br>
-            <strong>Lowest Recorded:</strong> ${minTemp.toFixed(1)}°C<br>
-            <strong>Max Anomaly:</strong> +${maxAnomaly.toFixed(1)}°C above normal<br>
-            <strong>Avg Anomaly:</strong> +${avgAnomaly.toFixed(1)}°C above normal
+          <!-- Dual Charts -->
+          <div class="dual-charts">
+            <div class="chart-item">
+              <div class="chart-item-title">🔴 Max Temperature Trend</div>
+              <svg class="dual-chart" id="tmaxChart"></svg>
+            </div>
+            <div class="chart-item">
+              <div class="chart-item-title">🔵 Min Temperature Trend</div>
+              <svg class="dual-chart" id="tminChart"></svg>
+            </div>
           </div>
 
-          <div class="chart-container">
-            <div class="chart-title">Temperature Trend (Last 30 Days)</div>
-            <svg id="tempChart"></svg>
+          <!-- Details -->
+          <div style="background:#f9fafb; padding:12px; border-radius:12px; font-size:12px; color:#374151; line-height:1.6;">
+            <strong>📊 Statistics</strong><br>
+            Avg Max: ${avgTmax.toFixed(1)}°C | Peak: ${maxTmax.toFixed(1)}°C | Min: ${minTmin.toFixed(1)}°C<br>
+            Avg Anomaly (Max): ${avgAnomalyTmax > 0 ? '+' : ''}${avgAnomalyTmax.toFixed(1)}°C<br>
+            Avg Anomaly (Min): ${avgAnomalyTmin > 0 ? '+' : ''}${avgAnomalyTmin.toFixed(1)}°C
           </div>
         </div>
       `);
 
-      renderTemperatureChart(selectedCity);
+      setTimeout(() => {
+        renderDualCharts(selectedCity, cityData);
+      }, 100);
     }
 
-    function renderTemperatureChart(cityName) {
-      const cityData = dataByCity[cityName];
+    function renderDualCharts(cityName, cityData) {
       if (!cityData || cityData.length === 0) return;
 
-      // Get last 30 days of data
+      // Limit to last 30 data points for clarity
       const recentData = cityData.slice(-30);
+
+      // TMax Chart
+      renderTempChart('#tmaxChart', recentData, 'tmax', 'tmax_normal', 'tmax_anomaly', '#ef4444');
       
-      const svg = d3.select('#tempChart');
+      // TMin Chart
+      renderTempChart('#tminChart', recentData, 'tmin', 'tmin_normal', 'tmin_anomaly', '#60a5fa');
+    }
+
+    function renderTempChart(selector, data, tempKey, normalKey, anomalyKey, lineColor) {
+      const svg = d3.select(selector);
       const rect = svg.node().getBoundingClientRect();
       const width = rect.width || 300;
       const height = 140;
@@ -683,25 +824,25 @@
       svg.attr('viewBox', [0, 0, width, height])
         .selectAll('*').remove();
 
-      const margin = { top: 10, right: 20, bottom: 20, left: 40 };
+      const margin = { top: 10, right: 20, bottom: 20, left: 35 };
       const innerWidth = width - margin.left - margin.right;
       const innerHeight = height - margin.top - margin.bottom;
 
       const xScale = d3.scaleLinear()
-        .domain([0, recentData.length - 1])
+        .domain([0, data.length - 1])
         .range([0, innerWidth]);
 
       const yScale = d3.scaleLinear()
         .domain([
-          d3.min(recentData, d => d.tmin) - 2,
-          d3.max(recentData, d => d.tmax) + 2
+          d3.min(data, d => Math.min(d[tempKey], d[normalKey])) - 2,
+          d3.max(data, d => Math.max(d[tempKey], d[normalKey])) + 2
         ])
         .range([innerHeight, 0]);
 
       const g = svg.append('g')
         .attr('transform', `translate(${margin.left},${margin.top})`);
 
-      // Grid lines
+      // Background grid
       g.append('g')
         .attr('class', 'grid')
         .attr('opacity', 0.1)
@@ -710,38 +851,59 @@
           .tickFormat('')
         );
 
-      // Min temperature area
-      g.append('path')
-        .attr('d', d3.area()
-          .x((d, i) => xScale(i))
-          .y0(d => yScale(d.tmin))
-          .y1(innerHeight)
-          (recentData)
-        )
-        .attr('fill', '#60a5fa')
-        .attr('opacity', 0.15);
-
-      // Min line
+      // Normal line (dashed)
       g.append('path')
         .attr('d', d3.line()
           .x((d, i) => xScale(i))
-          .y(d => yScale(d.tmin))
-          (recentData)
+          .y(d => yScale(d[normalKey]))
+          (data)
         )
-        .attr('stroke', '#60a5fa')
-        .attr('stroke-width', 2)
+        .attr('stroke', '#cbd5e1')
+        .attr('stroke-width', 1.5)
+        .attr('stroke-dasharray', '4,2')
         .attr('fill', 'none');
 
-      // Max line
+      // Actual temperature line
       g.append('path')
         .attr('d', d3.line()
           .x((d, i) => xScale(i))
-          .y(d => yScale(d.tmax))
-          (recentData)
+          .y(d => yScale(d[tempKey]))
+          (data)
         )
-        .attr('stroke', '#ef4444')
-        .attr('stroke-width', 2)
+        .attr('stroke', lineColor)
+        .attr('stroke-width', 2.5)
         .attr('fill', 'none');
+
+      // Data points with hover
+      g.selectAll('circle')
+        .data(data)
+        .enter()
+        .append('circle')
+        .attr('cx', (d, i) => xScale(i))
+        .attr('cy', d => yScale(d[tempKey]))
+        .attr('r', 2.5)
+        .attr('fill', lineColor)
+        .attr('opacity', 0.7)
+        .on('mousemove', function(event, d) {
+          d3.select(this).attr('r', 4).attr('opacity', 1);
+          const tooltip = d3.select('#chartTooltip');
+          const e = event.touches ? event.touches[0] : event;
+          const anomaly = d[anomalyKey];
+          const anomalyStr = anomaly ? `Anomaly: ${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°C` : 'No data';
+          
+          tooltip.style('opacity', 1).html(`
+            <strong>${d.date}</strong><br>
+            Actual: ${d[tempKey].toFixed(1)}°C<br>
+            Normal: ${d[normalKey] ? d[normalKey].toFixed(1) : '--'}°C<br>
+            ${anomalyStr}
+          `)
+          .style('left', `${Math.min(window.innerWidth-200, (e.pageX||20)+12)}px`)
+          .style('top', `${Math.max(12, (e.pageY||20)-50)}px`);
+        })
+        .on('mouseout', function() {
+          d3.select(this).attr('r', 2.5).attr('opacity', 0.7);
+          d3.select('#chartTooltip').style('opacity', 0);
+        });
 
       // Axes
       g.append('g')
@@ -755,25 +917,30 @@
 
       // Legend
       const legend = svg.append('g')
-        .attr('transform', `translate(${margin.left + 10},${margin.top + 5})`);
+        .attr('transform', `translate(${margin.left + 5},${margin.top + 3})`);
 
-      legend.append('rect')
-        .attr('width', 6).attr('height', 6)
-        .attr('fill', '#ef4444');
+      legend.append('line')
+        .attr('x1', 0).attr('x2', 8)
+        .attr('y1', 0).attr('y2', 0)
+        .attr('stroke', lineColor)
+        .attr('stroke-width', 2);
       legend.append('text')
-        .attr('x', 12).attr('y', 5)
-        .attr('font-size', '10px')
+        .attr('x', 12).attr('y', 3)
+        .attr('font-size', '9px')
         .attr('fill', '#374151')
-        .text('Max Temp');
+        .text('Actual');
 
-      legend.append('rect')
-        .attr('x', 90).attr('width', 6).attr('height', 6)
-        .attr('fill', '#60a5fa');
+      legend.append('line')
+        .attr('x1', 60).attr('x2', 68)
+        .attr('y1', 0).attr('y2', 0)
+        .attr('stroke', '#cbd5e1')
+        .attr('stroke-width', 1.5)
+        .attr('stroke-dasharray', '3,2');
       legend.append('text')
-        .attr('x', 102).attr('y', 5)
-        .attr('font-size', '10px')
+        .attr('x', 72).attr('y', 3)
+        .attr('font-size', '9px')
         .attr('fill', '#374151')
-        .text('Min Temp');
+        .text('Normal');
     }
 
     function populateTopCities() {
@@ -812,124 +979,60 @@
       document.getElementById('updateDate').textContent = dateStr;
     }
 
-    function updateBottomCards() {
-      const container = d3.select('#bottomChartsContainer');
+    function showBottomCards(searchQuery = '') {
+      const container = d3.select('#bottomGridContainer');
+      document.getElementById('bottomContainer').style.display = selectedCity ? 'block' : 'none';
+
+      if (!selectedCity) return;
+
+      let cityData = dataByCity[selectedCity] || [];
+      cityData = filterDataByDateRange(cityData);
       
-      if (!selectedCity) {
-        document.getElementById('bottomContainer').style.display = 'none';
-        return;
+      // Filter by search query
+      if (searchQuery.toLowerCase().trim() !== '') {
+        cityData = cityData.filter(d => selectedCity.toLowerCase().includes(searchQuery.toLowerCase()));
       }
 
-      document.getElementById('bottomContainer').style.display = 'block';
+      // Sort by date descending (newest first)
+      cityData = cityData.slice().reverse();
 
-      // Get other major cities (sorted by temp, excluding selected)
-      const otherCities = Object.entries(citiesMetadata)
-        .filter(([city]) => city !== selectedCity)
-        .map(([city, meta]) => {
-          const cityData = dataByCity[city] || [];
-          const latest = cityData.length > 0 ? cityData[cityData.length - 1] : null;
-          return { city, meta, latest, data: cityData };
-        })
-        .sort((a, b) => (b.latest?.tmax || 0) - (a.latest?.tmax || 0))
-        .slice(0, 3);
-
-      container.selectAll('.bottom-card').remove();
+      container.selectAll('.detailed-card').remove();
       
-      const cardSelection = container.selectAll('.bottom-card')
-        .data(otherCities)
+      const cardSelection = container.selectAll('.detailed-card')
+        .data(cityData)
         .enter()
         .append('div')
-        .attr('class', 'bottom-card');
+        .attr('class', 'detailed-card');
 
       cardSelection.html(d => {
-        const temp = d.latest ? d.latest.tmax : 0;
-        const minTemp = d.latest ? d.latest.tmin : 0;
-        const anomaly = d.latest ? (d.latest.tmax_anomaly || 0) : 0;
+        const tmax = d.tmax || 0;
+        const tmin = d.tmin || 0;
+        const tmaxAnomaly = d.tmax_anomaly || 0;
+        const tminAnomaly = d.tmin_anomaly || 0;
+        
         return `
-          <div class="card-city-name">${d.city}</div>
-          <div class="card-temps">
-            <div class="card-temps-item">
-              <div class="card-temps-label">Max</div>
-              <div class="card-temps-value" style="color:${getTemperatureColor(temp)};">${temp.toFixed(1)}°</div>
+          <div class="card-date">📅 ${d.date}</div>
+          <div class="card-city">${selectedCity}</div>
+          <div class="temps-row">
+            <div class="temp-box">
+              <div class="temp-label">Max Temp</div>
+              <div class="temp-value" style="color:${getTemperatureColor(tmax)};">${tmax.toFixed(1)}°</div>
             </div>
-            <div class="card-temps-item">
-              <div class="card-temps-label">Min</div>
-              <div class="card-temps-value">${minTemp.toFixed(1)}°</div>
-            </div>
-            <div class="card-temps-item">
-              <div class="card-temps-label">Anomaly</div>
-              <div class="card-temps-value" style="color:${anomaly > 0 ? '#dc2626' : '#059669'};">
-                ${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°
-              </div>
+            <div class="temp-box">
+              <div class="temp-label">Min Temp</div>
+              <div class="temp-value">${tmin.toFixed(1)}°</div>
             </div>
           </div>
-          <svg class="small-chart" id="chart-${d.city}"></svg>
+          <div class="anomaly-indicator">
+            <span class="anomaly-badge ${tmaxAnomaly > 0 ? 'positive' : 'negative'}">
+              TMax: ${tmaxAnomaly > 0 ? '+' : ''}${tmaxAnomaly.toFixed(1)}°
+            </span>
+            <span class="anomaly-badge ${tminAnomaly > 0 ? 'positive' : 'negative'}">
+              TMin: ${tminAnomaly > 0 ? '+' : ''}${tminAnomaly.toFixed(1)}°
+            </span>
+          </div>
         `;
       });
-
-      // Render small charts for each city
-      otherCities.forEach(d => {
-        renderSmallChart(d.city, d.data);
-      });
-    }
-
-    function renderSmallChart(cityName, cityData) {
-      if (!cityData || cityData.length === 0) return;
-
-      const recentData = cityData.slice(-20);
-      
-      const svg = d3.select(`#chart-${cityName}`);
-      const rect = svg.node().getBoundingClientRect();
-      const width = rect.width || 260;
-      const height = 100;
-
-      svg.attr('viewBox', [0, 0, width, height])
-        .selectAll('*').remove();
-
-      const margin = { top: 5, right: 10, bottom: 5, left: 30 };
-      const innerWidth = width - margin.left - margin.right;
-      const innerHeight = height - margin.top - margin.bottom;
-
-      const xScale = d3.scaleLinear()
-        .domain([0, recentData.length - 1])
-        .range([0, innerWidth]);
-
-      const yScale = d3.scaleLinear()
-        .domain([
-          d3.min(recentData, d => d.tmin) - 1,
-          d3.max(recentData, d => d.tmax) + 1
-        ])
-        .range([innerHeight, 0]);
-
-      const g = svg.append('g')
-        .attr('transform', `translate(${margin.left},${margin.top})`);
-
-      // Max line
-      g.append('path')
-        .attr('d', d3.line()
-          .x((d, i) => xScale(i))
-          .y(d => yScale(d.tmax))
-          (recentData)
-        )
-        .attr('stroke', '#ef4444')
-        .attr('stroke-width', 1.5)
-        .attr('fill', 'none');
-
-      // Min line
-      g.append('path')
-        .attr('d', d3.line()
-          .x((d, i) => xScale(i))
-          .y(d => yScale(d.tmin))
-          (recentData)
-        )
-        .attr('stroke', '#60a5fa')
-        .attr('stroke-width', 1.5)
-        .attr('fill', 'none');
-
-      // Y axis
-      g.append('g')
-        .call(d3.axisLeft(yScale).ticks(2))
-        .style('font-size', '9px');
     }
 
     // Initialize
