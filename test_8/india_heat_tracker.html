@@ -311,8 +311,8 @@
               <input type="date" id="dateEnd" class="date-input" />
             </div>
           </div>
-          <button class="apply-button" onclick="applyDateFilter()">📅 Apply Filter</button>
-          <button class="reset-button" onclick="resetDateFilter()">↺ Show All</button>
+          <button class="apply-button" onClick="applyDateFilter()">📅 Apply Filter</button>
+          <button class="reset-button" onClick="resetDateFilter()">↺ Show All</button>
 
           <div class="search-box" style="margin-top: 16px;">
             <input type="text" id="citySearch" class="search-input" placeholder="Search city..." />
@@ -359,11 +359,11 @@
     <h2 class="records-title">📊 City Temperature Summary</h2>
     <p class="records-sub">Every card below reports the same set of facts as the highlighted city panel above.</p>
     <div class="sort-controls">
-      <button class="sort-btn active" data-sort="tmax" onclick="setSort('tmax', this)">Hottest Record</button>
-      <button class="sort-btn" data-sort="tminAsc" onclick="setSort('tminAsc', this)">Coldest Record</button>
-      <button class="sort-btn" data-sort="maxAnom" onclick="setSort('maxAnom', this)">Highest Max Anomaly</button>
-      <button class="sort-btn" data-sort="minAnom" onclick="setSort('minAnom', this)">Highest Min Anomaly</button>
-      <button class="sort-btn" data-sort="name" onclick="setSort('name', this)">A–Z</button>
+      <button class="sort-btn active" data-sort="tmax" onClick="setSort('tmax', this)">Hottest Record</button>
+      <button class="sort-btn" data-sort="tminAsc" onClick="setSort('tminAsc', this)">Coldest Record</button>
+      <button class="sort-btn" data-sort="maxAnom" onClick="setSort('maxAnom', this)">Highest Max Anomaly</button>
+      <button class="sort-btn" data-sort="minAnom" onClick="setSort('minAnom', this)">Highest Min Anomaly</button>
+      <button class="sort-btn" data-sort="name" onClick="setSort('name', this)">A–Z</button>
     </div>
     <div class="records-grid" id="recordsGrid"></div>
   </div>
@@ -484,7 +484,9 @@
 
         if (droppedRows > 0) {
           document.getElementById('qualityNote').textContent =
-            `Data quality note: ${droppedRows} record(s) were excluded from all stats and charts as implausible sensor/date errors (e.g. out-of-range temperatures or corrupted dates).`;
+            `Data quality note: ${droppedRows} record(s) were excluded from all stats and charts as implausible sensor/date errors (e.g. out-of-range temperatures or corrupted dates).<br><br> Data covers the capital and major cities of 28 states and 8 union territories. In states where capital city data is unavailable, data for one of the largest cities was used. In Haryana and Punjab, data is shown for Hisar and Ludhiana, respectively. For Jammu and Kashmir, data is shown for both capital cities: Jammu and Srinagar. Data for Chandigarh and Kohima was unavailable. Normal temperature data for Puducherry was unavailable. Maximum temperature data for Dehradun was unavailable for 27/07/26. <br>
+
+<b>Source:</b> India Meteorological Department (IMD)`;
         }
       } catch (error) {
         console.error('Error:', error);
