@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>भारत वायु गुणवत्ता सूचकांक डैशबोर्ड</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/d3-hexbin@0.2.2/build/d3-hexbin.min.js"></script>
+
+  <style>
+    :root{
+      --bg:#f0f0f0;
+      --panel:#ffffff;
+      --panel-soft:#f8fafc;
+      --line:#cbd5e1;
+      --line-strong:#94a3b8;
+      --text:#111827;
+      --muted:#6b7280;
+      --shadow:0 10px 22px rgba(15,23,42,.08);
+      --header-1:#374151;
+      --header-2:#111827;
+      --state-fill:#e5e7eb;
+      --state-fill-active:#d1d5db;
+      --state-stroke:#9ca3af;
+      --good:#00e400;
+      --sat:#9cff00;
+      --mod:#ffff00;
+      --poor:#ff7e00;
+      --vpoor:#ff0000;
+      --sev:#7e0023;
+      --missing:#d1d5db;
+      --accent:#4b5563;
+      --radius-lg:16px;
+      --radius-md:12px;
+      --radius-sm:10px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0; padding: 0; min-height: 100%;
+      font-family: 'Noto Sans Devanagari', system-ui, -apple-system, Segoe UI, sans-serif;
+      background: var(--bg); color: var(--text);
+      -webkit-text-size-adjust: 100%;
+    }
+    body { overflow-x: hidden; }
+
+    header {
+      background: linear-gradient(135deg, var(--header-1), var(--header-2));
+      color: #fff;
+      padding: 16px clamp(14px, 2.5vw, 24px);
+      box-shadow: 0 6px 18px rgba(0,0,0,.18);
+    }
+    .header-title { font-size: clamp(20px,3.2vw,26px); font-weight:800; letter-spacing:.2px; line-height:1.2; }
+    .header-sub { margin-top:6px; font-size:clamp(12px,2.1vw,13px); opacity:.9; line-height:1.45; max-width:860px; }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 300px minmax(0,1fr) 420px;
+      gap: 16px; padding: 16px;
+      min-height: calc(100vh - 84px);
+      align-items: start;
+    }
+
+    .sidebar, .rightbar { display:flex; flex-direction:column; gap:16px; min-width:0; min-height:0; }
+    .main { display:grid; grid-template-rows:auto 1fr; gap:16px; min-width:0; min-height:0; }
+
+    .panel, .card {
+      background: var(--panel);
+      border: 1px solid rgba(148,163,184,.45);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden; min-width: 0;
+    }
+
+    .panel-header {
+      padding: 16px;
+      border-bottom: 1.5px solid #f0f0f0;
+      background: linear-gradient(135deg,#ffffff 0%, #f8fafc 100%);
+    }
+    .panel-title { 
+      margin:0; font-size:16px; font-weight:800; 
+      color:#111827; text-align:center; line-height:1.3; letter-spacing:-.3px;
+    }
+    .panel-sub { 
+      margin-top:6px; font-size:12px; 
+      color:#6b7280; line-height:1.5; font-weight:500;
+    }
+    #calendarTitle { font-size:17px; font-weight:800; color:#111827; letter-spacing:.1px; }
+    #calendarTitle .cal-city { font-size:19px; font-weight:900; }
+    #calendarTitle .cal-rest { font-size:12px; font-weight:600; color:var(--muted); }
+    .panel-body { padding:16px; min-width:0; }
+    
+    /* Sidebar filter panel styling */
+    .sidebar .panel:first-child .panel-header {
+      background:linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    }
+    .sidebar .panel:first-child .panel-title {
+      color:#ffffff; font-size:18px;
+    }
+    .sidebar .panel:first-child .panel-sub {
+      color:rgba(255,255,255,.8);
+    }
+
+    .cards { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+    .card { padding:16px; background:linear-gradient(180deg,#ffffff,#f8fafc); }
+    .card-label { font-size:10px; font-weight:800; color:#9ca3af; margin-bottom:8px; text-transform:uppercase; letter-spacing:.08em; line-height:1.35; }
+    .card-value { font-size:clamp(20px,2.8vw,26px); font-weight:800; line-height:1.1; color:#111827; word-break:break-word; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .card-value.is-long { font-size:clamp(15px,2vw,19px); }
+    .card-value.is-verylong { font-size:clamp(13px,1.7vw,16px); }
+    .card-subvalue { font-size:12px; color:var(--text); margin-top:6px; line-height:1.4; font-weight:600; }
+    .card-note { margin-top:4px; font-size:11px; color:var(--muted); line-height:1.4; }
+
+    .control-group { margin-bottom:14px; position:relative; }
+    .control-label { 
+      display:block; margin-bottom:8px; font-size:13px; font-weight:800; 
+      color:#374151; letter-spacing:.02em; text-transform:uppercase;
+    }
+
+    input[type="text"], select, button {
+      width:100%; min-height:44px; appearance:none;
+      border:1.5px solid #e5e7eb;
+      background:#f9fafb; color:#111827;
+      border-radius:12px; padding:12px 14px;
+      font-size:14px; outline:none; transition:.2s ease;	
+      touch-action:manipulation; font-weight:500;
+    }
+    input[type="text"]::placeholder { color:#a1acbe; font-weight:400; }
+    input[type="text"]:focus, select:focus {
+      background:#fff; border-color:#3b82f6;
+      box-shadow:0 0 0 4px rgba(59,130,246,.1);
+    }
+    select:hover, input[type="text"]:hover {
+      border-color:#cbd5e1;
+    }
+    button { 
+      background:linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); 
+      color:#fff; font-weight:700; cursor:pointer; border:none;
+      box-shadow:0 4px 12px rgba(59,130,246,.25);
+    }
+    button:hover { 
+      background:linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      box-shadow:0 6px 16px rgba(59,130,246,.35);
+    }
+    button:disabled { 
+      background:#d1d5db; cursor:not-allowed; box-shadow:none; color:#9ca3af;
+    }
+
+    .help-note {
+      padding:12px 14px; border-radius:12px;
+      background:linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border:1px solid #bae6fd;
+      font-size:12px; color:#075985; line-height:1.6; font-weight:500;
+    }
+
+    .suggestions { z-index:30; }
+    #cityList {
+      position:absolute; top:calc(100% + 8px); left:0;
+      width:100%; max-height:280px; overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      background:#fff; border:1.5px solid #e5e7eb; border-radius:12px;
+      box-shadow:0 16px 32px rgba(15,23,42,.12); display:none; z-index:50;
+    }
+    #cityList div { 
+      padding:12px 14px; font-size:14px; cursor:pointer; 
+      border-bottom:1px solid #f1f5f9; transition:.12s ease; font-weight:500;
+    }
+    #cityList div:last-child { border-bottom:none; }
+    #cityList div:hover { 
+      background:linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      color:#0369a1; font-weight:600;
+    }
+
+    .legend-block { margin-bottom:16px; }
+    .legend-title { font-size:13px; font-weight:800; color:#111827; margin-bottom:10px; text-transform:uppercase; letter-spacing:.05em; }
+    .legend-item { 
+      display:flex; align-items:center; gap:10px; font-size:13px; 
+      margin-bottom:8px; color:#374151; line-height:1.5; font-weight:500;
+    }
+    .legend-swatch { 
+      width:18px; height:18px; border-radius:6px; 
+      border:1.5px solid rgba(0,0,0,.1); flex:0 0 auto; 
+      box-shadow:0 2px 4px rgba(0,0,0,.08);
+    }
+    #sizeLegend { width:100%; height:92px; display:block; }
+    .size-legend text { font-size:10px; fill:#475569; text-anchor:middle; font-weight:700; }
+
+    .city-aqi-list, .rank-list {
+      max-height:320px; overflow-y:auto;
+      -webkit-overflow-scrolling:touch; padding-right:4px;
+    }
+
+    .city-item, .rank-item {
+      display:flex; align-items:center; justify-content:space-between; padding:10px 0;
+      border-bottom:1px solid #f1f5f9; font-size:13px;
+    }
+    .city-item:last-child, .rank-item:last-child { border-bottom:none; }
+    .city-name, .rank-name { font-weight:600; color:#111827; flex:1; }
+    .city-aqi, .rank-value { font-weight:800; font-size:13px; min-width:50px; text-align:right; }
+    .city-cat { font-size:11px; color:#6b7280; margin-top:2px; font-weight:500; }
+
+    .report-container { height:100%; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+    .report-title { font-size:15px; font-weight:800; color:#111827; margin-bottom:12px; }
+    .report-text { font-size:13px; color:#374151; line-height:1.6; font-weight:500; }
+    .report-grid {
+      display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:12px 0;
+    }
+    .report-metric { 
+      background:#f8fafc; padding:12px; border-radius:10px;
+      border:1px solid #e5e7eb;
+    }
+    .report-metric-label { font-size:11px; font-weight:800; color:#6b7280; text-transform:uppercase; letter-spacing:.03em; }
+    .report-metric-value { font-size:22px; font-weight:900; margin-top:6px; }
+    .distribution-html { margin-top:14px; padding-top:14px; border-top:1.5px solid #e5e7eb; }
+    .distribution-row { display:flex; align-items:center; gap:8px; margin-bottom:10px; }
+    .dist-bar { height:8px; border-radius:4px; flex:1; }
+    .dist-label { font-size:11px; font-weight:600; color:#374151; min-width:80px; }
+    .dist-count { font-size:11px; font-weight:700; color:#6b7280; min-width:40px; text-align:right; }
+
+    #mapContainer { position:relative; width:100%; height:100%; }
+    #svgMap { position:absolute; width:100%; height:100%; cursor:grab; }
+    #svgMap:active { cursor:grabbing; }
+
+    .hexagon { cursor:pointer; transition:.1s; }
+    .hexagon:hover { opacity:.8; filter:brightness(1.15); }
+
+    #tooltip { position:absolute; padding:8px 12px; background:#f3f4f6; border:1.5px solid #d1d5db; border-radius:10px; font-size:13px; font-weight:600; color:#111827; pointer-events:none; opacity:0; transition:opacity .2s; max-width:200px; white-space:nowrap; z-index:40; box-shadow:0 4px 12px rgba(0,0,0,.12); }
+
+    /* Calendar styling */
+    #calendarContainer { overflow:auto; -webkit-overflow-scrolling:touch; }
+    .month-label { font-size:14px; font-weight:800; color:#111827; margin:20px 0 12px 0; letter-spacing:-.2px; }
+    .month-label:first-of-type { margin-top:0; }
+    .dow-label { font-size:11px; font-weight:800; color:#6b7280; text-transform:uppercase; letter-spacing:.04em; }
+    .day-cell { stroke:none; cursor:pointer; }
+    .day-cell:hover { filter:brightness(1.1); }
+    .day-cell.selected { stroke:#3b82f6; stroke-width:2; }
+    .day-num { font-size:10px; font-weight:700; fill:#374151; }
+    .day-aqi { font-size:11px; font-weight:800; }
+    .day-aqi.is-empty { fill:#d1d5db; }
+
+    @media(max-width:1024px){
+      .dashboard { grid-template-columns:1fr; }
+      .sidebar { position:absolute; top:84px; left:0; width:280px; max-height:calc(100vh-84px); background:white; border-right:1.5px solid #e5e7eb; z-index:100; box-shadow:4px 0 16px rgba(0,0,0,.12); }
+      .sidebar.hidden { display:none; }
+      .cards { grid-template-columns:repeat(2,1fr); }
+    }
+    @media(max-width:640px){
+      .dashboard { grid-template-columns:1fr; }
+      .sidebar { width:100%; max-height:none; position:relative; border-right:none; border-bottom:1.5px solid #e5e7eb; box-shadow:none; }
+      .cards { grid-template-columns:1fr; }
+      .rightbar { display:none; }
+    }
+
+    @media print { body { background:#fff; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-title">भारत वायु गुणवत्ता सूचकांक</div>
+    <div class="header-sub">रीयल-टाइम वायु प्रदूषण डेटा और विश्लेषण | प्रमुख शहरों में AQI स्तर निगरानी करें</div>
+  </header>
+
+  <div class="dashboard">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">फिल्टर</div>
+          <div class="panel-sub">डेटा को फ़िल्टर करें</div>
+        </div>
+        <div class="panel-body">
+          <div class="control-group">
+            <label class="control-label">वर्ष</label>
+            <select id="yearSelect"></select>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">शहर खोजें</label>
+            <input type="text" id="citySearch" placeholder="शहर का नाम टाइप करें..." />
+            <div id="cityList"></div>
+            <div class="help-note">शहर का नाम टाइप करके स्वतः-पूर्ण सुझाव देखें</div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">शहर का चयन करें</label>
+            <select id="citySelect">
+              <option value="">-- शहर चुनें --</option>
+            </select>
+          </div>
+
+          <button id="resetBtn">रीसेट करें</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">लेजेंड</div>
+        </div>
+        <div class="panel-body">
+          <div class="legend-block">
+            <div class="legend-title">AQI रेंज</div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#00e400;"></div>
+              <span>अच्छा (0-50)</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#9cff00;"></div>
+              <span>संतोषजनक (51-100)</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#ffff00;"></div>
+              <span>मध्यम (101-200)</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#ff7e00;"></div>
+              <span>खराब (201-300)</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#ff0000;"></div>
+              <span>बहुत खराब (301-400)</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#7e0023;"></div>
+              <span>गंभीर (401+)</span>
+            </div>
+          </div>
+
+          <div class="legend-block">
+            <div class="legend-title">हेक्सागन आकार</div>
+            <svg id="sizeLegend" class="size-legend"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN AREA -->
+    <div class="main">
+      <div class="cards">
+        <div class="card">
+          <div class="card-label">अच्छे शहर</div>
+          <div class="card-value" id="goodCities">--</div>
+          <div class="card-note">अच्छी वायु गुणवत्ता वाले शहर</div>
+        </div>
+        <div class="card">
+          <div class="card-label">मध्यम शहर</div>
+          <div class="card-value" id="moderateCities">--</div>
+          <div class="card-note">मध्यम प्रदूषण स्तर वाले</div>
+        </div>
+        <div class="card">
+          <div class="card-label">खराब शहर</div>
+          <div class="card-value" id="badCities">--</div>
+          <div class="card-note">खराब वायु गुणवत्ता वाले</div>
+        </div>
+        <div class="card">
+          <div class="card-label">औसत AQI</div>
+          <div class="card-value" id="avgAQI">--</div>
+          <div class="card-note">सभी शहरों का औसत</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div id="mapContainer">
+          <svg id="svgMap"></svg>
+          <div id="tooltip"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="rightbar">
+      <div class="panel">
+        <div class="panel-header">
+          <div id="calendarTitle">
+            <div class="cal-city">कैलेंडर</div>
+            <div class="cal-rest">शहर चुनें</div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div id="calendarContainer"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">शहर रिपोर्ट</div>
+        </div>
+        <div class="panel-body">
+          <div class="report-container" id="cityReport">
+            <div class="report-title">शहर रिपोर्ट</div>
+            <div class="report-text">विस्तृत वार्षिक रिपोर्ट के लिए मानचित्र से शहर चुनें।</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let csvCities = [], csvAQI = [];
+    let allData = [], filteredData = [];
+    let selectedCity = null, selectedDay = null;
+    let selectedYear = 2026;
+    let mapState = "IN", mapZoom = 1, mapX = 0, mapY = 0;
+    let geojsonData = null;
+
+    const colorScale = d3.scaleLinear()
+      .domain([0,50,100,200,300,400])
+      .range(['#00e400','#9cff00','#ffff00','#ff7e00','#ff0000','#7e0023'])
+      .clamp(true);
+
+    function getAQICategory(aqi){
+      if(aqi<=50) return 'अच्छा';
+      if(aqi<=100) return 'संतोषजनक';
+      if(aqi<=200) return 'मध्यम';
+      if(aqi<=300) return 'खराब';
+      if(aqi<=400) return 'बहुत खराब';
+      return 'गंभीर';
+    }
+
+    function formatAQI(val){ return Math.round(val); }
+    function fmtDate(d){ return d3.timeFormat("%d %b %Y")(d); }
+    function formatMonth(d){ return d3.timeFormat("%B")(d); }
+    function getAQITextColor(aqi){ return aqi==null || aqi>100 ? '#000' : '#fff'; }
+
+    function getDayCategoryCounts(data){
+      const cats = {अच्छा:0, संतोषजनक:0, मध्यम:0, खराब:0, 'बहुत खराब':0, गंभीर:0};
+      const unique = new Map();
+      data.forEach(d=>{
+        const k = +d3.timeDay.floor(d.date);
+        if(!unique.has(k)){ unique.set(k, d.aqi); }
+      });
+      unique.forEach(aqi=>{ cats[getAQICategory(aqi)]++; });
+      return { counts: cats, total: unique.size };
+    }
+
+    function renderDistributionHTML(counts, total){
+      const order = ['अच्छा', 'संतोषजनक', 'मध्यम', 'खराब', 'बहुत खराब', 'गंभीर'];
+      const colorMap = {अच्छा:'#00e400', संतोषजनक:'#9cff00', मध्यम:'#ffff00', खराब:'#ff7e00', 'बहुत खराब':'#ff0000', गंभीर:'#7e0023'};
+      if(!total) return '<div style="color:#9ca3af;font-size:12px;">कोई डेटा नहीं</div>';
+      return `<div class="distribution-html">
+        <div style="font-size:11px;font-weight:800;color:#6b7280;text-transform:uppercase;margin-bottom:10px;">AQI वितरण</div>
+        ${order.map(cat=>`<div class="distribution-row">
+          <div class="dist-label">${cat}</div>
+          <div class="dist-bar" style="background:${colorMap[cat]};opacity:.75;"></div>
+          <div class="dist-count">${counts[cat]||0}</div>
+        </div>`).join('')}
+      </div>`;
+    }
+
+    function getCityAggregates(data){
+      return d3.rollups(data, v=>({ avgAQI: d3.mean(v,d=>d.aqi), lat: v[0].latitude, lon: v[0].longitude, state: v[0].state }),
+        d=>d.city).map(([city,{avgAQI,lat,lon,state}])=>({city,avgAQI,lat,lon,state}));
+    }
+
+    async function loadData(){
+      try{
+        const [cRes, aRes, gRes] = await Promise.all([
+          fetch('city_reference.csv'),
+          fetch('aqi_records.csv'),
+          fetch('india.geojson')
+        ]);
+        
+        const [cText, aText, gJson] = await Promise.all([cRes.text(), aRes.text(), gRes.json()]);
+        geojsonData = gJson;
+
+        csvCities = d3.csvParse(cText);
+        csvAQI = d3.csvParse(aText, d=>({
+          city: d.city,
+          aqi: +d.aqi,
+          date: new Date(d.date)
+        }));
+
+        allData = csvAQI.map(a=>{
+          const city = csvCities.find(c=>c.city===a.city);
+          return city ? {...a, state: city.state, latitude: +city.latitude, longitude: +city.longitude} : null;
+        }).filter(Boolean);
+
+        updateUI();
+      }catch(err){ console.error('डेटा लोड करने में त्रुटि:', err); }
+    }
+
+    function updateUI(){
+      const years = [...new Set(allData.map(d=>d.date.getFullYear()))].sort((a,b)=>b-a);
+      d3.select('#yearSelect').selectAll('option').data(years).enter().append('option').attr('value',d=>d).text(d=>d);
+      
+      const cities = [...new Set(csvCities.map(d=>d.city))].sort();
+      d3.select('#citySelect').selectAll('option:not(:first-child)').remove();
+      d3.select('#citySelect').selectAll('option.city').data(cities).enter().append('option').attr('class','city').attr('value',d=>d).text(d=>d);
+      
+      d3.select('#citySearch').on('input', function(){
+        const v = this.value.toLowerCase();
+        const matches = cities.filter(c=>c.toLowerCase().includes(v)).slice(0,8);
+        d3.select('#cityList').selectAll('div').data(matches).join(enter=>enter.append('div'), update=>update, exit=>exit.remove())
+          .text(d=>d)
+          .on('click',(e,d)=>{ selectedCity=d; d3.select('#citySelect').property('value',d); d3.select('#cityList').style('display','none'); updateMap(); renderCalendar(getYearData()); renderCityReport(getYearData()); });
+        d3.select('#cityList').style('display', v && matches.length ? 'block' : 'none');
+      });
+
+      d3.select('#yearSelect').on('change', function(){ selectedYear=+this.value; updateMap(); renderCalendar(getYearData()); renderCityReport(getYearData()); });
+      d3.select('#citySelect').on('change', function(){ selectedCity=this.value||null; selectedDay=null; updateMap(); renderCalendar(getYearData()); renderCityReport(getYearData()); });
+      d3.select('#resetBtn').on('click', ()=>{ selectedCity=null; selectedDay=null; d3.select('#citySearch').property('value',''); d3.select('#citySelect').property('value',''); d3.select('#cityList').style('display','none'); updateMap(); renderCalendar(getYearData()); renderCityReport(getYearData()); });
+      
+      updateMap();
+      renderCalendar(getYearData());
+      renderCityReport(getYearData());
+    }
+
+    function getYearData(){ return allData.filter(d=>d.date.getFullYear()===selectedYear); }
+
+    function updateKPIs(){
+      const yr = getYearData();
+      if(!yr.length){ 
+        d3.select('#goodCities').text('--');
+        d3.select('#moderateCities').text('--');
+        d3.select('#badCities').text('--');
+        d3.select('#avgAQI').text('--');
+        return;
+      }
+      const aggs = getCityAggregates(yr);
+      const good = aggs.filter(d=>d.avgAQI<=100).length;
+      const mod = aggs.filter(d=>d.avgAQI>100 && d.avgAQI<=200).length;
+      const bad = aggs.filter(d=>d.avgAQI>200).length;
+      const avg = Math.round(d3.mean(aggs,d=>d.avgAQI));
+      d3.select('#goodCities').text(good);
+      d3.select('#moderateCities').text(mod);
+      d3.select('#badCities').text(bad);
+      d3.select('#avgAQI').text(avg);
+    }
+
+    function updateMap(){
+      updateKPIs();
+      renderSizeLegend(getYearData());
+      const svg = d3.select('#svgMap');
+      const w = svg.node().clientWidth || 800, h = svg.node().clientHeight || 500;
+      svg.attr('viewBox',[0,0,w,h]);
+      
+      const yr = getYearData();
+      if(!yr.length || !geojsonData){ svg.selectAll('*').remove(); return; }
+      
+      svg.selectAll('*').remove();
+      
+      const projection = d3.geoMercator().fitSize([w,h], geojsonData);
+      const pathGen = d3.geoPath(projection);
+      const g = svg.append('g').attr('class','map-group');
+      
+      g.selectAll('path.state')
+        .data(geojsonData.features)
+        .enter().append('path')
+        .attr('class','state')
+        .attr('d',pathGen)
+        .attr('fill','#e5e7eb')
+        .attr('stroke','#9ca3af')
+        .attr('stroke-width',1)
+        .style('cursor','pointer')
+        .on('click',(e,d)=>{ mapState=d.properties.STATE_ID; updateMap(); });
+      
+      const aggs = getCityAggregates(yr);
+      const sizeScale = d3.scaleSqrt().domain([0, d3.max(aggs,d=>d.avgAQI)||100]).range([6,18]);
+      
+      const tooltip = d3.select('#tooltip');
+      
+      g.selectAll('path.hexagon')
+        .data(aggs)
+        .enter().append('path')
+        .attr('class','hexagon')
+        .attr('d',d=>d3.hexbin().hexagon(6)())
+        .attr('transform',d=>{
+          const [x,y] = projection([d.lon, d.lat]);
+          return `translate(${x},${y})`;
+        })
+        .attr('fill',d=>colorScale(d.avgAQI))
+        .attr('opacity',.85)
+        .on('click',(e,d)=>{ selectedCity=d.city; d3.select('#citySelect').property('value',d.city); selectedDay=null; updateMap(); renderCalendar(yr); renderCityReport(yr); })
+        .on('mouseenter',(e,d)=>{ 
+          tooltip.style('opacity',1)
+            .html(`<strong>${d.city}</strong><br>${d.state}<br>AQI: ${formatAQI(d.avgAQI)}<br>${getAQICategory(d.avgAQI)}<br>${fmtDate(new Date())}`)
+            .style('left',(e.pageX+12)+'px')
+            .style('top',(e.pageY-60)+'px');
+        })
+        .on('mousemove',(e,d)=>{ tooltip.style('left',(e.pageX+12)+'px').style('top',(e.pageY-60)+'px'); })
+        .on('mouseleave',()=>{ tooltip.style('opacity',0); });
+    }
+
+    function renderCalendar(yr){
+      const container = d3.select('#calendarContainer');
+      
+      if(selectedCity){
+        d3.select('#calendarTitle .cal-city').text(selectedCity);
+        d3.select('#calendarTitle .cal-rest').text(csvCities.find(c=>c.city===selectedCity)?.state || '');
+      }else{
+        d3.select('#calendarTitle .cal-city').text('कैलेंडर');
+        d3.select('#calendarTitle .cal-rest').text('शहर चुनें');
+        container.html('<div style="color:#9ca3af;padding:20px;text-align:center;font-size:13px;">शहर चुनने के लिए हेक्सागन पर क्लिक करें</div>');
+        return;
+      }
+
+      const cityData = yr.filter(d=>d.city===selectedCity);
+      if(!cityData.length){ container.html('<div style="color:#9ca3af;padding:20px;">इस शहर के लिए कोई डेटा नहीं</div>'); return; }
+
+      const tooltip = d3.select('#tooltip');
+      const monthsData = d3.rollups(cityData, v=>v, d=>d.date.getMonth()).sort((a,b)=>a[0]-b[0]);
+      
+      container.selectAll('*').remove();
+      const monthLabels = ['जनवरी','फरवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितंबर','अक्टूबर','नवंबर','दिसंबर'];
+
+      monthsData.forEach(([month, days])=>{
+        const d1 = new Date(selectedYear, month, 1);
+        const calData = [];
+        for(let i=1; i<=31; i++){
+          const d = new Date(selectedYear, month, i);
+          if(d.getMonth()!==month) break;
+          const v = cityData.find(x=>+d3.timeDay.floor(x.date)===+d3.timeDay.floor(d));
+          calData.push({ date:d, aqi: v?.aqi });
+        }
+
+        const monthG = container.append('div').style('margin-bottom','16px');
+        monthG.append('div').attr('class','month-label').text(`${monthLabels[month]} ${selectedYear}`);
+        
+        const calSvg = monthG.append('svg').attr('viewBox','0 0 240 120').style('width','100%').style('height','auto').style('display','block');
+        const CELL = 32, HEADER_H = 0, META_H = 0, DOW_H = 20;
+        const offsetX = 8;
+
+        ['रवि','सोम','मंगल','बुध','गुरु','शुक्र','शनि'].forEach((lbl,i)=>{
+          calSvg.append('text').attr('class','dow-label').attr('x',offsetX+i*CELL+CELL/2).attr('y',HEADER_H+META_H+12).attr('text-anchor','middle').text(lbl);
+        });
+
+        const cellTop = HEADER_H+META_H+DOW_H;
+        const cellG = calSvg.selectAll('.day-cell-g').data(calData).enter().append('g').attr('class','day-cell-g');
+
+        cellG.append('rect')
+          .attr('class',d=>{ const isSelected = selectedDay && (+d3.timeDay.floor(selectedDay)===+d.date); return `day-cell ${isSelected?'selected':''}`; })
+          .attr('x',d=>offsetX+d.date.getDay()*CELL)
+          .attr('y',d=>cellTop+Math.floor((d.date.getDate()-1+d1.getDay())/7)*CELL)
+          .attr('width',CELL-4).attr('height',CELL-4).attr('rx',10).attr('ry',10)
+          .attr('fill',d=>d.aqi==null?'#e5e7eb':colorScale(d.aqi))
+          .on('mousemove touchmove',function(e,d){
+            const evt = e.touches?e.touches[0]:e;
+            tooltip.style('opacity',1).html(`<strong>${selectedCity}</strong><br>${fmtDate(d.date)}<br>AQI: <strong>${d.aqi==null?'कोई डेटा नहीं':formatAQI(d.aqi)}</strong>${d.aqi!=null?` • <strong>${getAQICategory(d.aqi)}</strong>`:''}`)
+              .style('left',Math.min(window.innerWidth-290,(evt.pageX||20)+12)+'px')
+              .style('top',Math.max(12,(evt.pageY||20)-20)+'px');
+          })
+          .on('mouseout touchend',()=>tooltip.style('opacity',0))
+          .on('click',(e,d)=>{ selectedDay=d3.timeDay.floor(d.date); renderCalendar(yr); renderCityReport(yr); });
+
+        cellG.append('text').attr('class','day-num')
+          .attr('x',d=>offsetX+d.date.getDay()*CELL+7)
+          .attr('y',d=>cellTop+Math.floor((d.date.getDate()-1+d1.getDay())/7)*CELL+6)
+          .text(d=>d.date.getDate());
+
+        cellG.append('text')
+          .attr('class',d=>d.aqi==null?'day-aqi is-empty':'day-aqi')
+          .attr('x',d=>offsetX+d.date.getDay()*CELL+(CELL-4)/2)
+          .attr('y',d=>cellTop+Math.floor((d.date.getDate()-1+d1.getDay())/7)*CELL+(CELL-4)/2+6)
+          .attr('text-anchor','middle')
+          .attr('fill',d=>getAQITextColor(d.aqi))
+          .text(d=>d.aqi==null?'–':formatAQI(d.aqi));
+      });
+    }
+
+    function renderCityReport(yr){
+      const report = d3.select('#cityReport');
+      if(!selectedCity){
+        report.html(`<div class="report-title">शहर रिपोर्ट</div><div class="report-text">विस्तृत वार्षिक रिपोर्ट के लिए हेक्सागन पर क्लिक करें।</div>`);
+        return;
+      }
+
+      const cityYearData = yr.filter(d=>d.city===selectedCity);
+      if(!cityYearData.length){
+        report.html(`<div class="report-title">शहर रिपोर्ट</div><div class="report-text">चयनित शहर और वर्ष के लिए कोई AQI डेटा नहीं।</div>`);
+        return;
+      }
+
+      const avg = d3.mean(cityYearData,d=>d.aqi);
+      const min = d3.min(cityYearData,d=>d.aqi);
+      const max = d3.max(cityYearData,d=>d.aqi);
+      const state = cityYearData[0].state;
+      const days = new Set(cityYearData.map(d=>+d3.timeDay.floor(d.date))).size;
+
+      const monthly = d3.rollups(cityYearData,v=>d3.mean(v,d=>d.aqi),d=>d.date.getMonth()).sort((a,b)=>a[0]-b[0]);
+      const best = monthly.slice().sort((a,b)=>d3.ascending(a[1],b[1]))[0];
+      const worst = monthly.slice().sort((a,b)=>d3.descending(a[1],b[1]))[0];
+
+      const maxAQI = d3.max(cityYearData,d=>d.aqi);
+      const maxData = cityYearData.find(d=>d.aqi===maxAQI);
+      const maxDateStr = d3.timeFormat("%d %b %Y")(maxData.date);
+
+      const minAQI = d3.min(cityYearData,d=>d.aqi);
+      const minData = cityYearData.find(d=>d.aqi===minAQI);
+      const minDateStr = d3.timeFormat("%d %b %Y")(minData.date);
+
+      const sortedRecent = cityYearData.slice().sort((a,b)=>b.date-a.date);
+      const recentTs = +d3.timeDay.floor(sortedRecent[0].date);
+      const recentAQI = d3.mean(sortedRecent.filter(d=>+d3.timeDay.floor(d.date)===recentTs),d=>d.aqi);
+      const recentDateStr = d3.timeFormat("%d %b %Y")(new Date(recentTs));
+
+      const {counts:distCounts,total:distTotal} = getDayCategoryCounts(cityYearData);
+      const distributionHTML = renderDistributionHTML(distCounts,distTotal);
+
+      let dayText = '';
+      if(selectedDay){
+        const dayVal = d3.mean(cityYearData.filter(d=>+d3.timeDay.floor(d.date)===+selectedDay),d=>d.aqi);
+        dayText = `<div class="report-text" style="margin-top:8px;"><strong>चयनित दिन:</strong> ${fmtDate(selectedDay)} • AQI <strong>${dayVal==null?'कोई डेटा नहीं':formatAQI(dayVal)}</strong>${dayVal!=null?` • <strong>${getAQICategory(dayVal)}</strong>`:''}</div>`;
+      }
+
+      const monthLabels = ['जनवरी','फरवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितंबर','अक्टूबर','नवंबर','दिसंबर'];
+      const bestMonth = best ? monthLabels[best[0]] : '--';
+      const worstMonth = worst ? monthLabels[worst[0]] : '--';
+
+      report.html(`
+        <div style="background:linear-gradient(135deg,#374151 0%,#1f2937 100%);color:white;padding:16px;margin:-16px -16px 12px -16px;border-radius:14px 14px 0 0;">
+          <div style="font-size:28px;font-weight:900;margin:0;letter-spacing:-0.5px;">${selectedCity}</div>
+          <div style="font-size:13px;opacity:0.85;margin-top:4px;font-weight:600;">${state}</div>
+        </div>
+        <div class="report-grid">
+          <div class="report-metric">
+            <div class="report-metric-label">सबसे प्रदूषित दिन</div>
+            <div class="report-metric-value" style="color:${colorScale(maxAQI)};">${formatAQI(maxAQI)}</div>
+            <div class="report-metric-label" style="margin-top:6px;color:#6b7280;font-size:11px;">${getAQICategory(maxAQI)} - ${maxDateStr}</div>
+          </div>
+          <div class="report-metric">
+            <div class="report-metric-label">सबसे स्वच्छ दिन</div>
+            <div class="report-metric-value" style="color:${colorScale(minAQI)};">${formatAQI(minAQI)}</div>
+            <div class="report-metric-label" style="margin-top:6px;color:#6b7280;font-size:11px;">${getAQICategory(minAQI)} - ${minDateStr}</div>
+          </div>
+          <div class="report-metric">
+            <div class="report-metric-label">वार्षिक औसत AQI</div>
+            <div class="report-metric-value">${formatAQI(avg)}</div>
+            <div class="report-metric-label" style="margin-top:6px;color:#6b7280;font-size:11px;">${getAQICategory(avg)}</div>
+          </div>
+          <div class="report-metric">
+            <div class="report-metric-label">ट्रैक किए गए दिन</div>
+            <div class="report-metric-value">${days}</div>
+            <div class="report-metric-label" style="margin-top:6px;color:#6b7280;font-size:11px;">उपलब्ध रिकॉर्ड</div>
+          </div>
+        </div>
+        ${distributionHTML}
+        <div class="report-text" style="margin-top:12px;">
+          <strong>सबसे हाल की रीडिंग:</strong> ${formatAQI(recentAQI)} (${getAQICategory(recentAQI)}) ${recentDateStr} को<br>
+          <strong>रेंज:</strong> ${formatAQI(min)} - ${formatAQI(max)}<br>
+          <strong>सर्वश्रेष्ठ महीना:</strong> ${bestMonth} (${best?formatAQI(best[1]):'--'})<br>
+          <strong>सबसे खराब महीना:</strong> ${worstMonth} (${worst?formatAQI(worst[1]):'--'})
+        </div>
+        ${dayText}
+      `);
+    }
+
+    function renderSizeLegend(yr){
+      const lgSvg = d3.select('#sizeLegend');
+      lgSvg.selectAll('*').remove();
+      const aggs = getCityAggregates(yr);
+      const w = lgSvg.node().clientWidth || 240, h = 92;
+      lgSvg.attr('viewBox',[0,0,w,h]);
+      if(!aggs.length) return;
+
+      const maxAQI = d3.max(aggs,d=>d.avgAQI)||1;
+      const sizeScale = d3.scaleSqrt().domain([0,maxAQI]).range([8,22]);
+      const vals = [d3.min(aggs,d=>d.avgAQI)||0, d3.mean(aggs,d=>d.avgAQI)||0, d3.max(aggs,d=>d.avgAQI)||0].map(v=>Math.round(v));
+      const xs = vals.map((d,i)=>vals.length===1?w/2:34+i*((w-68)/(vals.length-1)));
+
+      lgSvg.selectAll('path').data(vals).enter().append('path')
+        .attr('d',d=>d3.hexbin().hexagon(sizeScale(d)*0.7))
+        .attr('transform',(d,i)=>`translate(${xs[i]},34)`)
+        .attr('fill','#94a3b8').attr('opacity',.85);
+
+      lgSvg.selectAll('text').data(vals).enter().append('text')
+        .attr('x',(d,i)=>xs[i]).attr('y',76).text(d=>d);
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
