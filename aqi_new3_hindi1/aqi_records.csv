@@ -1,2226 +1,3215 @@
-city,aqi,date
-Agartala,81,8 Aug 2026
-Agra,49,8 Aug 2026
-Ahmedabad,83,8 Aug 2026
-Ahmednagar,42,8 Aug 2026
-Aizawl,15,8 Aug 2026
-Akola,42,8 Aug 2026
-Alwar,80,8 Aug 2026
-Amaravati,85,8 Aug 2026
-Ambala,85,8 Aug 2026
-Ambernath,89,8 Aug 2026
-Amravati,65,8 Aug 2026
-Amritsar,58,8 Aug 2026
-Anantapur,68,8 Aug 2026
-Angul,62,8 Aug 2026
-Ankleshwar,64,8 Aug 2026
-Arrah,51,8 Aug 2026
-Asansol,55,8 Aug 2026
-Aurangabad (Maharashtra),51,8 Aug 2026
-Baddi,94,8 Aug 2026
-Badlapur,37,8 Aug 2026
-Baghpat,50,8 Aug 2026
-Bahadurgarh,48,8 Aug 2026
-Balasore,42,8 Aug 2026
-Ballabgarh,36,8 Aug 2026
-Banswara,67,8 Aug 2026
-Baran,87,8 Aug 2026
-Barbil,43,8 Aug 2026
-Bareilly,56,8 Aug 2026
-Baripada,47,8 Aug 2026
-Barmer,88,8 Aug 2026
-Barrackpore,41,8 Aug 2026
-Bathinda,43,8 Aug 2026
-Beed,44,8 Aug 2026
-Begusarai,83,8 Aug 2026
-Belapur,22,8 Aug 2026
-Belgaum,48,8 Aug 2026
-Bengaluru,49,8 Aug 2026
-Bettiah,28,8 Aug 2026
-Bhagalpur,54,8 Aug 2026
-Bharatpur,32,8 Aug 2026
-Bhavnagar,62,8 Aug 2026
-Bhilai,28,8 Aug 2026
-Bhilwara,122,8 Aug 2026
-Bhiwadi,74,8 Aug 2026
-Bhiwandi,54,8 Aug 2026
-Bhopal,87,8 Aug 2026
-Bhubaneswar,36,8 Aug 2026
-Bikaner,93,8 Aug 2026
-Bilaspur,35,8 Aug 2026
-Boisar,50,8 Aug 2026
-Bulandshahr,32,8 Aug 2026
-Bundi,87,8 Aug 2026
-Byrnihat (Assam),106,8 Aug 2026
-Byrnihat (Meghalaya),158,8 Aug 2026
-Chamarajanagar,45,8 Aug 2026
-Chandigarh,42,8 Aug 2026
-Chandrapur,76,8 Aug 2026
-Charkhi dadri,55,8 Aug 2026
-Chennai,79,8 Aug 2026
-Chhal,29,8 Aug 2026
-Chikkaballapur,24,8 Aug 2026
-Chikkamagaluru,33,8 Aug 2026
-Chittoor,60,8 Aug 2026
-Chittorgarh,88,8 Aug 2026
-Churu,47,8 Aug 2026
-Coimbatore,26,8 Aug 2026
-Cuttack,59,8 Aug 2026
-Damoh,51,8 Aug 2026
-Dausa,65,8 Aug 2026
-Dehradun,42,8 Aug 2026
-Delhi,63,8 Aug 2026
-Dewas,81,8 Aug 2026
-Dharuhera,53,8 Aug 2026
-Dharwad,63,8 Aug 2026
-Dholpur,33,8 Aug 2026
-Dhule,60,8 Aug 2026
-Dombivli,35,8 Aug 2026
-Dungarpur,76,8 Aug 2026
-Durgapur,58,8 Aug 2026
-Eloor,64,8 Aug 2026
-Eluru,52,8 Aug 2026
-Faridabad,93,8 Aug 2026
-Fatehabad,48,8 Aug 2026
-Fatehpur sikri,29,8 Aug 2026
-Firozabad,35,8 Aug 2026
-Gadag,105,8 Aug 2026
-Gajraula,42,8 Aug 2026
-Gandhinagar,92,8 Aug 2026
-Gaya,48,8 Aug 2026
-Ghaziabad,54,8 Aug 2026
-Gorakhpur,120,8 Aug 2026
-Greater noida,142,8 Aug 2026
-Gummidipoondi,126,8 Aug 2026
-Guntur,49,8 Aug 2026
-Gurugram,87,8 Aug 2026
-Guwahati,32,8 Aug 2026
-Gwalior,49,8 Aug 2026
-Hajipur,40,8 Aug 2026
-Haldia,26,8 Aug 2026
-Hanumangarh,39,8 Aug 2026
-Hapur,47,8 Aug 2026
-Hingoli,319,8 Aug 2026
-Hisar,32,8 Aug 2026
-Howrah,45,8 Aug 2026
-Hyderabad,46,8 Aug 2026
-Indore,58,8 Aug 2026
-Jabalpur,57,8 Aug 2026
-Jaipur,75,8 Aug 2026
-Jaisalmer,102,8 Aug 2026
-Jalandhar,41,8 Aug 2026
-Jalgaon,43,8 Aug 2026
-Jalna,39,8 Aug 2026
-Jalore,88,8 Aug 2026
-Jhalawar,76,8 Aug 2026
-Jhansi,55,8 Aug 2026
-Jhunjhunu,63,8 Aug 2026
-Jind,51,8 Aug 2026
-Jodhpur,84,8 Aug 2026
-Jorapokhar,67,8 Aug 2026
-Kaithal,70,8 Aug 2026
-Kakinada,66,8 Aug 2026
-Kalaburagi,32,8 Aug 2026
-Kalyan,80,8 Aug 2026
-Kannur,54,8 Aug 2026
-Kanpur,64,8 Aug 2026
-Karauli,39,8 Aug 2026
-Karnal,48,8 Aug 2026
-Karwar,59,8 Aug 2026
-Katni,74,8 Aug 2026
-Khairthal,73,8 Aug 2026
-Khanna,70,8 Aug 2026
-Khora,76,8 Aug 2026
-Khurja,53,8 Aug 2026
-Kishanganj,50,8 Aug 2026
-Kohima,56,8 Aug 2026
-Kolhapur,31,8 Aug 2026
-Kolkata,51,8 Aug 2026
-Korba,26,8 Aug 2026
-Kota,95,8 Aug 2026
-Kunjemura,27,8 Aug 2026
-Kurnool,33,8 Aug 2026
-Kurukshetra,52,8 Aug 2026
-Latur,47,8 Aug 2026
-Lucknow,72,8 Aug 2026
-Ludhiana,80,8 Aug 2026
-Machilipatnam,65,8 Aug 2026
-Madikeri,14,8 Aug 2026
-Mahad,38,8 Aug 2026
-Maihar,29,8 Aug 2026
-Malegaon,57,8 Aug 2026
-Mandideep,101,8 Aug 2026
-Mandi gobindgarh,118,8 Aug 2026
-Manesar,41,8 Aug 2026
-Manguraha,73,8 Aug 2026
-Mathura,42,8 Aug 2026
-Meerut,57,8 Aug 2026
-Mehsana,72,8 Aug 2026
-Milupara,36,8 Aug 2026
-Mira-bhayandar,31,8 Aug 2026
-Modinagar,22,8 Aug 2026
-Moradabad,42,8 Aug 2026
-Mumbai,43,8 Aug 2026
-Munger,45,8 Aug 2026
-Muzaffarnagar,35,8 Aug 2026
-Muzaffarpur,39,8 Aug 2026
-Mysuru,48,8 Aug 2026
-Nagaon,62,8 Aug 2026
-Nagaur,95,8 Aug 2026
-Nagpur,54,8 Aug 2026
-Naharlagun,28,8 Aug 2026
-Nalbari,59,8 Aug 2026
-Nanded,39,8 Aug 2026
-Nandesari,69,8 Aug 2026
-Narnaul,59,8 Aug 2026
-Nashik,45,8 Aug 2026
-Navi mumbai,39,8 Aug 2026
-Nellore,56,8 Aug 2026
-Noida,55,8 Aug 2026
-Pali,134,8 Aug 2026
-Palwal,110,8 Aug 2026
-Pampore,45,8 Aug 2026
-Panchgaon,33,8 Aug 2026
-Panchkula,35,8 Aug 2026
-Panipat,119,8 Aug 2026
-Parbhani,27,8 Aug 2026
-Patiala,44,8 Aug 2026
-Patna,66,8 Aug 2026
-Pimpri-chinchwad,55,8 Aug 2026
-Pithampur,128,8 Aug 2026
-Pratapgarh,82,8 Aug 2026
-Prayagraj,35,8 Aug 2026
-Puducherry,43,8 Aug 2026
-Pune,52,8 Aug 2026
-Purnia,56,8 Aug 2026
-Raebareli,66,8 Aug 2026
-Raipur,43,8 Aug 2026
-Rairangpur,31,8 Aug 2026
-Rajamahendravaram,65,8 Aug 2026
-Rajkot,72,8 Aug 2026
-Rajsamand,91,8 Aug 2026
-Ramanagara,48,8 Aug 2026
-Ratlam,43,8 Aug 2026
-Rishikesh,37,8 Aug 2026
-Rohtak,52,8 Aug 2026
-Rourkela,48,8 Aug 2026
-Sagar,36,8 Aug 2026
-Saharsa,46,8 Aug 2026
-Samastipur,104,8 Aug 2026
-Sangli,42,8 Aug 2026
-Satara,58,8 Aug 2026
-Satna,70,8 Aug 2026
-Sawai madhopur,78,8 Aug 2026
-Shamli,87,8 Aug 2026
-Shillong,32,8 Aug 2026
-Shivamogga,39,8 Aug 2026
-Sikar,43,8 Aug 2026
-Silchar,55,8 Aug 2026
-Siliguri,118,8 Aug 2026
-Singrauli,39,8 Aug 2026
-Sirohi,71,8 Aug 2026
-Sirsa,81,8 Aug 2026
-Siwan,105,8 Aug 2026
-Solapur,42,8 Aug 2026
-Sonipat,103,8 Aug 2026
-Sri ganganagar,83,8 Aug 2026
-Srinagar,40,8 Aug 2026
-Surat,56,8 Aug 2026
-Talcher,87,8 Aug 2026
-Tensa,77,8 Aug 2026
-Thane,41,8 Aug 2026
-Thiruvananthapuram,40,8 Aug 2026
-Thoothukudi,67,8 Aug 2026
-Thrissur,42,8 Aug 2026
-Tirumala,43,8 Aug 2026
-Tirupati,55,8 Aug 2026
-Tonk,109,8 Aug 2026
-Udaipur,109,8 Aug 2026
-Ujjain,71,8 Aug 2026
-Ulhasnagar,42,8 Aug 2026
-Vadodara,75,8 Aug 2026
-Vapi,44,8 Aug 2026
-Varanasi,66,8 Aug 2026
-Vatva,121,8 Aug 2026
-Virar,31,8 Aug 2026
-Visakhapatnam,103,8 Aug 2026
-Vrindavan,36,8 Aug 2026
-Yadgir,43,8 Aug 2026
-Yamuna nagar,87,8 Aug 2026
-Agartala,61,7 Aug 2026
-Agra,54,7 Aug 2026
-Ahmedabad,92,7 Aug 2026
-Ahmednagar,48,7 Aug 2026
-Aizawl,14,7 Aug 2026
-Akola,42,7 Aug 2026
-Alwar,94,7 Aug 2026
-Amaravati,53,7 Aug 2026
-Ambala,97,7 Aug 2026
-Ambernath,87,7 Aug 2026
-Amravati,48,7 Aug 2026
-Amritsar,77,7 Aug 2026
-Anantapur,71,7 Aug 2026
-Angul,64,7 Aug 2026
-Ankleshwar,65,7 Aug 2026
-Araria,43,7 Aug 2026
-Arrah,48,7 Aug 2026
-Asansol,61,7 Aug 2026
-Aurangabad (Maharashtra),49,7 Aug 2026
-Baddi,98,7 Aug 2026
-Badlapur,26,7 Aug 2026
-Bagalkot,51,7 Aug 2026
-Baghpat,32,7 Aug 2026
-Bahadurgarh,48,7 Aug 2026
-Balasore,54,7 Aug 2026
-Ballabgarh,41,7 Aug 2026
-Banswara,64,7 Aug 2026
-Baran,45,7 Aug 2026
-Barbil,34,7 Aug 2026
-Bareilly,34,7 Aug 2026
-Baripada,44,7 Aug 2026
-Barmer,91,7 Aug 2026
-Barrackpore,48,7 Aug 2026
-Bathinda,88,7 Aug 2026
-Beed,42,7 Aug 2026
-Begusarai,104,7 Aug 2026
-Belapur,20,7 Aug 2026
-Bengaluru,51,7 Aug 2026
-Bettiah,26,7 Aug 2026
-Bhagalpur,99,7 Aug 2026
-Bharatpur,27,7 Aug 2026
-Bhavnagar,63,7 Aug 2026
-Bhilai,30,7 Aug 2026
-Bhilwara,123,7 Aug 2026
-Bhiwadi,73,7 Aug 2026
-Bhiwandi,42,7 Aug 2026
-Bhiwani,157,7 Aug 2026
-Bhopal,77,7 Aug 2026
-Bhubaneswar,43,7 Aug 2026
-Bilaspur,41,7 Aug 2026
-Bileipada,68,7 Aug 2026
-Boisar,52,7 Aug 2026
-Brajrajnagar,44,7 Aug 2026
-Bulandshahr,38,7 Aug 2026
-Bundi,72,7 Aug 2026
-Byrnihat (Assam),86,7 Aug 2026
-Byrnihat (Meghalaya),181,7 Aug 2026
-Chamarajanagar,43,7 Aug 2026
-Chandigarh,21,7 Aug 2026
-Chandrapur,53,7 Aug 2026
-Charkhi dadri,149,7 Aug 2026
-Chennai,128,7 Aug 2026
-Chhapra,85,7 Aug 2026
-Chikkamagaluru,27,7 Aug 2026
-Chittoor,72,7 Aug 2026
-Chittorgarh,83,7 Aug 2026
-Churu,75,7 Aug 2026
-Cuttack,53,7 Aug 2026
-Damoh,50,7 Aug 2026
-Dausa,42,7 Aug 2026
-Delhi,63,7 Aug 2026
-Dewas,84,7 Aug 2026
-Dharuhera,72,7 Aug 2026
-Dharwad,59,7 Aug 2026
-Dholpur,31,7 Aug 2026
-Dhule,67,7 Aug 2026
-Dombivli,36,7 Aug 2026
-Dungarpur,78,7 Aug 2026
-Durgapur,92,7 Aug 2026
-Eloor,81,7 Aug 2026
-Eluru,154,7 Aug 2026
-Faridabad,86,7 Aug 2026
-Fatehabad,58,7 Aug 2026
-Fatehpur sikri,29,7 Aug 2026
-Firozabad,34,7 Aug 2026
-Gadag,39,7 Aug 2026
-Gajraula,28,7 Aug 2026
-Gandhinagar,97,7 Aug 2026
-Gaya,30,7 Aug 2026
-Ghaziabad,60,7 Aug 2026
-Gorakhpur,74,7 Aug 2026
-Greater noida,87,7 Aug 2026
-Gummidipoondi,150,7 Aug 2026
-Guntur,63,7 Aug 2026
-Gurugram,77,7 Aug 2026
-Guwahati,39,7 Aug 2026
-Gwalior,54,7 Aug 2026
-Hajipur,50,7 Aug 2026
-Haldia,29,7 Aug 2026
-Hanumangarh,63,7 Aug 2026
-Hapur,52,7 Aug 2026
-Hingoli,187,7 Aug 2026
-Hisar,53,7 Aug 2026
-Howrah,52,7 Aug 2026
-Hyderabad,45,7 Aug 2026
-Indore,58,7 Aug 2026
-Jabalpur,63,7 Aug 2026
-Jaipur,90,7 Aug 2026
-Jaisalmer,117,7 Aug 2026
-Jalandhar,62,7 Aug 2026
-Jalgaon,51,7 Aug 2026
-Jalna,52,7 Aug 2026
-Jalore,104,7 Aug 2026
-Jhalawar,70,7 Aug 2026
-Jhansi,44,7 Aug 2026
-Jhunjhunu,83,7 Aug 2026
-Jind,47,7 Aug 2026
-Jodhpur,91,7 Aug 2026
-Jorapokhar,59,7 Aug 2026
-Kadapa,57,7 Aug 2026
-Kaithal,101,7 Aug 2026
-Kakinada,45,7 Aug 2026
-Kalaburagi,34,7 Aug 2026
-Kalyan,73,7 Aug 2026
-Kannur,67,7 Aug 2026
-Kanpur,55,7 Aug 2026
-Karauli,35,7 Aug 2026
-Karnal,46,7 Aug 2026
-Karwar,52,7 Aug 2026
-Katni,57,7 Aug 2026
-Keonjhar,38,7 Aug 2026
-Khairthal,131,7 Aug 2026
-Khanna,70,7 Aug 2026
-Khora,80,7 Aug 2026
-Kohima,59,7 Aug 2026
-Kolhapur,29,7 Aug 2026
-Kolkata,49,7 Aug 2026
-Korba,28,7 Aug 2026
-Kota,73,7 Aug 2026
-Kunjemura,26,7 Aug 2026
-Kurnool,28,7 Aug 2026
-Kurukshetra,47,7 Aug 2026
-Latur,38,7 Aug 2026
-Lucknow,49,7 Aug 2026
-Machilipatnam,61,7 Aug 2026
-Madikeri,12,7 Aug 2026
-Mahad,58,7 Aug 2026
-Maihar,28,7 Aug 2026
-Malegaon,67,7 Aug 2026
-Mandideep,95,7 Aug 2026
-Mandi gobindgarh,118,7 Aug 2026
-Manesar,42,7 Aug 2026
-Mathura,39,7 Aug 2026
-Meerut,50,7 Aug 2026
-Mehsana,78,7 Aug 2026
-Milupara,24,7 Aug 2026
-Mira-bhayandar,38,7 Aug 2026
-Modinagar,36,7 Aug 2026
-Moradabad,34,7 Aug 2026
-Motihari,69,7 Aug 2026
-Mumbai,42,7 Aug 2026
-Munger,64,7 Aug 2026
-Muzaffarnagar,34,7 Aug 2026
-Muzaffarpur,57,7 Aug 2026
-Mysuru,51,7 Aug 2026
-Nagaon,54,7 Aug 2026
-Nagaur,103,7 Aug 2026
-Nagpur,46,7 Aug 2026
-Naharlagun,37,7 Aug 2026
-Nanded,37,7 Aug 2026
-Nandesari,64,7 Aug 2026
-Nashik,45,7 Aug 2026
-Navi mumbai,42,7 Aug 2026
-Nellore,57,7 Aug 2026
-Noida,51,7 Aug 2026
-Pali,169,7 Aug 2026
-Palwal,95,7 Aug 2026
-Pampore,69,7 Aug 2026
-Panchgaon,47,7 Aug 2026
-Panchkula,35,7 Aug 2026
-Panipat,81,7 Aug 2026
-Parbhani,33,7 Aug 2026
-Patiala,35,7 Aug 2026
-Patna,78,7 Aug 2026
-Pimpri-chinchwad,49,7 Aug 2026
-Pithampur,119,7 Aug 2026
-Pratapgarh,94,7 Aug 2026
-Prayagraj,27,7 Aug 2026
-Puducherry,35,7 Aug 2026
-Pune,59,7 Aug 2026
-Purnia,57,7 Aug 2026
-Raebareli,72,7 Aug 2026
-Raipur,50,7 Aug 2026
-Rairangpur,24,7 Aug 2026
-Rajamahendravaram,42,7 Aug 2026
-Rajkot,77,7 Aug 2026
-Rajsamand,103,7 Aug 2026
-Ramanagara,45,7 Aug 2026
-Ratlam,42,7 Aug 2026
-Rishikesh,37,7 Aug 2026
-Rohtak,30,7 Aug 2026
-Rourkela,40,7 Aug 2026
-Sagar,40,7 Aug 2026
-Saharsa,42,7 Aug 2026
-Samastipur,83,7 Aug 2026
-Sangli,36,7 Aug 2026
-Satara,66,7 Aug 2026
-Satna,71,7 Aug 2026
-Sawai madhopur,68,7 Aug 2026
-Shamli,125,7 Aug 2026
-Shillong,28,7 Aug 2026
-Shivamogga,29,7 Aug 2026
-Sikar,95,7 Aug 2026
-Silchar,39,7 Aug 2026
-Siliguri,125,7 Aug 2026
-Singrauli,38,7 Aug 2026
-Sirohi,89,7 Aug 2026
-Sirsa,89,7 Aug 2026
-Siwan,105,7 Aug 2026
-Solapur,47,7 Aug 2026
-Sonipat,132,7 Aug 2026
-Sri ganganagar,89,7 Aug 2026
-Srinagar,55,7 Aug 2026
-Surat,61,7 Aug 2026
-Tensa,77,7 Aug 2026
-Thane,49,7 Aug 2026
-Thiruvananthapuram,43,7 Aug 2026
-Thoothukudi,67,7 Aug 2026
-Thrissur,46,7 Aug 2026
-Tirumala,43,7 Aug 2026
-Tirupati,61,7 Aug 2026
-Tonk,125,7 Aug 2026
-Tumakuru,64,7 Aug 2026
-Tumidih,36,7 Aug 2026
-Udaipur,118,7 Aug 2026
-Ujjain,73,7 Aug 2026
-Ulhasnagar,49,7 Aug 2026
-Vadodara,87,7 Aug 2026
-Vapi,46,7 Aug 2026
-Varanasi,54,7 Aug 2026
-Vatva,113,7 Aug 2026
-Vijayawada,70,7 Aug 2026
-Virar,37,7 Aug 2026
-Visakhapatnam,68,7 Aug 2026
-Vrindavan,32,7 Aug 2026
-Yadgir,38,7 Aug 2026
-Agartala,69,6 Aug 2026
-Agra,55,6 Aug 2026
-Ahmedabad,85,6 Aug 2026
-Ahmednagar,47,6 Aug 2026
-Ajmer,84,6 Aug 2026
-Akola,36,6 Aug 2026
-Alwar,89,6 Aug 2026
-Amaravati,67,6 Aug 2026
-Ambala,62,6 Aug 2026
-Ambernath,71,6 Aug 2026
-Amravati,37,6 Aug 2026
-Amritsar,75,6 Aug 2026
-Angul,76,6 Aug 2026
-Ankleshwar,74,6 Aug 2026
-Asansol,56,6 Aug 2026
-Aurangabad (Maharashtra),53,6 Aug 2026
-Baddi,104,6 Aug 2026
-Badlapur,44,6 Aug 2026
-Bagalkot,51,6 Aug 2026
-Bahadurgarh,49,6 Aug 2026
-Balasore,56,6 Aug 2026
-Ballabgarh,75,6 Aug 2026
-Banswara,58,6 Aug 2026
-Baran,55,6 Aug 2026
-Bareilly,40,6 Aug 2026
-Baripada,48,6 Aug 2026
-Barmer,90,6 Aug 2026
-Barrackpore,47,6 Aug 2026
-Beed,42,6 Aug 2026
-Begusarai,32,6 Aug 2026
-Belapur,32,6 Aug 2026
-Bengaluru,61,6 Aug 2026
-Bhagalpur,121,6 Aug 2026
-Bharatpur,35,6 Aug 2026
-Bhavnagar,67,6 Aug 2026
-Bhilai,29,6 Aug 2026
-Bhilwara,87,6 Aug 2026
-Bhiwadi,74,6 Aug 2026
-Bhiwandi,55,6 Aug 2026
-Bhiwani,159,6 Aug 2026
-Bhopal,58,6 Aug 2026
-Bhubaneswar,54,6 Aug 2026
-Bikaner,99,6 Aug 2026
-Bilaspur,30,6 Aug 2026
-Bileipada,53,6 Aug 2026
-Boisar,54,6 Aug 2026
-Brajrajnagar,49,6 Aug 2026
-Bulandshahr,41,6 Aug 2026
-Bundi,77,6 Aug 2026
-Byrnihat (Assam),95,6 Aug 2026
-Byrnihat (Meghalaya),94,6 Aug 2026
-Chamarajanagar,44,6 Aug 2026
-Chandigarh,38,6 Aug 2026
-Chandrapur,45,6 Aug 2026
-Charkhi dadri,97,6 Aug 2026
-Chennai,80,6 Aug 2026
-Chhal,43,6 Aug 2026
-Chhapra,100,6 Aug 2026
-Chikkaballapur,30,6 Aug 2026
-Chikkamagaluru,29,6 Aug 2026
-Chittoor,65,6 Aug 2026
-Chittorgarh,67,6 Aug 2026
-Churu,91,6 Aug 2026
-Coimbatore,26,6 Aug 2026
-Cuddalore,23,6 Aug 2026
-Cuttack,47,6 Aug 2026
-Damoh,50,6 Aug 2026
-Dausa,70,6 Aug 2026
-Delhi,74,6 Aug 2026
-Dewas,96,6 Aug 2026
-Dharuhera,82,6 Aug 2026
-Dharwad,66,6 Aug 2026
-Dholpur,32,6 Aug 2026
-Dhule,58,6 Aug 2026
-Dombivli,34,6 Aug 2026
-Dungarpur,76,6 Aug 2026
-Durgapur,46,6 Aug 2026
-Eloor,67,6 Aug 2026
-Eluru,49,6 Aug 2026
-Faridabad,113,6 Aug 2026
-Fatehabad,63,6 Aug 2026
-Fatehpur sikri,29,6 Aug 2026
-Firozabad,53,6 Aug 2026
-Gadag,39,6 Aug 2026
-Gandhinagar,89,6 Aug 2026
-Gaya,89,6 Aug 2026
-Ghaziabad,82,6 Aug 2026
-Gorakhpur,55,6 Aug 2026
-Greater noida,97,6 Aug 2026
-Gummidipoondi,119,6 Aug 2026
-Guntur,61,6 Aug 2026
-Gurugram,90,6 Aug 2026
-Gwalior,51,6 Aug 2026
-Hajipur,35,6 Aug 2026
-Hanumangarh,65,6 Aug 2026
-Hapur,46,6 Aug 2026
-Hingoli,93,6 Aug 2026
-Howrah,66,6 Aug 2026
-Hyderabad,45,6 Aug 2026
-Indore,54,6 Aug 2026
-Jabalpur,51,6 Aug 2026
-Jaipur,92,6 Aug 2026
-Jaisalmer,120,6 Aug 2026
-Jalandhar,71,6 Aug 2026
-Jalgaon,36,6 Aug 2026
-Jalna,52,6 Aug 2026
-Jalore,85,6 Aug 2026
-Jhalawar,61,6 Aug 2026
-Jhansi,76,6 Aug 2026
-Jhunjhunu,77,6 Aug 2026
-Jind,56,6 Aug 2026
-Jodhpur,77,6 Aug 2026
-Jorapokhar,64,6 Aug 2026
-Kaithal,103,6 Aug 2026
-Kakinada,52,6 Aug 2026
-Kalaburagi,41,6 Aug 2026
-Kalyan,68,6 Aug 2026
-Kannur,70,6 Aug 2026
-Kanpur,51,6 Aug 2026
-Karnal,52,6 Aug 2026
-Karwar,47,6 Aug 2026
-Katni,79,6 Aug 2026
-Keonjhar,39,6 Aug 2026
-Khairthal,72,6 Aug 2026
-Khanna,65,6 Aug 2026
-Khora,89,6 Aug 2026
-Khurja,54,6 Aug 2026
-Kishanganj,51,6 Aug 2026
-Kohima,54,6 Aug 2026
-Kolhapur,34,6 Aug 2026
-Kolkata,60,6 Aug 2026
-Korba,29,6 Aug 2026
-Kota,81,6 Aug 2026
-Kunjemura,39,6 Aug 2026
-Kurnool,28,6 Aug 2026
-Kurukshetra,49,6 Aug 2026
-Latur,36,6 Aug 2026
-Lucknow,54,6 Aug 2026
-Ludhiana,70,6 Aug 2026
-Machilipatnam,69,6 Aug 2026
-Madikeri,14,6 Aug 2026
-Madurai,44,6 Aug 2026
-Mahad,35,6 Aug 2026
-Maihar,28,6 Aug 2026
-Malegaon,59,6 Aug 2026
-Mandideep,76,6 Aug 2026
-Mandi gobindgarh,118,6 Aug 2026
-Manesar,42,6 Aug 2026
-Mangalore,49,6 Aug 2026
-Manguraha,73,6 Aug 2026
-Mathura,32,6 Aug 2026
-Meerut,53,6 Aug 2026
-Mehsana,85,6 Aug 2026
-Mira-bhayandar,36,6 Aug 2026
-Moradabad,26,6 Aug 2026
-Mumbai,46,6 Aug 2026
-Munger,48,6 Aug 2026
-Muzaffarnagar,51,6 Aug 2026
-Muzaffarpur,33,6 Aug 2026
-Mysuru,54,6 Aug 2026
-Nagaon,54,6 Aug 2026
-Nagaur,83,6 Aug 2026
-Nagpur,43,6 Aug 2026
-Naharlagun,28,6 Aug 2026
-Nalbari,71,6 Aug 2026
-Nanded,35,6 Aug 2026
-Nandesari,62,6 Aug 2026
-Narnaul,77,6 Aug 2026
-Nashik,34,6 Aug 2026
-Navi mumbai,44,6 Aug 2026
-Nellore,60,6 Aug 2026
-Noida,76,6 Aug 2026
-Pali,135,6 Aug 2026
-Pampore,82,6 Aug 2026
-Panchgaon,48,6 Aug 2026
-Panchkula,44,6 Aug 2026
-Panipat,96,6 Aug 2026
-Parbhani,34,6 Aug 2026
-Patiala,47,6 Aug 2026
-Patna,49,6 Aug 2026
-Pimpri-chinchwad,50,6 Aug 2026
-Pithampur,107,6 Aug 2026
-Pratapgarh,86,6 Aug 2026
-Prayagraj,79,6 Aug 2026
-Puducherry,47,6 Aug 2026
-Pune,45,6 Aug 2026
-Purnia,56,6 Aug 2026
-Raebareli,72,6 Aug 2026
-Raipur,41,6 Aug 2026
-Rairangpur,24,6 Aug 2026
-Rajamahendravaram,44,6 Aug 2026
-Rajkot,83,6 Aug 2026
-Rajsamand,83,6 Aug 2026
-Ramanagara,42,6 Aug 2026
-Ratlam,35,6 Aug 2026
-Rishikesh,37,6 Aug 2026
-Rohtak,38,6 Aug 2026
-Rourkela,50,6 Aug 2026
-Rupnagar,54,6 Aug 2026
-Sagar,40,6 Aug 2026
-Saharsa,40,6 Aug 2026
-Samastipur,76,6 Aug 2026
-Sangli,37,6 Aug 2026
-Satara,51,6 Aug 2026
-Satna,70,6 Aug 2026
-Sawai madhopur,67,6 Aug 2026
-Shamli,85,6 Aug 2026
-Shillong,28,6 Aug 2026
-Shivamogga,37,6 Aug 2026
-Sikar,44,6 Aug 2026
-Silchar,40,6 Aug 2026
-Siliguri,122,6 Aug 2026
-Sirohi,79,6 Aug 2026
-Sirsa,80,6 Aug 2026
-Siwan,105,6 Aug 2026
-Solapur,45,6 Aug 2026
-Sonipat,134,6 Aug 2026
-Sri ganganagar,78,6 Aug 2026
-Srinagar,58,6 Aug 2026
-Surat,73,6 Aug 2026
-Talcher,75,6 Aug 2026
-Thane,45,6 Aug 2026
-Thiruvananthapuram,47,6 Aug 2026
-Thoothukudi,67,6 Aug 2026
-Thrissur,47,6 Aug 2026
-Tirumala,42,6 Aug 2026
-Tirupati,70,6 Aug 2026
-Tonk,102,6 Aug 2026
-Tumakuru,65,6 Aug 2026
-Tumidih,32,6 Aug 2026
-Udaipur,99,6 Aug 2026
-Ujjain,51,6 Aug 2026
-Ulhasnagar,38,6 Aug 2026
-Vadodara,86,6 Aug 2026
-Vapi,33,6 Aug 2026
-Varanasi,40,6 Aug 2026
-Vatva,117,6 Aug 2026
-Vijayapura,43,6 Aug 2026
-Vijayawada,61,6 Aug 2026
-Virar,35,6 Aug 2026
-Visakhapatnam,99,6 Aug 2026
-Vrindavan,34,6 Aug 2026
-Yamuna nagar,76,6 Aug 2026
-Agartala,61,5 Aug 2026
-Agra,63,5 Aug 2026
-Ahmedabad,94,5 Aug 2026
-Ahmednagar,54,5 Aug 2026
-Aizawl,14,5 Aug 2026
-Ajmer,88,5 Aug 2026
-Akola,51,5 Aug 2026
-Alwar,101,5 Aug 2026
-Amaravati,79,5 Aug 2026
-Ambala,74,5 Aug 2026
-Amravati,46,5 Aug 2026
-Amritsar,85,5 Aug 2026
-Angul,62,5 Aug 2026
-Ankleshwar,74,5 Aug 2026
-Araria,47,5 Aug 2026
-Asansol,58,5 Aug 2026
-Aurangabad (Maharashtra),58,5 Aug 2026
-Baddi,115,5 Aug 2026
-Badlapur,49,5 Aug 2026
-Bagalkot,51,5 Aug 2026
-Bahadurgarh,39,5 Aug 2026
-Balasore,52,5 Aug 2026
-Ballabgarh,63,5 Aug 2026
-Banswara,63,5 Aug 2026
-Baran,57,5 Aug 2026
-Barbil,59,5 Aug 2026
-Bareilly,38,5 Aug 2026
-Baripada,53,5 Aug 2026
-Barmer,80,5 Aug 2026
-Barrackpore,56,5 Aug 2026
-Bathinda,84,5 Aug 2026
-Beed,26,5 Aug 2026
-Begusarai,33,5 Aug 2026
-Belapur,30,5 Aug 2026
-Bengaluru,49,5 Aug 2026
-Bettiah,41,5 Aug 2026
-Bhagalpur,120,5 Aug 2026
-Bharatpur,33,5 Aug 2026
-Bhavnagar,64,5 Aug 2026
-Bhilai,26,5 Aug 2026
-Bhilwara,109,5 Aug 2026
-Bhiwadi,74,5 Aug 2026
-Bhiwandi,53,5 Aug 2026
-Bhopal,73,5 Aug 2026
-Bhubaneswar,46,5 Aug 2026
-Bikaner,59,5 Aug 2026
-Bilaspur,37,5 Aug 2026
-Bileipada,52,5 Aug 2026
-Boisar,53,5 Aug 2026
-Brajrajnagar,48,5 Aug 2026
-Bulandshahr,38,5 Aug 2026
-Bundi,70,5 Aug 2026
-Byasanagar,64,5 Aug 2026
-Byrnihat (Assam),94,5 Aug 2026
-Byrnihat (Meghalaya),127,5 Aug 2026
-Chamarajanagar,45,5 Aug 2026
-Chandigarh,37,5 Aug 2026
-Chandrapur,47,5 Aug 2026
-Charkhi dadri,152,5 Aug 2026
-Chennai,61,5 Aug 2026
-Chhal,61,5 Aug 2026
-Chikkaballapur,25,5 Aug 2026
-Chittoor,58,5 Aug 2026
-Chittorgarh,68,5 Aug 2026
-Churu,58,5 Aug 2026
-Coimbatore,27,5 Aug 2026
-Cuttack,58,5 Aug 2026
-Damoh,51,5 Aug 2026
-Dausa,165,5 Aug 2026
-Delhi,69,5 Aug 2026
-Dewas,92,5 Aug 2026
-Dharuhera,67,5 Aug 2026
-Dharwad,65,5 Aug 2026
-Dholpur,298,5 Aug 2026
-Dhule,54,5 Aug 2026
-Dombivli,34,5 Aug 2026
-Dungarpur,86,5 Aug 2026
-Durgapur,63,5 Aug 2026
-Eloor,64,5 Aug 2026
-Eluru,54,5 Aug 2026
-Faridabad,80,5 Aug 2026
-Fatehabad,55,5 Aug 2026
-Fatehpur sikri,29,5 Aug 2026
-Firozabad,45,5 Aug 2026
-Gadag,43,5 Aug 2026
-Gandhinagar,112,5 Aug 2026
-Gaya,123,5 Aug 2026
-Ghaziabad,70,5 Aug 2026
-Gorakhpur,62,5 Aug 2026
-Greater noida,115,5 Aug 2026
-Gummidipoondi,131,5 Aug 2026
-Guntur,62,5 Aug 2026
-Gurugram,103,5 Aug 2026
-Guwahati,63,5 Aug 2026
-Gwalior,61,5 Aug 2026
-Hajipur,48,5 Aug 2026
-Haldia,50,5 Aug 2026
-Hanumangarh,32,5 Aug 2026
-Hapur,53,5 Aug 2026
-Hingoli,38,5 Aug 2026
-Hisar,41,5 Aug 2026
-Howrah,61,5 Aug 2026
-Hyderabad,47,5 Aug 2026
-Indore,53,5 Aug 2026
-Jabalpur,53,5 Aug 2026
-Jaipur,102,5 Aug 2026
-Jaisalmer,105,5 Aug 2026
-Jalandhar,50,5 Aug 2026
-Jalgaon,50,5 Aug 2026
-Jalna,46,5 Aug 2026
-Jalore,95,5 Aug 2026
-Jhalawar,60,5 Aug 2026
-Jhansi,65,5 Aug 2026
-Jhunjhunu,82,5 Aug 2026
-Jind,49,5 Aug 2026
-Jodhpur,84,5 Aug 2026
-Jorapokhar,74,5 Aug 2026
-Kaithal,103,5 Aug 2026
-Kakinada,62,5 Aug 2026
-Kalaburagi,33,5 Aug 2026
-Kalyan,60,5 Aug 2026
-Kannur,46,5 Aug 2026
-Kanpur,40,5 Aug 2026
-Karauli,64,5 Aug 2026
-Karnal,51,5 Aug 2026
-Karwar,42,5 Aug 2026
-Katni,82,5 Aug 2026
-Keonjhar,41,5 Aug 2026
-Khairthal,88,5 Aug 2026
-Khanna,73,5 Aug 2026
-Khora,96,5 Aug 2026
-Khurja,41,5 Aug 2026
-Kishanganj,57,5 Aug 2026
-Kohima,53,5 Aug 2026
-Kolhapur,26,5 Aug 2026
-Kolkata,58,5 Aug 2026
-Korba,25,5 Aug 2026
-Kota,78,5 Aug 2026
-Kunjemura,57,5 Aug 2026
-Kurnool,29,5 Aug 2026
-Kurukshetra,43,5 Aug 2026
-Latur,45,5 Aug 2026
-Lucknow,56,5 Aug 2026
-Ludhiana,52,5 Aug 2026
-Machilipatnam,79,5 Aug 2026
-Madikeri,14,5 Aug 2026
-Madurai,34,5 Aug 2026
-Mahad,48,5 Aug 2026
-Malegaon,63,5 Aug 2026
-Mandideep,88,5 Aug 2026
-Mandi gobindgarh,117,5 Aug 2026
-Manesar,38,5 Aug 2026
-Mangalore,52,5 Aug 2026
-Manguraha,80,5 Aug 2026
-Mathura,34,5 Aug 2026
-Meerut,49,5 Aug 2026
-Mehsana,88,5 Aug 2026
-Mira-bhayandar,29,5 Aug 2026
-Moradabad,47,5 Aug 2026
-Mumbai,42,5 Aug 2026
-Muzaffarnagar,49,5 Aug 2026
-Muzaffarpur,38,5 Aug 2026
-Mysuru,48,5 Aug 2026
-Nagaon,47,5 Aug 2026
-Nagaur,95,5 Aug 2026
-Nagpur,55,5 Aug 2026
-Naharlagun,12,5 Aug 2026
-Nalbari,79,5 Aug 2026
-Nanded,34,5 Aug 2026
-Nandesari,59,5 Aug 2026
-Narnaul,90,5 Aug 2026
-Nashik,44,5 Aug 2026
-Navi mumbai,31,5 Aug 2026
-Nellore,54,5 Aug 2026
-Noida,64,5 Aug 2026
-Pali,135,5 Aug 2026
-Palwal,60,5 Aug 2026
-Pampore,53,5 Aug 2026
-Panchgaon,31,5 Aug 2026
-Panchkula,30,5 Aug 2026
-Parbhani,41,5 Aug 2026
-Patiala,35,5 Aug 2026
-Patna,63,5 Aug 2026
-Pimpri-chinchwad,47,5 Aug 2026
-Pithampur,107,5 Aug 2026
-Pratapgarh,105,5 Aug 2026
-Prayagraj,44,5 Aug 2026
-Puducherry,37,5 Aug 2026
-Pune,52,5 Aug 2026
-Purnia,55,5 Aug 2026
-Raebareli,75,5 Aug 2026
-Raipur,35,5 Aug 2026
-Rairangpur,44,5 Aug 2026
-Rajamahendravaram,41,5 Aug 2026
-Rajkot,80,5 Aug 2026
-Rajsamand,80,5 Aug 2026
-Ramanagara,44,5 Aug 2026
-Ratlam,41,5 Aug 2026
-Rishikesh,37,5 Aug 2026
-Rohtak,35,5 Aug 2026
-Rourkela,49,5 Aug 2026
-Rupnagar,54,5 Aug 2026
-Sagar,38,5 Aug 2026
-Saharsa,52,5 Aug 2026
-Sangli,34,5 Aug 2026
-Satara,52,5 Aug 2026
-Satna,70,5 Aug 2026
-Sawai madhopur,84,5 Aug 2026
-Shamli,71,5 Aug 2026
-Shillong,32,5 Aug 2026
-Sikar,120,5 Aug 2026
-Silchar,55,5 Aug 2026
-Siliguri,122,5 Aug 2026
-Sirohi,77,5 Aug 2026
-Sirsa,84,5 Aug 2026
-Siwan,105,5 Aug 2026
-Solapur,51,5 Aug 2026
-Sonipat,132,5 Aug 2026
-Sri ganganagar,61,5 Aug 2026
-Srinagar,46,5 Aug 2026
-Surat,78,5 Aug 2026
-Thane,39,5 Aug 2026
-Thiruvananthapuram,37,5 Aug 2026
-Thoothukudi,65,5 Aug 2026
-Tirumala,47,5 Aug 2026
-Tirupati,69,5 Aug 2026
-Tonk,114,5 Aug 2026
-Tumidih,35,5 Aug 2026
-Udaipur,97,5 Aug 2026
-Ujjain,57,5 Aug 2026
-Ulhasnagar,8,5 Aug 2026
-Vadodara,88,5 Aug 2026
-Vapi,36,5 Aug 2026
-Varanasi,38,5 Aug 2026
-Vatva,117,5 Aug 2026
-Vijayapura,43,5 Aug 2026
-Vijayawada,62,5 Aug 2026
-Virar,38,5 Aug 2026
-Visakhapatnam,106,5 Aug 2026
-Vrindavan,49,5 Aug 2026
-Yamuna nagar,115,5 Aug 2026
-Agartala,73,4 Aug 2026
-Agra,58,4 Aug 2026
-Ahmedabad,91,4 Aug 2026
-Ahmednagar,50,4 Aug 2026
-Aizawl,14,4 Aug 2026
-Ajmer,84,4 Aug 2026
-Akola,46,4 Aug 2026
-Alwar,85,4 Aug 2026
-Amaravati,59,4 Aug 2026
-Ambala,63,4 Aug 2026
-Amravati,34,4 Aug 2026
-Amritsar,54,4 Aug 2026
-Anantapur,55,4 Aug 2026
-Angul,65,4 Aug 2026
-Ankleshwar,67,4 Aug 2026
-Araria,47,4 Aug 2026
-Asansol,58,4 Aug 2026
-Aurangabad (Maharashtra),49,4 Aug 2026
-Baddi,75,4 Aug 2026
-Badlapur,34,4 Aug 2026
-Bagalkot,51,4 Aug 2026
-Bahadurgarh,48,4 Aug 2026
-Balasore,50,4 Aug 2026
-Ballabgarh,45,4 Aug 2026
-Banswara,42,4 Aug 2026
-Baran,50,4 Aug 2026
-Barbil,70,4 Aug 2026
-Bareilly,42,4 Aug 2026
-Baripada,60,4 Aug 2026
-Barmer,84,4 Aug 2026
-Barrackpore,64,4 Aug 2026
-Beed,32,4 Aug 2026
-Begusarai,29,4 Aug 2026
-Belapur,53,4 Aug 2026
-Belgaum,64,4 Aug 2026
-Bengaluru,53,4 Aug 2026
-Bhagalpur,118,4 Aug 2026
-Bharatpur,31,4 Aug 2026
-Bhavnagar,64,4 Aug 2026
-Bhilai,28,4 Aug 2026
-Bhilwara,94,4 Aug 2026
-Bhiwadi,73,4 Aug 2026
-Bhiwandi,72,4 Aug 2026
-Bhiwani,26,4 Aug 2026
-Bhopal,54,4 Aug 2026
-Bhubaneswar,41,4 Aug 2026
-Bikaner,65,4 Aug 2026
-Bileipada,133,4 Aug 2026
-Boisar,47,4 Aug 2026
-Brajrajnagar,44,4 Aug 2026
-Bulandshahr,38,4 Aug 2026
-Bundi,47,4 Aug 2026
-Byasanagar,51,4 Aug 2026
-Byrnihat (Meghalaya),70,4 Aug 2026
-Chamarajanagar,42,4 Aug 2026
-Chandigarh,39,4 Aug 2026
-Chandrapur,45,4 Aug 2026
-Charkhi dadri,75,4 Aug 2026
-Chennai,72,4 Aug 2026
-Chhapra,86,4 Aug 2026
-Chikkaballapur,32,4 Aug 2026
-Chittoor,63,4 Aug 2026
-Chittorgarh,64,4 Aug 2026
-Churu,32,4 Aug 2026
-Coimbatore,25,4 Aug 2026
-Cuddalore,23,4 Aug 2026
-Cuttack,53,4 Aug 2026
-Damoh,50,4 Aug 2026
-Dausa,131,4 Aug 2026
-Dehradun,64,4 Aug 2026
-Delhi,64,4 Aug 2026
-Dewas,90,4 Aug 2026
-Dharuhera,71,4 Aug 2026
-Dharwad,60,4 Aug 2026
-Dholpur,248,4 Aug 2026
-Dhule,51,4 Aug 2026
-Dombivli,39,4 Aug 2026
-Dungarpur,77,4 Aug 2026
-Durgapur,85,4 Aug 2026
-Eloor,125,4 Aug 2026
-Eluru,53,4 Aug 2026
-Faridabad,88,4 Aug 2026
-Fatehabad,58,4 Aug 2026
-Fatehpur sikri,29,4 Aug 2026
-Firozabad,40,4 Aug 2026
-Gandhinagar,101,4 Aug 2026
-Gaya,93,4 Aug 2026
-Ghaziabad,68,4 Aug 2026
-Gorakhpur,45,4 Aug 2026
-Greater noida,100,4 Aug 2026
-Gummidipoondi,127,4 Aug 2026
-Guntur,50,4 Aug 2026
-Gurugram,76,4 Aug 2026
-Guwahati,98,4 Aug 2026
-Gwalior,56,4 Aug 2026
-Hajipur,41,4 Aug 2026
-Haldia,47,4 Aug 2026
-Hanumangarh,34,4 Aug 2026
-Hapur,39,4 Aug 2026
-Hingoli,39,4 Aug 2026
-Hisar,48,4 Aug 2026
-Howrah,67,4 Aug 2026
-Hyderabad,49,4 Aug 2026
-Indore,52,4 Aug 2026
-Jabalpur,53,4 Aug 2026
-Jaipur,70,4 Aug 2026
-Jaisalmer,100,4 Aug 2026
-Jalandhar,45,4 Aug 2026
-Jalgaon,37,4 Aug 2026
-Jalore,88,4 Aug 2026
-Jhalawar,83,4 Aug 2026
-Jhansi,61,4 Aug 2026
-Jhunjhunu,100,4 Aug 2026
-Jind,43,4 Aug 2026
-Jodhpur,93,4 Aug 2026
-Jorapokhar,87,4 Aug 2026
-Kadapa,56,4 Aug 2026
-Kaithal,98,4 Aug 2026
-Kakinada,57,4 Aug 2026
-Kalaburagi,32,4 Aug 2026
-Kalyan,71,4 Aug 2026
-Kannur,45,4 Aug 2026
-Kanpur,43,4 Aug 2026
-Karauli,40,4 Aug 2026
-Karnal,51,4 Aug 2026
-Karwar,42,4 Aug 2026
-Kashipur,38,4 Aug 2026
-Katni,63,4 Aug 2026
-Keonjhar,44,4 Aug 2026
-Khanna,75,4 Aug 2026
-Khora,103,4 Aug 2026
-Khurja,55,4 Aug 2026
-Kishanganj,49,4 Aug 2026
-Kohima,50,4 Aug 2026
-Kolhapur,31,4 Aug 2026
-Kolkata,68,4 Aug 2026
-Korba,41,4 Aug 2026
-Kota,58,4 Aug 2026
-Kunjemura,39,4 Aug 2026
-Kurnool,29,4 Aug 2026
-Kurukshetra,45,4 Aug 2026
-Latur,34,4 Aug 2026
-Lucknow,51,4 Aug 2026
-Ludhiana,72,4 Aug 2026
-Machilipatnam,82,4 Aug 2026
-Madikeri,15,4 Aug 2026
-Madurai,28,4 Aug 2026
-Mahad,52,4 Aug 2026
-Maihar,26,4 Aug 2026
-Malegaon,42,4 Aug 2026
-Mandideep,64,4 Aug 2026
-Mandi gobindgarh,123,4 Aug 2026
-Mandikhera,99,4 Aug 2026
-Manesar,34,4 Aug 2026
-Mangalore,48,4 Aug 2026
-Mathura,28,4 Aug 2026
-Meerut,46,4 Aug 2026
-Mehsana,87,4 Aug 2026
-Milupara,31,4 Aug 2026
-Mira-bhayandar,38,4 Aug 2026
-Moradabad,49,4 Aug 2026
-Mumbai,49,4 Aug 2026
-Muzaffarnagar,45,4 Aug 2026
-Muzaffarpur,31,4 Aug 2026
-Mysuru,50,4 Aug 2026
-Nagaon,56,4 Aug 2026
-Nagaur,84,4 Aug 2026
-Nagpur,35,4 Aug 2026
-Naharlagun,23,4 Aug 2026
-Nalbari,67,4 Aug 2026
-Nanded,29,4 Aug 2026
-Nandesari,51,4 Aug 2026
-Narnaul,64,4 Aug 2026
-Nashik,35,4 Aug 2026
-Navi mumbai,44,4 Aug 2026
-Nellore,65,4 Aug 2026
-Noida,61,4 Aug 2026
-Pali,110,4 Aug 2026
-Palwal,77,4 Aug 2026
-Pampore,51,4 Aug 2026
-Panchgaon,33,4 Aug 2026
-Panchkula,69,4 Aug 2026
-Panipat,146,4 Aug 2026
-Parbhani,26,4 Aug 2026
-Patiala,35,4 Aug 2026
-Patna,55,4 Aug 2026
-Pimpri-chinchwad,53,4 Aug 2026
-Pithampur,103,4 Aug 2026
-Pratapgarh,93,4 Aug 2026
-Prayagraj,73,4 Aug 2026
-Puducherry,37,4 Aug 2026
-Pune,48,4 Aug 2026
-Purnia,56,4 Aug 2026
-Raipur,40,4 Aug 2026
-Rairangpur,40,4 Aug 2026
-Rajamahendravaram,36,4 Aug 2026
-Rajkot,84,4 Aug 2026
-Rajsamand,62,4 Aug 2026
-Ramanagara,38,4 Aug 2026
-Ratlam,45,4 Aug 2026
-Rishikesh,37,4 Aug 2026
-Rohtak,37,4 Aug 2026
-Rourkela,48,4 Aug 2026
-Sagar,38,4 Aug 2026
-Saharsa,49,4 Aug 2026
-Samastipur,36,4 Aug 2026
-Sangli,44,4 Aug 2026
-Sasaram,54,4 Aug 2026
-Satara,70,4 Aug 2026
-Satna,70,4 Aug 2026
-Sawai madhopur,64,4 Aug 2026
-Shamli,72,4 Aug 2026
-Shillong,28,4 Aug 2026
-Sikar,92,4 Aug 2026
-Silchar,57,4 Aug 2026
-Siliguri,115,4 Aug 2026
-Singrauli,46,4 Aug 2026
-Sirohi,81,4 Aug 2026
-Sirsa,85,4 Aug 2026
-Siwan,105,4 Aug 2026
-Solapur,48,4 Aug 2026
-Sonipat,131,4 Aug 2026
-Srinagar,43,4 Aug 2026
-Surat,78,4 Aug 2026
-Talcher,82,4 Aug 2026
-Thane,48,4 Aug 2026
-Thiruvananthapuram,38,4 Aug 2026
-Thoothukudi,65,4 Aug 2026
-Thrissur,43,4 Aug 2026
-Tirumala,50,4 Aug 2026
-Tirupati,67,4 Aug 2026
-Tonk,105,4 Aug 2026
-Tumidih,49,4 Aug 2026
-Udaipur,71,4 Aug 2026
-Ujjain,71,4 Aug 2026
-Ulhasnagar,16,4 Aug 2026
-Vadodara,71,4 Aug 2026
-Vapi,44,4 Aug 2026
-Varanasi,46,4 Aug 2026
-Vatva,126,4 Aug 2026
-Vijayapura,43,4 Aug 2026
-Vijayawada,57,4 Aug 2026
-Virar,35,4 Aug 2026
-Visakhapatnam,87,4 Aug 2026
-Vrindavan,50,4 Aug 2026
-Yadgir,32,4 Aug 2026
-Agartala,72,3 Aug 2026
-Agra,70,3 Aug 2026
-Ahmedabad,75,3 Aug 2026
-Ahmednagar,44,3 Aug 2026
-Aizawl,17,3 Aug 2026
-Ajmer,43,3 Aug 2026
-Akola,48,3 Aug 2026
-Alwar,88,3 Aug 2026
-Amaravati,58,3 Aug 2026
-Ambala,67,3 Aug 2026
-Ambernath,54,3 Aug 2026
-Amravati,42,3 Aug 2026
-Amritsar,75,3 Aug 2026
-Anantapur,55,3 Aug 2026
-Angul,59,3 Aug 2026
-Ankleshwar,43,3 Aug 2026
-Araria,48,3 Aug 2026
-Asansol,59,3 Aug 2026
-Aurangabad (Maharashtra),66,3 Aug 2026
-Baddi,93,3 Aug 2026
-Badlapur,35,3 Aug 2026
-Bagalkot,51,3 Aug 2026
-Bahadurgarh,59,3 Aug 2026
-Balasore,57,3 Aug 2026
-Ballabgarh,51,3 Aug 2026
-Banswara,66,3 Aug 2026
-Baran,45,3 Aug 2026
-Barbil,75,3 Aug 2026
-Bareilly,34,3 Aug 2026
-Baripada,64,3 Aug 2026
-Barmer,56,3 Aug 2026
-Barrackpore,65,3 Aug 2026
-Bathinda,85,3 Aug 2026
-Beed,28,3 Aug 2026
-Begusarai,63,3 Aug 2026
-Belapur,46,3 Aug 2026
-Belgaum,68,3 Aug 2026
-Bengaluru,51,3 Aug 2026
-Bettiah,23,3 Aug 2026
-Bhagalpur,70,3 Aug 2026
-Bharatpur,33,3 Aug 2026
-Bhavnagar,59,3 Aug 2026
-Bhilai,21,3 Aug 2026
-Bhilwara,55,3 Aug 2026
-Bhiwadi,60,3 Aug 2026
-Bhiwandi,45,3 Aug 2026
-Bhiwani,21,3 Aug 2026
-Bhopal,45,3 Aug 2026
-Bhubaneswar,47,3 Aug 2026
-Bihar sharif,387,3 Aug 2026
-Bikaner,42,3 Aug 2026
-Bilaspur,53,3 Aug 2026
-Bileipada,178,3 Aug 2026
-Boisar,60,3 Aug 2026
-Brajrajnagar,67,3 Aug 2026
-Bulandshahr,51,3 Aug 2026
-Bundi,44,3 Aug 2026
-Byasanagar,58,3 Aug 2026
-Byrnihat (Assam),86,3 Aug 2026
-Byrnihat (Meghalaya),154,3 Aug 2026
-Chamarajanagar,46,3 Aug 2026
-Chandigarh,44,3 Aug 2026
-Chandrapur,49,3 Aug 2026
-Charkhi dadri,79,3 Aug 2026
-Chennai,75,3 Aug 2026
-Chhal,92,3 Aug 2026
-Chhapra,90,3 Aug 2026
-Chikkaballapur,40,3 Aug 2026
-Chikkamagaluru,31,3 Aug 2026
-Chittoor,62,3 Aug 2026
-Chittorgarh,59,3 Aug 2026
-Churu,56,3 Aug 2026
-Coimbatore,25,3 Aug 2026
-Cuttack,52,3 Aug 2026
-Damoh,51,3 Aug 2026
-Dausa,73,3 Aug 2026
-Dehradun,44,3 Aug 2026
-Delhi,76,3 Aug 2026
-Dewas,61,3 Aug 2026
-Dhanbad,103,3 Aug 2026
-Dharuhera,69,3 Aug 2026
-Dharwad,57,3 Aug 2026
-Dholpur,52,3 Aug 2026
-Dhule,46,3 Aug 2026
-Dombivli,35,3 Aug 2026
-Dungarpur,51,3 Aug 2026
-Durgapur,77,3 Aug 2026
-Eluru,65,3 Aug 2026
-Faridabad,75,3 Aug 2026
-Fatehabad,78,3 Aug 2026
-Fatehpur sikri,29,3 Aug 2026
-Firozabad,33,3 Aug 2026
-Gandhinagar,65,3 Aug 2026
-Gangtok,19,3 Aug 2026
-Gaya,53,3 Aug 2026
-Ghaziabad,78,3 Aug 2026
-Greater noida,85,3 Aug 2026
-Gummidipoondi,77,3 Aug 2026
-Guntur,60,3 Aug 2026
-Gurugram,130,3 Aug 2026
-Guwahati,73,3 Aug 2026
-Gwalior,53,3 Aug 2026
-Hajipur,56,3 Aug 2026
-Haldia,55,3 Aug 2026
-Hanumangarh,42,3 Aug 2026
-Hapur,50,3 Aug 2026
-Hingoli,38,3 Aug 2026
-Hisar,56,3 Aug 2026
-Howrah,74,3 Aug 2026
-Hubballi,52,3 Aug 2026
-Hyderabad,49,3 Aug 2026
-Indore,36,3 Aug 2026
-Jabalpur,55,3 Aug 2026
-Jaipur,48,3 Aug 2026
-Jaisalmer,64,3 Aug 2026
-Jalandhar,60,3 Aug 2026
-Jalgaon,40,3 Aug 2026
-Jalore,35,3 Aug 2026
-Jhalawar,61,3 Aug 2026
-Jhansi,63,3 Aug 2026
-Jhunjhunu,88,3 Aug 2026
-Jind,56,3 Aug 2026
-Jodhpur,52,3 Aug 2026
-Jorapokhar,120,3 Aug 2026
-Kadapa,58,3 Aug 2026
-Kaithal,54,3 Aug 2026
-Kakinada,66,3 Aug 2026
-Kalaburagi,32,3 Aug 2026
-Kalyan,58,3 Aug 2026
-Kannur,45,3 Aug 2026
-Kanpur,43,3 Aug 2026
-Karauli,44,3 Aug 2026
-Karnal,69,3 Aug 2026
-Karwar,59,3 Aug 2026
-Katihar,65,3 Aug 2026
-Katni,47,3 Aug 2026
-Keonjhar,46,3 Aug 2026
-Khanna,68,3 Aug 2026
-Khora,99,3 Aug 2026
-Khurja,47,3 Aug 2026
-Kishanganj,44,3 Aug 2026
-Kohima,55,3 Aug 2026
-Kolhapur,32,3 Aug 2026
-Kolkata,70,3 Aug 2026
-Korba,46,3 Aug 2026
-Kota,41,3 Aug 2026
-Kunjemura,105,3 Aug 2026
-Kurnool,28,3 Aug 2026
-Kurukshetra,60,3 Aug 2026
-Latur,36,3 Aug 2026
-Lucknow,74,3 Aug 2026
-Machilipatnam,84,3 Aug 2026
-Madikeri,14,3 Aug 2026
-Mahad,50,3 Aug 2026
-Maihar,15,3 Aug 2026
-Malegaon,50,3 Aug 2026
-Mandideep,45,3 Aug 2026
-Mandi gobindgarh,105,3 Aug 2026
-Mandikhera,98,3 Aug 2026
-Manesar,35,3 Aug 2026
-Mangalore,57,3 Aug 2026
-Manguraha,71,3 Aug 2026
-Mathura,37,3 Aug 2026
-Meerut,60,3 Aug 2026
-Mehsana,81,3 Aug 2026
-Milupara,58,3 Aug 2026
-Mira-bhayandar,31,3 Aug 2026
-Moradabad,47,3 Aug 2026
-Mumbai,48,3 Aug 2026
-Munger,59,3 Aug 2026
-Muzaffarnagar,66,3 Aug 2026
-Muzaffarpur,42,3 Aug 2026
-Mysuru,52,3 Aug 2026
-Nagaon,64,3 Aug 2026
-Nagaur,33,3 Aug 2026
-Nagpur,49,3 Aug 2026
-Naharlagun,13,3 Aug 2026
-Nalbari,33,3 Aug 2026
-Nanded,31,3 Aug 2026
-Nandesari,61,3 Aug 2026
-Narnaul,74,3 Aug 2026
-Nashik,33,3 Aug 2026
-Navi mumbai,39,3 Aug 2026
-Nellore,65,3 Aug 2026
-Noida,74,3 Aug 2026
-Palwal,51,3 Aug 2026
-Pampore,54,3 Aug 2026
-Panchkula,40,3 Aug 2026
-Panipat,119,3 Aug 2026
-Parbhani,31,3 Aug 2026
-Patiala,44,3 Aug 2026
-Patna,65,3 Aug 2026
-Pimpri-chinchwad,45,3 Aug 2026
-Pithampur,67,3 Aug 2026
-Pratapgarh,45,3 Aug 2026
-Prayagraj,23,3 Aug 2026
-Puducherry,44,3 Aug 2026
-Pune,50,3 Aug 2026
-Purnia,57,3 Aug 2026
-Raebareli,74,3 Aug 2026
-Raipur,38,3 Aug 2026
-Rairangpur,43,3 Aug 2026
-Rajamahendravaram,51,3 Aug 2026
-Rajkot,74,3 Aug 2026
-Rajsamand,46,3 Aug 2026
-Ramanagara,40,3 Aug 2026
-Ratlam,35,3 Aug 2026
-Rishikesh,37,3 Aug 2026
-Rohtak,62,3 Aug 2026
-Rourkela,63,3 Aug 2026
-Sagar,35,3 Aug 2026
-Saharsa,64,3 Aug 2026
-Samastipur,99,3 Aug 2026
-Sangli,40,3 Aug 2026
-Satara,55,3 Aug 2026
-Satna,70,3 Aug 2026
-Sawai madhopur,43,3 Aug 2026
-Shamli,66,3 Aug 2026
-Shillong,26,3 Aug 2026
-Sikar,80,3 Aug 2026
-Silchar,55,3 Aug 2026
-Siliguri,116,3 Aug 2026
-Singrauli,43,3 Aug 2026
-Sirohi,58,3 Aug 2026
-Sirsa,85,3 Aug 2026
-Siwan,105,3 Aug 2026
-Solapur,53,3 Aug 2026
-Sonipat,133,3 Aug 2026
-Sri ganganagar,114,3 Aug 2026
-Srinagar,44,3 Aug 2026
-Surat,73,3 Aug 2026
-Talcher,62,3 Aug 2026
-Tensa,38,3 Aug 2026
-Thane,40,3 Aug 2026
-Thiruvananthapuram,34,3 Aug 2026
-Thoothukudi,66,3 Aug 2026
-Thrissur,40,3 Aug 2026
-Tirumala,53,3 Aug 2026
-Tirupati,62,3 Aug 2026
-Tonk,57,3 Aug 2026
-Tumidih,47,3 Aug 2026
-Udaipur,60,3 Aug 2026
-Ujjain,42,3 Aug 2026
-Ulhasnagar,24,3 Aug 2026
-Vadodara,70,3 Aug 2026
-Vapi,45,3 Aug 2026
-Varanasi,48,3 Aug 2026
-Vatva,101,3 Aug 2026
-Vijayapura,43,3 Aug 2026
-Vijayawada,61,3 Aug 2026
-Virar,31,3 Aug 2026
-Visakhapatnam,132,3 Aug 2026
-Vrindavan,50,3 Aug 2026
-Yadgir,38,3 Aug 2026
-Yamuna nagar,71,3 Aug 2026
-Agartala,72,2 Aug 2026
-Agra,65,2 Aug 2026
-Ahmedabad,70,2 Aug 2026
-Ahmednagar,69,2 Aug 2026
-Aizawl,20,2 Aug 2026
-Akola,43,2 Aug 2026
-Alwar,89,2 Aug 2026
-Amaravati,54,2 Aug 2026
-Ambala,62,2 Aug 2026
-Ambernath,74,2 Aug 2026
-Amravati,28,2 Aug 2026
-Amritsar,77,2 Aug 2026
-Anantapur,49,2 Aug 2026
-Angul,68,2 Aug 2026
-Araria,47,2 Aug 2026
-Asansol,50,2 Aug 2026
-Aurangabad (Maharashtra),43,2 Aug 2026
-Baddi,104,2 Aug 2026
-Badlapur,30,2 Aug 2026
-Bagalkot,51,2 Aug 2026
-Baghpat,87,2 Aug 2026
-Bahadurgarh,57,2 Aug 2026
-Balasore,61,2 Aug 2026
-Ballabgarh,47,2 Aug 2026
-Banswara,59,2 Aug 2026
-Baran,53,2 Aug 2026
-Barbil,73,2 Aug 2026
-Bareilly,49,2 Aug 2026
-Baripada,62,2 Aug 2026
-Barmer,41,2 Aug 2026
-Barrackpore,56,2 Aug 2026
-Bathinda,85,2 Aug 2026
-Beed,33,2 Aug 2026
-Begusarai,77,2 Aug 2026
-Belapur,49,2 Aug 2026
-Belgaum,68,2 Aug 2026
-Bengaluru,40,2 Aug 2026
-Bettiah,32,2 Aug 2026
-Bhagalpur,111,2 Aug 2026
-Bharatpur,35,2 Aug 2026
-Bhavnagar,59,2 Aug 2026
-Bhilai,21,2 Aug 2026
-Bhilwara,101,2 Aug 2026
-Bhiwadi,66,2 Aug 2026
-Bhiwandi,45,2 Aug 2026
-Bhiwani,46,2 Aug 2026
-Bhopal,30,2 Aug 2026
-Bhubaneswar,51,2 Aug 2026
-Bihar sharif,278,2 Aug 2026
-Bikaner,102,2 Aug 2026
-Bilaspur,76,2 Aug 2026
-Bileipada,196,2 Aug 2026
-Boisar,42,2 Aug 2026
-Brajrajnagar,71,2 Aug 2026
-Bulandshahr,54,2 Aug 2026
-Bundi,40,2 Aug 2026
-Buxar,122,2 Aug 2026
-Byasanagar,53,2 Aug 2026
-Byrnihat (Assam),86,2 Aug 2026
-Byrnihat (Meghalaya),113,2 Aug 2026
-Chamarajanagar,35,2 Aug 2026
-Chandigarh,44,2 Aug 2026
-Chandrapur,39,2 Aug 2026
-Charkhi dadri,72,2 Aug 2026
-Chennai,61,2 Aug 2026
-Chhal,70,2 Aug 2026
-Chhapra,121,2 Aug 2026
-Chikkamagaluru,29,2 Aug 2026
-Chittoor,60,2 Aug 2026
-Chittorgarh,34,2 Aug 2026
-Churu,57,2 Aug 2026
-Coimbatore,26,2 Aug 2026
-Cuddalore,40,2 Aug 2026
-Cuttack,54,2 Aug 2026
-Damoh,48,2 Aug 2026
-Dausa,32,2 Aug 2026
-Dehradun,40,2 Aug 2026
-Delhi,78,2 Aug 2026
-Dewas,64,2 Aug 2026
-Dhanbad,106,2 Aug 2026
-Dharuhera,79,2 Aug 2026
-Dharwad,59,2 Aug 2026
-Dholpur,55,2 Aug 2026
-Dhule,35,2 Aug 2026
-Dombivli,34,2 Aug 2026
-Dungarpur,30,2 Aug 2026
-Durgapur,65,2 Aug 2026
-Eluru,73,2 Aug 2026
-Faridabad,74,2 Aug 2026
-Fatehpur sikri,31,2 Aug 2026
-Firozabad,38,2 Aug 2026
-Gajraula,62,2 Aug 2026
-Gandhinagar,39,2 Aug 2026
-Gangtok,21,2 Aug 2026
-Gaya,57,2 Aug 2026
-Ghaziabad,73,2 Aug 2026
-Gorakhpur,85,2 Aug 2026
-Greater noida,88,2 Aug 2026
-Gummidipoondi,90,2 Aug 2026
-Guntur,59,2 Aug 2026
-Gurugram,83,2 Aug 2026
-Guwahati,44,2 Aug 2026
-Gwalior,54,2 Aug 2026
-Hajipur,53,2 Aug 2026
-Haldia,46,2 Aug 2026
-Hanumangarh,50,2 Aug 2026
-Hapur,52,2 Aug 2026
-Hingoli,39,2 Aug 2026
-Hisar,65,2 Aug 2026
-Howrah,66,2 Aug 2026
-Hubballi,40,2 Aug 2026
-Hyderabad,50,2 Aug 2026
-Indore,34,2 Aug 2026
-Jabalpur,55,2 Aug 2026
-Jaipur,49,2 Aug 2026
-Jaisalmer,70,2 Aug 2026
-Jalandhar,60,2 Aug 2026
-Jalgaon,36,2 Aug 2026
-Jalore,46,2 Aug 2026
-Jhalawar,78,2 Aug 2026
-Jhansi,51,2 Aug 2026
-Jhunjhunu,80,2 Aug 2026
-Jind,65,2 Aug 2026
-Jodhpur,63,2 Aug 2026
-Jorapokhar,92,2 Aug 2026
-Kaithal,58,2 Aug 2026
-Kakinada,69,2 Aug 2026
-Kalaburagi,38,2 Aug 2026
-Kalyan,74,2 Aug 2026
-Kannur,45,2 Aug 2026
-Kanpur,46,2 Aug 2026
-Karauli,42,2 Aug 2026
-Karnal,62,2 Aug 2026
-Karwar,86,2 Aug 2026
-Katihar,68,2 Aug 2026
-Katni,50,2 Aug 2026
-Keonjhar,41,2 Aug 2026
-Khanna,65,2 Aug 2026
-Khora,104,2 Aug 2026
-Khurja,58,2 Aug 2026
-Kishanganj,44,2 Aug 2026
-Kohima,56,2 Aug 2026
-Kolhapur,37,2 Aug 2026
-Kolkata,62,2 Aug 2026
-Korba,43,2 Aug 2026
-Kota,38,2 Aug 2026
-Kunjemura,98,2 Aug 2026
-Kurnool,31,2 Aug 2026
-Kurukshetra,68,2 Aug 2026
-Latur,42,2 Aug 2026
-Lucknow,92,2 Aug 2026
-Ludhiana,69,2 Aug 2026
-Machilipatnam,68,2 Aug 2026
-Madikeri,14,2 Aug 2026
-Mahad,49,2 Aug 2026
-Mandideep,28,2 Aug 2026
-Mandi gobindgarh,109,2 Aug 2026
-Mandikhera,99,2 Aug 2026
-Manesar,47,2 Aug 2026
-Mangalore,60,2 Aug 2026
-Mathura,35,2 Aug 2026
-Meerut,70,2 Aug 2026
-Mehsana,67,2 Aug 2026
-Mira-bhayandar,40,2 Aug 2026
-Moradabad,52,2 Aug 2026
-Mumbai,52,2 Aug 2026
-Munger,71,2 Aug 2026
-Muzaffarnagar,59,2 Aug 2026
-Muzaffarpur,50,2 Aug 2026
-Mysuru,118,2 Aug 2026
-Nagaur,49,2 Aug 2026
-Nagpur,35,2 Aug 2026
-Naharlagun,34,2 Aug 2026
-Nalbari,36,2 Aug 2026
-Nanded,33,2 Aug 2026
-Nandesari,120,2 Aug 2026
-Narnaul,77,2 Aug 2026
-Nashik,30,2 Aug 2026
-Navi mumbai,43,2 Aug 2026
-Nellore,60,2 Aug 2026
-Noida,71,2 Aug 2026
-Pali,62,2 Aug 2026
-Palwal,53,2 Aug 2026
-Pampore,30,2 Aug 2026
-Panchgaon,22,2 Aug 2026
-Panchkula,37,2 Aug 2026
-Panipat,111,2 Aug 2026
-Parbhani,23,2 Aug 2026
-Patiala,40,2 Aug 2026
-Patna,70,2 Aug 2026
-Pimpri-chinchwad,53,2 Aug 2026
-Pithampur,41,2 Aug 2026
-Pratapgarh,38,2 Aug 2026
-Prayagraj,42,2 Aug 2026
-Puducherry,49,2 Aug 2026
-Pune,50,2 Aug 2026
-Purnia,57,2 Aug 2026
-Raebareli,72,2 Aug 2026
-Raipur,30,2 Aug 2026
-Rairangpur,31,2 Aug 2026
-Rajamahendravaram,96,2 Aug 2026
-Rajkot,64,2 Aug 2026
-Rajsamand,55,2 Aug 2026
-Ramanagara,33,2 Aug 2026
-Ratlam,35,2 Aug 2026
-Rishikesh,37,2 Aug 2026
-Rohtak,51,2 Aug 2026
-Rourkela,42,2 Aug 2026
-Rupnagar,100,2 Aug 2026
-Sagar,35,2 Aug 2026
-Saharsa,137,2 Aug 2026
-Samastipur,82,2 Aug 2026
-Sangli,41,2 Aug 2026
-Satara,47,2 Aug 2026
-Satna,70,2 Aug 2026
-Sawai madhopur,36,2 Aug 2026
-Shamli,86,2 Aug 2026
-Shillong,24,2 Aug 2026
-Sikar,44,2 Aug 2026
-Silchar,57,2 Aug 2026
-Siliguri,111,2 Aug 2026
-Singrauli,74,2 Aug 2026
-Sirohi,30,2 Aug 2026
-Sirsa,86,2 Aug 2026
-Siwan,105,2 Aug 2026
-Solapur,51,2 Aug 2026
-Sonipat,132,2 Aug 2026
-Sri ganganagar,115,2 Aug 2026
-Srinagar,37,2 Aug 2026
-Surat,65,2 Aug 2026
-Talcher,60,2 Aug 2026
-Tensa,46,2 Aug 2026
-Thane,49,2 Aug 2026
-Thiruvananthapuram,34,2 Aug 2026
-Thrissur,39,2 Aug 2026
-Tirumala,41,2 Aug 2026
-Tirupati,59,2 Aug 2026
-Tonk,54,2 Aug 2026
-Tumidih,75,2 Aug 2026
-Udaipur,95,2 Aug 2026
-Ujjain,40,2 Aug 2026
-Ulhasnagar,34,2 Aug 2026
-Vadodara,70,2 Aug 2026
-Vapi,43,2 Aug 2026
-Varanasi,58,2 Aug 2026
-Vatva,87,2 Aug 2026
-Vijayapura,43,2 Aug 2026
-Vijayawada,59,2 Aug 2026
-Virar,46,2 Aug 2026
-Visakhapatnam,109,2 Aug 2026
-Vrindavan,27,2 Aug 2026
-Yadgir,51,2 Aug 2026
-Yamuna nagar,74,2 Aug 2026
-Agartala,49,1 Aug 2026
-Agra,72,1 Aug 2026
-Ahmedabad,43,1 Aug 2026
-Ahmednagar,47,1 Aug 2026
-Aizawl,25,1 Aug 2026
-Ajmer,68,1 Aug 2026
-Akola,32,1 Aug 2026
-Alwar,99,1 Aug 2026
-Amaravati,35,1 Aug 2026
-Ambala,69,1 Aug 2026
-Ambernath,87,1 Aug 2026
-Amravati,19,1 Aug 2026
-Amritsar,92,1 Aug 2026
-Anantapur,58,1 Aug 2026
-Ankleshwar,53,1 Aug 2026
-Araria,47,1 Aug 2026
-Asansol,47,1 Aug 2026
-Aurangabad (Maharashtra),41,1 Aug 2026
-Baddi,102,1 Aug 2026
-Badlapur,25,1 Aug 2026
-Bagalkot,51,1 Aug 2026
-Baghpat,66,1 Aug 2026
-Bahadurgarh,63,1 Aug 2026
-Balasore,48,1 Aug 2026
-Ballabgarh,51,1 Aug 2026
-Banswara,67,1 Aug 2026
-Baran,51,1 Aug 2026
-Barbil,36,1 Aug 2026
-Bareilly,111,1 Aug 2026
-Baripada,54,1 Aug 2026
-Barmer,110,1 Aug 2026
-Barrackpore,52,1 Aug 2026
-Bathinda,85,1 Aug 2026
-Beed,38,1 Aug 2026
-Begusarai,202,1 Aug 2026
-Belapur,54,1 Aug 2026
-Bengaluru,42,1 Aug 2026
-Bettiah,40,1 Aug 2026
-Bhagalpur,36,1 Aug 2026
-Bharatpur,38,1 Aug 2026
-Bhavnagar,59,1 Aug 2026
-Bhilai,26,1 Aug 2026
-Bhilwara,66,1 Aug 2026
-Bhiwadi,76,1 Aug 2026
-Bhiwandi,46,1 Aug 2026
-Bhiwani,57,1 Aug 2026
-Bhopal,25,1 Aug 2026
-Bhubaneswar,51,1 Aug 2026
-Bikaner,115,1 Aug 2026
-Bilaspur,31,1 Aug 2026
-Bileipada,76,1 Aug 2026
-Boisar,49,1 Aug 2026
-Brajrajnagar,65,1 Aug 2026
-Bulandshahr,60,1 Aug 2026
-Bundi,34,1 Aug 2026
-Buxar,250,1 Aug 2026
-Byasanagar,48,1 Aug 2026
-Byrnihat (Assam),101,1 Aug 2026
-Byrnihat (Meghalaya),151,1 Aug 2026
-Chamarajanagar,42,1 Aug 2026
-Chandigarh,40,1 Aug 2026
-Chandrapur,38,1 Aug 2026
-Charkhi dadri,101,1 Aug 2026
-Chennai,76,1 Aug 2026
-Chhal,107,1 Aug 2026
-Chhapra,91,1 Aug 2026
-Chikkaballapur,34,1 Aug 2026
-Chikkamagaluru,38,1 Aug 2026
-Chittoor,61,1 Aug 2026
-Churu,69,1 Aug 2026
-Coimbatore,32,1 Aug 2026
-Cuddalore,54,1 Aug 2026
-Cuttack,60,1 Aug 2026
-Damoh,50,1 Aug 2026
-Dausa,60,1 Aug 2026
-Dehradun,31,1 Aug 2026
-Delhi,80,1 Aug 2026
-Dewas,62,1 Aug 2026
-Dhanbad,106,1 Aug 2026
-Dharuhera,80,1 Aug 2026
-Dharwad,65,1 Aug 2026
-Dholpur,59,1 Aug 2026
-Dhule,21,1 Aug 2026
-Dombivli,34,1 Aug 2026
-Dungarpur,42,1 Aug 2026
-Durgapur,58,1 Aug 2026
-Eluru,58,1 Aug 2026
-Faridabad,73,1 Aug 2026
-Fatehabad,76,1 Aug 2026
-Fatehpur sikri,33,1 Aug 2026
-Firozabad,45,1 Aug 2026
-Gajraula,44,1 Aug 2026
-Gandhinagar,43,1 Aug 2026
-Gaya,53,1 Aug 2026
-Ghaziabad,74,1 Aug 2026
-Gorakhpur,67,1 Aug 2026
-Greater noida,111,1 Aug 2026
-Gummidipoondi,119,1 Aug 2026
-Guntur,53,1 Aug 2026
-Gurugram,100,1 Aug 2026
-Guwahati,41,1 Aug 2026
-Gwalior,52,1 Aug 2026
-Hajipur,40,1 Aug 2026
-Haldia,45,1 Aug 2026
-Hanumangarh,43,1 Aug 2026
-Hapur,83,1 Aug 2026
-Hingoli,29,1 Aug 2026
-Hisar,55,1 Aug 2026
-Howrah,64,1 Aug 2026
-Hubballi,42,1 Aug 2026
-Hyderabad,45,1 Aug 2026
-Indore,33,1 Aug 2026
-Jabalpur,57,1 Aug 2026
-Jaipur,62,1 Aug 2026
-Jaisalmer,81,1 Aug 2026
-Jalandhar,52,1 Aug 2026
-Jalgaon,44,1 Aug 2026
-Jalna,23,1 Aug 2026
-Jalore,65,1 Aug 2026
-Jhalawar,62,1 Aug 2026
-Jhansi,55,1 Aug 2026
-Jhunjhunu,94,1 Aug 2026
-Jind,40,1 Aug 2026
-Jodhpur,75,1 Aug 2026
-Jorapokhar,62,1 Aug 2026
-Kadapa,55,1 Aug 2026
-Kaithal,49,1 Aug 2026
-Kakinada,60,1 Aug 2026
-Kalaburagi,32,1 Aug 2026
-Kalyan,75,1 Aug 2026
-Kannur,44,1 Aug 2026
-Kanpur,49,1 Aug 2026
-Karauli,39,1 Aug 2026
-Karwar,48,1 Aug 2026
-Katihar,70,1 Aug 2026
-Katni,38,1 Aug 2026
-Keonjhar,42,1 Aug 2026
-Khanna,65,1 Aug 2026
-Khora,102,1 Aug 2026
-Khurja,50,1 Aug 2026
-Kishanganj,43,1 Aug 2026
-Kohima,52,1 Aug 2026
-Kolhapur,31,1 Aug 2026
-Kolkata,56,1 Aug 2026
-Korba,29,1 Aug 2026
-Kota,48,1 Aug 2026
-Kunjemura,61,1 Aug 2026
-Kurnool,31,1 Aug 2026
-Kurukshetra,45,1 Aug 2026
-Latur,27,1 Aug 2026
-Lucknow,64,1 Aug 2026
-Ludhiana,68,1 Aug 2026
-Machilipatnam,83,1 Aug 2026
-Mahad,54,1 Aug 2026
-Mandideep,98,1 Aug 2026
-Mandi gobindgarh,112,1 Aug 2026
-Mandikhera,97,1 Aug 2026
-Manesar,53,1 Aug 2026
-Manguraha,73,1 Aug 2026
-Mathura,61,1 Aug 2026
-Meerut,61,1 Aug 2026
-Mehsana,46,1 Aug 2026
-Milupara,42,1 Aug 2026
-Mira-bhayandar,45,1 Aug 2026
-Modinagar,37,1 Aug 2026
-Moradabad,47,1 Aug 2026
-Mumbai,58,1 Aug 2026
-Muzaffarnagar,50,1 Aug 2026
-Muzaffarpur,44,1 Aug 2026
-Mysuru,44,1 Aug 2026
-Nagaur,69,1 Aug 2026
-Nagpur,35,1 Aug 2026
-Naharlagun,22,1 Aug 2026
-Nalbari,30,1 Aug 2026
-Nanded,24,1 Aug 2026
-Nandesari,220,1 Aug 2026
-Narnaul,98,1 Aug 2026
-Nashik,34,1 Aug 2026
-Navi mumbai,50,1 Aug 2026
-Nellore,63,1 Aug 2026
-Noida,72,1 Aug 2026
-Pali,81,1 Aug 2026
-Pampore,27,1 Aug 2026
-Panchgaon,39,1 Aug 2026
-Panchkula,40,1 Aug 2026
-Panipat,106,1 Aug 2026
-Parbhani,21,1 Aug 2026
-Patiala,35,1 Aug 2026
-Patna,52,1 Aug 2026
-Pimpri-chinchwad,48,1 Aug 2026
-Pithampur,41,1 Aug 2026
-Pratapgarh,41,1 Aug 2026
-Prayagraj,40,1 Aug 2026
-Puducherry,50,1 Aug 2026
-Pune,49,1 Aug 2026
-Purnia,58,1 Aug 2026
-Raipur,16,1 Aug 2026
-Rairangpur,31,1 Aug 2026
-Rajamahendravaram,40,1 Aug 2026
-Rajkot,47,1 Aug 2026
-Rajsamand,70,1 Aug 2026
-Ramanagara,35,1 Aug 2026
-Ratlam,35,1 Aug 2026
-Rishikesh,37,1 Aug 2026
-Rohtak,55,1 Aug 2026
-Rourkela,37,1 Aug 2026
-Sagar,50,1 Aug 2026
-Saharsa,59,1 Aug 2026
-Sangli,35,1 Aug 2026
-Satna,70,1 Aug 2026
-Sawai madhopur,49,1 Aug 2026
-Shamli,91,1 Aug 2026
-Shillong,24,1 Aug 2026
-Sikar,53,1 Aug 2026
-Silchar,55,1 Aug 2026
-Siliguri,119,1 Aug 2026
-Singrauli,34,1 Aug 2026
-Sirohi,54,1 Aug 2026
-Sirsa,77,1 Aug 2026
-Siwan,105,1 Aug 2026
-Solapur,50,1 Aug 2026
-Sonipat,133,1 Aug 2026
-Sri ganganagar,71,1 Aug 2026
-Srinagar,39,1 Aug 2026
-Surat,41,1 Aug 2026
-Talcher,48,1 Aug 2026
-Tensa,49,1 Aug 2026
-Thane,52,1 Aug 2026
-Thiruvananthapuram,40,1 Aug 2026
-Thoothukudi,65,1 Aug 2026
-Thrissur,48,1 Aug 2026
-Tirumala,44,1 Aug 2026
-Tirupati,60,1 Aug 2026
-Tonk,72,1 Aug 2026
-Tumakuru,61,1 Aug 2026
-Tumidih,77,1 Aug 2026
-Ujjain,43,1 Aug 2026
-Ulhasnagar,39,1 Aug 2026
-Vadodara,70,1 Aug 2026
-Vapi,31,1 Aug 2026
-Varanasi,54,1 Aug 2026
-Vatva,78,1 Aug 2026
-Vijayapura,43,1 Aug 2026
-Vijayawada,53,1 Aug 2026
-Virar,49,1 Aug 2026
-Visakhapatnam,104,1 Aug 2026
-Vrindavan,30,1 Aug 2026
-Yadgir,48,1 Aug 2026
-Yamuna nagar,75,1 Aug 2026
-Agartala,79,9 Aug 2026
-Agra,80,9 Aug 2026
-Ahmedabad,93,9 Aug 2026
-Ahmednagar,47,9 Aug 2026
-Aizawl,14,9 Aug 2026
-Akola,45,9 Aug 2026
-Alwar,79,9 Aug 2026
-Amaravati,76,9 Aug 2026
-Ambala,108,9 Aug 2026
-Ambernath,90,9 Aug 2026
-Amravati,66,9 Aug 2026
-Amritsar,58,9 Aug 2026
-Anantapur,67,9 Aug 2026
-Angul,76,9 Aug 2026
-Ankleshwar,70,9 Aug 2026
-Araria,40,9 Aug 2026
-Arrah,55,9 Aug 2026
-Asansol,53,9 Aug 2026
-Aurangabad (Maharashtra),53,9 Aug 2026
-Baddi,106,9 Aug 2026
-Badlapur,23,9 Aug 2026
-Baghpat,79,9 Aug 2026
-Bahadurgarh,59,9 Aug 2026
-Balasore,45,9 Aug 2026
-Ballabgarh,82,9 Aug 2026
-Banswara,64,9 Aug 2026
-Baran,54,9 Aug 2026
-Barbil,38,9 Aug 2026
-Bareilly,46,9 Aug 2026
-Barmer,81,9 Aug 2026
-Barrackpore,39,9 Aug 2026
-Bathinda,29,9 Aug 2026
-Beed,46,9 Aug 2026
-Begusarai,68,9 Aug 2026
-Belapur,18,9 Aug 2026
-Belgaum,41,9 Aug 2026
-Bengaluru,53,9 Aug 2026
-Bettiah,26,9 Aug 2026
-Bhagalpur,89,9 Aug 2026
-Bharatpur,42,9 Aug 2026
-Bhavnagar,64,9 Aug 2026
-Bhilai,20,9 Aug 2026
-Bhilwara,95,9 Aug 2026
-Bhiwadi,86,9 Aug 2026
-Bhiwandi,44,9 Aug 2026
-Bhiwani,52,9 Aug 2026
-Bhopal,80,9 Aug 2026
-Bhubaneswar,36,9 Aug 2026
-Bikaner,65,9 Aug 2026
-Bilaspur,22,9 Aug 2026
-Boisar,55,9 Aug 2026
-Brajrajnagar,47,9 Aug 2026
-Bulandshahr,61,9 Aug 2026
-Bundi,61,9 Aug 2026
-Byasanagar,39,9 Aug 2026
-Byrnihat (Assam),90,9 Aug 2026
-Byrnihat (Meghalaya),89,9 Aug 2026
-Chamarajanagar,45,9 Aug 2026
-Chandigarh,35,9 Aug 2026
-Chandrapur,57,9 Aug 2026
-Charkhi dadri,167,9 Aug 2026
-Chennai,70,9 Aug 2026
-Chikkaballapur,23,9 Aug 2026
-Chikkamagaluru,36,9 Aug 2026
-Chittoor,59,9 Aug 2026
-Chittorgarh,72,9 Aug 2026
-Churu,55,9 Aug 2026
-Coimbatore,26,9 Aug 2026
-Cuttack,46,9 Aug 2026
-Damoh,50,9 Aug 2026
-Dausa,61,9 Aug 2026
-Delhi,87,9 Aug 2026
-Dewas,84,9 Aug 2026
-Dharuhera,81,9 Aug 2026
-Dharwad,63,9 Aug 2026
-Dholpur,29,9 Aug 2026
-Dhule,55,9 Aug 2026
-Dombivli,35,9 Aug 2026
-Dungarpur,114,9 Aug 2026
-Durgapur,59,9 Aug 2026
-Eluru,61,9 Aug 2026
-Faridabad,98,9 Aug 2026
-Fatehabad,52,9 Aug 2026
-Fatehpur sikri,29,9 Aug 2026
-Firozabad,35,9 Aug 2026
-Gadag,82,9 Aug 2026
-Gajraula,50,9 Aug 2026
-Gandhinagar,96,9 Aug 2026
-Gaya,39,9 Aug 2026
-Ghaziabad,82,9 Aug 2026
-Greater noida,133,9 Aug 2026
-Gummidipoondi,120,9 Aug 2026
-Guntur,86,9 Aug 2026
-Gurugram,117,9 Aug 2026
-Guwahati,38,9 Aug 2026
-Gwalior,80,9 Aug 2026
-Hajipur,43,9 Aug 2026
-Haldia,28,9 Aug 2026
-Hanumangarh,53,9 Aug 2026
-Hingoli,336,9 Aug 2026
-Hisar,34,9 Aug 2026
-Howrah,47,9 Aug 2026
-Hubballi,55,9 Aug 2026
-Hyderabad,50,9 Aug 2026
-Indore,64,9 Aug 2026
-Jabalpur,50,9 Aug 2026
-Jaipur,54,9 Aug 2026
-Jaisalmer,114,9 Aug 2026
-Jalandhar,59,9 Aug 2026
-Jalgaon,50,9 Aug 2026
-Jalna,58,9 Aug 2026
-Jalore,89,9 Aug 2026
-Jhalawar,72,9 Aug 2026
-Jhansi,71,9 Aug 2026
-Jhunjhunu,101,9 Aug 2026
-Jind,39,9 Aug 2026
-Jodhpur,80,9 Aug 2026
-Jorapokhar,77,9 Aug 2026
-Kadapa,70,9 Aug 2026
-Kaithal,50,9 Aug 2026
-Kalaburagi,31,9 Aug 2026
-Kalyan,50,9 Aug 2026
-Kannur,53,9 Aug 2026
-Kanpur,65,9 Aug 2026
-Karauli,36,9 Aug 2026
-Karnal,51,9 Aug 2026
-Karwar,57,9 Aug 2026
-Khairthal,75,9 Aug 2026
-Khanna,65,9 Aug 2026
-Khora,106,9 Aug 2026
-Khurja,81,9 Aug 2026
-Kishanganj,42,9 Aug 2026
-Kohima,50,9 Aug 2026
-Kolhapur,36,9 Aug 2026
-Kolkata,57,9 Aug 2026
-Korba,31,9 Aug 2026
-Kota,77,9 Aug 2026
-Kunjemura,22,9 Aug 2026
-Kurukshetra,47,9 Aug 2026
-Latur,71,9 Aug 2026
-Lucknow,61,9 Aug 2026
-Ludhiana,74,9 Aug 2026
-Machilipatnam,59,9 Aug 2026
-Madikeri,17,9 Aug 2026
-Mahad,56,9 Aug 2026
-Maihar,34,9 Aug 2026
-Malegaon,55,9 Aug 2026
-Mandideep,83,9 Aug 2026
-Mandi gobindgarh,119,9 Aug 2026
-Mandikhera,98,9 Aug 2026
-Manesar,54,9 Aug 2026
-Mangalore,37,9 Aug 2026
-Manguraha,70,9 Aug 2026
-Mathura,63,9 Aug 2026
-Meerut,74,9 Aug 2026
-Mehsana,71,9 Aug 2026
-Milupara,37,9 Aug 2026
-Mira-bhayandar,34,9 Aug 2026
-Modinagar,24,9 Aug 2026
-Moradabad,49,9 Aug 2026
-Mumbai,45,9 Aug 2026
-Muzaffarnagar,63,9 Aug 2026
-Muzaffarpur,43,9 Aug 2026
-Mysuru,57,9 Aug 2026
-Nagaur,59,9 Aug 2026
-Nagpur,56,9 Aug 2026
-Naharlagun,32,9 Aug 2026
-Nanded,51,9 Aug 2026
-Nandesari,61,9 Aug 2026
-Narnaul,67,9 Aug 2026
-Nashik,37,9 Aug 2026
-Navi mumbai,44,9 Aug 2026
-Nellore,56,9 Aug 2026
-Noida,83,9 Aug 2026
-Pali,149,9 Aug 2026
-Palwal,103,9 Aug 2026
-Pampore,27,9 Aug 2026
-Panchgaon,79,9 Aug 2026
-Panchkula,36,9 Aug 2026
-Panipat,94,9 Aug 2026
-Parbhani,30,9 Aug 2026
-Patiala,38,9 Aug 2026
-Patna,65,9 Aug 2026
-Pimpri-chinchwad,59,9 Aug 2026
-Pithampur,132,9 Aug 2026
-Pratapgarh,86,9 Aug 2026
-Prayagraj,44,9 Aug 2026
-Puducherry,42,9 Aug 2026
-Pune,61,9 Aug 2026
-Purnia,55,9 Aug 2026
-Raebareli,74,9 Aug 2026
-Raipur,21,9 Aug 2026
-Rairangpur,23,9 Aug 2026
-Rajamahendravaram,56,9 Aug 2026
-Rajkot,76,9 Aug 2026
-Rajsamand,93,9 Aug 2026
-Ramanagara,44,9 Aug 2026
-Ratlam,51,9 Aug 2026
-Rishikesh,37,9 Aug 2026
-Rohtak,43,9 Aug 2026
-Rourkela,43,9 Aug 2026
-Sagar,40,9 Aug 2026
-Saharsa,88,9 Aug 2026
-Samastipur,39,9 Aug 2026
-Sangli,52,9 Aug 2026
-Satara,63,9 Aug 2026
-Satna,70,9 Aug 2026
-Sawai madhopur,60,9 Aug 2026
-Shamli,57,9 Aug 2026
-Shillong,35,9 Aug 2026
-Shivamogga,53,9 Aug 2026
-Sikar,46,9 Aug 2026
-Silchar,53,9 Aug 2026
-Siliguri,119,9 Aug 2026
-Singrauli,71,9 Aug 2026
-Sirohi,76,9 Aug 2026
-Sirsa,88,9 Aug 2026
-Siwan,104,9 Aug 2026
-Solapur,45,9 Aug 2026
-Sonipat,90,9 Aug 2026
-Sri ganganagar,86,9 Aug 2026
-Srinagar,30,9 Aug 2026
-Surat,57,9 Aug 2026
-Tensa,78,9 Aug 2026
-Thane,48,9 Aug 2026
-Thiruvananthapuram,43,9 Aug 2026
-Thoothukudi,67,9 Aug 2026
-Thrissur,42,9 Aug 2026
-Tirumala,40,9 Aug 2026
-Tirupati,55,9 Aug 2026
-Tonk,88,9 Aug 2026
-Tumidih,40,9 Aug 2026
-Udaipur,101,9 Aug 2026
-Ujjain,88,9 Aug 2026
-Ulhasnagar,52,9 Aug 2026
-Vadodara,79,9 Aug 2026
-Vapi,48,9 Aug 2026
-Varanasi,56,9 Aug 2026
-Vatva,111,9 Aug 2026
-Vijayawada,69,9 Aug 2026
-Visakhapatnam,87,9 Aug 2026
-Vrindavan,49,9 Aug 2026
-Yadgir,50,9 Aug 2026
-Yamuna nagar,83,9 Aug 2026
+city,aqi,date,pollutant
+Agartala,81,8-Aug-26,PM10
+Agra,49,8-Aug-26,"SO2, PM10"
+Ahmedabad,83,8-Aug-26,PM10
+Ahmednagar,42,8-Aug-26,PM10
+Aizawl,15,8-Aug-26,PM10
+Akola,42,8-Aug-26,PM10
+Alwar,80,8-Aug-26,PM10
+Amaravati,85,8-Aug-26,PM10
+Ambala,85,8-Aug-26,PM10
+Ambernath,89,8-Aug-26,PM10
+Amravati,65,8-Aug-26,PM10
+Amritsar,58,8-Aug-26,PM10
+Anantapur,68,8-Aug-26,PM10
+Angul,62,8-Aug-26,O3
+Ankleshwar,64,8-Aug-26,PM10
+Arrah,51,8-Aug-26,CO
+Asansol,55,8-Aug-26,"SO2, CO"
+Aurangabad (Maharashtra),51,8-Aug-26,PM10
+Baddi,94,8-Aug-26,CO
+Badlapur,37,8-Aug-26,CO
+Baghpat,50,8-Aug-26,PM10
+Bahadurgarh,48,8-Aug-26,PM10
+Balasore,42,8-Aug-26,CO
+Ballabgarh,36,8-Aug-26,PM10
+Banswara,67,8-Aug-26,PM10
+Baran,87,8-Aug-26,PM10
+Barbil,43,8-Aug-26,PM2.5
+Bareilly,56,8-Aug-26,"O3, SO2"
+Baripada,47,8-Aug-26,O3
+Barmer,88,8-Aug-26,PM10
+Barrackpore,41,8-Aug-26,CO
+Bathinda,43,8-Aug-26,PM10
+Beed,44,8-Aug-26,PM10
+Begusarai,83,8-Aug-26,PM10
+Belapur,22,8-Aug-26,CO
+Belgaum,48,8-Aug-26,NO2
+Bengaluru,49,8-Aug-26,PM10
+Bettiah,28,8-Aug-26,NO2
+Bhagalpur,54,8-Aug-26,"SO2, PM10"
+Bharatpur,32,8-Aug-26,O3
+Bhavnagar,62,8-Aug-26,PM10
+Bhilai,28,8-Aug-26,"PM10, CO"
+Bhilwara,122,8-Aug-26,PM10
+Bhiwadi,74,8-Aug-26,"PM2.5, PM10"
+Bhiwandi,54,8-Aug-26,O3
+Bhopal,87,8-Aug-26,PM10
+Bhubaneswar,36,8-Aug-26,"CO, O3"
+Bikaner,93,8-Aug-26,PM10
+Bilaspur,35,8-Aug-26,CO
+Boisar,50,8-Aug-26,PM10
+Bulandshahr,32,8-Aug-26,O3
+Bundi,87,8-Aug-26,PM10
+Byrnihat (Assam),106,8-Aug-26,PM2.5
+Byrnihat (Meghalaya),158,8-Aug-26,PM2.5
+Chamarajanagar,45,8-Aug-26,PM10
+Chandigarh,42,8-Aug-26,"CO, PM10"
+Chandrapur,76,8-Aug-26,PM10
+Charkhi dadri,55,8-Aug-26,PM2.5
+Chennai,79,8-Aug-26,PM10
+Chhal,29,8-Aug-26,CO
+Chikkaballapur,24,8-Aug-26,SO2
+Chikkamagaluru,33,8-Aug-26,PM10
+Chittoor,60,8-Aug-26,PM10
+Chittorgarh,88,8-Aug-26,PM10
+Churu,47,8-Aug-26,O3
+Coimbatore,26,8-Aug-26,SO2
+Cuttack,59,8-Aug-26,CO
+Damoh,51,8-Aug-26,SO2
+Dausa,65,8-Aug-26,PM10
+Dehradun,42,8-Aug-26,PM10
+Delhi,63,8-Aug-26,"PM2.5, NO2"
+Dewas,81,8-Aug-26,PM10
+Dharuhera,53,8-Aug-26,PM2.5
+Dharwad,63,8-Aug-26,PM10
+Dholpur,33,8-Aug-26,CO
+Dhule,60,8-Aug-26,PM10
+Dombivli,35,8-Aug-26,O3
+Dungarpur,76,8-Aug-26,PM10
+Durgapur,58,8-Aug-26,"NO2, PM10"
+Eloor,64,8-Aug-26,PM10
+Eluru,52,8-Aug-26,PM2.5
+Faridabad,93,8-Aug-26,"PM2.5, PM10"
+Fatehabad,48,8-Aug-26,CO
+Fatehpur sikri,29,8-Aug-26,PM10
+Firozabad,35,8-Aug-26,PM10
+Gadag,105,8-Aug-26,PM10
+Gajraula,42,8-Aug-26,PM10
+Gandhinagar,92,8-Aug-26,PM10
+Gaya,48,8-Aug-26,PM10
+Ghaziabad,54,8-Aug-26,"CO, PM10"
+Gorakhpur,120,8-Aug-26,PM10
+Greater noida,142,8-Aug-26,O3
+Gummidipoondi,126,8-Aug-26,PM2.5
+Guntur,49,8-Aug-26,PM10
+Gurugram,87,8-Aug-26,"PM2.5, PM10"
+Guwahati,32,8-Aug-26,"PM2.5, SO2"
+Gwalior,49,8-Aug-26,"CO, O3, NO2"
+Hajipur,40,8-Aug-26,O3
+Haldia,26,8-Aug-26,O3
+Hanumangarh,39,8-Aug-26,CO
+Hapur,47,8-Aug-26,CO
+Hingoli,319,8-Aug-26,O3
+Hisar,32,8-Aug-26,PM10
+Howrah,45,8-Aug-26,"CO, NO2"
+Hyderabad,46,8-Aug-26,PM10
+Indore,58,8-Aug-26,PM10
+Jabalpur,57,8-Aug-26,"CO, PM10"
+Jaipur,75,8-Aug-26,"CO, PM10"
+Jaisalmer,102,8-Aug-26,PM10
+Jalandhar,41,8-Aug-26,PM2.5
+Jalgaon,43,8-Aug-26,PM10
+Jalna,39,8-Aug-26,PM10
+Jalore,88,8-Aug-26,PM10
+Jhalawar,76,8-Aug-26,PM10
+Jhansi,55,8-Aug-26,PM10
+Jhunjhunu,63,8-Aug-26,O3
+Jind,51,8-Aug-26,PM2.5
+Jodhpur,84,8-Aug-26,PM10
+Jorapokhar,67,8-Aug-26,PM10
+Kaithal,70,8-Aug-26,SO2
+Kakinada,66,8-Aug-26,PM10
+Kalaburagi,32,8-Aug-26,CO
+Kalyan,80,8-Aug-26,"PM10, PM2.5"
+Kannur,54,8-Aug-26,PM2.5
+Kanpur,64,8-Aug-26,"PM2.5, CO"
+Karauli,39,8-Aug-26,NO2
+Karnal,48,8-Aug-26,CO
+Karwar,59,8-Aug-26,PM10
+Katni,74,8-Aug-26,PM10
+Khairthal,73,8-Aug-26,PM10
+Khanna,70,8-Aug-26,PM10
+Khora,76,8-Aug-26,PM2.5
+Khurja,53,8-Aug-26,CO
+Kishanganj,50,8-Aug-26,PM2.5
+Kohima,56,8-Aug-26,SO2
+Kolhapur,31,8-Aug-26,PM10
+Kolkata,51,8-Aug-26,"O3, PM10, CO"
+Korba,26,8-Aug-26,CO
+Kota,95,8-Aug-26,PM10
+Kunjemura,27,8-Aug-26,PM10
+Kurnool,33,8-Aug-26,PM10
+Kurukshetra,52,8-Aug-26,PM2.5
+Latur,47,8-Aug-26,PM10
+Lucknow,72,8-Aug-26,"PM10, PM2.5"
+Ludhiana,80,8-Aug-26,PM2.5
+Machilipatnam,65,8-Aug-26,PM10
+Madikeri,14,8-Aug-26,CO
+Mahad,38,8-Aug-26,PM10
+Maihar,29,8-Aug-26,CO
+Malegaon,57,8-Aug-26,PM10
+Mandideep,101,8-Aug-26,PM10
+Mandi gobindgarh,118,8-Aug-26,PM10
+Manesar,41,8-Aug-26,NO2
+Manguraha,73,8-Aug-26,PM10
+Mathura,42,8-Aug-26,PM2.5
+Meerut,57,8-Aug-26,"PM2.5, PM10"
+Mehsana,72,8-Aug-26,PM10
+Milupara,36,8-Aug-26,NO2
+Mira-bhayandar,31,8-Aug-26,PM10
+Modinagar,22,8-Aug-26,PM2.5
+Moradabad,42,8-Aug-26,"SO2, PM2.5, CO"
+Mumbai,43,8-Aug-26,PM10
+Munger,45,8-Aug-26,PM2.5
+Muzaffarnagar,35,8-Aug-26,PM2.5
+Muzaffarpur,39,8-Aug-26,"PM10, O3"
+Mysuru,48,8-Aug-26,PM10
+Nagaon,62,8-Aug-26,PM2.5
+Nagaur,95,8-Aug-26,PM10
+Nagpur,54,8-Aug-26,PM10
+Naharlagun,28,8-Aug-26,PM10
+Nalbari,59,8-Aug-26,PM2.5
+Nanded,39,8-Aug-26,PM10
+Nandesari,69,8-Aug-26,PM10
+Narnaul,59,8-Aug-26,PM10
+Nashik,45,8-Aug-26,PM10
+Navi mumbai,39,8-Aug-26,"CO, PM10"
+Nellore,56,8-Aug-26,PM10
+Noida,55,8-Aug-26,"PM10, CO, PM2.5"
+Pali,134,8-Aug-26,PM2.5
+Palwal,110,8-Aug-26,CO
+Pampore,45,8-Aug-26,PM10
+Panchgaon,33,8-Aug-26,CO
+Panchkula,35,8-Aug-26,O3
+Panipat,119,8-Aug-26,PM10
+Parbhani,27,8-Aug-26,NO2
+Patiala,44,8-Aug-26,PM10
+Patna,66,8-Aug-26,"PM2.5, O3"
+Pimpri-chinchwad,55,8-Aug-26,PM10
+Pithampur,128,8-Aug-26,PM10
+Pratapgarh,82,8-Aug-26,PM10
+Prayagraj,35,8-Aug-26,PM10
+Puducherry,43,8-Aug-26,O3
+Pune,52,8-Aug-26,PM10
+Purnia,56,8-Aug-26,CO
+Raebareli,66,8-Aug-26,"CO, PM10"
+Raipur,43,8-Aug-26,PM10
+Rairangpur,31,8-Aug-26,PM10
+Rajamahendravaram,65,8-Aug-26,PM10
+Rajkot,72,8-Aug-26,PM10
+Rajsamand,91,8-Aug-26,PM10
+Ramanagara,48,8-Aug-26,PM10
+Ratlam,43,8-Aug-26,PM2.5
+Rishikesh,37,8-Aug-26,CO
+Rohtak,52,8-Aug-26,CO
+Rourkela,48,8-Aug-26,"PM10, CO"
+Sagar,36,8-Aug-26,O3
+Saharsa,46,8-Aug-26,PM10
+Samastipur,104,8-Aug-26,PM2.5
+Sangli,42,8-Aug-26,PM10
+Satara,58,8-Aug-26,PM10
+Satna,70,8-Aug-26,PM10
+Sawai madhopur,78,8-Aug-26,PM10
+Shamli,87,8-Aug-26,CO
+Shillong,32,8-Aug-26,O3
+Shivamogga,39,8-Aug-26,PM10
+Sikar,43,8-Aug-26,PM10
+Silchar,55,8-Aug-26,PM10
+Siliguri,118,8-Aug-26,NO2
+Singrauli,39,8-Aug-26,SO2
+Sirohi,71,8-Aug-26,PM10
+Sirsa,81,8-Aug-26,CO
+Siwan,105,8-Aug-26,PM10
+Solapur,42,8-Aug-26,"PM10, O3"
+Sonipat,103,8-Aug-26,PM10
+Sri ganganagar,83,8-Aug-26,NO2
+Srinagar,40,8-Aug-26,PM10
+Surat,56,8-Aug-26,PM10
+Talcher,87,8-Aug-26,SO2
+Tensa,77,8-Aug-26,O3
+Thane,41,8-Aug-26,PM10
+Thiruvananthapuram,40,8-Aug-26,PM10
+Thoothukudi,67,8-Aug-26,PM10
+Thrissur,42,8-Aug-26,PM10
+Tirumala,43,8-Aug-26,NO2
+Tirupati,55,8-Aug-26,PM10
+Tonk,109,8-Aug-26,PM10
+Udaipur,109,8-Aug-26,PM10
+Ujjain,71,8-Aug-26,PM10
+Ulhasnagar,42,8-Aug-26,PM10
+Vadodara,75,8-Aug-26,PM10
+Vapi,44,8-Aug-26,PM10
+Varanasi,66,8-Aug-26,"PM2.5, PM10"
+Vatva,121,8-Aug-26,PM10
+Virar,31,8-Aug-26,PM10
+Visakhapatnam,103,8-Aug-26,PM10
+Vrindavan,36,8-Aug-26,PM10
+Yadgir,43,8-Aug-26,PM10
+Yamuna nagar,87,8-Aug-26,PM10
+Agartala,61,7-Aug-26,
+Agra,54,7-Aug-26,
+Ahmedabad,92,7-Aug-26,
+Ahmednagar,48,7-Aug-26,
+Aizawl,14,7-Aug-26,
+Akola,42,7-Aug-26,
+Alwar,94,7-Aug-26,
+Amaravati,53,7-Aug-26,
+Ambala,97,7-Aug-26,
+Ambernath,87,7-Aug-26,
+Amravati,48,7-Aug-26,
+Amritsar,77,7-Aug-26,
+Anantapur,71,7-Aug-26,
+Angul,64,7-Aug-26,
+Ankleshwar,65,7-Aug-26,
+Araria,43,7-Aug-26,
+Arrah,48,7-Aug-26,
+Asansol,61,7-Aug-26,
+Aurangabad (Maharashtra),49,7-Aug-26,
+Baddi,98,7-Aug-26,
+Badlapur,26,7-Aug-26,
+Bagalkot,51,7-Aug-26,
+Baghpat,32,7-Aug-26,
+Bahadurgarh,48,7-Aug-26,
+Balasore,54,7-Aug-26,
+Ballabgarh,41,7-Aug-26,
+Banswara,64,7-Aug-26,
+Baran,45,7-Aug-26,
+Barbil,34,7-Aug-26,
+Bareilly,34,7-Aug-26,
+Baripada,44,7-Aug-26,
+Barmer,91,7-Aug-26,
+Barrackpore,48,7-Aug-26,
+Bathinda,88,7-Aug-26,
+Beed,42,7-Aug-26,
+Begusarai,104,7-Aug-26,
+Belapur,20,7-Aug-26,
+Bengaluru,51,7-Aug-26,
+Bettiah,26,7-Aug-26,
+Bhagalpur,99,7-Aug-26,
+Bharatpur,27,7-Aug-26,
+Bhavnagar,63,7-Aug-26,
+Bhilai,30,7-Aug-26,
+Bhilwara,123,7-Aug-26,
+Bhiwadi,73,7-Aug-26,
+Bhiwandi,42,7-Aug-26,
+Bhiwani,157,7-Aug-26,
+Bhopal,77,7-Aug-26,
+Bhubaneswar,43,7-Aug-26,
+Bilaspur,41,7-Aug-26,
+Bileipada,68,7-Aug-26,
+Boisar,52,7-Aug-26,
+Brajrajnagar,44,7-Aug-26,
+Bulandshahr,38,7-Aug-26,
+Bundi,72,7-Aug-26,
+Byrnihat (Assam),86,7-Aug-26,
+Byrnihat (Meghalaya),181,7-Aug-26,
+Chamarajanagar,43,7-Aug-26,
+Chandigarh,21,7-Aug-26,
+Chandrapur,53,7-Aug-26,
+Charkhi dadri,149,7-Aug-26,
+Chennai,128,7-Aug-26,
+Chhapra,85,7-Aug-26,
+Chikkamagaluru,27,7-Aug-26,
+Chittoor,72,7-Aug-26,
+Chittorgarh,83,7-Aug-26,
+Churu,75,7-Aug-26,
+Cuttack,53,7-Aug-26,
+Damoh,50,7-Aug-26,
+Dausa,42,7-Aug-26,
+Delhi,63,7-Aug-26,
+Dewas,84,7-Aug-26,
+Dharuhera,72,7-Aug-26,
+Dharwad,59,7-Aug-26,
+Dholpur,31,7-Aug-26,
+Dhule,67,7-Aug-26,
+Dombivli,36,7-Aug-26,
+Dungarpur,78,7-Aug-26,
+Durgapur,92,7-Aug-26,
+Eloor,81,7-Aug-26,
+Eluru,154,7-Aug-26,
+Faridabad,86,7-Aug-26,
+Fatehabad,58,7-Aug-26,
+Fatehpur sikri,29,7-Aug-26,
+Firozabad,34,7-Aug-26,
+Gadag,39,7-Aug-26,
+Gajraula,28,7-Aug-26,
+Gandhinagar,97,7-Aug-26,
+Gaya,30,7-Aug-26,
+Ghaziabad,60,7-Aug-26,
+Gorakhpur,74,7-Aug-26,
+Greater noida,87,7-Aug-26,
+Gummidipoondi,150,7-Aug-26,
+Guntur,63,7-Aug-26,
+Gurugram,77,7-Aug-26,
+Guwahati,39,7-Aug-26,
+Gwalior,54,7-Aug-26,
+Hajipur,50,7-Aug-26,
+Haldia,29,7-Aug-26,
+Hanumangarh,63,7-Aug-26,
+Hapur,52,7-Aug-26,
+Hingoli,187,7-Aug-26,
+Hisar,53,7-Aug-26,
+Howrah,52,7-Aug-26,
+Hyderabad,45,7-Aug-26,
+Indore,58,7-Aug-26,
+Jabalpur,63,7-Aug-26,
+Jaipur,90,7-Aug-26,
+Jaisalmer,117,7-Aug-26,
+Jalandhar,62,7-Aug-26,
+Jalgaon,51,7-Aug-26,
+Jalna,52,7-Aug-26,
+Jalore,104,7-Aug-26,
+Jhalawar,70,7-Aug-26,
+Jhansi,44,7-Aug-26,
+Jhunjhunu,83,7-Aug-26,
+Jind,47,7-Aug-26,
+Jodhpur,91,7-Aug-26,
+Jorapokhar,59,7-Aug-26,
+Kadapa,57,7-Aug-26,
+Kaithal,101,7-Aug-26,
+Kakinada,45,7-Aug-26,
+Kalaburagi,34,7-Aug-26,
+Kalyan,73,7-Aug-26,
+Kannur,67,7-Aug-26,
+Kanpur,55,7-Aug-26,
+Karauli,35,7-Aug-26,
+Karnal,46,7-Aug-26,
+Karwar,52,7-Aug-26,
+Katni,57,7-Aug-26,
+Keonjhar,38,7-Aug-26,
+Khairthal,131,7-Aug-26,
+Khanna,70,7-Aug-26,
+Khora,80,7-Aug-26,
+Kohima,59,7-Aug-26,
+Kolhapur,29,7-Aug-26,
+Kolkata,49,7-Aug-26,
+Korba,28,7-Aug-26,
+Kota,73,7-Aug-26,
+Kunjemura,26,7-Aug-26,
+Kurnool,28,7-Aug-26,
+Kurukshetra,47,7-Aug-26,
+Latur,38,7-Aug-26,
+Lucknow,49,7-Aug-26,
+Machilipatnam,61,7-Aug-26,
+Madikeri,12,7-Aug-26,
+Mahad,58,7-Aug-26,
+Maihar,28,7-Aug-26,
+Malegaon,67,7-Aug-26,
+Mandideep,95,7-Aug-26,
+Mandi gobindgarh,118,7-Aug-26,
+Manesar,42,7-Aug-26,
+Mathura,39,7-Aug-26,
+Meerut,50,7-Aug-26,
+Mehsana,78,7-Aug-26,
+Milupara,24,7-Aug-26,
+Mira-bhayandar,38,7-Aug-26,
+Modinagar,36,7-Aug-26,
+Moradabad,34,7-Aug-26,
+Motihari,69,7-Aug-26,
+Mumbai,42,7-Aug-26,
+Munger,64,7-Aug-26,
+Muzaffarnagar,34,7-Aug-26,
+Muzaffarpur,57,7-Aug-26,
+Mysuru,51,7-Aug-26,
+Nagaon,54,7-Aug-26,
+Nagaur,103,7-Aug-26,
+Nagpur,46,7-Aug-26,
+Naharlagun,37,7-Aug-26,
+Nanded,37,7-Aug-26,
+Nandesari,64,7-Aug-26,
+Nashik,45,7-Aug-26,
+Navi mumbai,42,7-Aug-26,
+Nellore,57,7-Aug-26,
+Noida,51,7-Aug-26,
+Pali,169,7-Aug-26,
+Palwal,95,7-Aug-26,
+Pampore,69,7-Aug-26,
+Panchgaon,47,7-Aug-26,
+Panchkula,35,7-Aug-26,
+Panipat,81,7-Aug-26,
+Parbhani,33,7-Aug-26,
+Patiala,35,7-Aug-26,
+Patna,78,7-Aug-26,
+Pimpri-chinchwad,49,7-Aug-26,
+Pithampur,119,7-Aug-26,
+Pratapgarh,94,7-Aug-26,
+Prayagraj,27,7-Aug-26,
+Puducherry,35,7-Aug-26,
+Pune,59,7-Aug-26,
+Purnia,57,7-Aug-26,
+Raebareli,72,7-Aug-26,
+Raipur,50,7-Aug-26,
+Rairangpur,24,7-Aug-26,
+Rajamahendravaram,42,7-Aug-26,
+Rajkot,77,7-Aug-26,
+Rajsamand,103,7-Aug-26,
+Ramanagara,45,7-Aug-26,
+Ratlam,42,7-Aug-26,
+Rishikesh,37,7-Aug-26,
+Rohtak,30,7-Aug-26,
+Rourkela,40,7-Aug-26,
+Sagar,40,7-Aug-26,
+Saharsa,42,7-Aug-26,
+Samastipur,83,7-Aug-26,
+Sangli,36,7-Aug-26,
+Satara,66,7-Aug-26,
+Satna,71,7-Aug-26,
+Sawai madhopur,68,7-Aug-26,
+Shamli,125,7-Aug-26,
+Shillong,28,7-Aug-26,
+Shivamogga,29,7-Aug-26,
+Sikar,95,7-Aug-26,
+Silchar,39,7-Aug-26,
+Siliguri,125,7-Aug-26,
+Singrauli,38,7-Aug-26,
+Sirohi,89,7-Aug-26,
+Sirsa,89,7-Aug-26,
+Siwan,105,7-Aug-26,
+Solapur,47,7-Aug-26,
+Sonipat,132,7-Aug-26,
+Sri ganganagar,89,7-Aug-26,
+Srinagar,55,7-Aug-26,
+Surat,61,7-Aug-26,
+Tensa,77,7-Aug-26,
+Thane,49,7-Aug-26,
+Thiruvananthapuram,43,7-Aug-26,
+Thoothukudi,67,7-Aug-26,
+Thrissur,46,7-Aug-26,
+Tirumala,43,7-Aug-26,
+Tirupati,61,7-Aug-26,
+Tonk,125,7-Aug-26,
+Tumakuru,64,7-Aug-26,
+Tumidih,36,7-Aug-26,
+Udaipur,118,7-Aug-26,
+Ujjain,73,7-Aug-26,
+Ulhasnagar,49,7-Aug-26,
+Vadodara,87,7-Aug-26,
+Vapi,46,7-Aug-26,
+Varanasi,54,7-Aug-26,
+Vatva,113,7-Aug-26,
+Vijayawada,70,7-Aug-26,
+Virar,37,7-Aug-26,
+Visakhapatnam,68,7-Aug-26,
+Vrindavan,32,7-Aug-26,
+Yadgir,38,7-Aug-26,
+Agartala,69,6-Aug-26,
+Agra,55,6-Aug-26,
+Ahmedabad,85,6-Aug-26,
+Ahmednagar,47,6-Aug-26,
+Ajmer,84,6-Aug-26,
+Akola,36,6-Aug-26,
+Alwar,89,6-Aug-26,
+Amaravati,67,6-Aug-26,
+Ambala,62,6-Aug-26,
+Ambernath,71,6-Aug-26,
+Amravati,37,6-Aug-26,
+Amritsar,75,6-Aug-26,
+Angul,76,6-Aug-26,
+Ankleshwar,74,6-Aug-26,
+Asansol,56,6-Aug-26,
+Aurangabad (Maharashtra),53,6-Aug-26,
+Baddi,104,6-Aug-26,
+Badlapur,44,6-Aug-26,
+Bagalkot,51,6-Aug-26,
+Bahadurgarh,49,6-Aug-26,
+Balasore,56,6-Aug-26,
+Ballabgarh,75,6-Aug-26,
+Banswara,58,6-Aug-26,
+Baran,55,6-Aug-26,
+Bareilly,40,6-Aug-26,
+Baripada,48,6-Aug-26,
+Barmer,90,6-Aug-26,
+Barrackpore,47,6-Aug-26,
+Beed,42,6-Aug-26,
+Begusarai,32,6-Aug-26,
+Belapur,32,6-Aug-26,
+Bengaluru,61,6-Aug-26,
+Bhagalpur,121,6-Aug-26,
+Bharatpur,35,6-Aug-26,
+Bhavnagar,67,6-Aug-26,
+Bhilai,29,6-Aug-26,
+Bhilwara,87,6-Aug-26,
+Bhiwadi,74,6-Aug-26,
+Bhiwandi,55,6-Aug-26,
+Bhiwani,159,6-Aug-26,
+Bhopal,58,6-Aug-26,
+Bhubaneswar,54,6-Aug-26,
+Bikaner,99,6-Aug-26,
+Bilaspur,30,6-Aug-26,
+Bileipada,53,6-Aug-26,
+Boisar,54,6-Aug-26,
+Brajrajnagar,49,6-Aug-26,
+Bulandshahr,41,6-Aug-26,
+Bundi,77,6-Aug-26,
+Byrnihat (Assam),95,6-Aug-26,
+Byrnihat (Meghalaya),94,6-Aug-26,
+Chamarajanagar,44,6-Aug-26,
+Chandigarh,38,6-Aug-26,
+Chandrapur,45,6-Aug-26,
+Charkhi dadri,97,6-Aug-26,
+Chennai,80,6-Aug-26,
+Chhal,43,6-Aug-26,
+Chhapra,100,6-Aug-26,
+Chikkaballapur,30,6-Aug-26,
+Chikkamagaluru,29,6-Aug-26,
+Chittoor,65,6-Aug-26,
+Chittorgarh,67,6-Aug-26,
+Churu,91,6-Aug-26,
+Coimbatore,26,6-Aug-26,
+Cuddalore,23,6-Aug-26,
+Cuttack,47,6-Aug-26,
+Damoh,50,6-Aug-26,
+Dausa,70,6-Aug-26,
+Delhi,74,6-Aug-26,
+Dewas,96,6-Aug-26,
+Dharuhera,82,6-Aug-26,
+Dharwad,66,6-Aug-26,
+Dholpur,32,6-Aug-26,
+Dhule,58,6-Aug-26,
+Dombivli,34,6-Aug-26,
+Dungarpur,76,6-Aug-26,
+Durgapur,46,6-Aug-26,
+Eloor,67,6-Aug-26,
+Eluru,49,6-Aug-26,
+Faridabad,113,6-Aug-26,
+Fatehabad,63,6-Aug-26,
+Fatehpur sikri,29,6-Aug-26,
+Firozabad,53,6-Aug-26,
+Gadag,39,6-Aug-26,
+Gandhinagar,89,6-Aug-26,
+Gaya,89,6-Aug-26,
+Ghaziabad,82,6-Aug-26,
+Gorakhpur,55,6-Aug-26,
+Greater noida,97,6-Aug-26,
+Gummidipoondi,119,6-Aug-26,
+Guntur,61,6-Aug-26,
+Gurugram,90,6-Aug-26,
+Gwalior,51,6-Aug-26,
+Hajipur,35,6-Aug-26,
+Hanumangarh,65,6-Aug-26,
+Hapur,46,6-Aug-26,
+Hingoli,93,6-Aug-26,
+Howrah,66,6-Aug-26,
+Hyderabad,45,6-Aug-26,
+Indore,54,6-Aug-26,
+Jabalpur,51,6-Aug-26,
+Jaipur,92,6-Aug-26,
+Jaisalmer,120,6-Aug-26,
+Jalandhar,71,6-Aug-26,
+Jalgaon,36,6-Aug-26,
+Jalna,52,6-Aug-26,
+Jalore,85,6-Aug-26,
+Jhalawar,61,6-Aug-26,
+Jhansi,76,6-Aug-26,
+Jhunjhunu,77,6-Aug-26,
+Jind,56,6-Aug-26,
+Jodhpur,77,6-Aug-26,
+Jorapokhar,64,6-Aug-26,
+Kaithal,103,6-Aug-26,
+Kakinada,52,6-Aug-26,
+Kalaburagi,41,6-Aug-26,
+Kalyan,68,6-Aug-26,
+Kannur,70,6-Aug-26,
+Kanpur,51,6-Aug-26,
+Karnal,52,6-Aug-26,
+Karwar,47,6-Aug-26,
+Katni,79,6-Aug-26,
+Keonjhar,39,6-Aug-26,
+Khairthal,72,6-Aug-26,
+Khanna,65,6-Aug-26,
+Khora,89,6-Aug-26,
+Khurja,54,6-Aug-26,
+Kishanganj,51,6-Aug-26,
+Kohima,54,6-Aug-26,
+Kolhapur,34,6-Aug-26,
+Kolkata,60,6-Aug-26,
+Korba,29,6-Aug-26,
+Kota,81,6-Aug-26,
+Kunjemura,39,6-Aug-26,
+Kurnool,28,6-Aug-26,
+Kurukshetra,49,6-Aug-26,
+Latur,36,6-Aug-26,
+Lucknow,54,6-Aug-26,
+Ludhiana,70,6-Aug-26,
+Machilipatnam,69,6-Aug-26,
+Madikeri,14,6-Aug-26,
+Madurai,44,6-Aug-26,
+Mahad,35,6-Aug-26,
+Maihar,28,6-Aug-26,
+Malegaon,59,6-Aug-26,
+Mandideep,76,6-Aug-26,
+Mandi gobindgarh,118,6-Aug-26,
+Manesar,42,6-Aug-26,
+Mangalore,49,6-Aug-26,
+Manguraha,73,6-Aug-26,
+Mathura,32,6-Aug-26,
+Meerut,53,6-Aug-26,
+Mehsana,85,6-Aug-26,
+Mira-bhayandar,36,6-Aug-26,
+Moradabad,26,6-Aug-26,
+Mumbai,46,6-Aug-26,
+Munger,48,6-Aug-26,
+Muzaffarnagar,51,6-Aug-26,
+Muzaffarpur,33,6-Aug-26,
+Mysuru,54,6-Aug-26,
+Nagaon,54,6-Aug-26,
+Nagaur,83,6-Aug-26,
+Nagpur,43,6-Aug-26,
+Naharlagun,28,6-Aug-26,
+Nalbari,71,6-Aug-26,
+Nanded,35,6-Aug-26,
+Nandesari,62,6-Aug-26,
+Narnaul,77,6-Aug-26,
+Nashik,34,6-Aug-26,
+Navi mumbai,44,6-Aug-26,
+Nellore,60,6-Aug-26,
+Noida,76,6-Aug-26,
+Pali,135,6-Aug-26,
+Pampore,82,6-Aug-26,
+Panchgaon,48,6-Aug-26,
+Panchkula,44,6-Aug-26,
+Panipat,96,6-Aug-26,
+Parbhani,34,6-Aug-26,
+Patiala,47,6-Aug-26,
+Patna,49,6-Aug-26,
+Pimpri-chinchwad,50,6-Aug-26,
+Pithampur,107,6-Aug-26,
+Pratapgarh,86,6-Aug-26,
+Prayagraj,79,6-Aug-26,
+Puducherry,47,6-Aug-26,
+Pune,45,6-Aug-26,
+Purnia,56,6-Aug-26,
+Raebareli,72,6-Aug-26,
+Raipur,41,6-Aug-26,
+Rairangpur,24,6-Aug-26,
+Rajamahendravaram,44,6-Aug-26,
+Rajkot,83,6-Aug-26,
+Rajsamand,83,6-Aug-26,
+Ramanagara,42,6-Aug-26,
+Ratlam,35,6-Aug-26,
+Rishikesh,37,6-Aug-26,
+Rohtak,38,6-Aug-26,
+Rourkela,50,6-Aug-26,
+Rupnagar,54,6-Aug-26,
+Sagar,40,6-Aug-26,
+Saharsa,40,6-Aug-26,
+Samastipur,76,6-Aug-26,
+Sangli,37,6-Aug-26,
+Satara,51,6-Aug-26,
+Satna,70,6-Aug-26,
+Sawai madhopur,67,6-Aug-26,
+Shamli,85,6-Aug-26,
+Shillong,28,6-Aug-26,
+Shivamogga,37,6-Aug-26,
+Sikar,44,6-Aug-26,
+Silchar,40,6-Aug-26,
+Siliguri,122,6-Aug-26,
+Sirohi,79,6-Aug-26,
+Sirsa,80,6-Aug-26,
+Siwan,105,6-Aug-26,
+Solapur,45,6-Aug-26,
+Sonipat,134,6-Aug-26,
+Sri ganganagar,78,6-Aug-26,
+Srinagar,58,6-Aug-26,
+Surat,73,6-Aug-26,
+Talcher,75,6-Aug-26,
+Thane,45,6-Aug-26,
+Thiruvananthapuram,47,6-Aug-26,
+Thoothukudi,67,6-Aug-26,
+Thrissur,47,6-Aug-26,
+Tirumala,42,6-Aug-26,
+Tirupati,70,6-Aug-26,
+Tonk,102,6-Aug-26,
+Tumakuru,65,6-Aug-26,
+Tumidih,32,6-Aug-26,
+Udaipur,99,6-Aug-26,
+Ujjain,51,6-Aug-26,
+Ulhasnagar,38,6-Aug-26,
+Vadodara,86,6-Aug-26,
+Vapi,33,6-Aug-26,
+Varanasi,40,6-Aug-26,
+Vatva,117,6-Aug-26,
+Vijayapura,43,6-Aug-26,
+Vijayawada,61,6-Aug-26,
+Virar,35,6-Aug-26,
+Visakhapatnam,99,6-Aug-26,
+Vrindavan,34,6-Aug-26,
+Yamuna nagar,76,6-Aug-26,
+Agartala,61,5-Aug-26,
+Agra,63,5-Aug-26,
+Ahmedabad,94,5-Aug-26,
+Ahmednagar,54,5-Aug-26,
+Aizawl,14,5-Aug-26,
+Ajmer,88,5-Aug-26,
+Akola,51,5-Aug-26,
+Alwar,101,5-Aug-26,
+Amaravati,79,5-Aug-26,
+Ambala,74,5-Aug-26,
+Amravati,46,5-Aug-26,
+Amritsar,85,5-Aug-26,
+Angul,62,5-Aug-26,
+Ankleshwar,74,5-Aug-26,
+Araria,47,5-Aug-26,
+Asansol,58,5-Aug-26,
+Aurangabad (Maharashtra),58,5-Aug-26,
+Baddi,115,5-Aug-26,
+Badlapur,49,5-Aug-26,
+Bagalkot,51,5-Aug-26,
+Bahadurgarh,39,5-Aug-26,
+Balasore,52,5-Aug-26,
+Ballabgarh,63,5-Aug-26,
+Banswara,63,5-Aug-26,
+Baran,57,5-Aug-26,
+Barbil,59,5-Aug-26,
+Bareilly,38,5-Aug-26,
+Baripada,53,5-Aug-26,
+Barmer,80,5-Aug-26,
+Barrackpore,56,5-Aug-26,
+Bathinda,84,5-Aug-26,
+Beed,26,5-Aug-26,
+Begusarai,33,5-Aug-26,
+Belapur,30,5-Aug-26,
+Bengaluru,49,5-Aug-26,
+Bettiah,41,5-Aug-26,
+Bhagalpur,120,5-Aug-26,
+Bharatpur,33,5-Aug-26,
+Bhavnagar,64,5-Aug-26,
+Bhilai,26,5-Aug-26,
+Bhilwara,109,5-Aug-26,
+Bhiwadi,74,5-Aug-26,
+Bhiwandi,53,5-Aug-26,
+Bhopal,73,5-Aug-26,
+Bhubaneswar,46,5-Aug-26,
+Bikaner,59,5-Aug-26,
+Bilaspur,37,5-Aug-26,
+Bileipada,52,5-Aug-26,
+Boisar,53,5-Aug-26,
+Brajrajnagar,48,5-Aug-26,
+Bulandshahr,38,5-Aug-26,
+Bundi,70,5-Aug-26,
+Byasanagar,64,5-Aug-26,
+Byrnihat (Assam),94,5-Aug-26,
+Byrnihat (Meghalaya),127,5-Aug-26,
+Chamarajanagar,45,5-Aug-26,
+Chandigarh,37,5-Aug-26,
+Chandrapur,47,5-Aug-26,
+Charkhi dadri,152,5-Aug-26,
+Chennai,61,5-Aug-26,
+Chhal,61,5-Aug-26,
+Chikkaballapur,25,5-Aug-26,
+Chittoor,58,5-Aug-26,
+Chittorgarh,68,5-Aug-26,
+Churu,58,5-Aug-26,
+Coimbatore,27,5-Aug-26,
+Cuttack,58,5-Aug-26,
+Damoh,51,5-Aug-26,
+Dausa,165,5-Aug-26,
+Delhi,69,5-Aug-26,
+Dewas,92,5-Aug-26,
+Dharuhera,67,5-Aug-26,
+Dharwad,65,5-Aug-26,
+Dholpur,298,5-Aug-26,
+Dhule,54,5-Aug-26,
+Dombivli,34,5-Aug-26,
+Dungarpur,86,5-Aug-26,
+Durgapur,63,5-Aug-26,
+Eloor,64,5-Aug-26,
+Eluru,54,5-Aug-26,
+Faridabad,80,5-Aug-26,
+Fatehabad,55,5-Aug-26,
+Fatehpur sikri,29,5-Aug-26,
+Firozabad,45,5-Aug-26,
+Gadag,43,5-Aug-26,
+Gandhinagar,112,5-Aug-26,
+Gaya,123,5-Aug-26,
+Ghaziabad,70,5-Aug-26,
+Gorakhpur,62,5-Aug-26,
+Greater noida,115,5-Aug-26,
+Gummidipoondi,131,5-Aug-26,
+Guntur,62,5-Aug-26,
+Gurugram,103,5-Aug-26,
+Guwahati,63,5-Aug-26,
+Gwalior,61,5-Aug-26,
+Hajipur,48,5-Aug-26,
+Haldia,50,5-Aug-26,
+Hanumangarh,32,5-Aug-26,
+Hapur,53,5-Aug-26,
+Hingoli,38,5-Aug-26,
+Hisar,41,5-Aug-26,
+Howrah,61,5-Aug-26,
+Hyderabad,47,5-Aug-26,
+Indore,53,5-Aug-26,
+Jabalpur,53,5-Aug-26,
+Jaipur,102,5-Aug-26,
+Jaisalmer,105,5-Aug-26,
+Jalandhar,50,5-Aug-26,
+Jalgaon,50,5-Aug-26,
+Jalna,46,5-Aug-26,
+Jalore,95,5-Aug-26,
+Jhalawar,60,5-Aug-26,
+Jhansi,65,5-Aug-26,
+Jhunjhunu,82,5-Aug-26,
+Jind,49,5-Aug-26,
+Jodhpur,84,5-Aug-26,
+Jorapokhar,74,5-Aug-26,
+Kaithal,103,5-Aug-26,
+Kakinada,62,5-Aug-26,
+Kalaburagi,33,5-Aug-26,
+Kalyan,60,5-Aug-26,
+Kannur,46,5-Aug-26,
+Kanpur,40,5-Aug-26,
+Karauli,64,5-Aug-26,
+Karnal,51,5-Aug-26,
+Karwar,42,5-Aug-26,
+Katni,82,5-Aug-26,
+Keonjhar,41,5-Aug-26,
+Khairthal,88,5-Aug-26,
+Khanna,73,5-Aug-26,
+Khora,96,5-Aug-26,
+Khurja,41,5-Aug-26,
+Kishanganj,57,5-Aug-26,
+Kohima,53,5-Aug-26,
+Kolhapur,26,5-Aug-26,
+Kolkata,58,5-Aug-26,
+Korba,25,5-Aug-26,
+Kota,78,5-Aug-26,
+Kunjemura,57,5-Aug-26,
+Kurnool,29,5-Aug-26,
+Kurukshetra,43,5-Aug-26,
+Latur,45,5-Aug-26,
+Lucknow,56,5-Aug-26,
+Ludhiana,52,5-Aug-26,
+Machilipatnam,79,5-Aug-26,
+Madikeri,14,5-Aug-26,
+Madurai,34,5-Aug-26,
+Mahad,48,5-Aug-26,
+Malegaon,63,5-Aug-26,
+Mandideep,88,5-Aug-26,
+Mandi gobindgarh,117,5-Aug-26,
+Manesar,38,5-Aug-26,
+Mangalore,52,5-Aug-26,
+Manguraha,80,5-Aug-26,
+Mathura,34,5-Aug-26,
+Meerut,49,5-Aug-26,
+Mehsana,88,5-Aug-26,
+Mira-bhayandar,29,5-Aug-26,
+Moradabad,47,5-Aug-26,
+Mumbai,42,5-Aug-26,
+Muzaffarnagar,49,5-Aug-26,
+Muzaffarpur,38,5-Aug-26,
+Mysuru,48,5-Aug-26,
+Nagaon,47,5-Aug-26,
+Nagaur,95,5-Aug-26,
+Nagpur,55,5-Aug-26,
+Naharlagun,12,5-Aug-26,
+Nalbari,79,5-Aug-26,
+Nanded,34,5-Aug-26,
+Nandesari,59,5-Aug-26,
+Narnaul,90,5-Aug-26,
+Nashik,44,5-Aug-26,
+Navi mumbai,31,5-Aug-26,
+Nellore,54,5-Aug-26,
+Noida,64,5-Aug-26,
+Pali,135,5-Aug-26,
+Palwal,60,5-Aug-26,
+Pampore,53,5-Aug-26,
+Panchgaon,31,5-Aug-26,
+Panchkula,30,5-Aug-26,
+Parbhani,41,5-Aug-26,
+Patiala,35,5-Aug-26,
+Patna,63,5-Aug-26,
+Pimpri-chinchwad,47,5-Aug-26,
+Pithampur,107,5-Aug-26,
+Pratapgarh,105,5-Aug-26,
+Prayagraj,44,5-Aug-26,
+Puducherry,37,5-Aug-26,
+Pune,52,5-Aug-26,
+Purnia,55,5-Aug-26,
+Raebareli,75,5-Aug-26,
+Raipur,35,5-Aug-26,
+Rairangpur,44,5-Aug-26,
+Rajamahendravaram,41,5-Aug-26,
+Rajkot,80,5-Aug-26,
+Rajsamand,80,5-Aug-26,
+Ramanagara,44,5-Aug-26,
+Ratlam,41,5-Aug-26,
+Rishikesh,37,5-Aug-26,
+Rohtak,35,5-Aug-26,
+Rourkela,49,5-Aug-26,
+Rupnagar,54,5-Aug-26,
+Sagar,38,5-Aug-26,
+Saharsa,52,5-Aug-26,
+Sangli,34,5-Aug-26,
+Satara,52,5-Aug-26,
+Satna,70,5-Aug-26,
+Sawai madhopur,84,5-Aug-26,
+Shamli,71,5-Aug-26,
+Shillong,32,5-Aug-26,
+Sikar,120,5-Aug-26,
+Silchar,55,5-Aug-26,
+Siliguri,122,5-Aug-26,
+Sirohi,77,5-Aug-26,
+Sirsa,84,5-Aug-26,
+Siwan,105,5-Aug-26,
+Solapur,51,5-Aug-26,
+Sonipat,132,5-Aug-26,
+Sri ganganagar,61,5-Aug-26,
+Srinagar,46,5-Aug-26,
+Surat,78,5-Aug-26,
+Thane,39,5-Aug-26,
+Thiruvananthapuram,37,5-Aug-26,
+Thoothukudi,65,5-Aug-26,
+Tirumala,47,5-Aug-26,
+Tirupati,69,5-Aug-26,
+Tonk,114,5-Aug-26,
+Tumidih,35,5-Aug-26,
+Udaipur,97,5-Aug-26,
+Ujjain,57,5-Aug-26,
+Ulhasnagar,8,5-Aug-26,
+Vadodara,88,5-Aug-26,
+Vapi,36,5-Aug-26,
+Varanasi,38,5-Aug-26,
+Vatva,117,5-Aug-26,
+Vijayapura,43,5-Aug-26,
+Vijayawada,62,5-Aug-26,
+Virar,38,5-Aug-26,
+Visakhapatnam,106,5-Aug-26,
+Vrindavan,49,5-Aug-26,
+Yamuna nagar,115,5-Aug-26,
+Agartala,73,4-Aug-26,PM10
+Agra,58,4-Aug-26,"PM2.5, SO2, NO2"
+Ahmedabad,91,4-Aug-26,"PM2.5, PM10"
+Ahmednagar,50,4-Aug-26,PM10
+Aizawl,14,4-Aug-26,SO2
+Ajmer,84,4-Aug-26,PM10
+Akola,46,4-Aug-26,PM10
+Alwar,85,4-Aug-26,PM10
+Amaravati,59,4-Aug-26,PM10
+Ambala,63,4-Aug-26,PM10
+Amravati,34,4-Aug-26,PM10
+Amritsar,54,4-Aug-26,PM10
+Anantapur,55,4-Aug-26,PM10
+Angul,65,4-Aug-26,O3
+Ankleshwar,67,4-Aug-26,PM10
+Araria,47,4-Aug-26,PM2.5
+Asansol,58,4-Aug-26,"SO2, CO, PM2.5"
+Aurangabad (Maharashtra),49,4-Aug-26,"PM10, PM2.5"
+Baddi,75,4-Aug-26,CO
+Badlapur,34,4-Aug-26,CO
+Bagalkot,51,4-Aug-26,PM10
+Bahadurgarh,48,4-Aug-26,PM10
+Balasore,50,4-Aug-26,O3
+Ballabgarh,45,4-Aug-26,PM2.5
+Banswara,42,4-Aug-26,PM10
+Baran,50,4-Aug-26,PM10
+Barbil,70,4-Aug-26,PM2.5
+Bareilly,42,4-Aug-26,"PM10, SO2"
+Baripada,60,4-Aug-26,O3
+Barmer,84,4-Aug-26,PM10
+Barrackpore,64,4-Aug-26,PM10
+Beed,32,4-Aug-26,PM10
+Begusarai,29,4-Aug-26,SO2
+Belapur,53,4-Aug-26,PM10
+Belgaum,64,4-Aug-26,NO2
+Bengaluru,53,4-Aug-26,PM10
+Bhagalpur,118,4-Aug-26,"PM10, PM2.5"
+Bharatpur,31,4-Aug-26,CO
+Bhavnagar,64,4-Aug-26,PM10
+Bhilai,28,4-Aug-26,"PM10, CO"
+Bhilwara,94,4-Aug-26,PM10
+Bhiwadi,73,4-Aug-26,PM10
+Bhiwandi,72,4-Aug-26,PM2.5
+Bhiwani,26,4-Aug-26,CO
+Bhopal,54,4-Aug-26,PM10
+Bhubaneswar,41,4-Aug-26,"O3, CO"
+Bikaner,65,4-Aug-26,PM10
+Bileipada,133,4-Aug-26,PM10
+Boisar,47,4-Aug-26,PM10
+Brajrajnagar,44,4-Aug-26,O3
+Bulandshahr,38,4-Aug-26,PM10
+Bundi,47,4-Aug-26,PM10
+Byasanagar,51,4-Aug-26,O3
+Byrnihat (Meghalaya),70,4-Aug-26,PM2.5
+Chamarajanagar,42,4-Aug-26,PM10
+Chandigarh,39,4-Aug-26,"CO, NO2"
+Chandrapur,45,4-Aug-26,"PM10, CO"
+Charkhi dadri,75,4-Aug-26,PM2.5
+Chennai,72,4-Aug-26,PM10
+Chhapra,86,4-Aug-26,CO
+Chikkaballapur,32,4-Aug-26,PM10
+Chittoor,63,4-Aug-26,PM10
+Chittorgarh,64,4-Aug-26,PM10
+Churu,32,4-Aug-26,PM10
+Coimbatore,25,4-Aug-26,SO2
+Cuddalore,23,4-Aug-26,SO2
+Cuttack,53,4-Aug-26,O3
+Damoh,50,4-Aug-26,SO2
+Dausa,131,4-Aug-26,PM10
+Dehradun,64,4-Aug-26,PM2.5
+Delhi,64,4-Aug-26,"NO2, PM10"
+Dewas,90,4-Aug-26,PM10
+Dharuhera,71,4-Aug-26,CO
+Dharwad,60,4-Aug-26,PM10
+Dholpur,248,4-Aug-26,PM2.5
+Dhule,51,4-Aug-26,PM10
+Dombivli,39,4-Aug-26,O3
+Dungarpur,77,4-Aug-26,PM10
+Durgapur,85,4-Aug-26,"PM10, NO2"
+Eloor,125,4-Aug-26,CO
+Eluru,53,4-Aug-26,PM10
+Faridabad,88,4-Aug-26,"PM10, PM2.5, CO"
+Fatehabad,58,4-Aug-26,PM10
+Fatehpur sikri,29,4-Aug-26,PM10
+Firozabad,40,4-Aug-26,"PM10, CO"
+Gandhinagar,101,4-Aug-26,PM10
+Gaya,93,4-Aug-26,"PM2.5, CO, PM10"
+Ghaziabad,68,4-Aug-26,"CO, PM10"
+Gorakhpur,45,4-Aug-26,SO2
+Greater noida,100,4-Aug-26,"O3, PM10"
+Gummidipoondi,127,4-Aug-26,PM2.5
+Guntur,50,4-Aug-26,PM10
+Gurugram,76,4-Aug-26,"PM2.5, PM10"
+Guwahati,98,4-Aug-26,"O3, PM2.5, SO2"
+Gwalior,56,4-Aug-26,"CO, O3"
+Hajipur,41,4-Aug-26,O3
+Haldia,47,4-Aug-26,PM10
+Hanumangarh,34,4-Aug-26,O3
+Hapur,39,4-Aug-26,CO
+Hingoli,39,4-Aug-26,PM10
+Hisar,48,4-Aug-26,O3
+Howrah,67,4-Aug-26,"PM10, CO"
+Hyderabad,49,4-Aug-26,PM10
+Indore,52,4-Aug-26,"PM10, PM2.5"
+Jabalpur,53,4-Aug-26,"NO2, PM10"
+Jaipur,70,4-Aug-26,PM10
+Jaisalmer,100,4-Aug-26,PM10
+Jalandhar,45,4-Aug-26,CO
+Jalgaon,37,4-Aug-26,PM10
+Jalore,88,4-Aug-26,PM10
+Jhalawar,83,4-Aug-26,PM10
+Jhansi,61,4-Aug-26,PM10
+Jhunjhunu,100,4-Aug-26,O3
+Jind,43,4-Aug-26,PM2.5
+Jodhpur,93,4-Aug-26,PM10
+Jorapokhar,87,4-Aug-26,PM10
+Kadapa,56,4-Aug-26,PM10
+Kaithal,98,4-Aug-26,SO2
+Kakinada,57,4-Aug-26,PM10
+Kalaburagi,32,4-Aug-26,CO
+Kalyan,71,4-Aug-26,"CO, PM10"
+Kannur,45,4-Aug-26,PM10
+Kanpur,43,4-Aug-26,"CO, PM10, NO2"
+Karauli,40,4-Aug-26,NO2
+Karnal,51,4-Aug-26,CO
+Karwar,42,4-Aug-26,PM10
+Kashipur,38,4-Aug-26,PM2.5
+Katni,63,4-Aug-26,PM10
+Keonjhar,44,4-Aug-26,PM10
+Khanna,75,4-Aug-26,PM10
+Khora,103,4-Aug-26,CO
+Khurja,55,4-Aug-26,CO
+Kishanganj,49,4-Aug-26,PM2.5
+Kohima,50,4-Aug-26,SO2
+Kolhapur,31,4-Aug-26,PM10
+Kolkata,68,4-Aug-26,"O3, PM10"
+Korba,41,4-Aug-26,"CO, SO2"
+Kota,58,4-Aug-26,PM10
+Kunjemura,39,4-Aug-26,PM10
+Kurnool,29,4-Aug-26,PM10
+Kurukshetra,45,4-Aug-26,PM2.5
+Latur,34,4-Aug-26,PM10
+Lucknow,51,4-Aug-26,"PM10, CO"
+Ludhiana,72,4-Aug-26,PM10
+Machilipatnam,82,4-Aug-26,PM2.5
+Madikeri,15,4-Aug-26,PM10
+Madurai,28,4-Aug-26,PM10
+Mahad,52,4-Aug-26,PM10
+Maihar,26,4-Aug-26,SO2
+Malegaon,42,4-Aug-26,PM10
+Mandideep,64,4-Aug-26,PM10
+Mandi gobindgarh,123,4-Aug-26,PM10
+Mandikhera,99,4-Aug-26,PM10
+Manesar,34,4-Aug-26,O3
+Mangalore,48,4-Aug-26,PM10
+Mathura,28,4-Aug-26,PM2.5
+Meerut,46,4-Aug-26,"PM2.5, PM10, CO"
+Mehsana,87,4-Aug-26,PM10
+Milupara,31,4-Aug-26,PM10
+Mira-bhayandar,38,4-Aug-26,PM10
+Moradabad,49,4-Aug-26,"PM2.5, PM10"
+Mumbai,49,4-Aug-26,PM10
+Muzaffarnagar,45,4-Aug-26,PM10
+Muzaffarpur,31,4-Aug-26,"PM10, O3"
+Mysuru,50,4-Aug-26,PM10
+Nagaon,56,4-Aug-26,PM2.5
+Nagaur,84,4-Aug-26,PM10
+Nagpur,35,4-Aug-26,"PM10, CO"
+Naharlagun,23,4-Aug-26,PM10
+Nalbari,67,4-Aug-26,PM2.5
+Nanded,29,4-Aug-26,PM10
+Nandesari,51,4-Aug-26,PM10
+Narnaul,64,4-Aug-26,PM10
+Nashik,35,4-Aug-26,"PM10, CO"
+Navi mumbai,44,4-Aug-26,"CO, PM10"
+Nellore,65,4-Aug-26,PM10
+Noida,61,4-Aug-26,"PM10, O3"
+Pali,110,4-Aug-26,PM2.5
+Palwal,77,4-Aug-26,CO
+Pampore,51,4-Aug-26,PM10
+Panchgaon,33,4-Aug-26,CO
+Panchkula,69,4-Aug-26,PM2.5
+Panipat,146,4-Aug-26,PM10
+Parbhani,26,4-Aug-26,PM10
+Patiala,35,4-Aug-26,O3
+Patna,55,4-Aug-26,"O3, PM10"
+Pimpri-chinchwad,53,4-Aug-26,"PM10, CO"
+Pithampur,103,4-Aug-26,PM10
+Pratapgarh,93,4-Aug-26,PM10
+Prayagraj,73,4-Aug-26,PM10
+Puducherry,37,4-Aug-26,PM10
+Pune,48,4-Aug-26,PM10
+Purnia,56,4-Aug-26,CO
+Raipur,40,4-Aug-26,PM10
+Rairangpur,40,4-Aug-26,PM10
+Rajamahendravaram,36,4-Aug-26,O3
+Rajkot,84,4-Aug-26,PM10
+Rajsamand,62,4-Aug-26,PM10
+Ramanagara,38,4-Aug-26,PM10
+Ratlam,45,4-Aug-26,PM2.5
+Rishikesh,37,4-Aug-26,CO
+Rohtak,37,4-Aug-26,O3
+Rourkela,48,4-Aug-26,PM10
+Sagar,38,4-Aug-26,O3
+Saharsa,49,4-Aug-26,PM10
+Samastipur,36,4-Aug-26,PM2.5
+Sangli,44,4-Aug-26,PM10
+Sasaram,54,4-Aug-26,PM10
+Satara,70,4-Aug-26,PM10
+Satna,70,4-Aug-26,PM10
+Sawai madhopur,64,4-Aug-26,PM10
+Shamli,72,4-Aug-26,CO
+Shillong,28,4-Aug-26,SO2
+Sikar,92,4-Aug-26,PM10
+Silchar,57,4-Aug-26,PM10
+Siliguri,115,4-Aug-26,NO2
+Singrauli,46,4-Aug-26,PM10
+Sirohi,81,4-Aug-26,PM10
+Sirsa,85,4-Aug-26,CO
+Siwan,105,4-Aug-26,PM10
+Solapur,48,4-Aug-26,"O3, PM10"
+Sonipat,131,4-Aug-26,PM10
+Srinagar,43,4-Aug-26,PM10
+Surat,78,4-Aug-26,PM10
+Talcher,82,4-Aug-26,SO2
+Thane,48,4-Aug-26,PM10
+Thiruvananthapuram,38,4-Aug-26,PM10
+Thoothukudi,65,4-Aug-26,PM10
+Thrissur,43,4-Aug-26,PM10
+Tirumala,50,4-Aug-26,NO2
+Tirupati,67,4-Aug-26,PM10
+Tonk,105,4-Aug-26,PM10
+Tumidih,49,4-Aug-26,PM10
+Udaipur,71,4-Aug-26,PM10
+Ujjain,71,4-Aug-26,PM10
+Ulhasnagar,16,4-Aug-26,PM10
+Vadodara,71,4-Aug-26,CO
+Vapi,44,4-Aug-26,PM10
+Varanasi,46,4-Aug-26,"PM10, NO2"
+Vatva,126,4-Aug-26,PM2.5
+Vijayapura,43,4-Aug-26,PM10
+Vijayawada,57,4-Aug-26,PM10
+Virar,35,4-Aug-26,PM10
+Visakhapatnam,87,4-Aug-26,PM10
+Vrindavan,50,4-Aug-26,PM2.5
+Yadgir,32,4-Aug-26,PM10
+Agartala,72,3-Aug-26,PM10
+Agra,70,3-Aug-26,"PM10, PM2.5, SO2"
+Ahmedabad,75,3-Aug-26,"CO, PM10"
+Ahmednagar,44,3-Aug-26,PM10
+Aizawl,17,3-Aug-26,PM10
+Ajmer,43,3-Aug-26,PM10
+Akola,48,3-Aug-26,PM10
+Alwar,88,3-Aug-26,PM10
+Amaravati,58,3-Aug-26,PM10
+Ambala,67,3-Aug-26,PM10
+Ambernath,54,3-Aug-26,PM10
+Amravati,42,3-Aug-26,PM10
+Amritsar,75,3-Aug-26,PM10
+Anantapur,55,3-Aug-26,PM10
+Angul,59,3-Aug-26,PM10
+Ankleshwar,43,3-Aug-26,CO
+Araria,48,3-Aug-26,PM2.5
+Asansol,59,3-Aug-26,"SO2, CO"
+Aurangabad (Maharashtra),66,3-Aug-26,"PM10, CO"
+Baddi,93,3-Aug-26,CO
+Badlapur,35,3-Aug-26,CO
+Bagalkot,51,3-Aug-26,PM10
+Bahadurgarh,59,3-Aug-26,PM2.5
+Balasore,57,3-Aug-26,O3
+Ballabgarh,51,3-Aug-26,PM2.5
+Banswara,66,3-Aug-26,PM10
+Baran,45,3-Aug-26,O3
+Barbil,75,3-Aug-26,PM2.5
+Bareilly,34,3-Aug-26,PM2.5
+Baripada,64,3-Aug-26,O3
+Barmer,56,3-Aug-26,PM10
+Barrackpore,65,3-Aug-26,PM10
+Bathinda,85,3-Aug-26,CO
+Beed,28,3-Aug-26,PM2.5
+Begusarai,63,3-Aug-26,PM10
+Belapur,46,3-Aug-26,PM10
+Belgaum,68,3-Aug-26,NO2
+Bengaluru,51,3-Aug-26,PM10
+Bettiah,23,3-Aug-26,PM2.5
+Bhagalpur,70,3-Aug-26,PM2.5
+Bharatpur,33,3-Aug-26,O3
+Bhavnagar,59,3-Aug-26,CO
+Bhilai,21,3-Aug-26,"PM10, CO"
+Bhilwara,55,3-Aug-26,PM10
+Bhiwadi,60,3-Aug-26,PM10
+Bhiwandi,45,3-Aug-26,PM10
+Bhiwani,21,3-Aug-26,CO
+Bhopal,45,3-Aug-26,PM10
+Bhubaneswar,47,3-Aug-26,PM10
+Bihar sharif,387,3-Aug-26,PM2.5
+Bikaner,42,3-Aug-26,O3
+Bilaspur,53,3-Aug-26,PM10
+Bileipada,178,3-Aug-26,PM10
+Boisar,60,3-Aug-26,PM10
+Brajrajnagar,67,3-Aug-26,PM10
+Bulandshahr,51,3-Aug-26,PM10
+Bundi,44,3-Aug-26,PM10
+Byasanagar,58,3-Aug-26,PM2.5
+Byrnihat (Assam),86,3-Aug-26,PM2.5
+Byrnihat (Meghalaya),154,3-Aug-26,PM2.5
+Chamarajanagar,46,3-Aug-26,PM10
+Chandigarh,44,3-Aug-26,"CO, NO2"
+Chandrapur,49,3-Aug-26,PM10
+Charkhi dadri,79,3-Aug-26,PM2.5
+Chennai,75,3-Aug-26,"PM10, O3"
+Chhal,92,3-Aug-26,PM2.5
+Chhapra,90,3-Aug-26,CO
+Chikkaballapur,40,3-Aug-26,PM10
+Chikkamagaluru,31,3-Aug-26,PM10
+Chittoor,62,3-Aug-26,PM2.5
+Chittorgarh,59,3-Aug-26,CO
+Churu,56,3-Aug-26,O3
+Coimbatore,25,3-Aug-26,SO2
+Cuttack,52,3-Aug-26,CO
+Damoh,51,3-Aug-26,SO2
+Dausa,73,3-Aug-26,PM10
+Dehradun,44,3-Aug-26,PM2.5
+Delhi,76,3-Aug-26,"PM10, PM2.5, NO2"
+Dewas,61,3-Aug-26,O3
+Dhanbad,103,3-Aug-26,NO2
+Dharuhera,69,3-Aug-26,CO
+Dharwad,57,3-Aug-26,PM10
+Dholpur,52,3-Aug-26,PM10
+Dhule,46,3-Aug-26,PM10
+Dombivli,35,3-Aug-26,O3
+Dungarpur,51,3-Aug-26,PM10
+Durgapur,77,3-Aug-26,"PM10, NO2"
+Eluru,65,3-Aug-26,PM10
+Faridabad,75,3-Aug-26,"PM2.5, PM10, CO"
+Fatehabad,78,3-Aug-26,PM10
+Fatehpur sikri,29,3-Aug-26,PM10
+Firozabad,33,3-Aug-26,"SO2, PM10"
+Gandhinagar,65,3-Aug-26,PM10
+Gangtok,19,3-Aug-26,PM2.5
+Gaya,53,3-Aug-26,PM10
+Ghaziabad,78,3-Aug-26,"CO, PM10"
+Greater noida,85,3-Aug-26,PM10
+Gummidipoondi,77,3-Aug-26,PM2.5
+Guntur,60,3-Aug-26,PM10
+Gurugram,130,3-Aug-26,PM2.5
+Guwahati,73,3-Aug-26,"O3, PM2.5, SO2"
+Gwalior,53,3-Aug-26,"CO, PM10, O3"
+Hajipur,56,3-Aug-26,PM2.5
+Haldia,55,3-Aug-26,PM10
+Hanumangarh,42,3-Aug-26,PM10
+Hapur,50,3-Aug-26,PM2.5
+Hingoli,38,3-Aug-26,PM10
+Hisar,56,3-Aug-26,PM10
+Howrah,74,3-Aug-26,PM10
+Hubballi,52,3-Aug-26,PM10
+Hyderabad,49,3-Aug-26,PM10
+Indore,36,3-Aug-26,"NO2, SO2, CO"
+Jabalpur,55,3-Aug-26,"NO2, CO"
+Jaipur,48,3-Aug-26,"PM2.5, O3, CO"
+Jaisalmer,64,3-Aug-26,PM10
+Jalandhar,60,3-Aug-26,PM10
+Jalgaon,40,3-Aug-26,CO
+Jalore,35,3-Aug-26,PM10
+Jhalawar,61,3-Aug-26,PM10
+Jhansi,63,3-Aug-26,PM10
+Jhunjhunu,88,3-Aug-26,O3
+Jind,56,3-Aug-26,PM2.5
+Jodhpur,52,3-Aug-26,"O3, PM10"
+Jorapokhar,120,3-Aug-26,PM10
+Kadapa,58,3-Aug-26,PM10
+Kaithal,54,3-Aug-26,PM10
+Kakinada,66,3-Aug-26,O3
+Kalaburagi,32,3-Aug-26,CO
+Kalyan,58,3-Aug-26,"CO, PM10"
+Kannur,45,3-Aug-26,PM10
+Kanpur,43,3-Aug-26,"CO, PM10, NO2"
+Karauli,44,3-Aug-26,NO2
+Karnal,69,3-Aug-26,PM10
+Karwar,59,3-Aug-26,NO2
+Katihar,65,3-Aug-26,CO
+Katni,47,3-Aug-26,PM10
+Keonjhar,46,3-Aug-26,PM10
+Khanna,68,3-Aug-26,PM10
+Khora,99,3-Aug-26,PM2.5
+Khurja,47,3-Aug-26,PM10
+Kishanganj,44,3-Aug-26,PM2.5
+Kohima,55,3-Aug-26,SO2
+Kolhapur,32,3-Aug-26,PM10
+Kolkata,70,3-Aug-26,"O3, PM10"
+Korba,46,3-Aug-26,PM10
+Kota,41,3-Aug-26,"PM10, O3"
+Kunjemura,105,3-Aug-26,PM10
+Kurnool,28,3-Aug-26,PM10
+Kurukshetra,60,3-Aug-26,PM10
+Latur,36,3-Aug-26,PM10
+Lucknow,74,3-Aug-26,"PM10, PM2.5"
+Machilipatnam,84,3-Aug-26,PM2.5
+Madikeri,14,3-Aug-26,CO
+Mahad,50,3-Aug-26,PM10
+Maihar,15,3-Aug-26,PM10
+Malegaon,50,3-Aug-26,PM10
+Mandideep,45,3-Aug-26,PM10
+Mandi gobindgarh,105,3-Aug-26,PM10
+Mandikhera,98,3-Aug-26,PM10
+Manesar,35,3-Aug-26,PM2.5
+Mangalore,57,3-Aug-26,PM10
+Manguraha,71,3-Aug-26,PM10
+Mathura,37,3-Aug-26,PM2.5
+Meerut,60,3-Aug-26,"PM2.5, PM10"
+Mehsana,81,3-Aug-26,PM10
+Milupara,58,3-Aug-26,PM10
+Mira-bhayandar,31,3-Aug-26,PM10
+Moradabad,47,3-Aug-26,"PM2.5, PM10"
+Mumbai,48,3-Aug-26,PM10
+Munger,59,3-Aug-26,PM10
+Muzaffarnagar,66,3-Aug-26,PM10
+Muzaffarpur,42,3-Aug-26,"PM10, CO"
+Mysuru,52,3-Aug-26,PM10
+Nagaon,64,3-Aug-26,PM2.5
+Nagaur,33,3-Aug-26,PM10
+Nagpur,49,3-Aug-26,PM10
+Naharlagun,13,3-Aug-26,PM2.5
+Nalbari,33,3-Aug-26,PM2.5
+Nanded,31,3-Aug-26,PM10
+Nandesari,61,3-Aug-26,PM2.5
+Narnaul,74,3-Aug-26,PM10
+Nashik,33,3-Aug-26,"PM10, CO"
+Navi mumbai,39,3-Aug-26,"CO, PM10"
+Nellore,65,3-Aug-26,PM10
+Noida,74,3-Aug-26,PM10
+Palwal,51,3-Aug-26,PM2.5
+Pampore,54,3-Aug-26,PM10
+Panchkula,40,3-Aug-26,PM2.5
+Panipat,119,3-Aug-26,PM10
+Parbhani,31,3-Aug-26,O3
+Patiala,44,3-Aug-26,PM10
+Patna,65,3-Aug-26,"PM10, PM2.5"
+Pimpri-chinchwad,45,3-Aug-26,PM10
+Pithampur,67,3-Aug-26,PM10
+Pratapgarh,45,3-Aug-26,PM10
+Prayagraj,23,3-Aug-26,"O3, SO2, PM2.5"
+Puducherry,44,3-Aug-26,O3
+Pune,50,3-Aug-26,CO
+Purnia,57,3-Aug-26,CO
+Raebareli,74,3-Aug-26,PM10
+Raipur,38,3-Aug-26,"PM10, CO"
+Rairangpur,43,3-Aug-26,PM10
+Rajamahendravaram,51,3-Aug-26,PM10
+Rajkot,74,3-Aug-26,PM10
+Rajsamand,46,3-Aug-26,O3
+Ramanagara,40,3-Aug-26,PM10
+Ratlam,35,3-Aug-26,NO2
+Rishikesh,37,3-Aug-26,CO
+Rohtak,62,3-Aug-26,PM10
+Rourkela,63,3-Aug-26,PM10
+Sagar,35,3-Aug-26,O3
+Saharsa,64,3-Aug-26,PM10
+Samastipur,99,3-Aug-26,PM2.5
+Sangli,40,3-Aug-26,PM10
+Satara,55,3-Aug-26,PM10
+Satna,70,3-Aug-26,PM10
+Sawai madhopur,43,3-Aug-26,PM10
+Shamli,66,3-Aug-26,CO
+Shillong,26,3-Aug-26,SO2
+Sikar,80,3-Aug-26,PM10
+Silchar,55,3-Aug-26,PM10
+Siliguri,116,3-Aug-26,NO2
+Singrauli,43,3-Aug-26,NO2
+Sirohi,58,3-Aug-26,PM10
+Sirsa,85,3-Aug-26,CO
+Siwan,105,3-Aug-26,PM10
+Solapur,53,3-Aug-26,"PM10, O3"
+Sonipat,133,3-Aug-26,PM10
+Sri ganganagar,114,3-Aug-26,PM10
+Srinagar,44,3-Aug-26,PM10
+Surat,73,3-Aug-26,PM10
+Talcher,62,3-Aug-26,PM10
+Tensa,38,3-Aug-26,PM10
+Thane,40,3-Aug-26,"PM2.5, PM10"
+Thiruvananthapuram,34,3-Aug-26,"PM2.5, PM10"
+Thoothukudi,66,3-Aug-26,PM10
+Thrissur,40,3-Aug-26,PM10
+Tirumala,53,3-Aug-26,NO2
+Tirupati,62,3-Aug-26,PM10
+Tonk,57,3-Aug-26,PM10
+Tumidih,47,3-Aug-26,PM2.5
+Udaipur,60,3-Aug-26,PM10
+Ujjain,42,3-Aug-26,O3
+Ulhasnagar,24,3-Aug-26,PM10
+Vadodara,70,3-Aug-26,CO
+Vapi,45,3-Aug-26,PM10
+Varanasi,48,3-Aug-26,PM10
+Vatva,101,3-Aug-26,PM10
+Vijayapura,43,3-Aug-26,PM10
+Vijayawada,61,3-Aug-26,PM10
+Virar,31,3-Aug-26,PM10
+Visakhapatnam,132,3-Aug-26,PM10
+Vrindavan,50,3-Aug-26,PM10
+Yadgir,38,3-Aug-26,PM10
+Yamuna nagar,71,3-Aug-26,PM10
+Agartala,72,2-Aug-26,PM10
+Agra,65,2-Aug-26,"PM2.5, SO2, PM10"
+Ahmedabad,70,2-Aug-26,"CO, PM10"
+Ahmednagar,69,2-Aug-26,PM10
+Aizawl,20,2-Aug-26,PM10
+Akola,43,2-Aug-26,PM10
+Alwar,89,2-Aug-26,PM10
+Amaravati,54,2-Aug-26,PM10
+Ambala,62,2-Aug-26,PM10
+Ambernath,74,2-Aug-26,PM10
+Amravati,28,2-Aug-26,"PM10, PM2.5"
+Amritsar,77,2-Aug-26,PM10
+Anantapur,49,2-Aug-26,PM10
+Angul,68,2-Aug-26,PM10
+Araria,47,2-Aug-26,PM2.5
+Asansol,50,2-Aug-26,"SO2, CO"
+Aurangabad (Maharashtra),43,2-Aug-26,PM10
+Baddi,104,2-Aug-26,CO
+Badlapur,30,2-Aug-26,CO
+Bagalkot,51,2-Aug-26,PM10
+Baghpat,87,2-Aug-26,PM10
+Bahadurgarh,57,2-Aug-26,PM2.5
+Balasore,61,2-Aug-26,O3
+Ballabgarh,47,2-Aug-26,PM2.5
+Banswara,59,2-Aug-26,PM10
+Baran,53,2-Aug-26,CO
+Barbil,73,2-Aug-26,PM10
+Bareilly,49,2-Aug-26,"PM10, PM2.5"
+Baripada,62,2-Aug-26,O3
+Barmer,41,2-Aug-26,O3
+Barrackpore,56,2-Aug-26,PM10
+Bathinda,85,2-Aug-26,CO
+Beed,33,2-Aug-26,PM10
+Begusarai,77,2-Aug-26,PM10
+Belapur,49,2-Aug-26,PM10
+Belgaum,68,2-Aug-26,NO2
+Bengaluru,40,2-Aug-26,PM10
+Bettiah,32,2-Aug-26,CO
+Bhagalpur,111,2-Aug-26,PM2.5
+Bharatpur,35,2-Aug-26,O3
+Bhavnagar,59,2-Aug-26,CO
+Bhilai,21,2-Aug-26,"PM10, O3, CO"
+Bhilwara,101,2-Aug-26,PM10
+Bhiwadi,66,2-Aug-26,PM10
+Bhiwandi,45,2-Aug-26,PM10
+Bhiwani,46,2-Aug-26,PM2.5
+Bhopal,30,2-Aug-26,"PM10, O3"
+Bhubaneswar,51,2-Aug-26,PM10
+Bihar sharif,278,2-Aug-26,PM2.5
+Bikaner,102,2-Aug-26,PM10
+Bilaspur,76,2-Aug-26,PM10
+Bileipada,196,2-Aug-26,PM10
+Boisar,42,2-Aug-26,PM10
+Brajrajnagar,71,2-Aug-26,PM10
+Bulandshahr,54,2-Aug-26,PM10
+Bundi,40,2-Aug-26,PM10
+Buxar,122,2-Aug-26,PM2.5
+Byasanagar,53,2-Aug-26,PM10
+Byrnihat (Assam),86,2-Aug-26,PM2.5
+Byrnihat (Meghalaya),113,2-Aug-26,PM2.5
+Chamarajanagar,35,2-Aug-26,PM10
+Chandigarh,44,2-Aug-26,"CO, NO2"
+Chandrapur,39,2-Aug-26,"PM10, CO"
+Charkhi dadri,72,2-Aug-26,PM2.5
+Chennai,61,2-Aug-26,PM10
+Chhal,70,2-Aug-26,PM10
+Chhapra,121,2-Aug-26,PM2.5
+Chikkamagaluru,29,2-Aug-26,PM10
+Chittoor,60,2-Aug-26,PM2.5
+Chittorgarh,34,2-Aug-26,PM2.5
+Churu,57,2-Aug-26,PM10
+Coimbatore,26,2-Aug-26,SO2
+Cuddalore,40,2-Aug-26,PM10
+Cuttack,54,2-Aug-26,PM10
+Damoh,48,2-Aug-26,SO2
+Dausa,32,2-Aug-26,PM10
+Dehradun,40,2-Aug-26,PM10
+Delhi,78,2-Aug-26,"PM2.5, PM10, NO2"
+Dewas,64,2-Aug-26,O3
+Dhanbad,106,2-Aug-26,NO2
+Dharuhera,79,2-Aug-26,PM2.5
+Dharwad,59,2-Aug-26,PM10
+Dholpur,55,2-Aug-26,PM10
+Dhule,35,2-Aug-26,PM10
+Dombivli,34,2-Aug-26,O3
+Dungarpur,30,2-Aug-26,PM10
+Durgapur,65,2-Aug-26,"PM10, NO2"
+Eluru,73,2-Aug-26,PM10
+Faridabad,74,2-Aug-26,"PM10, PM2.5"
+Fatehpur sikri,31,2-Aug-26,PM10
+Firozabad,38,2-Aug-26,"CO, PM10"
+Gajraula,62,2-Aug-26,PM2.5
+Gandhinagar,39,2-Aug-26,"PM10, CO"
+Gangtok,21,2-Aug-26,PM2.5
+Gaya,57,2-Aug-26,"PM2.5, PM10"
+Ghaziabad,73,2-Aug-26,"CO, PM10, PM2.5"
+Gorakhpur,85,2-Aug-26,PM10
+Greater noida,88,2-Aug-26,PM10
+Gummidipoondi,90,2-Aug-26,PM10
+Guntur,59,2-Aug-26,PM10
+Gurugram,83,2-Aug-26,"PM2.5, CO"
+Guwahati,44,2-Aug-26,"PM2.5, SO2"
+Gwalior,54,2-Aug-26,"CO, O3, PM10"
+Hajipur,53,2-Aug-26,PM2.5
+Haldia,46,2-Aug-26,PM10
+Hanumangarh,50,2-Aug-26,PM10
+Hapur,52,2-Aug-26,CO
+Hingoli,39,2-Aug-26,PM10
+Hisar,65,2-Aug-26,PM10
+Howrah,66,2-Aug-26,"PM10, CO"
+Hubballi,40,2-Aug-26,PM10
+Hyderabad,50,2-Aug-26,"PM10, O3"
+Indore,34,2-Aug-26,"NO2, CO"
+Jabalpur,55,2-Aug-26,"NO2, CO, O3"
+Jaipur,49,2-Aug-26,"O3, PM2.5, CO"
+Jaisalmer,70,2-Aug-26,PM10
+Jalandhar,60,2-Aug-26,PM10
+Jalgaon,36,2-Aug-26,PM10
+Jalore,46,2-Aug-26,PM10
+Jhalawar,78,2-Aug-26,CO
+Jhansi,51,2-Aug-26,PM10
+Jhunjhunu,80,2-Aug-26,O3
+Jind,65,2-Aug-26,PM2.5
+Jodhpur,63,2-Aug-26,"PM10, O3"
+Jorapokhar,92,2-Aug-26,PM10
+Kaithal,58,2-Aug-26,PM10
+Kakinada,69,2-Aug-26,PM10
+Kalaburagi,38,2-Aug-26,CO
+Kalyan,74,2-Aug-26,"CO, PM10"
+Kannur,45,2-Aug-26,PM10
+Kanpur,46,2-Aug-26,"CO, PM10"
+Karauli,42,2-Aug-26,NO2
+Karnal,62,2-Aug-26,PM10
+Karwar,86,2-Aug-26,NO2
+Katihar,68,2-Aug-26,CO
+Katni,50,2-Aug-26,PM10
+Keonjhar,41,2-Aug-26,PM10
+Khanna,65,2-Aug-26,PM10
+Khora,104,2-Aug-26,PM2.5
+Khurja,58,2-Aug-26,CO
+Kishanganj,44,2-Aug-26,PM2.5
+Kohima,56,2-Aug-26,SO2
+Kolhapur,37,2-Aug-26,"O3, PM10"
+Kolkata,62,2-Aug-26,"PM10, O3"
+Korba,43,2-Aug-26,PM10
+Kota,38,2-Aug-26,"CO, PM10"
+Kunjemura,98,2-Aug-26,PM10
+Kurnool,31,2-Aug-26,PM10
+Kurukshetra,68,2-Aug-26,O3
+Latur,42,2-Aug-26,PM10
+Lucknow,92,2-Aug-26,"PM2.5, PM10"
+Ludhiana,69,2-Aug-26,PM10
+Machilipatnam,68,2-Aug-26,PM10
+Madikeri,14,2-Aug-26,CO
+Mahad,49,2-Aug-26,PM10
+Mandideep,28,2-Aug-26,PM10
+Mandi gobindgarh,109,2-Aug-26,PM10
+Mandikhera,99,2-Aug-26,PM10
+Manesar,47,2-Aug-26,PM2.5
+Mangalore,60,2-Aug-26,PM10
+Mathura,35,2-Aug-26,PM10
+Meerut,70,2-Aug-26,"PM10, PM2.5"
+Mehsana,67,2-Aug-26,PM10
+Mira-bhayandar,40,2-Aug-26,PM10
+Moradabad,52,2-Aug-26,"PM2.5, O3, PM10"
+Mumbai,52,2-Aug-26,PM10
+Munger,71,2-Aug-26,PM10
+Muzaffarnagar,59,2-Aug-26,PM10
+Muzaffarpur,50,2-Aug-26,"PM10, O3"
+Mysuru,118,2-Aug-26,O3
+Nagaur,49,2-Aug-26,PM10
+Nagpur,35,2-Aug-26,PM10
+Naharlagun,34,2-Aug-26,PM10
+Nalbari,36,2-Aug-26,PM2.5
+Nanded,33,2-Aug-26,PM10
+Nandesari,120,2-Aug-26,PM2.5
+Narnaul,77,2-Aug-26,PM10
+Nashik,30,2-Aug-26,"PM10, CO, PM2.5"
+Navi mumbai,43,2-Aug-26,"CO, PM10"
+Nellore,60,2-Aug-26,PM10
+Noida,71,2-Aug-26,"PM10, O3"
+Pali,62,2-Aug-26,PM10
+Palwal,53,2-Aug-26,PM10
+Pampore,30,2-Aug-26,PM10
+Panchgaon,22,2-Aug-26,PM10
+Panchkula,37,2-Aug-26,O3
+Panipat,111,2-Aug-26,PM10
+Parbhani,23,2-Aug-26,PM10
+Patiala,40,2-Aug-26,PM10
+Patna,70,2-Aug-26,"PM10, PM2.5"
+Pimpri-chinchwad,53,2-Aug-26,"PM10, CO"
+Pithampur,41,2-Aug-26,PM10
+Pratapgarh,38,2-Aug-26,O3
+Prayagraj,42,2-Aug-26,PM10
+Puducherry,49,2-Aug-26,O3
+Pune,50,2-Aug-26,"PM10, CO"
+Purnia,57,2-Aug-26,CO
+Raebareli,72,2-Aug-26,PM10
+Raipur,30,2-Aug-26,PM10
+Rairangpur,31,2-Aug-26,PM10
+Rajamahendravaram,96,2-Aug-26,O3
+Rajkot,64,2-Aug-26,PM10
+Rajsamand,55,2-Aug-26,O3
+Ramanagara,33,2-Aug-26,PM10
+Ratlam,35,2-Aug-26,NO2
+Rishikesh,37,2-Aug-26,CO
+Rohtak,51,2-Aug-26,PM10
+Rourkela,42,2-Aug-26,PM10
+Rupnagar,100,2-Aug-26,PM2.5
+Sagar,35,2-Aug-26,O3
+Saharsa,137,2-Aug-26,PM10
+Samastipur,82,2-Aug-26,PM2.5
+Sangli,41,2-Aug-26,PM10
+Satara,47,2-Aug-26,PM10
+Satna,70,2-Aug-26,PM10
+Sawai madhopur,36,2-Aug-26,CO
+Shamli,86,2-Aug-26,CO
+Shillong,24,2-Aug-26,SO2
+Sikar,44,2-Aug-26,PM10
+Silchar,57,2-Aug-26,PM10
+Siliguri,111,2-Aug-26,NO2
+Singrauli,74,2-Aug-26,PM10
+Sirohi,30,2-Aug-26,PM10
+Sirsa,86,2-Aug-26,CO
+Siwan,105,2-Aug-26,PM10
+Solapur,51,2-Aug-26,"PM10, O3"
+Sonipat,132,2-Aug-26,PM10
+Sri ganganagar,115,2-Aug-26,PM10
+Srinagar,37,2-Aug-26,PM10
+Surat,65,2-Aug-26,PM10
+Talcher,60,2-Aug-26,PM2.5
+Tensa,46,2-Aug-26,CO
+Thane,49,2-Aug-26,"PM2.5, PM10"
+Thiruvananthapuram,34,2-Aug-26,"PM2.5, SO2"
+Thrissur,39,2-Aug-26,PM10
+Tirumala,41,2-Aug-26,NO2
+Tirupati,59,2-Aug-26,PM10
+Tonk,54,2-Aug-26,PM10
+Tumidih,75,2-Aug-26,PM10
+Udaipur,95,2-Aug-26,PM2.5
+Ujjain,40,2-Aug-26,O3
+Ulhasnagar,34,2-Aug-26,PM10
+Vadodara,70,2-Aug-26,CO
+Vapi,43,2-Aug-26,PM10
+Varanasi,58,2-Aug-26,PM10
+Vatva,87,2-Aug-26,PM10
+Vijayapura,43,2-Aug-26,PM10
+Vijayawada,59,2-Aug-26,PM10
+Virar,46,2-Aug-26,PM10
+Visakhapatnam,109,2-Aug-26,PM10
+Vrindavan,27,2-Aug-26,NO2
+Yadgir,51,2-Aug-26,PM10
+Yamuna nagar,74,2-Aug-26,PM10
+Agartala,49,1-Aug-26,PM10
+Agra,72,1-Aug-26,"PM10, PM2.5, SO2"
+Ahmedabad,43,1-Aug-26,CO
+Ahmednagar,47,1-Aug-26,PM10
+Aizawl,25,1-Aug-26,PM10
+Ajmer,68,1-Aug-26,PM2.5
+Akola,32,1-Aug-26,PM10
+Alwar,99,1-Aug-26,"PM2.5, PM10"
+Amaravati,35,1-Aug-26,PM10
+Ambala,69,1-Aug-26,PM10
+Ambernath,87,1-Aug-26,PM10
+Amravati,19,1-Aug-26,PM10
+Amritsar,92,1-Aug-26,PM10
+Anantapur,58,1-Aug-26,PM2.5
+Ankleshwar,53,1-Aug-26,PM2.5
+Araria,47,1-Aug-26,PM2.5
+Asansol,47,1-Aug-26,"SO2, CO"
+Aurangabad (Maharashtra),41,1-Aug-26,PM10
+Baddi,102,1-Aug-26,CO
+Badlapur,25,1-Aug-26,CO
+Bagalkot,51,1-Aug-26,PM10
+Baghpat,66,1-Aug-26,PM10
+Bahadurgarh,63,1-Aug-26,PM10
+Balasore,48,1-Aug-26,O3
+Ballabgarh,51,1-Aug-26,PM10
+Banswara,67,1-Aug-26,PM10
+Baran,51,1-Aug-26,CO
+Barbil,36,1-Aug-26,PM10
+Bareilly,111,1-Aug-26,"O3, SO2"
+Baripada,54,1-Aug-26,O3
+Barmer,110,1-Aug-26,PM10
+Barrackpore,52,1-Aug-26,PM10
+Bathinda,85,1-Aug-26,CO
+Beed,38,1-Aug-26,PM10
+Begusarai,202,1-Aug-26,PM2.5
+Belapur,54,1-Aug-26,PM10
+Bengaluru,42,1-Aug-26,"PM10, O3"
+Bettiah,40,1-Aug-26,CO
+Bhagalpur,36,1-Aug-26,PM10
+Bharatpur,38,1-Aug-26,O3
+Bhavnagar,59,1-Aug-26,CO
+Bhilai,26,1-Aug-26,"PM10, CO, O3"
+Bhilwara,66,1-Aug-26,PM10
+Bhiwadi,76,1-Aug-26,PM10
+Bhiwandi,46,1-Aug-26,PM10
+Bhiwani,57,1-Aug-26,PM2.5
+Bhopal,25,1-Aug-26,"CO, O3"
+Bhubaneswar,51,1-Aug-26,"PM10, O3"
+Bikaner,115,1-Aug-26,PM10
+Bilaspur,31,1-Aug-26,PM10
+Bileipada,76,1-Aug-26,PM10
+Boisar,49,1-Aug-26,PM2.5
+Brajrajnagar,65,1-Aug-26,PM10
+Bulandshahr,60,1-Aug-26,PM10
+Bundi,34,1-Aug-26,O3
+Buxar,250,1-Aug-26,PM2.5
+Byasanagar,48,1-Aug-26,O3
+Byrnihat (Assam),101,1-Aug-26,PM2.5
+Byrnihat (Meghalaya),151,1-Aug-26,PM2.5
+Chamarajanagar,42,1-Aug-26,PM10
+Chandigarh,40,1-Aug-26,"CO, NO2, PM2.5"
+Chandrapur,38,1-Aug-26,CO
+Charkhi dadri,101,1-Aug-26,PM2.5
+Chennai,76,1-Aug-26,PM10
+Chhal,107,1-Aug-26,PM10
+Chhapra,91,1-Aug-26,CO
+Chikkaballapur,34,1-Aug-26,PM10
+Chikkamagaluru,38,1-Aug-26,PM10
+Chittoor,61,1-Aug-26,PM2.5
+Churu,69,1-Aug-26,PM10
+Coimbatore,32,1-Aug-26,PM2.5
+Cuddalore,54,1-Aug-26,PM10
+Cuttack,60,1-Aug-26,PM10
+Damoh,50,1-Aug-26,SO2
+Dausa,60,1-Aug-26,PM10
+Dehradun,31,1-Aug-26,PM10
+Delhi,80,1-Aug-26,PM10
+Dewas,62,1-Aug-26,O3
+Dhanbad,106,1-Aug-26,NO2
+Dharuhera,80,1-Aug-26,PM2.5
+Dharwad,65,1-Aug-26,PM10
+Dholpur,59,1-Aug-26,PM10
+Dhule,21,1-Aug-26,PM2.5
+Dombivli,34,1-Aug-26,O3
+Dungarpur,42,1-Aug-26,PM10
+Durgapur,58,1-Aug-26,"PM10, NO2"
+Eluru,58,1-Aug-26,PM10
+Faridabad,73,1-Aug-26,"PM10, PM2.5"
+Fatehabad,76,1-Aug-26,PM10
+Fatehpur sikri,33,1-Aug-26,PM10
+Firozabad,45,1-Aug-26,PM10
+Gajraula,44,1-Aug-26,PM10
+Gandhinagar,43,1-Aug-26,PM10
+Gaya,53,1-Aug-26,"CO, PM10, PM2.5"
+Ghaziabad,74,1-Aug-26,"CO, PM10"
+Gorakhpur,67,1-Aug-26,PM10
+Greater noida,111,1-Aug-26,PM10
+Gummidipoondi,119,1-Aug-26,PM10
+Guntur,53,1-Aug-26,PM10
+Gurugram,100,1-Aug-26,"PM2.5, PM10"
+Guwahati,41,1-Aug-26,"SO2, O3"
+Gwalior,52,1-Aug-26,"PM10, O3"
+Hajipur,40,1-Aug-26,O3
+Haldia,45,1-Aug-26,PM10
+Hanumangarh,43,1-Aug-26,PM10
+Hapur,83,1-Aug-26,CO
+Hingoli,29,1-Aug-26,O3
+Hisar,55,1-Aug-26,PM10
+Howrah,64,1-Aug-26,"PM10, CO"
+Hubballi,42,1-Aug-26,PM10
+Hyderabad,45,1-Aug-26,PM10
+Indore,33,1-Aug-26,"NO2, CO, SO2"
+Jabalpur,57,1-Aug-26,"NO2, O3"
+Jaipur,62,1-Aug-26,"CO, PM2.5, PM10"
+Jaisalmer,81,1-Aug-26,PM10
+Jalandhar,52,1-Aug-26,PM10
+Jalgaon,44,1-Aug-26,CO
+Jalna,23,1-Aug-26,O3
+Jalore,65,1-Aug-26,PM10
+Jhalawar,62,1-Aug-26,CO
+Jhansi,55,1-Aug-26,PM10
+Jhunjhunu,94,1-Aug-26,PM10
+Jind,40,1-Aug-26,PM2.5
+Jodhpur,75,1-Aug-26,PM10
+Jorapokhar,62,1-Aug-26,PM2.5
+Kadapa,55,1-Aug-26,PM10
+Kaithal,49,1-Aug-26,PM10
+Kakinada,60,1-Aug-26,PM10
+Kalaburagi,32,1-Aug-26,CO
+Kalyan,75,1-Aug-26,"CO, PM10"
+Kannur,44,1-Aug-26,PM10
+Kanpur,49,1-Aug-26,"PM10, CO"
+Karauli,39,1-Aug-26,NO2
+Karwar,48,1-Aug-26,NO2
+Katihar,70,1-Aug-26,CO
+Katni,38,1-Aug-26,O3
+Keonjhar,42,1-Aug-26,PM10
+Khanna,65,1-Aug-26,PM10
+Khora,102,1-Aug-26,CO
+Khurja,50,1-Aug-26,CO
+Kishanganj,43,1-Aug-26,PM2.5
+Kohima,52,1-Aug-26,SO2
+Kolhapur,31,1-Aug-26,"PM10, O3"
+Kolkata,56,1-Aug-26,"PM10, O3"
+Korba,29,1-Aug-26,"CO, SO2"
+Kota,48,1-Aug-26,PM10
+Kunjemura,61,1-Aug-26,PM10
+Kurnool,31,1-Aug-26,PM10
+Kurukshetra,45,1-Aug-26,PM2.5
+Latur,27,1-Aug-26,PM10
+Lucknow,64,1-Aug-26,"PM10, CO"
+Ludhiana,68,1-Aug-26,PM10
+Machilipatnam,83,1-Aug-26,PM2.5
+Mahad,54,1-Aug-26,PM10
+Mandideep,98,1-Aug-26,PM10
+Mandi gobindgarh,112,1-Aug-26,PM10
+Mandikhera,97,1-Aug-26,PM10
+Manesar,53,1-Aug-26,PM2.5
+Manguraha,73,1-Aug-26,PM10
+Mathura,61,1-Aug-26,PM2.5
+Meerut,61,1-Aug-26,PM10
+Mehsana,46,1-Aug-26,CO
+Milupara,42,1-Aug-26,PM10
+Mira-bhayandar,45,1-Aug-26,PM10
+Modinagar,37,1-Aug-26,PM2.5
+Moradabad,47,1-Aug-26,"PM10, PM2.5"
+Mumbai,58,1-Aug-26,PM10
+Muzaffarnagar,50,1-Aug-26,PM10
+Muzaffarpur,44,1-Aug-26,"O3, PM10, PM2.5"
+Mysuru,44,1-Aug-26,PM10
+Nagaur,69,1-Aug-26,PM10
+Nagpur,35,1-Aug-26,"CO, PM10"
+Naharlagun,22,1-Aug-26,PM10
+Nalbari,30,1-Aug-26,PM2.5
+Nanded,24,1-Aug-26,PM10
+Nandesari,220,1-Aug-26,PM2.5
+Narnaul,98,1-Aug-26,PM2.5
+Nashik,34,1-Aug-26,"PM10, CO"
+Navi mumbai,50,1-Aug-26,PM10
+Nellore,63,1-Aug-26,PM10
+Noida,72,1-Aug-26,"PM10, O3"
+Pali,81,1-Aug-26,PM10
+Pampore,27,1-Aug-26,PM10
+Panchgaon,39,1-Aug-26,O3
+Panchkula,40,1-Aug-26,O3
+Panipat,106,1-Aug-26,PM10
+Parbhani,21,1-Aug-26,PM10
+Patiala,35,1-Aug-26,O3
+Patna,52,1-Aug-26,PM10
+Pimpri-chinchwad,48,1-Aug-26,PM10
+Pithampur,41,1-Aug-26,O3
+Pratapgarh,41,1-Aug-26,O3
+Prayagraj,40,1-Aug-26,"PM10, SO2"
+Puducherry,50,1-Aug-26,O3
+Pune,49,1-Aug-26,"CO, PM10"
+Purnia,58,1-Aug-26,CO
+Raipur,16,1-Aug-26,"PM10, O3, PM2.5"
+Rairangpur,31,1-Aug-26,PM10
+Rajamahendravaram,40,1-Aug-26,PM10
+Rajkot,47,1-Aug-26,PM10
+Rajsamand,70,1-Aug-26,O3
+Ramanagara,35,1-Aug-26,PM10
+Ratlam,35,1-Aug-26,NO2
+Rishikesh,37,1-Aug-26,CO
+Rohtak,55,1-Aug-26,PM10
+Rourkela,37,1-Aug-26,PM10
+Sagar,50,1-Aug-26,O3
+Saharsa,59,1-Aug-26,PM10
+Sangli,35,1-Aug-26,PM10
+Satna,70,1-Aug-26,PM10
+Sawai madhopur,49,1-Aug-26,PM10
+Shamli,91,1-Aug-26,CO
+Shillong,24,1-Aug-26,SO2
+Sikar,53,1-Aug-26,PM10
+Silchar,55,1-Aug-26,PM10
+Siliguri,119,1-Aug-26,NO2
+Singrauli,34,1-Aug-26,NO2
+Sirohi,54,1-Aug-26,PM10
+Sirsa,77,1-Aug-26,CO
+Siwan,105,1-Aug-26,PM10
+Solapur,50,1-Aug-26,"PM10, O3"
+Sonipat,133,1-Aug-26,PM10
+Sri ganganagar,71,1-Aug-26,NO2
+Srinagar,39,1-Aug-26,PM10
+Surat,41,1-Aug-26,CO
+Talcher,48,1-Aug-26,NO2
+Tensa,49,1-Aug-26,CO
+Thane,52,1-Aug-26,"PM2.5, PM10"
+Thiruvananthapuram,40,1-Aug-26,"PM2.5, PM10"
+Thoothukudi,65,1-Aug-26,PM10
+Thrissur,48,1-Aug-26,PM10
+Tirumala,44,1-Aug-26,NO2
+Tirupati,60,1-Aug-26,PM10
+Tonk,72,1-Aug-26,PM10
+Tumakuru,61,1-Aug-26,PM10
+Tumidih,77,1-Aug-26,PM2.5
+Ujjain,43,1-Aug-26,O3
+Ulhasnagar,39,1-Aug-26,PM10
+Vadodara,70,1-Aug-26,CO
+Vapi,31,1-Aug-26,PM10
+Varanasi,54,1-Aug-26,PM10
+Vatva,78,1-Aug-26,PM10
+Vijayapura,43,1-Aug-26,PM10
+Vijayawada,53,1-Aug-26,"PM10, PM2.5"
+Virar,49,1-Aug-26,PM10
+Visakhapatnam,104,1-Aug-26,PM10
+Vrindavan,30,1-Aug-26,SO2
+Yadgir,48,1-Aug-26,PM10
+Yamuna nagar,75,1-Aug-26,PM10
+Agartala,79,9-Aug-26,PM10
+Agra,80,9-Aug-26,"PM2.5, PM10"
+Ahmedabad,93,9-Aug-26,PM10
+Ahmednagar,47,9-Aug-26,PM10
+Aizawl,14,9-Aug-26,SO2
+Akola,45,9-Aug-26,PM10
+Alwar,79,9-Aug-26,PM10
+Amaravati,76,9-Aug-26,PM10
+Ambala,108,9-Aug-26,PM10
+Ambernath,90,9-Aug-26,PM10
+Amravati,66,9-Aug-26,PM10
+Amritsar,58,9-Aug-26,PM2.5
+Anantapur,67,9-Aug-26,PM10
+Angul,76,9-Aug-26,O3
+Ankleshwar,70,9-Aug-26,PM10
+Araria,40,9-Aug-26,O3
+Arrah,55,9-Aug-26,CO
+Asansol,53,9-Aug-26,"SO2, CO"
+Aurangabad (Maharashtra),53,9-Aug-26,PM10
+Baddi,106,9-Aug-26,CO
+Badlapur,23,9-Aug-26,NO2
+Baghpat,79,9-Aug-26,PM10
+Bahadurgarh,59,9-Aug-26,PM2.5
+Balasore,45,9-Aug-26,CO
+Ballabgarh,82,9-Aug-26,PM10
+Banswara,64,9-Aug-26,PM10
+Baran,54,9-Aug-26,PM10
+Barbil,38,9-Aug-26,PM2.5
+Bareilly,46,9-Aug-26,"SO2, PM10"
+Barmer,81,9-Aug-26,PM10
+Barrackpore,39,9-Aug-26,PM10
+Bathinda,29,9-Aug-26,NO2
+Beed,46,9-Aug-26,PM10
+Begusarai,68,9-Aug-26,PM10
+Belapur,18,9-Aug-26,NO2
+Belgaum,41,9-Aug-26,NO2
+Bengaluru,53,9-Aug-26,PM10
+Bettiah,26,9-Aug-26,NO2
+Bhagalpur,89,9-Aug-26,"PM10, PM2.5"
+Bharatpur,42,9-Aug-26,O3
+Bhavnagar,64,9-Aug-26,PM10
+Bhilai,20,9-Aug-26,"PM10, CO"
+Bhilwara,95,9-Aug-26,PM10
+Bhiwadi,86,9-Aug-26,"PM2.5, PM10"
+Bhiwandi,44,9-Aug-26,PM10
+Bhiwani,52,9-Aug-26,PM2.5
+Bhopal,80,9-Aug-26,PM10
+Bhubaneswar,36,9-Aug-26,O3
+Bikaner,65,9-Aug-26,PM10
+Bilaspur,22,9-Aug-26,PM2.5
+Boisar,55,9-Aug-26,PM10
+Brajrajnagar,47,9-Aug-26,CO
+Bulandshahr,61,9-Aug-26,PM10
+Bundi,61,9-Aug-26,PM10
+Byasanagar,39,9-Aug-26,PM2.5
+Byrnihat (Assam),90,9-Aug-26,PM2.5
+Byrnihat (Meghalaya),89,9-Aug-26,PM2.5
+Chamarajanagar,45,9-Aug-26,PM10
+Chandigarh,35,9-Aug-26,"PM10, NO2"
+Chandrapur,57,9-Aug-26,PM10
+Charkhi dadri,167,9-Aug-26,PM2.5
+Chennai,70,9-Aug-26,"PM10, O3"
+Chikkaballapur,23,9-Aug-26,PM10
+Chikkamagaluru,36,9-Aug-26,PM10
+Chittoor,59,9-Aug-26,PM10
+Chittorgarh,72,9-Aug-26,PM10
+Churu,55,9-Aug-26,O3
+Coimbatore,26,9-Aug-26,SO2
+Cuttack,46,9-Aug-26,PM10
+Damoh,50,9-Aug-26,SO2
+Dausa,61,9-Aug-26,PM10
+Delhi,87,9-Aug-26,"O3, PM2.5"
+Dewas,84,9-Aug-26,PM10
+Dharuhera,81,9-Aug-26,PM2.5
+Dharwad,63,9-Aug-26,PM10
+Dholpur,29,9-Aug-26,CO
+Dhule,55,9-Aug-26,PM10
+Dombivli,35,9-Aug-26,O3
+Dungarpur,114,9-Aug-26,CO
+Durgapur,59,9-Aug-26,"NO2, PM10"
+Eluru,61,9-Aug-26,O3
+Faridabad,98,9-Aug-26,"PM2.5, PM10"
+Fatehabad,52,9-Aug-26,CO
+Fatehpur sikri,29,9-Aug-26,O3
+Firozabad,35,9-Aug-26,PM10
+Gadag,82,9-Aug-26,PM10
+Gajraula,50,9-Aug-26,PM10
+Gandhinagar,96,9-Aug-26,PM10
+Gaya,39,9-Aug-26,"PM10, CO"
+Ghaziabad,82,9-Aug-26,"CO, PM10, PM2.5"
+Greater noida,133,9-Aug-26,PM10
+Gummidipoondi,120,9-Aug-26,PM2.5
+Guntur,86,9-Aug-26,NH3
+Gurugram,117,9-Aug-26,PM2.5
+Guwahati,38,9-Aug-26,"PM2.5, SO2"
+Gwalior,80,9-Aug-26,"PM10, CO, PM2.5"
+Hajipur,43,9-Aug-26,O3
+Haldia,28,9-Aug-26,PM10
+Hanumangarh,53,9-Aug-26,PM10
+Hingoli,336,9-Aug-26,O3
+Hisar,34,9-Aug-26,PM10
+Howrah,47,9-Aug-26,"CO, NO2, O3"
+Hubballi,55,9-Aug-26,PM10
+Hyderabad,50,9-Aug-26,PM10
+Indore,64,9-Aug-26,"PM10, PM2.5"
+Jabalpur,50,9-Aug-26,"CO, PM10"
+Jaipur,54,9-Aug-26,"CO, O3, PM2.5"
+Jaisalmer,114,9-Aug-26,PM10
+Jalandhar,59,9-Aug-26,PM2.5
+Jalgaon,50,9-Aug-26,PM10
+Jalna,58,9-Aug-26,PM10
+Jalore,89,9-Aug-26,PM10
+Jhalawar,72,9-Aug-26,PM10
+Jhansi,71,9-Aug-26,PM10
+Jhunjhunu,101,9-Aug-26,O3
+Jind,39,9-Aug-26,PM2.5
+Jodhpur,80,9-Aug-26,PM10
+Jorapokhar,77,9-Aug-26,PM10
+Kadapa,70,9-Aug-26,PM2.5
+Kaithal,50,9-Aug-26,PM10
+Kalaburagi,31,9-Aug-26,CO
+Kalyan,50,9-Aug-26,PM2.5
+Kannur,53,9-Aug-26,PM2.5
+Kanpur,65,9-Aug-26,"PM10, PM2.5"
+Karauli,36,9-Aug-26,NO2
+Karnal,51,9-Aug-26,CO
+Karwar,57,9-Aug-26,PM10
+Khairthal,75,9-Aug-26,PM10
+Khanna,65,9-Aug-26,PM10
+Khora,106,9-Aug-26,PM2.5
+Khurja,81,9-Aug-26,PM10
+Kishanganj,42,9-Aug-26,PM2.5
+Kohima,50,9-Aug-26,SO2
+Kolhapur,36,9-Aug-26,PM10
+Kolkata,57,9-Aug-26,"O3, PM10"
+Korba,31,9-Aug-26,CO
+Kota,77,9-Aug-26,PM10
+Kunjemura,22,9-Aug-26,CO
+Kurukshetra,47,9-Aug-26,PM2.5
+Latur,71,9-Aug-26,PM10
+Lucknow,61,9-Aug-26,"PM10, PM2.5"
+Ludhiana,74,9-Aug-26,PM10
+Machilipatnam,59,9-Aug-26,PM10
+Madikeri,17,9-Aug-26,PM10
+Mahad,56,9-Aug-26,PM10
+Maihar,34,9-Aug-26,CO
+Malegaon,55,9-Aug-26,PM10
+Mandideep,83,9-Aug-26,PM10
+Mandi gobindgarh,119,9-Aug-26,PM10
+Mandikhera,98,9-Aug-26,PM10
+Manesar,54,9-Aug-26,PM2.5
+Mangalore,37,9-Aug-26,O3
+Manguraha,70,9-Aug-26,PM10
+Mathura,63,9-Aug-26,PM2.5
+Meerut,74,9-Aug-26,PM10
+Mehsana,71,9-Aug-26,PM10
+Milupara,37,9-Aug-26,O3
+Mira-bhayandar,34,9-Aug-26,PM10
+Modinagar,24,9-Aug-26,PM2.5
+Moradabad,49,9-Aug-26,"O3, PM2.5, SO2"
+Mumbai,45,9-Aug-26,PM10
+Muzaffarnagar,63,9-Aug-26,PM10
+Muzaffarpur,43,9-Aug-26,PM10
+Mysuru,57,9-Aug-26,PM10
+Nagaur,59,9-Aug-26,PM10
+Nagpur,56,9-Aug-26,PM10
+Naharlagun,32,9-Aug-26,PM10
+Nanded,51,9-Aug-26,PM10
+Nandesari,61,9-Aug-26,PM10
+Narnaul,67,9-Aug-26,PM10
+Nashik,37,9-Aug-26,"PM10, O3"
+Navi mumbai,44,9-Aug-26,PM10
+Nellore,56,9-Aug-26,PM10
+Noida,83,9-Aug-26,"PM10, PM2.5"
+Pali,149,9-Aug-26,PM10
+Palwal,103,9-Aug-26,PM10
+Pampore,27,9-Aug-26,PM10
+Panchgaon,79,9-Aug-26,CO
+Panchkula,36,9-Aug-26,O3
+Panipat,94,9-Aug-26,PM10
+Parbhani,30,9-Aug-26,PM10
+Patiala,38,9-Aug-26,PM10
+Patna,65,9-Aug-26,"PM10, O3"
+Pimpri-chinchwad,59,9-Aug-26,PM10
+Pithampur,132,9-Aug-26,PM10
+Pratapgarh,86,9-Aug-26,PM10
+Prayagraj,44,9-Aug-26,"PM10, SO2"
+Puducherry,42,9-Aug-26,O3
+Pune,61,9-Aug-26,PM10
+Purnia,55,9-Aug-26,CO
+Raebareli,74,9-Aug-26,CO
+Raipur,21,9-Aug-26,PM10
+Rairangpur,23,9-Aug-26,PM10
+Rajamahendravaram,56,9-Aug-26,PM10
+Rajkot,76,9-Aug-26,PM10
+Rajsamand,93,9-Aug-26,PM10
+Ramanagara,44,9-Aug-26,PM10
+Ratlam,51,9-Aug-26,PM2.5
+Rishikesh,37,9-Aug-26,CO
+Rohtak,43,9-Aug-26,PM2.5
+Rourkela,43,9-Aug-26,"PM10, CO"
+Sagar,40,9-Aug-26,O3
+Saharsa,88,9-Aug-26,PM10
+Samastipur,39,9-Aug-26,PM2.5
+Sangli,52,9-Aug-26,PM10
+Satara,63,9-Aug-26,PM10
+Satna,70,9-Aug-26,PM10
+Sawai madhopur,60,9-Aug-26,PM10
+Shamli,57,9-Aug-26,CO
+Shillong,35,9-Aug-26,O3
+Shivamogga,53,9-Aug-26,PM10
+Sikar,46,9-Aug-26,PM10
+Silchar,53,9-Aug-26,PM10
+Siliguri,119,9-Aug-26,NO2
+Singrauli,71,9-Aug-26,SO2
+Sirohi,76,9-Aug-26,PM10
+Sirsa,88,9-Aug-26,CO
+Siwan,104,9-Aug-26,PM10
+Solapur,45,9-Aug-26,PM10
+Sonipat,90,9-Aug-26,PM10
+Sri ganganagar,86,9-Aug-26,NO2
+Srinagar,30,9-Aug-26,PM10
+Surat,57,9-Aug-26,PM10
+Tensa,78,9-Aug-26,O3
+Thane,48,9-Aug-26,PM10
+Thiruvananthapuram,43,9-Aug-26,PM10
+Thoothukudi,67,9-Aug-26,PM10
+Thrissur,42,9-Aug-26,PM10
+Tirumala,40,9-Aug-26,NO2
+Tirupati,55,9-Aug-26,PM10
+Tonk,88,9-Aug-26,PM10
+Tumidih,40,9-Aug-26,NO2
+Udaipur,101,9-Aug-26,PM10
+Ujjain,88,9-Aug-26,PM2.5
+Ulhasnagar,52,9-Aug-26,PM10
+Vadodara,79,9-Aug-26,PM10
+Vapi,48,9-Aug-26,PM10
+Varanasi,56,9-Aug-26,PM10
+Vatva,111,9-Aug-26,PM10
+Vijayawada,69,9-Aug-26,"PM2.5, PM10"
+Visakhapatnam,87,9-Aug-26,PM10
+Vrindavan,49,9-Aug-26,PM10
+Yadgir,50,9-Aug-26,PM10
+Yamuna nagar,83,9-Aug-26,PM2.5
+Agartala,65,10-Aug-26,PM10
+Agra,83,10-Aug-26,"PM2.5, PM10, SO2"
+Ahmedabad,93,10-Aug-26,PM10
+Ahmednagar,41,10-Aug-26,PM10
+Aizawl,14,10-Aug-26,SO2
+Ajmer,79,10-Aug-26,PM10
+Akola,47,10-Aug-26,PM10
+Alwar,97,10-Aug-26,"PM10, PM2.5"
+Amaravati,79,10-Aug-26,PM10
+Ambala,90,10-Aug-26,PM10
+Ambernath,86,10-Aug-26,PM10
+Amravati,62,10-Aug-26,PM10
+Amritsar,64,10-Aug-26,PM2.5
+Anantapur,63,10-Aug-26,PM10
+Angul,77,10-Aug-26,O3
+Ankleshwar,66,10-Aug-26,PM10
+Araria,58,10-Aug-26,PM2.5
+Arrah,53,10-Aug-26,CO
+Asansol,55,10-Aug-26,"SO2, CO, PM10"
+Aurangabad (Maharashtra),50,10-Aug-26,PM10
+Baddi,102,10-Aug-26,CO
+Badlapur,42,10-Aug-26,CO
+Bagalkot,51,10-Aug-26,PM10
+Baghpat,79,10-Aug-26,PM10
+Bahadurgarh,82,10-Aug-26,PM10
+Balasore,36,10-Aug-26,CO
+Ballabgarh,130,10-Aug-26,PM10
+Banswara,62,10-Aug-26,PM10
+Baran,39,10-Aug-26,PM10
+Barbil,65,10-Aug-26,PM10
+Bareilly,47,10-Aug-26,"SO2, PM10"
+Baripada,43,10-Aug-26,O3
+Barmer,65,10-Aug-26,PM10
+Barrackpore,41,10-Aug-26,CO
+Bathinda,29,10-Aug-26,NO2
+Beed,41,10-Aug-26,PM10
+Begusarai,76,10-Aug-26,PM10
+Belapur,23,10-Aug-26,CO
+Belgaum,41,10-Aug-26,NO2
+Bengaluru,54,10-Aug-26,"PM10, PM2.5"
+Bettiah,27,10-Aug-26,NO2
+Bhagalpur,74,10-Aug-26,"PM10, PM2.5"
+Bharatpur,39,10-Aug-26,PM10
+Bhavnagar,63,10-Aug-26,PM10
+Bhilai,27,10-Aug-26,"PM10, CO"
+Bhilwara,97,10-Aug-26,PM10
+Bhiwadi,96,10-Aug-26,PM10
+Bhiwandi,50,10-Aug-26,PM10
+Bhiwani,73,10-Aug-26,PM2.5
+Bhopal,58,10-Aug-26,"NO2, PM10"
+Bhubaneswar,52,10-Aug-26,CO
+Bikaner,61,10-Aug-26,PM10
+Bilaspur,38,10-Aug-26,PM2.5
+Boisar,51,10-Aug-26,PM10
+Brajrajnagar,47,10-Aug-26,CO
+Bulandshahr,60,10-Aug-26,PM10
+Bundi,64,10-Aug-26,PM10
+Byasanagar,46,10-Aug-26,PM2.5
+Byrnihat (Assam),82,10-Aug-26,PM2.5
+Byrnihat (Meghalaya),87,10-Aug-26,PM2.5
+Chamarajanagar,37,10-Aug-26,PM10
+Chandigarh,33,10-Aug-26,"NO2, O3"
+Chandrapur,73,10-Aug-26,PM10
+Charkhi dadri,171,10-Aug-26,PM2.5
+Chennai,66,10-Aug-26,PM10
+Chhal,57,10-Aug-26,O3
+Chhapra,114,10-Aug-26,PM10
+Chikkaballapur,30,10-Aug-26,PM10
+Chikkamagaluru,35,10-Aug-26,PM10
+Chittoor,61,10-Aug-26,PM10
+Chittorgarh,71,10-Aug-26,PM10
+Churu,94,10-Aug-26,O3
+Coimbatore,27,10-Aug-26,SO2
+Cuttack,52,10-Aug-26,PM10
+Damoh,49,10-Aug-26,SO2
+Dausa,70,10-Aug-26,PM10
+Dehradun,17,10-Aug-26,PM10
+Delhi,89,10-Aug-26,"PM2.5, PM10"
+Dewas,58,10-Aug-26,O3
+Dharuhera,95,10-Aug-26,PM2.5
+Dharwad,65,10-Aug-26,PM10
+Dhule,41,10-Aug-26,PM10
+Dombivli,35,10-Aug-26,O3
+Dungarpur,81,10-Aug-26,PM10
+Durgapur,64,10-Aug-26,"NO2, PM10, CO"
+Eluru,56,10-Aug-26,PM10
+Faridabad,119,10-Aug-26,"PM2.5, PM10"
+Fatehabad,50,10-Aug-26,CO
+Fatehpur sikri,30,10-Aug-26,O3
+Firozabad,33,10-Aug-26,PM10
+Gajraula,50,10-Aug-26,PM10
+Gandhinagar,90,10-Aug-26,PM10
+Gaya,61,10-Aug-26,"CO, PM10"
+Ghaziabad,95,10-Aug-26,"PM10, CO"
+Greater noida,201,10-Aug-26,O3
+Gummidipoondi,97,10-Aug-26,PM2.5
+Guntur,66,10-Aug-26,NH3
+Gurugram,100,10-Aug-26,"PM2.5, PM10"
+Guwahati,40,10-Aug-26,PM2.5
+Gwalior,82,10-Aug-26,"PM10, CO"
+Hajipur,53,10-Aug-26,PM10
+Haldia,36,10-Aug-26,PM10
+Hanumangarh,58,10-Aug-26,PM10
+Hapur,57,10-Aug-26,PM10
+Hingoli,105,10-Aug-26,O3
+Hisar,61,10-Aug-26,PM10
+Howrah,48,10-Aug-26,"CO, NO2, O3"
+Hubballi,66,10-Aug-26,PM10
+Hyderabad,47,10-Aug-26,PM10
+Indore,51,10-Aug-26,"PM10, PM2.5"
+Jabalpur,45,10-Aug-26,"CO, PM10"
+Jaipur,69,10-Aug-26,"O3, PM2.5"
+Jaisalmer,100,10-Aug-26,PM10
+Jalandhar,100,10-Aug-26,PM2.5
+Jalgaon,48,10-Aug-26,PM10
+Jalna,71,10-Aug-26,PM10
+Jalore,76,10-Aug-26,PM10
+Jhalawar,47,10-Aug-26,PM10
+Jhansi,59,10-Aug-26,PM10
+Jind,59,10-Aug-26,PM2.5
+Jodhpur,50,10-Aug-26,PM10
+Jorapokhar,77,10-Aug-26,PM2.5
+Kadapa,62,10-Aug-26,PM2.5
+Kaithal,53,10-Aug-26,PM10
+Kalaburagi,36,10-Aug-26,PM10
+Kalyan,98,10-Aug-26,"PM10, PM2.5"
+Kannur,58,10-Aug-26,PM2.5
+Kanpur,78,10-Aug-26,"PM10, PM2.5"
+Karauli,38,10-Aug-26,NO2
+Karnal,50,10-Aug-26,CO
+Karwar,38,10-Aug-26,PM10
+Katni,36,10-Aug-26,PM10
+Khanna,64,10-Aug-26,PM10
+Khora,113,10-Aug-26,PM2.5
+Kohima,41,10-Aug-26,SO2
+Kolhapur,37,10-Aug-26,PM10
+Kolkata,52,10-Aug-26,"O3, PM10, CO"
+Korba,23,10-Aug-26,"PM10, CO"
+Kota,73,10-Aug-26,PM10
+Kunjemura,41,10-Aug-26,PM10
+Kurukshetra,52,10-Aug-26,PM10
+Latur,48,10-Aug-26,PM10
+Lucknow,74,10-Aug-26,"PM10, PM2.5"
+Ludhiana,75,10-Aug-26,PM10
+Machilipatnam,59,10-Aug-26,PM10
+Mahad,55,10-Aug-26,PM10
+Maihar,32,10-Aug-26,CO
+Malegaon,52,10-Aug-26,PM10
+Mandideep,72,10-Aug-26,PM10
+Mandi gobindgarh,111,10-Aug-26,PM10
+Mandikhera,98,10-Aug-26,PM10
+Manesar,113,10-Aug-26,PM2.5
+Mangalore,37,10-Aug-26,O3
+Manguraha,72,10-Aug-26,PM10
+Mathura,72,10-Aug-26,PM10
+Meerut,90,10-Aug-26,PM10
+Mehsana,72,10-Aug-26,PM10
+Milupara,33,10-Aug-26,NO2
+Mira-bhayandar,32,10-Aug-26,PM10
+Modinagar,25,10-Aug-26,PM2.5
+Moradabad,47,10-Aug-26,"O3, PM2.5, SO2"
+Mumbai,41,10-Aug-26,"PM10, CO"
+Muzaffarnagar,47,10-Aug-26,PM10
+Muzaffarpur,40,10-Aug-26,PM10
+Mysuru,53,10-Aug-26,PM10
+Nagaur,55,10-Aug-26,PM10
+Nagpur,53,10-Aug-26,PM10
+Naharlagun,37,10-Aug-26,PM10
+Nanded,49,10-Aug-26,PM10
+Nandesari,61,10-Aug-26,CO
+Narnaul,82,10-Aug-26,PM10
+Nashik,43,10-Aug-26,PM10
+Navi mumbai,38,10-Aug-26,PM10
+Nellore,65,10-Aug-26,PM10
+Noida,93,10-Aug-26,PM10
+Pali,128,10-Aug-26,PM2.5
+Palwal,113,10-Aug-26,PM10
+Panchgaon,89,10-Aug-26,CO
+Panchkula,35,10-Aug-26,O3
+Parbhani,52,10-Aug-26,PM10
+Patiala,35,10-Aug-26,O3
+Patna,71,10-Aug-26,"PM2.5, PM10"
+Pimpri-chinchwad,51,10-Aug-26,PM10
+Pithampur,106,10-Aug-26,PM10
+Pratapgarh,56,10-Aug-26,PM10
+Prayagraj,39,10-Aug-26,"PM10, SO2"
+Puducherry,44,10-Aug-26,O3
+Pune,61,10-Aug-26,PM10
+Purnia,58,10-Aug-26,CO
+Raebareli,66,10-Aug-26,"PM2.5, PM10"
+Raipur,48,10-Aug-26,PM10
+Rairangpur,26,10-Aug-26,PM10
+Rajamahendravaram,64,10-Aug-26,PM10
+Rajkot,78,10-Aug-26,PM10
+Rajsamand,91,10-Aug-26,PM10
+Ramanagara,41,10-Aug-26,PM10
+Ratlam,39,10-Aug-26,PM2.5
+Rishikesh,37,10-Aug-26,CO
+Rohtak,80,10-Aug-26,PM2.5
+Rourkela,44,10-Aug-26,PM10
+Sagar,42,10-Aug-26,O3
+Saharsa,78,10-Aug-26,PM10
+Sangli,43,10-Aug-26,PM10
+Satara,63,10-Aug-26,PM10
+Satna,70,10-Aug-26,PM10
+Sawai madhopur,82,10-Aug-26,PM10
+Shamli,65,10-Aug-26,CO
+Shillong,33,10-Aug-26,O3
+Shivamogga,52,10-Aug-26,PM10
+Sikar,63,10-Aug-26,PM10
+Silchar,54,10-Aug-26,PM10
+Siliguri,121,10-Aug-26,NO2
+Singrauli,46,10-Aug-26,NO2
+Sirohi,78,10-Aug-26,PM10
+Sirsa,86,10-Aug-26,CO
+Solapur,45,10-Aug-26,PM10
+Sonipat,124,10-Aug-26,PM10
+Sri ganganagar,83,10-Aug-26,NO2
+Srinagar,46,10-Aug-26,PM10
+Surat,53,10-Aug-26,PM10
+Tensa,77,10-Aug-26,O3
+Thane,48,10-Aug-26,PM10
+Thiruvananthapuram,55,10-Aug-26,"PM10, CO"
+Thoothukudi,65,10-Aug-26,PM10
+Thrissur,44,10-Aug-26,PM10
+Tirumala,121,10-Aug-26,PM10
+Tonk,100,10-Aug-26,CO
+Tumakuru,65,10-Aug-26,PM10
+Tumidih,54,10-Aug-26,PM10
+Udaipur,103,10-Aug-26,PM10
+Ujjain,83,10-Aug-26,PM2.5
+Ulhasnagar,54,10-Aug-26,PM10
+Vadodara,74,10-Aug-26,PM10
+Vapi,35,10-Aug-26,PM10
+Varanasi,61,10-Aug-26,PM10
+Vatva,115,10-Aug-26,PM10
+Vijayawada,51,10-Aug-26,PM10
+Virar,43,10-Aug-26,PM10
+Visakhapatnam,105,10-Aug-26,PM10
+Vrindavan,48,10-Aug-26,PM2.5
+Yadgir,54,10-Aug-26,PM10
+Yamuna nagar,72,10-Aug-26,PM2.5
+Agartala,54,11-Aug-26,PM10
+Agra,81,11-Aug-26,"PM2.5, PM10"
+Ahmedabad,68,11-Aug-26,PM10
+Ahmednagar,43,11-Aug-26,PM10
+Ajmer,91,11-Aug-26,PM10
+Akola,48,11-Aug-26,PM10
+Alwar,100,11-Aug-26,PM10
+Amaravati,96,11-Aug-26,PM10
+Ambala,96,11-Aug-26,PM10
+Ambernath,72,11-Aug-26,PM10
+Amravati,51,11-Aug-26,PM10
+Amritsar,66,11-Aug-26,PM2.5
+Anantapur,75,11-Aug-26,PM10
+Angul,82,11-Aug-26,CO
+Ankleshwar,75,11-Aug-26,O3
+Araria,74,11-Aug-26,PM2.5
+Arrah,56,11-Aug-26,CO
+Asansol,59,11-Aug-26,"SO2, CO, PM10"
+Aurangabad (Maharashtra),66,11-Aug-26,PM10
+Baddi,103,11-Aug-26,PM10
+Badlapur,22,11-Aug-26,NO2
+Bagalkot,51,11-Aug-26,PM10
+Baghpat,44,11-Aug-26,PM10
+Bahadurgarh,69,11-Aug-26,PM10
+Balasore,41,11-Aug-26,CO
+Ballabgarh,133,11-Aug-26,PM10
+Banswara,61,11-Aug-26,PM10
+Barbil,55,11-Aug-26,PM2.5
+Bareilly,41,11-Aug-26,"SO2, PM10"
+Baripada,57,11-Aug-26,O3
+Barmer,74,11-Aug-26,PM10
+Barrackpore,46,11-Aug-26,CO
+Bathinda,28,11-Aug-26,NO2
+Beed,41,11-Aug-26,PM10
+Begusarai,116,11-Aug-26,PM10
+Belapur,40,11-Aug-26,PM10
+Belgaum,24,11-Aug-26,SO2
+Bengaluru,61,11-Aug-26,PM10
+Bettiah,27,11-Aug-26,NO2
+Bhagalpur,113,11-Aug-26,"PM10, PM2.5"
+Bharatpur,56,11-Aug-26,PM10
+Bhavnagar,62,11-Aug-26,PM10
+Bhilai,28,11-Aug-26,"PM10, CO"
+Bhilwara,92,11-Aug-26,PM10
+Bhiwadi,90,11-Aug-26,PM10
+Bhiwandi,43,11-Aug-26,PM10
+Bhiwani,67,11-Aug-26,PM2.5
+Bhopal,47,11-Aug-26,"NO2, CO, PM10"
+Bhubaneswar,35,11-Aug-26,PM10
+Bilaspur,29,11-Aug-26,PM10
+Bileipada,70,11-Aug-26,PM10
+Boisar,62,11-Aug-26,PM10
+Brajrajnagar,50,11-Aug-26,CO
+Bulandshahr,41,11-Aug-26,PM10
+Bundi,57,11-Aug-26,PM10
+Byasanagar,48,11-Aug-26,O3
+Byrnihat (Assam),83,11-Aug-26,PM2.5
+Byrnihat (Meghalaya),134,11-Aug-26,PM2.5
+Chamarajanagar,45,11-Aug-26,PM10
+Chandigarh,43,11-Aug-26,"CO, PM2.5"
+Chandrapur,63,11-Aug-26,PM10
+Charkhi dadri,146,11-Aug-26,PM2.5
+Chennai,59,11-Aug-26,PM10
+Chhal,78,11-Aug-26,PM10
+Chhapra,115,11-Aug-26,PM10
+Chikkaballapur,36,11-Aug-26,PM10
+Chittoor,71,11-Aug-26,PM2.5
+Chittorgarh,52,11-Aug-26,PM10
+Churu,55,11-Aug-26,PM10
+Coimbatore,45,11-Aug-26,O3
+Cuttack,45,11-Aug-26,PM10
+Damoh,50,11-Aug-26,SO2
+Dausa,71,11-Aug-26,PM10
+Davanagere,21,11-Aug-26,PM2.5
+Dehradun,43,11-Aug-26,PM2.5
+Delhi,78,11-Aug-26,"PM2.5, NO2"
+Dewas,58,11-Aug-26,O3
+Dharuhera,97,11-Aug-26,PM2.5
+Dholpur,98,11-Aug-26,PM10
+Dhule,40,11-Aug-26,PM10
+Dombivli,33,11-Aug-26,O3
+Dungarpur,74,11-Aug-26,PM10
+Durgapur,63,11-Aug-26,"NO2, PM10"
+Eloor,115,11-Aug-26,CO
+Eluru,56,11-Aug-26,PM10
+Faridabad,118,11-Aug-26,"PM2.5, PM10"
+Fatehabad,47,11-Aug-26,CO
+Fatehpur sikri,30,11-Aug-26,PM10
+Firozabad,42,11-Aug-26,"PM10, CO"
+Gajraula,44,11-Aug-26,PM2.5
+Gandhinagar,75,11-Aug-26,PM10
+Gaya,146,11-Aug-26,"PM2.5, PM10"
+Ghaziabad,75,11-Aug-26,"CO, PM10"
+Gorakhpur,214,11-Aug-26,PM2.5
+Greater noida,84,11-Aug-26,PM10
+Gummidipoondi,88,11-Aug-26,PM2.5
+Guntur,49,11-Aug-26,PM10
+Gurugram,106,11-Aug-26,"PM2.5, PM10"
+Guwahati,63,11-Aug-26,"CO, PM10, PM2.5"
+Gwalior,82,11-Aug-26,"CO, PM10, O3"
+Hajipur,45,11-Aug-26,O3
+Haldia,31,11-Aug-26,PM10
+Hanumangarh,53,11-Aug-26,PM10
+Hapur,40,11-Aug-26,PM10
+Hingoli,52,11-Aug-26,PM10
+Hisar,50,11-Aug-26,PM10
+Howrah,56,11-Aug-26,"NO2, CO"
+Hubballi,61,11-Aug-26,PM10
+Hyderabad,48,11-Aug-26,PM10
+Indore,38,11-Aug-26,"PM10, PM2.5, SO2"
+Jabalpur,52,11-Aug-26,"NO2, PM10"
+Jaipur,66,11-Aug-26,"PM2.5, PM10"
+Jaisalmer,102,11-Aug-26,PM10
+Jalandhar,94,11-Aug-26,PM2.5
+Jalgaon,48,11-Aug-26,PM10
+Jalna,66,11-Aug-26,PM10
+Jalore,76,11-Aug-26,PM10
+Jhansi,61,11-Aug-26,PM10
+Jhunjhunu,52,11-Aug-26,PM10
+Jodhpur,67,11-Aug-26,PM10
+Jorapokhar,71,11-Aug-26,PM10
+Kaithal,99,11-Aug-26,SO2
+Kalaburagi,33,11-Aug-26,CO
+Kalyan,70,11-Aug-26,PM10
+Kannur,73,11-Aug-26,PM2.5
+Kanpur,80,11-Aug-26,"PM10, PM2.5"
+Karnal,45,11-Aug-26,PM2.5
+Karwar,25,11-Aug-26,PM10
+Katni,46,11-Aug-26,PM10
+Keonjhar,41,11-Aug-26,PM10
+Khanna,70,11-Aug-26,PM10
+Khora,118,11-Aug-26,PM2.5
+Khurja,69,11-Aug-26,PM10
+Kishanganj,56,11-Aug-26,PM2.5
+Kohima,57,11-Aug-26,SO2
+Kolhapur,38,11-Aug-26,PM10
+Kolkata,68,11-Aug-26,"O3, PM10"
+Korba,26,11-Aug-26,"SO2, PM10"
+Kota,67,11-Aug-26,PM10
+Kunjemura,55,11-Aug-26,PM10
+Kurukshetra,43,11-Aug-26,PM2.5
+Latur,42,11-Aug-26,PM10
+Leh,183,11-Aug-26,CO
+Lucknow,70,11-Aug-26,"PM10, PM2.5"
+Ludhiana,67,11-Aug-26,PM10
+Machilipatnam,62,11-Aug-26,PM10
+Madikeri,29,11-Aug-26,PM10
+Mahad,26,11-Aug-26,PM2.5
+Malegaon,53,11-Aug-26,PM10
+Mandideep,37,11-Aug-26,PM10
+Mandi gobindgarh,91,11-Aug-26,PM10
+Mandikhera,71,11-Aug-26,PM10
+Manesar,72,11-Aug-26,PM2.5
+Mangalore,43,11-Aug-26,PM10
+Manguraha,70,11-Aug-26,PM10
+Mathura,72,11-Aug-26,PM10
+Meerut,56,11-Aug-26,"PM10, PM2.5"
+Mehsana,64,11-Aug-26,PM10
+Mira-bhayandar,30,11-Aug-26,PM10
+Modinagar,23,11-Aug-26,PM2.5
+Moradabad,46,11-Aug-26,"SO2, PM2.5, PM10"
+Motihari,140,11-Aug-26,PM2.5
+Mumbai,41,11-Aug-26,"PM10, O3"
+Munger,57,11-Aug-26,PM2.5
+Muzaffarnagar,32,11-Aug-26,PM10
+Muzaffarpur,52,11-Aug-26,"PM10, O3"
+Mysuru,56,11-Aug-26,PM10
+Nagaon,58,11-Aug-26,PM2.5
+Nagpur,50,11-Aug-26,PM10
+Naharlagun,35,11-Aug-26,PM10
+Nanded,49,11-Aug-26,PM10
+Nandesari,66,11-Aug-26,CO
+Narnaul,77,11-Aug-26,PM10
+Nashik,34,11-Aug-26,"PM10, O3"
+Navi mumbai,41,11-Aug-26,"CO, PM10"
+Nellore,62,11-Aug-26,PM10
+Noida,68,11-Aug-26,"PM10, CO"
+Pali,144,11-Aug-26,PM10
+Palwal,103,11-Aug-26,PM10
+Panchgaon,79,11-Aug-26,CO
+Panchkula,33,11-Aug-26,O3
+Panipat,82,11-Aug-26,PM10
+Parbhani,39,11-Aug-26,NO2
+Patiala,39,11-Aug-26,CO
+Patna,78,11-Aug-26,"PM2.5, PM10"
+Pimpri-chinchwad,66,11-Aug-26,PM10
+Pithampur,85,11-Aug-26,PM10
+Pratapgarh,34,11-Aug-26,PM10
+Prayagraj,31,11-Aug-26,SO2
+Puducherry,47,11-Aug-26,O3
+Pune,61,11-Aug-26,PM10
+Purnia,59,11-Aug-26,CO
+Raebareli,168,11-Aug-26,"PM2.5, PM10"
+Raipur,47,11-Aug-26,PM10
+Rairangpur,25,11-Aug-26,PM10
+Rajamahendravaram,65,11-Aug-26,PM10
+Rajkot,70,11-Aug-26,PM10
+Rajsamand,79,11-Aug-26,PM10
+Ramanagara,43,11-Aug-26,PM10
+Ratlam,38,11-Aug-26,PM2.5
+Rishikesh,37,11-Aug-26,CO
+Rohtak,53,11-Aug-26,PM2.5
+Rourkela,48,11-Aug-26,PM10
+Rupnagar,54,11-Aug-26,CO
+Sagar,29,11-Aug-26,O3
+Saharsa,239,11-Aug-26,PM10
+Samastipur,154,11-Aug-26,PM2.5
+Sangli,28,11-Aug-26,PM10
+Satara,61,11-Aug-26,PM10
+Satna,70,11-Aug-26,PM10
+Sawai madhopur,55,11-Aug-26,O3
+Shamli,126,11-Aug-26,CO
+Shillong,24,11-Aug-26,SO2
+Shivamogga,46,11-Aug-26,O3
+Sikar,87,11-Aug-26,PM10
+Silchar,52,11-Aug-26,PM10
+Siliguri,117,11-Aug-26,NO2
+Singrauli,45,11-Aug-26,NO2
+Sirohi,66,11-Aug-26,PM10
+Sirsa,92,11-Aug-26,CO
+Siwan,105,11-Aug-26,PM10
+Solapur,45,11-Aug-26,PM10
+Sonipat,113,11-Aug-26,PM10
+Sri ganganagar,106,11-Aug-26,O3
+Srinagar,51,11-Aug-26,PM10
+Surat,46,11-Aug-26,"CO, PM10"
+Talcher,78,11-Aug-26,SO2
+Tensa,77,11-Aug-26,O3
+Thiruvananthapuram,57,11-Aug-26,PM10
+Thoothukudi,65,11-Aug-26,PM10
+Thrissur,49,11-Aug-26,PM10
+Tirumala,49,11-Aug-26,NO2
+Tonk,77,11-Aug-26,PM10
+Tumidih,36,11-Aug-26,PM10
+Udaipur,86,11-Aug-26,PM10
+Ujjain,47,11-Aug-26,PM2.5
+Ulhasnagar,28,11-Aug-26,PM10
+Vadodara,74,11-Aug-26,CO
+Vapi,38,11-Aug-26,PM10
+Varanasi,67,11-Aug-26,PM10
+Vatva,112,11-Aug-26,PM2.5
+Vijayapura,43,11-Aug-26,PM10
+Vijayawada,64,11-Aug-26,"PM10, PM2.5"
+Virar,33,11-Aug-26,PM10
+Visakhapatnam,98,11-Aug-26,PM10
+Vrindavan,41,11-Aug-26,PM2.5
+Yadgir,42,11-Aug-26,PM10
+Yamuna nagar,83,11-Aug-26,PM2.5
+Agartala,61,12-Aug-26,PM10
+Agra,83,12-Aug-26,"PM2.5, PM10"
+Ahmedabad,84,12-Aug-26,"PM10, PM2.5"
+Ahmednagar,32,12-Aug-26,PM10
+Aizawl,15,12-Aug-26,SO2
+Ajmer,46,12-Aug-26,PM10
+Akola,29,12-Aug-26,PM10
+Alwar,99,12-Aug-26,PM10
+Amaravati,94,12-Aug-26,PM10
+Ambala,114,12-Aug-26,PM10
+Ambernath,48,12-Aug-26,PM10
+Amravati,29,12-Aug-26,PM10
+Amritsar,76,12-Aug-26,PM10
+Anantapur,73,12-Aug-26,PM10
+Angul,102,12-Aug-26,CO
+Ankleshwar,61,12-Aug-26,O3
+Araria,68,12-Aug-26,PM10
+Arrah,56,12-Aug-26,CO
+Asansol,70,12-Aug-26,"CO, SO2"
+Aurangabad (Maharashtra),38,12-Aug-26,PM10
+Baddi,141,12-Aug-26,PM10
+Badlapur,45,12-Aug-26,CO
+Bagalkot,51,12-Aug-26,PM10
+Baghpat,65,12-Aug-26,O3
+Bahadurgarh,63,12-Aug-26,PM2.5
+Balasore,43,12-Aug-26,CO
+Ballabgarh,135,12-Aug-26,PM10
+Banswara,69,12-Aug-26,PM10
+Baran,42,12-Aug-26,O3
+Barbil,70,12-Aug-26,PM2.5
+Bareilly,66,12-Aug-26,"PM10, SO2"
+Baripada,50,12-Aug-26,O3
+Barmer,58,12-Aug-26,PM10
+Barrackpore,52,12-Aug-26,CO
+Bathinda,40,12-Aug-26,PM10
+Beed,27,12-Aug-26,PM10
+Begusarai,84,12-Aug-26,PM10
+Belapur,39,12-Aug-26,PM10
+Bengaluru,67,12-Aug-26,"PM10, PM2.5"
+Bettiah,27,12-Aug-26,NO2
+Bhagalpur,70,12-Aug-26,"PM10, PM2.5"
+Bharatpur,105,12-Aug-26,PM10
+Bhavnagar,60,12-Aug-26,PM10
+Bhilai,25,12-Aug-26,"PM10, CO"
+Bhilwara,41,12-Aug-26,PM2.5
+Bhiwadi,114,12-Aug-26,PM2.5
+Bhiwandi,41,12-Aug-26,PM10
+Bhiwani,65,12-Aug-26,PM2.5
+Bhopal,33,12-Aug-26,"CO, O3"
+Bhubaneswar,66,12-Aug-26,"PM2.5, PM10"
+Bikaner,101,12-Aug-26,PM10
+Bilaspur,99,12-Aug-26,PM2.5
+Boisar,51,12-Aug-26,PM10
+Brajrajnagar,48,12-Aug-26,CO
+Bulandshahr,70,12-Aug-26,PM10
+Bundi,47,12-Aug-26,PM10
+Buxar,168,12-Aug-26,PM2.5
+Byasanagar,60,12-Aug-26,PM10
+Byrnihat (Assam),82,12-Aug-26,PM2.5
+Byrnihat (Meghalaya),161,12-Aug-26,PM2.5
+Chamarajanagar,42,12-Aug-26,PM10
+Chandigarh,36,12-Aug-26,"CO, PM10, NO2"
+Chandrapur,34,12-Aug-26,"CO, PM10"
+Charkhi dadri,231,12-Aug-26,PM2.5
+Chennai,62,12-Aug-26,PM10
+Chhal,35,12-Aug-26,PM2.5
+Chhapra,114,12-Aug-26,PM10
+Chikkaballapur,49,12-Aug-26,PM10
+Chittoor,75,12-Aug-26,PM2.5
+Chittorgarh,33,12-Aug-26,PM10
+Churu,59,12-Aug-26,PM10
+Coimbatore,26,12-Aug-26,SO2
+Cuddalore,23,12-Aug-26,PM2.5
+Cuttack,64,12-Aug-26,PM10
+Damoh,50,12-Aug-26,SO2
+Dausa,59,12-Aug-26,PM10
+Davanagere,22,12-Aug-26,CO
+Dehradun,25,12-Aug-26,PM10
+Delhi,92,12-Aug-26,"PM10, PM2.5, O3"
+Dewas,60,12-Aug-26,O3
+Dharuhera,126,12-Aug-26,PM2.5
+Dhule,29,12-Aug-26,PM10
+Dombivli,34,12-Aug-26,O3
+Dungarpur,64,12-Aug-26,PM10
+Durgapur,77,12-Aug-26,"NO2, PM10"
+Eloor,125,12-Aug-26,CO
+Eluru,63,12-Aug-26,PM10
+Faridabad,88,12-Aug-26,PM10
+Fatehabad,46,12-Aug-26,CO
+Fatehpur sikri,29,12-Aug-26,PM10
+Firozabad,40,12-Aug-26,"PM10, CO"
+Gadag,88,12-Aug-26,PM10
+Gajraula,47,12-Aug-26,PM10
+Gandhinagar,73,12-Aug-26,PM10
+Gangtok,21,12-Aug-26,PM2.5
+Gaya,117,12-Aug-26,PM2.5
+Ghaziabad,79,12-Aug-26,"CO, O3, PM10"
+Greater noida,148,12-Aug-26,PM10
+Gummidipoondi,129,12-Aug-26,PM2.5
+Guntur,58,12-Aug-26,PM10
+Gurugram,165,12-Aug-26,PM2.5
+Guwahati,54,12-Aug-26,"CO, PM10, O3"
+Gwalior,69,12-Aug-26,"PM10, PM2.5"
+Hajipur,60,12-Aug-26,O3
+Haldia,37,12-Aug-26,PM10
+Hanumangarh,44,12-Aug-26,PM10
+Hapur,96,12-Aug-26,PM10
+Hisar,64,12-Aug-26,PM10
+Howrah,62,12-Aug-26,"NO2, CO, PM10"
+Hubballi,62,12-Aug-26,PM10
+Hyderabad,44,12-Aug-26,PM10
+Indore,39,12-Aug-26,"PM10, SO2, CO"
+Jabalpur,56,12-Aug-26,"NO2, CO, PM10"
+Jaipur,67,12-Aug-26,PM2.5
+Jaisalmer,100,12-Aug-26,PM10
+Jalandhar,56,12-Aug-26,PM2.5
+Jalgaon,37,12-Aug-26,CO
+Jalna,46,12-Aug-26,O3
+Jalore,71,12-Aug-26,PM10
+Jhansi,51,12-Aug-26,PM10
+Jhunjhunu,50,12-Aug-26,O3
+Jind,69,12-Aug-26,PM2.5
+Jodhpur,57,12-Aug-26,PM10
+Jorapokhar,59,12-Aug-26,PM2.5
+Kaithal,100,12-Aug-26,SO2
+Kalaburagi,31,12-Aug-26,CO
+Kalyan,51,12-Aug-26,"PM2.5, PM10"
+Kannur,73,12-Aug-26,PM2.5
+Kanpur,64,12-Aug-26,"PM10, PM2.5"
+Karauli,33,12-Aug-26,PM10
+Karnal,61,12-Aug-26,PM10
+Karwar,18,12-Aug-26,PM10
+Katni,50,12-Aug-26,PM10
+Keonjhar,60,12-Aug-26,PM10
+Khanna,69,12-Aug-26,PM10
+Khora,130,12-Aug-26,PM2.5
+Khurja,73,12-Aug-26,PM10
+Kishanganj,47,12-Aug-26,PM2.5
+Kohima,58,12-Aug-26,SO2
+Kolhapur,30,12-Aug-26,"NO2, PM10"
+Kolkata,58,12-Aug-26,"PM10, CO"
+Korba,31,12-Aug-26,"PM10, SO2"
+Kota,43,12-Aug-26,"PM2.5, PM10"
+Kunjemura,28,12-Aug-26,PM10
+Kurukshetra,49,12-Aug-26,PM2.5
+Latur,40,12-Aug-26,PM10
+Leh,183,12-Aug-26,CO
+Lucknow,66,12-Aug-26,"PM10, PM2.5"
+Ludhiana,67,12-Aug-26,PM10
+Machilipatnam,60,12-Aug-26,PM10
+Madikeri,27,12-Aug-26,PM10
+Mahad,30,12-Aug-26,PM2.5
+Maihar,34,12-Aug-26,CO
+Malegaon,43,12-Aug-26,PM10
+Mandideep,35,12-Aug-26,PM10
+Mandi gobindgarh,102,12-Aug-26,PM10
+Mandikhera,69,12-Aug-26,PM10
+Manesar,92,12-Aug-26,PM2.5
+Mangalore,48,12-Aug-26,PM10
+Manguraha,79,12-Aug-26,PM10
+Mathura,76,12-Aug-26,PM10
+Meerut,51,12-Aug-26,"PM10, PM2.5, CO"
+Mehsana,65,12-Aug-26,PM10
+Mira-bhayandar,27,12-Aug-26,PM2.5
+Modinagar,20,12-Aug-26,PM10
+Moradabad,44,12-Aug-26,"PM10, PM2.5"
+Mumbai,34,12-Aug-26,PM10
+Munger,66,12-Aug-26,PM2.5
+Muzaffarnagar,33,12-Aug-26,O3
+Muzaffarpur,47,12-Aug-26,"PM10, O3"
+Mysuru,58,12-Aug-26,PM10
+Nagaon,62,12-Aug-26,PM2.5
+Nagaur,45,12-Aug-26,PM10
+Nagpur,41,12-Aug-26,"PM10, CO"
+Naharlagun,37,12-Aug-26,PM10
+Nanded,38,12-Aug-26,PM10
+Nandesari,52,12-Aug-26,PM10
+Narnaul,93,12-Aug-26,PM10
+Nashik,37,12-Aug-26,"PM10, O3"
+Navi mumbai,38,12-Aug-26,CO
+Nellore,60,12-Aug-26,PM10
+Noida,101,12-Aug-26,"O3, PM10"
+Pali,78,12-Aug-26,PM10
+Palwal,101,12-Aug-26,PM10
+Panchgaon,82,12-Aug-26,CO
+Panchkula,39,12-Aug-26,O3
+Panipat,85,12-Aug-26,PM10
+Parbhani,39,12-Aug-26,NO2
+Patiala,43,12-Aug-26,CO
+Patna,76,12-Aug-26,PM10
+Pimpri-chinchwad,39,12-Aug-26,"CO, PM10"
+Pithampur,74,12-Aug-26,PM10
+Prayagraj,47,12-Aug-26,"PM10, O3"
+Puducherry,51,12-Aug-26,O3
+Pune,63,12-Aug-26,CO
+Purnia,58,12-Aug-26,CO
+Raebareli,91,12-Aug-26,PM2.5
+Raipur,40,12-Aug-26,PM10
+Rairangpur,30,12-Aug-26,PM10
+Rajamahendravaram,48,12-Aug-26,PM10
+Rajkot,63,12-Aug-26,PM10
+Rajsamand,38,12-Aug-26,PM10
+Ramanagara,39,12-Aug-26,PM10
+Ratlam,44,12-Aug-26,PM10
+Rishikesh,37,12-Aug-26,CO
+Rohtak,57,12-Aug-26,PM10
+Rourkela,49,12-Aug-26,"PM10, PM2.5"
+Rupnagar,54,12-Aug-26,CO
+Sagar,35,12-Aug-26,O3
+Saharsa,57,12-Aug-26,PM10
+Samastipur,154,12-Aug-26,PM2.5
+Satara,38,12-Aug-26,PM10
+Satna,70,12-Aug-26,PM10
+Sawai madhopur,58,12-Aug-26,O3
+Shamli,85,12-Aug-26,CO
+Shillong,25,12-Aug-26,O3
+Shivamogga,46,12-Aug-26,O3
+Sikar,78,12-Aug-26,PM10
+Silchar,56,12-Aug-26,PM10
+Siliguri,119,12-Aug-26,NO2
+Sirohi,56,12-Aug-26,PM10
+Sivasagar,50,12-Aug-26,O3
+Siwan,104,12-Aug-26,PM10
+Solapur,45,12-Aug-26,"O3, PM10"
+Sonipat,115,12-Aug-26,PM10
+Sri ganganagar,147,12-Aug-26,PM10
+Srinagar,49,12-Aug-26,PM10
+Surat,48,12-Aug-26,PM10
+Talcher,78,12-Aug-26,SO2
+Tensa,60,12-Aug-26,O3
+Thane,27,12-Aug-26,"CO, O3"
+Thiruvananthapuram,54,12-Aug-26,PM10
+Thoothukudi,66,12-Aug-26,PM10
+Thrissur,52,12-Aug-26,PM10
+Tirumala,42,12-Aug-26,NO2
+Tirupati,76,12-Aug-26,PM2.5
+Tonk,60,12-Aug-26,CO
+Tumidih,49,12-Aug-26,PM10
+Udaipur,44,12-Aug-26,PM2.5
+Ujjain,44,12-Aug-26,O3
+Ulhasnagar,21,12-Aug-26,PM10
+Vadodara,73,12-Aug-26,CO
+Vapi,40,12-Aug-26,PM10
+Varanasi,68,12-Aug-26,PM10
+Vatva,114,12-Aug-26,PM10
+Vijayapura,43,12-Aug-26,PM10
+Vijayawada,57,12-Aug-26,"PM10, PM2.5"
+Virar,24,12-Aug-26,PM10
+Visakhapatnam,110,12-Aug-26,PM10
+Vrindavan,42,12-Aug-26,PM2.5
+Yadgir,30,12-Aug-26,PM10
+Yamuna nagar,74,12-Aug-26,PM2.5
+Agartala,27,13-Aug-26,PM2.5
+Agra,70,13-Aug-26,"PM2.5, PM10"
+Ahmedabad,68,13-Aug-26,PM10
+Ahmednagar,43,13-Aug-26,PM10
+Aizawl,14,13-Aug-26,SO2
+Ajmer,42,13-Aug-26,PM10
+Akola,35,13-Aug-26,PM10
+Alwar,96,13-Aug-26,PM10
+Amaravati,66,13-Aug-26,PM10
+Ambala,142,13-Aug-26,PM10
+Ambernath,71,13-Aug-26,PM10
+Amravati,37,13-Aug-26,PM10
+Amritsar,71,13-Aug-26,PM10
+Anantapur,62,13-Aug-26,PM10
+Angul,103,13-Aug-26,CO
+Ankleshwar,55,13-Aug-26,PM10
+Araria,49,13-Aug-26,O3
+Arrah,52,13-Aug-26,CO
+Asansol,52,13-Aug-26,"SO2, PM10"
+Aurangabad (Maharashtra),46,13-Aug-26,"CO, PM10"
+Baddi,138,13-Aug-26,PM10
+Badlapur,41,13-Aug-26,CO
+Baghpat,154,13-Aug-26,PM10
+Bahadurgarh,67,13-Aug-26,PM10
+Balasore,43,13-Aug-26,CO
+Ballabgarh,145,13-Aug-26,PM10
+Banswara,51,13-Aug-26,PM10
+Baran,28,13-Aug-26,O3
+Bareilly,75,13-Aug-26,"O3, SO2"
+Barmer,47,13-Aug-26,PM10
+Barrackpore,48,13-Aug-26,CO
+Bathinda,52,13-Aug-26,PM10
+Beed,34,13-Aug-26,PM10
+Begusarai,104,13-Aug-26,PM10
+Belapur,47,13-Aug-26,PM10
+Belgaum,38,13-Aug-26,NO2
+Bengaluru,61,13-Aug-26,"PM10, PM2.5"
+Bettiah,29,13-Aug-26,NO2
+Bhagalpur,139,13-Aug-26,"PM2.5, PM10"
+Bharatpur,44,13-Aug-26,O3
+Bhavnagar,60,13-Aug-26,CO
+Bhilai,21,13-Aug-26,"PM10, CO"
+Bhilwara,63,13-Aug-26,PM10
+Bhiwadi,79,13-Aug-26,PM10
+Bhiwandi,44,13-Aug-26,PM10
+Bhiwani,35,13-Aug-26,PM2.5
+Bhopal,43,13-Aug-26,PM10
+Bhubaneswar,55,13-Aug-26,"PM2.5, PM10"
+Bikaner,38,13-Aug-26,O3
+Bilaspur,57,13-Aug-26,PM10
+Bileipada,68,13-Aug-26,PM10
+Boisar,53,13-Aug-26,PM10
+Brajrajnagar,47,13-Aug-26,PM10
+Bulandshahr,98,13-Aug-26,PM10
+Bundi,47,13-Aug-26,PM10
+Byasanagar,54,13-Aug-26,PM10
+Byrnihat (Assam),96,13-Aug-26,PM2.5
+Byrnihat (Meghalaya),153,13-Aug-26,PM2.5
+Chamarajanagar,43,13-Aug-26,PM10
+Chandigarh,46,13-Aug-26,"PM10, NO2"
+Chandrapur,41,13-Aug-26,PM10
+Charkhi dadri,99,13-Aug-26,PM2.5
+Chennai,75,13-Aug-26,PM10
+Chhal,45,13-Aug-26,PM10
+Chhapra,115,13-Aug-26,PM10
+Chikkaballapur,46,13-Aug-26,PM10
+Chittorgarh,44,13-Aug-26,PM10
+Churu,45,13-Aug-26,O3
+Coimbatore,28,13-Aug-26,SO2
+Cuddalore,24,13-Aug-26,PM2.5
+Cuttack,41,13-Aug-26,PM10
+Damoh,50,13-Aug-26,SO2
+Dausa,63,13-Aug-26,PM10
+Davanagere,22,13-Aug-26,CO
+Delhi,105,13-Aug-26,"PM10, PM2.5"
+Dewas,61,13-Aug-26,PM10
+Dharuhera,87,13-Aug-26,PM2.5
+Dholpur,34,13-Aug-26,CO
+Dhule,29,13-Aug-26,PM10
+Dombivli,33,13-Aug-26,O3
+Dungarpur,49,13-Aug-26,PM10
+Durgapur,55,13-Aug-26,"NO2, PM10, O3"
+Eluru,52,13-Aug-26,PM10
+Faridabad,131,13-Aug-26,"PM2.5, PM10"
+Fatehabad,47,13-Aug-26,CO
+Firozabad,30,13-Aug-26,"PM10, SO2"
+Gadag,86,13-Aug-26,PM10
+Gajraula,96,13-Aug-26,PM10
+Gandhinagar,45,13-Aug-26,"PM10, PM2.5"
+Gangtok,25,13-Aug-26,PM2.5
+Gaya,63,13-Aug-26,"PM2.5, PM10"
+Ghaziabad,118,13-Aug-26,"PM10, CO"
+Gorakhpur,147,13-Aug-26,PM2.5
+Greater noida,157,13-Aug-26,PM10
+Gummidipoondi,166,13-Aug-26,PM2.5
+Guntur,64,13-Aug-26,PM10
+Gurugram,131,13-Aug-26,PM2.5
+Guwahati,59,13-Aug-26,"CO, PM10, PM2.5"
+Gwalior,76,13-Aug-26,"PM2.5, O3, NO2"
+Hajipur,48,13-Aug-26,O3
+Haldia,31,13-Aug-26,PM2.5
+Hanumangarh,39,13-Aug-26,PM10
+Hapur,106,13-Aug-26,PM10
+Hingoli,47,13-Aug-26,PM10
+Hisar,66,13-Aug-26,PM10
+Howrah,52,13-Aug-26,"NO2, CO"
+Hubballi,53,13-Aug-26,PM10
+Hyderabad,45,13-Aug-26,PM10
+Indore,40,13-Aug-26,"PM10, SO2"
+Jabalpur,45,13-Aug-26,"PM10, CO"
+Jaipur,63,13-Aug-26,"CO, O3, PM2.5"
+Jaisalmer,88,13-Aug-26,PM10
+Jalandhar,73,13-Aug-26,PM2.5
+Jalgaon,32,13-Aug-26,PM10
+Jalore,65,13-Aug-26,PM10
+Jhalawar,36,13-Aug-26,PM10
+Jhansi,47,13-Aug-26,PM10
+Jhunjhunu,63,13-Aug-26,O3
+Jind,83,13-Aug-26,PM2.5
+Jodhpur,45,13-Aug-26,"O3, PM10"
+Jorapokhar,105,13-Aug-26,PM10
+Kadapa,67,13-Aug-26,PM2.5
+Kaithal,51,13-Aug-26,PM10
+Kakinada,41,13-Aug-26,NO2
+Kalaburagi,37,13-Aug-26,PM10
+Kalyan,64,13-Aug-26,"PM10, PM2.5"
+Kannur,73,13-Aug-26,PM2.5
+Kanpur,79,13-Aug-26,"PM2.5, PM10"
+Karauli,44,13-Aug-26,NO2
+Karnal,83,13-Aug-26,PM10
+Katni,53,13-Aug-26,PM10
+Keonjhar,49,13-Aug-26,PM10
+Khanna,66,13-Aug-26,PM10
+Khurja,61,13-Aug-26,CO
+Kishanganj,43,13-Aug-26,PM2.5
+Kohima,57,13-Aug-26,SO2
+Kolhapur,37,13-Aug-26,"PM10, NO2"
+Kolkata,50,13-Aug-26,"PM10, CO"
+Korba,33,13-Aug-26,PM10
+Kota,34,13-Aug-26,PM10
+Kunjemura,75,13-Aug-26,PM10
+Kurnool,35,13-Aug-26,PM10
+Kurukshetra,64,13-Aug-26,PM10
+Latur,39,13-Aug-26,PM10
+Leh,184,13-Aug-26,CO
+Lucknow,76,13-Aug-26,"PM10, PM2.5"
+Ludhiana,80,13-Aug-26,PM10
+Machilipatnam,55,13-Aug-26,PM10
+Mahad,37,13-Aug-26,PM10
+Malegaon,44,13-Aug-26,PM10
+Mandideep,52,13-Aug-26,PM2.5
+Mandi gobindgarh,93,13-Aug-26,PM10
+Mandikhera,70,13-Aug-26,PM10
+Manesar,99,13-Aug-26,PM2.5
+Mangalore,37,13-Aug-26,PM10
+Manguraha,80,13-Aug-26,PM10
+Mathura,60,13-Aug-26,PM2.5
+Meerut,115,13-Aug-26,"PM2.5, PM10"
+Mehsana,61,13-Aug-26,PM10
+Milupara,36,13-Aug-26,PM2.5
+Mira-bhayandar,32,13-Aug-26,PM10
+Modinagar,190,13-Aug-26,PM10
+Moradabad,57,13-Aug-26,"PM10, PM2.5"
+Motihari,63,13-Aug-26,PM2.5
+Mumbai,41,13-Aug-26,PM10
+Muzaffarnagar,77,13-Aug-26,PM10
+Muzaffarpur,56,13-Aug-26,O3
+Mysuru,50,13-Aug-26,PM10
+Nagaon,49,13-Aug-26,PM2.5
+Nagaur,34,13-Aug-26,PM10
+Nagpur,36,13-Aug-26,PM10
+Naharlagun,31,13-Aug-26,PM10
+Nanded,37,13-Aug-26,O3
+Nandesari,89,13-Aug-26,PM2.5
+Narnaul,73,13-Aug-26,PM10
+Nashik,34,13-Aug-26,"PM2.5, PM10"
+Navi mumbai,38,13-Aug-26,"CO, PM10"
+Nellore,64,13-Aug-26,PM10
+Noida,119,13-Aug-26,"PM10, O3"
+Pali,96,13-Aug-26,PM2.5
+Palwal,100,13-Aug-26,PM10
+Panchgaon,68,13-Aug-26,CO
+Panchkula,62,13-Aug-26,PM2.5
+Parbhani,29,13-Aug-26,NO2
+Patiala,52,13-Aug-26,PM10
+Patna,87,13-Aug-26,"PM2.5, PM10"
+Pimpri-chinchwad,46,13-Aug-26,"PM10, CO"
+Pithampur,85,13-Aug-26,PM10
+Pratapgarh,36,13-Aug-26,O3
+Prayagraj,89,13-Aug-26,"PM10, PM2.5"
+Puducherry,43,13-Aug-26,PM10
+Pune,60,13-Aug-26,"CO, PM10"
+Purnia,59,13-Aug-26,CO
+Raebareli,86,13-Aug-26,"PM2.5, PM10"
+Raipur,37,13-Aug-26,"PM10, O3"
+Rairangpur,37,13-Aug-26,PM10
+Rajamahendravaram,29,13-Aug-26,PM10
+Rajkot,41,13-Aug-26,CO
+Rajsamand,45,13-Aug-26,PM10
+Ramanagara,46,13-Aug-26,PM10
+Ratlam,55,13-Aug-26,NO2
+Rishikesh,37,13-Aug-26,CO
+Rohtak,56,13-Aug-26,PM10
+Rourkela,44,13-Aug-26,PM10
+Rupnagar,57,13-Aug-26,CO
+Sagar,38,13-Aug-26,O3
+Samastipur,140,13-Aug-26,PM2.5
+Satara,58,13-Aug-26,PM10
+Satna,70,13-Aug-26,PM10
+Sawai madhopur,60,13-Aug-26,O3
+Shamli,93,13-Aug-26,CO
+Shillong,23,13-Aug-26,SO2
+Shivamogga,45,13-Aug-26,PM10
+Sikar,45,13-Aug-26,PM10
+Silchar,49,13-Aug-26,PM10
+Siliguri,120,13-Aug-26,NO2
+Sirohi,47,13-Aug-26,PM10
+Sirsa,88,13-Aug-26,CO
+Sivasagar,43,13-Aug-26,O3
+Siwan,105,13-Aug-26,PM10
+Solapur,34,13-Aug-26,PM10
+Sonipat,106,13-Aug-26,PM10
+Sri ganganagar,74,13-Aug-26,PM10
+Srikakulam,80,13-Aug-26,CO
+Srinagar,42,13-Aug-26,PM10
+Surat,46,13-Aug-26,"PM10, CO"
+Talcher,78,13-Aug-26,NO2
+Tensa,46,13-Aug-26,PM10
+Thane,35,13-Aug-26,PM10
+Thiruvananthapuram,58,13-Aug-26,PM10
+Thoothukudi,66,13-Aug-26,PM10
+Thrissur,51,13-Aug-26,PM10
+Tirumala,45,13-Aug-26,NO2
+Tirupati,79,13-Aug-26,PM10
+Tonk,83,13-Aug-26,CO
+Udaipur,44,13-Aug-26,PM10
+Ulhasnagar,39,13-Aug-26,PM10
+Vadodara,75,13-Aug-26,CO
+Vapi,33,13-Aug-26,PM10
+Varanasi,78,13-Aug-26,PM10
+Vatva,107,13-Aug-26,PM10
+Vijayapura,43,13-Aug-26,PM10
+Vijayawada,60,13-Aug-26,"PM2.5, PM10"
+Virar,30,13-Aug-26,PM10
+Visakhapatnam,94,13-Aug-26,PM10
+Vrindavan,41,13-Aug-26,PM2.5
+Yamuna nagar,96,13-Aug-26,PM2.5
