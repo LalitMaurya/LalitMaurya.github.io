@@ -7,13 +7,13 @@
 <meta name="description" content="A year of daily temperature and rainfall in ten Indian cities, drawn as interactive radial charts.">
 <style>
   :root{
-    --bg:#1a2330;
-    --bg-alt:#212c3b;
-    --bg-deep:#141c27;
-    --text:#eaf0f6;
-    --muted:#8d9db0;
-    --line:rgba(255,255,255,.09);
-    --rain:#5bb8ff;
+    --bg:#ffffff;
+    --bg-alt:#f2f5f8;
+    --bg-deep:#e8eef4;
+    --text:#26333f;
+    --muted:#6b7b8c;
+    --line:rgba(30,50,70,.14);
+    --rain:#2f8fdc;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -30,10 +30,10 @@
 
   /* hero */
   .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;
-    background:radial-gradient(1200px 700px at 80% 40%,#26364b 0%,var(--bg) 60%)}
+    background:radial-gradient(1200px 700px at 80% 40%,#dde9f3 0%,#ffffff 65%)}
   .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding-top:80px;padding-bottom:40px;width:100%}
   .hero h1{font-size:clamp(40px,6.4vw,84px);line-height:.98;margin:0 0 22px;font-weight:800;letter-spacing:-1.5px}
-  .hero p{font-size:clamp(17px,1.8vw,22px);color:#b9c6d6;max-width:30em;margin:0 0 30px}
+  .hero p{font-size:clamp(17px,1.8vw,22px);color:#4b5b6b;max-width:30em;margin:0 0 30px}
   .btn{display:inline-block;padding:11px 22px;border:2px solid var(--text);border-radius:3px;font-weight:700;font-size:14px;text-decoration:none}
   .btn:hover,.btn:focus-visible{background:var(--text);color:var(--bg)}
   #heroRadial{width:100%;max-width:560px;justify-self:center;aspect-ratio:1}
@@ -42,17 +42,17 @@
   section.alt{background:var(--bg-alt)}
   h2{font-size:clamp(28px,3.6vw,44px);line-height:1.1;margin:0 0 20px;font-weight:800;letter-spacing:-.8px;max-width:20em}
   h3{margin:0;font-size:20px;font-weight:800}
-  .lead{font-size:19px;color:#b9c6d6;max-width:40em}
+  .lead{font-size:19px;color:#4b5b6b;max-width:40em}
 
   /* legend */
   .help{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px}
   .help svg{width:100%;max-width:230px;display:block;margin-bottom:16px}
-  .help p{margin:0;color:#b9c6d6;font-size:15px}
+  .help p{margin:0;color:#4b5b6b;font-size:15px}
   .help strong{color:var(--text)}
   .scale{margin-top:56px;max-width:640px}
   .scale .bar{height:14px;border-radius:2px;margin-bottom:8px}
   .scale .ticks{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
-  .scale .cap{font-size:14px;color:#b9c6d6;margin-bottom:10px}
+  .scale .cap{font-size:14px;color:#4b5b6b;margin-bottom:10px}
 
   /* city grid */
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:56px 40px;margin-top:48px}
@@ -61,23 +61,23 @@
   .city svg{width:100%;height:auto;display:block;touch-action:pan-y}
   .city h3{margin-top:14px}
   .city .region{color:var(--muted);font-size:14px;margin-bottom:6px}
-  .city .note{font-size:14px;color:#b9c6d6;margin:0 0 12px}
+  .city .note{font-size:14px;color:#4b5b6b;margin:0 0 12px}
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;border-top:1px solid var(--line);padding-top:10px;font-size:12px;color:var(--muted)}
   .stats b{display:block;font-size:16px;color:var(--text);font-weight:700}
   .err{color:#ff8a80;font-size:14px;padding:30px 0}
 
   /* dialog */
   dialog{width:min(860px,96vw);max-height:96vh;padding:24px;border:1px solid var(--line);border-radius:6px;background:var(--bg-deep);color:var(--text);overflow:auto}
-  dialog::backdrop{background:rgba(8,12,18,.78)}
+  dialog::backdrop{background:rgba(30,45,60,.55)}
   dialog .bar{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
   dialog .close{background:none;border:2px solid var(--muted);color:var(--text);border-radius:3px;padding:6px 14px;font-weight:700;cursor:pointer}
   dialog .close:hover,dialog .close:focus-visible{border-color:var(--text)}
   dialog svg{width:100%;height:auto;display:block}
 
   /* add city */
-  pre{background:var(--bg-deep);border:1px solid var(--line);border-radius:4px;padding:16px;overflow:auto;font-size:13px;color:#cfe0f3}
+  pre{background:var(--bg-deep);border:1px solid var(--line);border-radius:4px;padding:16px;overflow:auto;font-size:13px;color:#26333f}
   code{font-family:ui-monospace,Menlo,Consolas,monospace}
-  ol.steps{padding-left:20px;color:#b9c6d6;max-width:44em}
+  ol.steps{padding-left:20px;color:#4b5b6b;max-width:44em}
   ol.steps li{margin-bottom:8px}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 
@@ -196,8 +196,8 @@ const RAIN_SCALE = 0.009;               // bigger number = bigger rain circles
 /* ======================================================== */
 
 const COLOR_STOPS = [
-  [-15,"#5a4fcf"],[-5,"#3f7cf0"],[5,"#36b6e8"],[15,"#58d68d"],
-  [24,"#f4e04d"],[31,"#fb9b32"],[38,"#ee4035"],[45,"#a8102f"]
+  [-15,"#5a4fcf"],[-5,"#3f7cf0"],[5,"#36b6e8"],[15,"#45c47a"],
+  [24,"#f2c014"],[31,"#fb9b32"],[38,"#ee4035"],[45,"#a8102f"]
 ];
 const color = d3.scaleLinear()
   .domain(COLOR_STOPS.map(d => d[0])).range(COLOR_STOPS.map(d => d[1]))
@@ -248,10 +248,10 @@ function drawRadial(svgEl, data, opts = {}){
   const rings = [0, 10, 20, 30, 40];
   const g0 = svg.append("g");
   g0.selectAll("circle").data(rings).join("circle")
-    .attr("r", rad).attr("fill", "none").attr("stroke", "rgba(255,255,255,.09)").attr("stroke-width", .7);
+    .attr("r", rad).attr("fill", "none").attr("stroke", "rgba(30,50,70,.16)").attr("stroke-width", .7);
   if (large){
     g0.selectAll("text").data(rings).join("text")
-      .attr("x", 3).attr("y", d => -rad(d) - 2).attr("font-size", 10).attr("fill", "#8d9db0").text(d => d + "°");
+      .attr("x", 3).attr("y", d => -rad(d) - 2).attr("font-size", 10).attr("fill", "#6b7b8c").text(d => d + "°");
   }
 
   // month ticks + labels
@@ -262,11 +262,11 @@ function drawRadial(svgEl, data, opts = {}){
     const a = s / N * TAU;
     g1.append("line").attr("x1", px(r0 - 2, a)).attr("y1", py(r0 - 2, a))
       .attr("x2", px(R + 6, a)).attr("y2", py(R + 6, a))
-      .attr("stroke", "rgba(255,255,255,.07)").attr("stroke-width", .7);
+      .attr("stroke", "rgba(30,50,70,.10)").attr("stroke-width", .7);
     const mid = (s + starts[m + 1]) / 2 / N * TAU;
     g1.append("text").attr("x", px(R + (large ? 22 : 16), mid)).attr("y", py(R + (large ? 22 : 16), mid))
       .attr("text-anchor", "middle").attr("dominant-baseline", "middle")
-      .attr("font-size", large ? 12 : 10).attr("font-weight", 700).attr("fill", "#8d9db0")
+      .attr("font-size", large ? 12 : 10).attr("font-weight", 700).attr("fill", "#6b7b8c")
       .text(large ? MONTHS[m] : MONTHS[m][0]);
   });
 
@@ -284,13 +284,13 @@ function drawRadial(svgEl, data, opts = {}){
     .attr("cx", d => px(rad((d.tmin + d.tmax) / 2), ang(d.doy)))
     .attr("cy", d => py(rad((d.tmin + d.tmax) / 2), ang(d.doy)))
     .attr("r", d => Math.max(.9, rr(d.precip)))
-    .attr("fill", "rgba(91,184,255,.30)").attr("stroke", "#8fd0ff").attr("stroke-width", .7);
+    .attr("fill", "rgba(47,143,220,.26)").attr("stroke", "#2f8fdc").attr("stroke-width", .7);
 
   // centre readout
   const ctr = svg.append("g").attr("text-anchor", "middle").attr("pointer-events", "none");
-  const t1 = ctr.append("text").attr("y", -6).attr("font-weight", 800).attr("fill", "#eaf0f6").attr("font-size", large ? 20 : 13);
-  const t2 = ctr.append("text").attr("y", large ? 14 : 9).attr("fill", "#b9c6d6").attr("font-size", large ? 13 : 10);
-  const t3 = ctr.append("text").attr("y", large ? 31 : 21).attr("fill", "#8fd0ff").attr("font-size", large ? 13 : 10);
+  const t1 = ctr.append("text").attr("y", -6).attr("font-weight", 800).attr("fill", "#26333f").attr("font-size", large ? 20 : 13);
+  const t2 = ctr.append("text").attr("y", large ? 14 : 9).attr("fill", "#4b5b6b").attr("font-size", large ? 13 : 10);
+  const t3 = ctr.append("text").attr("y", large ? 31 : 21).attr("fill", "#2f8fdc").attr("font-size", large ? 13 : 10);
   const idle = () => {
     t1.text(opts.title || ""); t2.text(data[0].date.getFullYear()); t3.text("");
     hi.attr("opacity", 0);
@@ -298,7 +298,7 @@ function drawRadial(svgEl, data, opts = {}){
 
   // hover highlight
   const hi = svg.append("g").attr("pointer-events", "none").attr("opacity", 0);
-  const hl = hi.append("line").attr("stroke", "#fff").attr("stroke-width", lw + 2.4).attr("stroke-linecap", "round");
+  const hl = hi.append("line").attr("stroke", "#26333f").attr("stroke-width", lw + 2.4).attr("stroke-linecap", "round");
   const hl2 = hi.append("line").attr("stroke-linecap", "round").attr("stroke-width", lw);
 
   const byDoy = new Map(data.map(d => [d.doy, d]));
@@ -396,9 +396,9 @@ function buildHelp(){
   const C = 115, r0 = 30, R = 100;
   const rad = d3.scaleLinear().domain([T_MIN, T_MAX]).range([r0, R]);
   const ring = (g) => [0, 10, 20, 30, 40].forEach(t =>
-    g.append("circle").attr("cx", C).attr("cy", C).attr("r", rad(t)).attr("fill", "none").attr("stroke", "rgba(255,255,255,.12)"));
+    g.append("circle").attr("cx", C).attr("cy", C).attr("r", rad(t)).attr("fill", "none").attr("stroke", "rgba(30,50,70,.18)"));
   const txt = (g, x, y, s, o = {}) => g.append("text").attr("x", x).attr("y", y).attr("font-size", o.size || 11)
-    .attr("fill", o.fill || "#b9c6d6").attr("text-anchor", o.anchor || "start").attr("font-weight", o.w || 400).text(s);
+    .attr("fill", o.fill || "#4b5b6b").attr("text-anchor", o.anchor || "start").attr("font-weight", o.w || 400).text(s);
 
   // temperature
   let g = d3.select("#helpTemp"); ring(g);
@@ -408,8 +408,8 @@ function buildHelp(){
     .attr("x2", C + rad(hi) * Math.sin(ang)).attr("y2", C - rad(hi) * Math.cos(ang));
   line(a, 14, 34, color(24), 5);
   [[0.25,8,30],[0.32,9,31],[0.4,10,33],[0.47,12,33],[0.62,15,35],[0.7,16,34]].forEach(([k, lo, hi]) => line(k * Math.PI, lo, hi, color((lo + hi) / 2), 3));
-  txt(g, C + rad(34) * Math.sin(a) + 6, C - rad(34) * Math.cos(a) + 4, "max", { fill: "#eaf0f6", w: 700 });
-  txt(g, C + rad(14) * Math.sin(a) + 2, C - rad(14) * Math.cos(a) + 15, "min", { fill: "#eaf0f6", w: 700 });
+  txt(g, C + rad(34) * Math.sin(a) + 6, C - rad(34) * Math.cos(a) + 4, "max", { fill: "#26333f", w: 700 });
+  txt(g, C + rad(14) * Math.sin(a) + 2, C - rad(14) * Math.cos(a) + 15, "min", { fill: "#26333f", w: 700 });
   txt(g, C + 3, C - rad(40) - 3, "40°"); txt(g, C + 3, C - rad(20) - 3, "20°");
 
   // rain
@@ -417,17 +417,17 @@ function buildHelp(){
   const k = Math.sqrt;
   [[5, 58, 100],[25, 108, 100],[100, 168, 100]].forEach(([p, x, y]) => {
     const r = Math.min(R * 0.13, k(p) * R * RAIN_SCALE * 2.2);
-    g.append("circle").attr("cx", x).attr("cy", y + 22).attr("r", r).attr("fill", "rgba(91,184,255,.30)").attr("stroke", "#8fd0ff");
+    g.append("circle").attr("cx", x).attr("cy", y + 22).attr("r", r).attr("fill", "rgba(47,143,220,.26)").attr("stroke", "#2f8fdc");
     txt(g, x, y + 60, p + " mm", { anchor: "middle" });
   });
-  txt(g, 115, 50, "bigger circle = more rain", { anchor: "middle", fill: "#eaf0f6", w: 700 });
+  txt(g, 115, 50, "bigger circle = more rain", { anchor: "middle", fill: "#26333f", w: 700 });
 
   // months
   g = d3.select("#helpMonths");
   [0, 90, 180, 270].forEach((deg, i) => {
     const r = deg * Math.PI / 180;
     g.append("line").attr("x1", C + (r0 - 2) * Math.sin(r)).attr("y1", C - (r0 - 2) * Math.cos(r))
-      .attr("x2", C + R * Math.sin(r)).attr("y2", C - R * Math.cos(r)).attr("stroke", "rgba(255,255,255,.18)");
+      .attr("x2", C + R * Math.sin(r)).attr("y2", C - R * Math.cos(r)).attr("stroke", "rgba(30,50,70,.25)");
   });
   for (let d = 0; d < 365; d += 3){
     const r = d / 365 * TAU;
@@ -436,10 +436,10 @@ function buildHelp(){
       .attr("x1", C + 50 * Math.sin(r)).attr("y1", C - 50 * Math.cos(r))
       .attr("x2", C + 82 * Math.sin(r)).attr("y2", C - 82 * Math.cos(r));
   }
-  txt(g, C, 12, "1 Jan", { anchor: "middle", fill: "#eaf0f6", w: 700 });
+  txt(g, C, 12, "1 Jan", { anchor: "middle", fill: "#26333f", w: 700 });
   txt(g, 222, C + 4, "Apr", { anchor: "end" }); txt(g, C, 226, "Jul", { anchor: "middle" }); txt(g, 8, C + 4, "Oct");
-  g.append("path").attr("d", `M ${C + 14} ${C - 12} A 18 18 0 0 1 ${C + 18} ${C + 12}`).attr("fill", "none").attr("stroke", "#eaf0f6").attr("stroke-width", 1.4);
-  g.append("path").attr("d", `M ${C + 14} ${C + 11} l 4 2 l 1 -5`).attr("fill", "none").attr("stroke", "#eaf0f6").attr("stroke-width", 1.4);
+  g.append("path").attr("d", `M ${C + 14} ${C - 12} A 18 18 0 0 1 ${C + 18} ${C + 12}`).attr("fill", "none").attr("stroke", "#26333f").attr("stroke-width", 1.4);
+  g.append("path").attr("d", `M ${C + 14} ${C + 11} l 4 2 l 1 -5`).attr("fill", "none").attr("stroke", "#26333f").attr("stroke-width", 1.4);
   txt(g, C - 20, C + 4, "clockwise", { size: 9, anchor: "end" });
 }
 
