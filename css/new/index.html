@@ -103,7 +103,7 @@
 <header class="hero" id="top">
   <div class="top">
     <a class="brand" href="#top">India Weather Radials</a>
-    <nav><a href="#about">About</a><a href="#cities">Cities</a><a href="#data">Add a city</a></nav>
+    <nav><a href="#about">About</a><a href="#cities">Cities</a><a href="#data">Why Climate Data Matters</a></nav>
   </div>
   <div class="wrap">
     <div>
@@ -157,27 +157,13 @@
 
 <section id="data">
   <div class="wrap">
-    <h2>Update or add a city with a CSV</h2>
+    <h2>Why Climate Data Matters</h2>
     <div class="two">
       <div>
-        <ol class="steps">
-          <li>Put a CSV with one row per day in the <code>data</code> folder.</li>
-          <li>Add a line for it in <code>cities.csv</code>.</li>
-          <li>Reload the page. The chart, stats and colours update on their own.</li>
-        </ol>
-        <p class="lead" style="font-size:15px">To refresh an existing city, overwrite its CSV. <code>tmean</code> is optional; when it is missing, the page uses the average of <code>tmin</code> and <code>tmax</code>. A leap year with 366 rows works too.</p>
+        <p>Climate data is essential for understanding changing weather patterns, seasonal variations, and the growing risks associated with extreme heat and rainfall. By transforming daily temperature and rainfall data into interactive visualisations, this project makes complex climate information easier to understand and compare across Indian cities. It helps bridge the gap between raw data and public understanding, supporting climate awareness, evidence-based reporting, and informed discussions on climate resilience.</p>
       </div>
       <div>
-        <pre><code># data/surat.csv
-date,tmin,tmax,tmean,precip
-2025-01-01,14.2,29.8,22.0,0.0
-2025-01-02,13.9,30.4,22.2,0.0
-2025-07-14,25.1,29.0,27.0,86.4
-…
-
-# cities.csv
-id,city,region,year,file,note
-surat,Surat,Gujarat,2025,data/surat.csv,Dry then intense monsoon</code></pre>
+        The project is designed to support the integration, organisation, and visualisation of city-level climate data. Its flexible data structure enables the addition of new cities and the updating of datasets, helping expand the scope of comparative climate analysis. By presenting temperature and rainfall patterns through interactive radial visualisations, the project makes complex climate information easier to explore, interpret, and communicate to researchers, journalists, and the wider public.
       </div>
     </div>
   </div>
@@ -185,8 +171,7 @@ surat,Surat,Gujarat,2025,data/surat.csv,Dry then intense monsoon</code></pre>
 
 <footer>
   <div class="wrap">
-    The sample CSVs in this site are illustrative values built from approximate monthly climate normals. Replace them with observed data before publishing.
-    Charts drawn with <a href="https://d3js.org">D3</a>. Inspired by the <a href="https://www.weather-radials.com/">Weather Radials</a> poster by Raureif.
+   An interactive climate visualisation project by &copy;Lalit Maurya, exploring temperature and rainfall patterns across Indian cities through data-driven storytelling.
   </div>
 </footer>
 
